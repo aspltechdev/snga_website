@@ -240,7 +240,7 @@ const AppRoutes = () => {
                         />
 
                         <Route
-                            path="/hero"
+                            path="hero"
                             element={<HeroManagement />}
 
 
@@ -248,39 +248,39 @@ const AppRoutes = () => {
 
 
                         <Route
-                            path="/news"
+                            path="news"
                             element={<NewsManagement />}
                         />
 
 
                         <Route
-                            path="/achievements"
+                            path="achievements"
                             element={<AchievementManagement />}
                         />
                         <Route
-                            path="/admissions"
+                            path="admissions"
                             element={<AdmissionManagement />}
                         />
 
 
                         <Route
-                            path="/blogs"
+                            path="blogs"
                             element={<BlogManagement />}
                         />
 
 
                         <Route
-                            path="/gallery"
+                            path="gallery"
                             element={<GalleryManagement />}
                         />
 
 
                         <Route
-                            path="/testimonials"
+                            path="testimonials"
                             element={<TestimonialManagement />}
                         />
                         <Route
-                            path="/contact"
+                            path="contact"
                             element={<ContactEnquiryManagement />}
                         />
 
