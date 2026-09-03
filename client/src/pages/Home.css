@@ -1,0 +1,60 @@
+/* =========================================
+   HOME PAGE — LAYOUT ONLY
+   ========================================= */
+
+.home-page {
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Keep every section in normal vertical flow */
+.home-page > * {
+  width: 100%;
+  display: block;
+}
+
+/* Prevent accidental horizontal overflow */
+.home-page {
+  max-width: 100%;
+}
+
+/* Sections should not create unexpected
+   external margins between each other */
+.home-page > section {
+  margin: 0;
+}
+
+/* =========================================
+   OPTIONAL SECTION FLOW
+   ========================================= */
+
+.home-page {
+  display: flex;
+  flex-direction: column;
+}
+
+/* =========================================
+   MOBILE LAYOUT
+   ========================================= */
+
+@media (max-width: 768px) {
+  .home-page {
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  .home-page > * {
+    width: 100%;
+  }
+}
+
+/* =========================================
+   SMALL MOBILE
+   ========================================= */
+
+@media (max-width: 480px) {
+  .home-page {
+    width: 100%;
+  }
+}

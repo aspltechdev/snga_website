@@ -1,0 +1,156 @@
+.admin-dashboard {
+  padding: 32px;
+}
+
+.dashboard-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 32px;
+}
+
+.dashboard-header h1 {
+  margin: 0;
+  font-size: 32px;
+}
+
+.dashboard-header p {
+  margin-top: 6px;
+  color: #666;
+}
+
+.dashboard-header button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: none;
+  padding: 10px 16px;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.dashboard-error {
+  padding: 14px;
+  margin-bottom: 24px;
+  border-radius: 8px;
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 20px;
+}
+
+.dashboard-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  padding: 22px;
+
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+
+  text-decoration: none;
+  color: inherit;
+
+  background: #fff;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 8px 24px
+    rgba(0, 0, 0, 0.08);
+}
+
+.dashboard-card-icon {
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 10px;
+
+  background: #f3f4f6;
+}
+
+.dashboard-card p {
+  margin: 0 0 5px;
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.dashboard-card h2 {
+  margin: 0;
+  font-size: 28px;
+}
+
+.quick-actions {
+  margin-top: 40px;
+}
+
+.quick-actions h2 {
+  margin-bottom: 16px;
+}
+
+.quick-actions > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.quick-actions a {
+  padding: 12px 18px;
+
+  border-radius: 8px;
+
+  background: #111827;
+  color: #fff;
+
+  text-decoration: none;
+}
+
+@media (max-width: 1100px) {
+  .dashboard-grid {
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 800px) {
+  .dashboard-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .dashboard-header {
+    align-items: flex-start;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 550px) {
+  .admin-dashboard {
+    padding: 20px;
+  }
+
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-header {
+    flex-direction: column;
+  }
+}

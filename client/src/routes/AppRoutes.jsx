@@ -1,0 +1,298 @@
+// import {
+//   BrowserRouter,
+//   Routes,
+//   Route,
+// } from "react-router-dom";
+// import Home from "../pages/Home";
+// import AdminLogin from "../admin/pages/Login";
+// import ProtectedRoute from "./ProtectedRoute";
+// import Dashboard from "../admin/pages/Dashboard";
+
+
+
+// const AppRoutes = () => {
+//   return (
+//     <BrowserRouter>
+//       <Routes>
+
+//         {/* PUBLIC */}
+//         <Route
+//           path="/"
+//           element={<Home />}
+//         />
+
+//         {/* ADMIN LOGIN */}
+//         <Route
+//           path="/admin/login"
+//           element={<AdminLogin />}
+//         />
+
+//         {/* PROTECTED ADMIN */}
+//         <Route element={<ProtectedRoute />}>
+//           <Route
+//             path="/admin"
+//             element={<Dashboard />}
+//           />
+//         </Route>
+
+//       </Routes>
+//     </BrowserRouter>
+//   );
+// };
+
+// export default AppRoutes;
+
+import {
+    BrowserRouter,
+    Routes,
+    Route,
+} from "react-router-dom";
+import PublicLayout from "../components/layout/PublicLayout";
+import Home from "../pages/Home";
+import AdminLogin from "../admin/pages/Login";
+import ProtectedRoute from "./ProtectedRoute";
+import AdminLayout from "../admin/layouts/AdminLayout";
+import Dashboard from "../admin/pages/Dashboard";
+import Contact from "../pages/Contact";
+
+import Gallery from "../pages/Gallery";
+import Blogs from "../pages/Blog";
+import News from "../pages/News";
+import Academics from "../pages/Academics";
+import About from "../pages/About";
+import HeroManagement from "../admin/pages/HeroManagement";
+import NewsManagement from "../admin/pages/NewsManagement";
+import BlogManagement from "../admin/pages/BlogManagement";
+import GalleryManagement from "../admin/pages/GalleryManagement";
+import AchievementManagement from "../admin/pages/AchievementManagement";
+import AdmissionManagement from "../admin/pages/AdmissionManagement";
+import TestimonialManagement from "../admin/pages/TestimonialManagement";
+import ContactEnquiryManagement from "../admin/pages/ContactManagement";
+
+import History from "../components/about/History";
+import VisionMission from "../components/about/VisionMission";
+import PrincipalMessage from "../components/about/PrincipalMessage";
+import Management from "../components/about/Management";
+import Infrastructure from "../components/about/Infrastructure";
+import Curriculum from "../components/academics/Curriculum";
+import Faculties from "../components/academics/Faculties";
+import Examinations from "../components/academics/Examinations";
+import Admissions from "../pages/Admissions";
+
+
+
+const AppRoutes = () => {
+    return (
+        <BrowserRouter>
+
+            <Routes>
+
+                {/* ================================= */}
+                {/* PUBLIC WEBSITE */}
+                {/* ================================= */}
+
+                <Route element={<PublicLayout />}>
+
+                    <Route
+                        path="/"
+                        element={<Home />}
+                    />
+
+                    {/* Future public pages */}
+
+
+                    <Route
+                        path="/about"
+                        element={<History />}
+
+                    />
+                    <Route
+                        path="/history"
+                        element={<History />}
+
+                    />
+
+
+ <Route
+                        path="/about/vision-mission"
+                        element={<VisionMission />}
+
+                    />
+
+
+ <Route
+                        path="/about/leadership"
+                        element={<PrincipalMessage />}
+
+                    />
+
+                     <Route
+                        path="/about/management"
+                        element={<Management />}
+
+                    />
+   <Route
+                        path="/about/infrastructure"
+                        element={<Infrastructure />}
+
+                    />
+
+
+                       <Route
+                        path="/academics/curriculum"
+                        element={<Curriculum />}
+
+                    />
+
+                       <Route
+                        path="/academics/faculties"
+                        element={<Faculties />}
+
+                    />
+
+                    <Route 
+                    path="/academics/examinations"
+                    element={<Examinations/>}
+                    />
+    <Route 
+                    path="/academics/results"
+                    element={<Examinations/>}
+                    />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    <Route
+                        path="/academics"
+                        element={<Academics />}
+                    />
+
+                    <Route
+                        path="/news"
+                        element={<News />}
+                    />
+
+                    <Route
+                        path="/blogs"
+                        element={<Blogs />}
+                    />
+
+                    <Route
+                        path="/gallery"
+                        element={<Gallery />}
+                    />
+
+                    <Route
+                        path="/admissions"
+                        element={<Admissions />}
+                    />
+
+                    <Route
+                        path="/contact"
+                        element={<Contact />}
+                    />
+
+
+                </Route>
+
+                {/* ================================= */}
+                {/* ADMIN LOGIN */}
+                {/* ================================= */}
+
+                <Route
+                    path="/admin/login"
+                    element={<AdminLogin />}
+                />
+
+                {/* ================================= */}
+                {/* PROTECTED ADMIN */}
+                {/* ================================= */}
+
+                <Route element={<ProtectedRoute />}>
+
+                    <Route
+                        path="/admin"
+                        element={<AdminLayout />}
+                    >
+
+                        <Route
+                            index
+                            element={<Dashboard />}
+                        />
+
+                        <Route
+                            path="admin/hero"
+                            element={<HeroManagement />}
+
+
+                        />
+
+
+                        <Route
+                            path="admin/news"
+                            element={<NewsManagement />}
+                        />
+
+
+                        <Route
+                            path="admin/achievements"
+                            element={<AchievementManagement />}
+                        />
+                        <Route
+                            path="admin/admissions"
+                            element={<AdmissionManagement />}
+                        />
+
+
+                        <Route
+                            path="admin/blogs"
+                            element={<BlogManagement />}
+                        />
+
+
+                        <Route
+                            path="admin/gallery"
+                            element={<GalleryManagement />}
+                        />
+
+
+                        <Route
+                            path="admin/testimonials"
+                            element={<TestimonialManagement />}
+                        />
+                        <Route
+                            path="admin/contact"
+                            element={<ContactEnquiryManagement />}
+                        />
+
+
+                    </Route>
+
+                </Route>
+
+            </Routes>
+
+        </BrowserRouter>
+    );
+};
+
+export default AppRoutes;

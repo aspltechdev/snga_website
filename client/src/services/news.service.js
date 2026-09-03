@@ -1,0 +1,34 @@
+import api from "./api";
+
+const getAll = async () => {
+  const response = await api.get("/news");
+  return response.data;
+};
+
+const getById = async (id) => {
+  const response = await api.get(`/news/${id}`);
+  return response.data;
+};
+
+const create = async (data) => {
+  const response = await api.post("/news", data);
+  return response.data;
+};
+
+const update = async (id, data) => {
+  const response = await api.put(`/news/${id}`, data);
+  return response.data;
+};
+
+const remove = async (id) => {
+  const response = await api.delete(`/news/${id}`);
+  return response.data;
+};
+
+export default {
+  getAll,
+  getById,
+  create,
+  update,
+  remove,
+};

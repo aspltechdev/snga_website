@@ -1,0 +1,51 @@
+/* =========================================
+   PUBLIC LAYOUT
+   Layout-only styles
+   ========================================= */
+
+.public-layout {
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+
+  overflow-x: hidden;
+  margin: 0;
+}
+
+/* Main content occupies the available viewport */
+.public-layout > main {
+  width: 100%;
+  flex: 1 0 auto;
+
+  margin: 0;
+  padding: 0;
+}
+
+/* Keep routed pages full width */
+.public-layout > main > * {
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Footer stays after the page content */
+.public-layout > footer {
+  width: 100%;
+  flex-shrink: 0;
+}
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 768px) {
+  .public-layout {
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  .public-layout > main {
+    width: 100%;
+  }
+}
