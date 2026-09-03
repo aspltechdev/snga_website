@@ -1,0 +1,1256 @@
+/* =====================================================
+   HISTORY PAGE - PRODUCTION GRADE
+   Premium Design System
+===================================================== */
+
+/* =====================================================
+   1. ROOT VARIABLES
+===================================================== */
+:root {
+  --sh-primary: #0f1e3a;
+  --sh-primary-light: #1a2d5a;
+  --sh-primary-dark: #080f1e;
+  --sh-secondary: #2563eb;
+  --sh-secondary-light: #3b82f6;
+  --sh-secondary-lighter: #60a5fa;
+  --sh-secondary-glow: rgba(37, 99, 235, 0.15);
+  --sh-gold: #f59e0b;
+  --sh-gold-light: #fbbf24;
+  --sh-gold-glow: rgba(245, 158, 11, 0.15);
+  --sh-bg: #f1f5f9;
+  --sh-bg-card: #ffffff;
+  --sh-bg-dark: #0f1e3a;
+  --sh-text: #0f1e3a;
+  --sh-text-muted: #64748b;
+  --sh-text-light: #94a3b8;
+  --sh-text-white: #ffffff;
+  --sh-border: rgba(15, 30, 58, 0.06);
+  --sh-border-light: rgba(15, 30, 58, 0.04);
+  --sh-radius: 16px;
+  --sh-radius-sm: 10px;
+  --sh-radius-full: 9999px;
+  --sh-transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  --sh-transition-slow: 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  --sh-font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --sh-font-display: "Playfair Display", "Georgia", serif;
+}
+
+/* =====================================================
+   2. PAGE WRAPPER
+===================================================== */
+.sh-page {
+  background: var(--sh-bg);
+  overflow: hidden;
+}
+
+/* =====================================================
+   3. CONTAINER
+===================================================== */
+.sh-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 48px;
+}
+
+/* =====================================================
+   4. HERO SECTION
+===================================================== */
+.sh-hero {
+  position: relative;
+  padding: 120px 0 50px;
+  background: var(--sh-primary);
+  overflow: hidden;
+  min-height: 440px;
+  display: flex;
+  align-items: center;
+}
+
+.sh-hero__bg {
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 80% 50%, rgba(37, 99, 235, 0.08) 0%, transparent 60%),
+    radial-gradient(circle at 20% 80%, rgba(245, 158, 11, 0.05) 0%, transparent 40%);
+  pointer-events: none;
+}
+
+.sh-hero__gradient {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60%;
+  background: linear-gradient(to top, var(--sh-bg), transparent);
+  pointer-events: none;
+  opacity: 0.3;
+}
+
+.sh-hero__content {
+  position: relative;
+  z-index: 1;
+  max-width: 640px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.sh-hero--visible .sh-hero__content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.sh-hero__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--sh-font);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--sh-secondary-lighter);
+  padding: 6px 16px;
+  background: rgba(37, 99, 235, 0.1);
+  border-radius: var(--sh-radius-full);
+  border: 1px solid rgba(37, 99, 235, 0.15);
+}
+
+.sh-hero__badge svg {
+  font-size: 0.8rem;
+}
+
+.sh-hero__title {
+  font-family: var(--sh-font-display);
+  font-size: clamp(2.8rem, 5vw, 4.2rem);
+  font-weight: 700;
+  line-height: 1.05;
+  color: var(--sh-text-white);
+  margin: 16px 0 12px;
+}
+
+.sh-hero__highlight {
+  color: var(--sh-gold-light);
+  position: relative;
+}
+
+.sh-hero__desc {
+  font-family: var(--sh-font);
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 500px;
+  margin: 0;
+}
+
+.sh-hero__tags {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  gap: 24px;
+  padding-top: 28px;
+  margin-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  transition-delay: 0.3s;
+}
+
+.sh-hero--visible .sh-hero__tags {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.sh-hero__tags span {
+  font-family: var(--sh-font);
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.25);
+}
+
+/* =====================================================
+   5. INTRO SECTION
+===================================================== */
+.sh-intro {
+  padding: 60px 0 50px;
+  background: var(--sh-bg);
+}
+
+.sh-intro__inner {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.sh-intro--visible .sh-intro__inner {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.sh-intro__label {
+  font-family: var(--sh-font);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--sh-secondary);
+}
+
+.sh-intro__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  margin-top: 12px;
+}
+
+.sh-intro__title {
+  font-family: var(--sh-font-display);
+  font-size: clamp(2rem, 3vw, 2.8rem);
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--sh-text);
+  margin: 0;
+}
+
+.sh-intro__highlight {
+  color: var(--sh-secondary);
+  position: relative;
+}
+
+.sh-intro__highlight::after {
+  content: "";
+  position: absolute;
+  bottom: 2px;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--sh-secondary);
+  opacity: 0.12;
+  border-radius: 2px;
+}
+
+.sh-intro__text {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sh-intro__text p {
+  font-family: var(--sh-font);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--sh-text-muted);
+  margin: 0;
+}
+
+/* =====================================================
+   6. CAMPUS SECTION
+===================================================== */
+.sh-campus {
+  position: relative;
+  padding: 60px 0 50px;
+  background: var(--sh-bg-dark);
+  overflow: hidden;
+}
+
+.sh-campus__bg {
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 30% 50%, rgba(37, 99, 235, 0.06) 0%, transparent 60%),
+    radial-gradient(circle at 80% 80%, rgba(245, 158, 11, 0.04) 0%, transparent 40%);
+  pointer-events: none;
+}
+
+.sh-campus__inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: center;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.sh-campus--visible .sh-campus__inner {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.sh-campus__label {
+  font-family: var(--sh-font);
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--sh-secondary-lighter);
+}
+
+.sh-campus__title {
+  font-family: var(--sh-font-display);
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  font-weight: 700;
+  color: var(--sh-text-white);
+  margin: 8px 0 12px;
+  line-height: 1.1;
+}
+
+.sh-campus__highlight {
+  color: var(--sh-gold-light);
+}
+
+.sh-campus__desc {
+  font-family: var(--sh-font);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0 0 20px;
+  max-width: 420px;
+}
+
+.sh-campus__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--sh-font);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--sh-secondary-lighter);
+  text-decoration: none;
+  padding: 8px 0;
+  border-bottom: 2px solid rgba(37, 99, 235, 0.2);
+  transition: all var(--sh-transition);
+}
+
+.sh-campus__link:hover {
+  border-bottom-color: var(--sh-secondary-lighter);
+  gap: 14px;
+}
+
+.sh-campus__link svg {
+  transition: transform var(--sh-transition);
+}
+
+.sh-campus__link:hover svg {
+  transform: translateX(4px);
+}
+
+.sh-campus__stat {
+  text-align: center;
+  padding: 30px 24px;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: var(--sh-radius);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.sh-campus__stat-number {
+  font-family: var(--sh-font-display);
+  font-size: 4rem;
+  font-weight: 700;
+  color: var(--sh-gold-light);
+  display: block;
+  line-height: 1;
+}
+
+.sh-campus__stat-label {
+  font-family: var(--sh-font);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.sh-campus__stat-text {
+  font-family: var(--sh-font);
+  font-size: 0.8rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.4);
+  margin: 8px 0 12px;
+}
+
+.sh-campus__stat-icons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.sh-campus__stat-icons span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 0.7rem;
+}
+
+/* =====================================================
+   7. MILESTONES SECTION
+===================================================== */
+.sh-milestones {
+  padding: 60px 0 50px;
+  background: var(--sh-bg-card);
+}
+
+.sh-milestones__header {
+  text-align: center;
+  margin-bottom: 40px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.sh-milestones--visible .sh-milestones__header {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.sh-milestones__label {
+  font-family: var(--sh-font);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--sh-secondary);
+}
+
+.sh-milestones__title {
+  font-family: var(--sh-font-display);
+  font-size: clamp(1.8rem, 2.8vw, 2.6rem);
+  font-weight: 700;
+  color: var(--sh-text);
+  margin: 4px 0 0;
+  line-height: 1.1;
+}
+
+.sh-milestones__highlight {
+  color: var(--sh-secondary);
+}
+
+.sh-milestones__list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.sh-milestones--visible .sh-milestones__list {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.2s;
+}
+
+.sh-milestones__item {
+  background: var(--sh-bg);
+  padding: 28px 24px 24px;
+  border-radius: var(--sh-radius);
+  border: 1px solid var(--sh-border);
+  transition: all var(--sh-transition);
+  position: relative;
+}
+
+.sh-milestones__item:hover {
+  transform: translateY(-4px);
+  border-color: var(--sh-secondary);
+  box-shadow: 0 8px 32px rgba(37, 99, 235, 0.06);
+}
+
+.sh-milestones__item-number {
+  font-family: var(--sh-font-display);
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--sh-secondary);
+  opacity: 0.08;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.sh-milestones__item-title {
+  font-family: var(--sh-font);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--sh-text);
+  margin: 0 0 8px;
+}
+
+.sh-milestones__item-desc {
+  font-family: var(--sh-font);
+  font-size: 0.85rem;
+  line-height: 1.7;
+  color: var(--sh-text-muted);
+  margin: 0;
+}
+
+.sh-milestones__item-connector {
+  display: none;
+}
+
+/* =====================================================
+   8. FACILITIES SECTION
+===================================================== */
+.sh-facilities {
+  position: relative;
+  padding: 60px 0 50px;
+  background: var(--sh-bg-dark);
+  overflow: hidden;
+}
+
+.sh-facilities__bg {
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 70% 50%, rgba(37, 99, 235, 0.06) 0%, transparent 60%),
+    radial-gradient(circle at 20% 20%, rgba(245, 158, 11, 0.04) 0%, transparent 40%);
+  pointer-events: none;
+}
+
+.sh-facilities__header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 32px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.sh-facilities--visible .sh-facilities__header {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.sh-facilities__label {
+  font-family: var(--sh-font);
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--sh-secondary-lighter);
+}
+
+.sh-facilities__title {
+  font-family: var(--sh-font-display);
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  font-weight: 700;
+  color: var(--sh-text-white);
+  margin: 8px 0 0;
+  line-height: 1.1;
+}
+
+.sh-facilities__highlight {
+  color: var(--sh-gold-light);
+}
+
+.sh-facilities__desc {
+  font-family: var(--sh-font);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0;
+  align-self: center;
+}
+
+.sh-facilities__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.sh-facilities--visible .sh-facilities__grid {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.2s;
+}
+
+.sh-facilities__item {
+  text-align: center;
+  padding: 24px 16px;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: var(--sh-radius);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition: all var(--sh-transition);
+}
+
+.sh-facilities__item:hover {
+  transform: translateY(-4px);
+  border-color: rgba(37, 99, 235, 0.2);
+}
+
+.sh-facilities__item-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+
+.sh-facilities__item-number {
+  font-family: var(--sh-font-display);
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--sh-text-white);
+  display: block;
+  line-height: 1.1;
+}
+
+.sh-facilities__item-label {
+  font-family: var(--sh-font);
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* =====================================================
+   9. PHILOSOPHY SECTION
+===================================================== */
+.sh-philosophy {
+  padding: 60px 0 50px;
+  background: var(--sh-bg);
+}
+
+.sh-philosophy__header {
+  text-align: center;
+  margin-bottom: 32px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.sh-philosophy--visible .sh-philosophy__header {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.sh-philosophy__label {
+  font-family: var(--sh-font);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--sh-secondary);
+}
+
+.sh-philosophy__title {
+  font-family: var(--sh-font-display);
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  font-weight: 700;
+  color: var(--sh-text);
+  margin: 4px 0 0;
+  line-height: 1.1;
+}
+
+.sh-philosophy__highlight {
+  color: var(--sh-secondary);
+}
+
+.sh-philosophy__principles {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.sh-philosophy--visible .sh-philosophy__principles {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.2s;
+}
+
+.sh-philosophy__principle {
+  text-align: center;
+  padding: 28px 20px 24px;
+  background: var(--sh-bg-card);
+  border-radius: var(--sh-radius);
+  border: 1px solid var(--sh-border);
+  transition: all var(--sh-transition);
+}
+
+.sh-philosophy__principle:hover {
+  transform: translateY(-4px);
+  border-color: var(--sh-secondary);
+  box-shadow: 0 8px 32px rgba(37, 99, 235, 0.06);
+}
+
+.sh-philosophy__principle-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+}
+
+.sh-philosophy__principle-title {
+  font-family: var(--sh-font);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--sh-text);
+  margin: 0 0 6px;
+}
+
+.sh-philosophy__principle-text {
+  font-family: var(--sh-font);
+  font-size: 0.85rem;
+  line-height: 1.7;
+  color: var(--sh-text-muted);
+  margin: 0;
+}
+
+/* =====================================================
+   10. VISION SECTION
+===================================================== */
+.sh-vision {
+  position: relative;
+  padding: 60px 0 50px;
+  background: var(--sh-bg-dark);
+  overflow: hidden;
+}
+
+.sh-vision__bg {
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 50% 50%, rgba(37, 99, 235, 0.06) 0%, transparent 60%),
+    radial-gradient(circle at 20% 80%, rgba(245, 158, 11, 0.04) 0%, transparent 40%);
+  pointer-events: none;
+}
+
+.sh-vision__content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.sh-vision--visible .sh-vision__content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.sh-vision__label {
+  font-family: var(--sh-font);
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--sh-secondary-lighter);
+}
+
+.sh-vision__title {
+  font-family: var(--sh-font-display);
+  font-size: clamp(2rem, 3.5vw, 3.2rem);
+  font-weight: 700;
+  color: var(--sh-text-white);
+  margin: 8px 0 12px;
+  line-height: 1.1;
+}
+
+.sh-vision__highlight {
+  color: var(--sh-gold-light);
+}
+
+.sh-vision__desc {
+  font-family: var(--sh-font);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0 auto 12px;
+  max-width: 580px;
+}
+
+.sh-vision__desc:last-of-type {
+  margin-bottom: 20px;
+}
+
+.sh-vision__icons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.sh-vision__icons span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 0.9rem;
+}
+
+/* =====================================================
+   11. FINAL CTA
+===================================================== */
+.sh-cta {
+  padding: 70px 0 60px;
+  background: var(--sh-bg);
+}
+
+.sh-cta__content {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.sh-cta--visible .sh-cta__content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.sh-cta__badge {
+  font-family: var(--sh-font);
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--sh-secondary);
+}
+
+.sh-cta__title {
+  font-family: var(--sh-font-display);
+  font-size: clamp(2rem, 3.5vw, 3.2rem);
+  font-weight: 700;
+  color: var(--sh-text);
+  margin: 8px 0 12px;
+  line-height: 1.1;
+}
+
+.sh-cta__highlight {
+  color: var(--sh-secondary);
+  position: relative;
+}
+
+.sh-cta__highlight::after {
+  content: "";
+  position: absolute;
+  bottom: 2px;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--sh-secondary);
+  opacity: 0.12;
+  border-radius: 2px;
+}
+
+.sh-cta__desc {
+  font-family: var(--sh-font);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--sh-text-muted);
+  margin: 0 0 28px;
+}
+
+.sh-cta__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 36px;
+  background: var(--sh-secondary);
+  color: #ffffff;
+  font-family: var(--sh-font);
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: var(--sh-radius-full);
+  transition: all var(--sh-transition);
+  box-shadow: 0 4px 20px rgba(37, 99, 235, 0.2);
+}
+
+.sh-cta__btn:hover {
+  background: var(--sh-secondary-light);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 32px rgba(37, 99, 235, 0.3);
+}
+
+.sh-cta__btn svg {
+  transition: transform var(--sh-transition);
+}
+
+.sh-cta__btn:hover svg {
+  transform: translateX(4px);
+}
+
+/* =====================================================
+   12. RESPONSIVE DESIGN
+===================================================== */
+
+/* --- Tablet --- */
+@media (max-width: 1024px) {
+  .sh-container {
+    padding: 0 32px;
+  }
+
+  .sh-hero {
+    padding: 100px 0 30px;
+    min-height: 360px;
+  }
+
+  .sh-hero__content {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .sh-hero__desc {
+    max-width: 100%;
+  }
+
+  .sh-hero__tags {
+    justify-content: center;
+  }
+
+  .sh-intro__grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .sh-campus__inner {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    text-align: center;
+  }
+
+  .sh-campus__desc {
+    max-width: 100%;
+  }
+
+  .sh-campus__link {
+    justify-content: center;
+  }
+
+  .sh-milestones__list {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .sh-facilities__header {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    text-align: center;
+  }
+
+  .sh-facilities__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .sh-philosophy__principles {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .sh-philosophy__principle:last-child {
+    grid-column: span 1;
+  }
+}
+
+/* --- Mobile Landscape --- */
+@media (max-width: 768px) {
+  .sh-container {
+    padding: 0 20px;
+  }
+
+  .sh-hero {
+    padding: 80px 0 20px;
+    min-height: 300px;
+  }
+
+  .sh-hero__title {
+    font-size: clamp(2rem, 4vw, 2.8rem);
+  }
+
+  .sh-hero__desc {
+    font-size: 0.9rem;
+  }
+
+  .sh-hero__badge {
+    font-size: 0.55rem;
+    padding: 4px 12px;
+  }
+
+  .sh-hero__tags {
+    gap: 16px;
+  }
+
+  .sh-hero__tags span {
+    font-size: 0.5rem;
+    letter-spacing: 2px;
+  }
+
+  .sh-milestones__list {
+    grid-template-columns: 1fr;
+  }
+
+  .sh-facilities__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .sh-facilities__item-number {
+    font-size: 1.8rem;
+  }
+
+  .sh-philosophy__principles {
+    grid-template-columns: 1fr;
+  }
+
+  .sh-philosophy__principle:last-child {
+    grid-column: span 1;
+  }
+
+  .sh-vision__desc {
+    font-size: 0.9rem;
+  }
+}
+
+/* --- Mobile Portrait --- */
+@media (max-width: 480px) {
+  .sh-container {
+    padding: 0 14px;
+  }
+
+  .sh-hero {
+    padding: 60px 0 16px;
+    min-height: 260px;
+  }
+
+  .sh-hero__title {
+    font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+  }
+
+  .sh-hero__desc {
+    font-size: 0.8rem;
+  }
+
+  .sh-hero__tags {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .sh-hero__tags span {
+    font-size: 0.45rem;
+  }
+
+  .sh-intro__title {
+    font-size: clamp(1.4rem, 4vw, 1.8rem);
+  }
+
+  .sh-intro__text p {
+    font-size: 0.85rem;
+  }
+
+  .sh-campus__title {
+    font-size: clamp(1.4rem, 3.5vw, 1.8rem);
+  }
+
+  .sh-campus__desc {
+    font-size: 0.85rem;
+  }
+
+  .sh-campus__stat-number {
+    font-size: 3rem;
+  }
+
+  .sh-milestones__title {
+    font-size: clamp(1.4rem, 4vw, 1.8rem);
+  }
+
+  .sh-milestones__item {
+    padding: 20px 16px 18px;
+  }
+
+  .sh-milestones__item-number {
+    font-size: 2rem;
+  }
+
+  .sh-milestones__item-title {
+    font-size: 0.9rem;
+  }
+
+  .sh-milestones__item-desc {
+    font-size: 0.8rem;
+  }
+
+  .sh-facilities__title {
+    font-size: clamp(1.4rem, 3.5vw, 1.8rem);
+  }
+
+  .sh-facilities__desc {
+    font-size: 0.85rem;
+  }
+
+  .sh-facilities__grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .sh-facilities__item {
+    padding: 16px 12px;
+  }
+
+  .sh-facilities__item-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+
+  .sh-facilities__item-number {
+    font-size: 1.4rem;
+  }
+
+  .sh-facilities__item-label {
+    font-size: 0.6rem;
+  }
+
+  .sh-philosophy__title {
+    font-size: clamp(1.4rem, 4vw, 1.8rem);
+  }
+
+  .sh-philosophy__principle {
+    padding: 20px 16px 18px;
+  }
+
+  .sh-philosophy__principle-icon {
+    width: 48px;
+    height: 48px;
+    font-size: 1.2rem;
+  }
+
+  .sh-philosophy__principle-title {
+    font-size: 1rem;
+  }
+
+  .sh-philosophy__principle-text {
+    font-size: 0.8rem;
+  }
+
+  .sh-vision__title {
+    font-size: clamp(1.4rem, 3vw, 1.8rem);
+  }
+
+  .sh-vision__desc {
+    font-size: 0.85rem;
+  }
+
+  .sh-cta__title {
+    font-size: clamp(1.4rem, 3vw, 1.8rem);
+  }
+
+  .sh-cta__desc {
+    font-size: 0.85rem;
+  }
+
+  .sh-cta__btn {
+    padding: 14px 28px;
+    font-size: 0.7rem;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .sh-campus__stat-icons span {
+    width: 28px;
+    height: 28px;
+    font-size: 0.6rem;
+  }
+
+  .sh-vision__icons span {
+    width: 34px;
+    height: 34px;
+    font-size: 0.75rem;
+  }
+}
+
+/* =====================================================
+   13. UTILITY & ACCESSIBILITY
+===================================================== */
+
+/* Focus States */
+.sh-hero__btn:focus-visible,
+.sh-campus__link:focus-visible,
+.sh-cta__btn:focus-visible {
+  outline: 2px solid var(--sh-secondary);
+  outline-offset: 2px;
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .sh-hero__content,
+  .sh-hero__tags,
+  .sh-intro__inner,
+  .sh-campus__inner,
+  .sh-milestones__header,
+  .sh-milestones__list,
+  .sh-facilities__header,
+  .sh-facilities__grid,
+  .sh-philosophy__header,
+  .sh-philosophy__principles,
+  .sh-vision__content,
+  .sh-cta__content {
+    animation: none !important;
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .sh-milestones__item,
+  .sh-facilities__item,
+  .sh-philosophy__principle,
+  .sh-campus__link,
+  .sh-cta__btn {
+    transition: none !important;
+  }
+
+  .sh-milestones__item:hover,
+  .sh-facilities__item:hover,
+  .sh-philosophy__principle:hover {
+    transform: none !important;
+  }
+}
+
+/* High Contrast */
+@media (prefers-contrast: high) {
+  .sh-hero__badge {
+    border-color: #ffffff;
+  }
+
+  .sh-milestones__item {
+    border-color: var(--sh-primary);
+  }
+
+  .sh-facilities__item {
+    border-color: rgba(255, 255, 255, 0.3);
+  }
+
+  .sh-philosophy__principle {
+    border-color: var(--sh-primary);
+  }
+
+  .sh-cta__btn {
+    background: var(--sh-primary);
+  }
+}

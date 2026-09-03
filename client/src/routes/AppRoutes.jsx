@@ -107,7 +107,7 @@ const AppRoutes = () => {
 
                     />
                     <Route
-                        path="/history"
+                        path="/about/history"
                         element={<History />}
 
                     />
@@ -240,7 +240,7 @@ const AppRoutes = () => {
                         />
 
                         <Route
-                            path="admin/hero"
+                            path="/hero"
                             element={<HeroManagement />}
 
 
@@ -248,39 +248,39 @@ const AppRoutes = () => {
 
 
                         <Route
-                            path="admin/news"
+                            path="/news"
                             element={<NewsManagement />}
                         />
 
 
                         <Route
-                            path="admin/achievements"
+                            path="/achievements"
                             element={<AchievementManagement />}
                         />
                         <Route
-                            path="admin/admissions"
+                            path="/admissions"
                             element={<AdmissionManagement />}
                         />
 
 
                         <Route
-                            path="admin/blogs"
+                            path="/blogs"
                             element={<BlogManagement />}
                         />
 
 
                         <Route
-                            path="admin/gallery"
+                            path="/gallery"
                             element={<GalleryManagement />}
                         />
 
 
                         <Route
-                            path="admin/testimonials"
+                            path="/testimonials"
                             element={<TestimonialManagement />}
                         />
                         <Route
-                            path="admin/contact"
+                            path="/contact"
                             element={<ContactEnquiryManagement />}
                         />
 
