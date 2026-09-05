@@ -78,6 +78,10 @@ import Curriculum from "../components/academics/Curriculum";
 import Faculties from "../components/academics/Faculties";
 import Examinations from "../components/academics/Examinations";
 import Admissions from "../pages/Admissions";
+import BlogDetail from "../pages/BlogDetails";
+import NewsDetail from "../pages/NewsDetail";
+import Results from "../components/academics/Results";
+
 
 
 
@@ -142,6 +146,16 @@ const AppRoutes = () => {
                         path="/academics/curriculum"
                         element={<Curriculum />}
 
+
+
+                    />
+
+                     <Route
+                        path="/academics"
+                        element={<Curriculum />}
+
+                        
+
                     />
 
                        <Route
@@ -156,7 +170,7 @@ const AppRoutes = () => {
                     />
     <Route 
                     path="/academics/results"
-                    element={<Examinations/>}
+                    element={<Results/>}
                     />
 
 
@@ -195,7 +209,9 @@ const AppRoutes = () => {
                         path="/blogs"
                         element={<Blogs />}
                     />
+    <Route path="/blogs/:slug" element={<BlogDetail />} />
 
+    <Route path="/news/:slug" element={<NewsDetail />} />
                     <Route
                         path="/gallery"
                         element={<Gallery />}
