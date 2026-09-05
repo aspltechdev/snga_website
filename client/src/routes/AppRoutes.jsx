@@ -81,6 +81,8 @@ import Admissions from "../pages/Admissions";
 import BlogDetail from "../pages/BlogDetails";
 import NewsDetail from "../pages/NewsDetail";
 import Results from "../components/academics/Results";
+import Campus from "../pages/Campus";
+import Achievements from "../pages/Achievements";
 
 
 
@@ -117,32 +119,32 @@ const AppRoutes = () => {
                     />
 
 
- <Route
+                    <Route
                         path="/about/vision-mission"
                         element={<VisionMission />}
 
                     />
 
 
- <Route
+                    <Route
                         path="/about/leadership"
                         element={<PrincipalMessage />}
 
                     />
 
-                     <Route
+                    <Route
                         path="/about/management"
                         element={<Management />}
 
                     />
-   <Route
+                    <Route
                         path="/about/infrastructure"
                         element={<Infrastructure />}
 
                     />
 
 
-                       <Route
+                    <Route
                         path="/academics/curriculum"
                         element={<Curriculum />}
 
@@ -150,27 +152,45 @@ const AppRoutes = () => {
 
                     />
 
-                     <Route
+                    <Route
                         path="/academics"
                         element={<Curriculum />}
 
-                        
+
 
                     />
 
-                       <Route
+
+
+
+                    <Route
+                        path="/campus"
+                        element={<Campus />}
+
+
+
+                    />
+                    <Route
+                        path="/achivements"
+                        element={<Achievements />}
+
+
+
+                    />
+
+                    <Route
                         path="/academics/faculties"
                         element={<Faculties />}
 
                     />
 
-                    <Route 
-                    path="/academics/examinations"
-                    element={<Examinations/>}
+                    <Route
+                        path="/academics/examinations"
+                        element={<Examinations />}
                     />
-    <Route 
-                    path="/academics/results"
-                    element={<Results/>}
+                    <Route
+                        path="/academics/results"
+                        element={<Results />}
                     />
 
 
@@ -209,9 +229,9 @@ const AppRoutes = () => {
                         path="/blogs"
                         element={<Blogs />}
                     />
-    <Route path="/blogs/:slug" element={<BlogDetail />} />
+                    <Route path="/blogs/:slug" element={<BlogDetail />} />
 
-    <Route path="/news/:slug" element={<NewsDetail />} />
+                    <Route path="/news/:slug" element={<NewsDetail />} />
                     <Route
                         path="/gallery"
                         element={<Gallery />}
