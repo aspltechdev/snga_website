@@ -1,262 +1,5 @@
-// import { useEffect, useState } from "react";
-// import { Link } from "react-router-dom";
-// import {
-//   FaArrowRight,
-//   FaQuoteLeft,
-//   FaStar,
-// } from "react-icons/fa";
-// import testimonialService from "../../services/testimonial.service";
-// import "./TestimonialsPreview.css";
-
-// const API_URL =
-//   import.meta.env.VITE_API_URL?.replace(/\/api\/?$/, "") ||
-//   "http://localhost:5000";
-
-// const getImageUrl = (image) => {
-//   if (!image) return "";
-
-//   if (image.startsWith("http://") || image.startsWith("https://")) {
-//     return image;
-//   }
-
-//   return `${API_URL}${image.startsWith("/") ? image : `/${image}`}`;
-// };
-
-// const TestimonialsPreview = () => {
-//   const [testimonials, setTestimonials] = useState([]);
-//   const [activeIndex, setActiveIndex] = useState(0);
-//   const [loading, setLoading] = useState(true);
-
-//   useEffect(() => {
-//     const fetchTestimonials = async () => {
-//       try {
-//         const response = await testimonialService.getAll();
-
-//         const data = response?.data || response || [];
-
-//         const published = Array.isArray(data)
-//           ? data.filter((item) => item.isPublished !== false)
-//           : [];
-
-//         setTestimonials(published.slice(0, 5));
-//       } catch (error) {
-//         console.error("Failed to load testimonials:", error);
-//         setTestimonials([]);
-//       } finally {
-//         setLoading(false);
-//       }
-//     };
-
-//     fetchTestimonials();
-//   }, []);
-
-//   useEffect(() => {
-//     if (testimonials.length <= 1) return;
-
-//     const interval = setInterval(() => {
-//       setActiveIndex((current) =>
-//         current === testimonials.length - 1 ? 0 : current + 1
-//       );
-//     }, 6000);
-
-//     return () => clearInterval(interval);
-//   }, [testimonials.length]);
-
-//   const activeTestimonial = testimonials[activeIndex];
-
-//   return (
-//     <section className="testimonials-preview">
-//       <div className="testimonials-preview-container">
-
-//         {/* Header */}
-//         <div className="testimonials-preview-header">
-//           <div>
-//             <div className="testimonials-preview-label">
-//               <span></span>
-//               VOICES OF OUR COMMUNITY
-//             </div>
-
-//             <h2 className="testimonials-preview-title">
-//               What Our
-//               <br />
-//               <em>Community Says.</em>
-//             </h2>
-//           </div>
-
-//           <div className="testimonials-preview-header-right">
-//             <p>
-//               The experiences of our students and parents reflect the
-//               relationships, learning and values we build every day.
-//             </p>
-
-//             <Link
-//               to="/testimonials"
-//               className="testimonials-preview-link"
-//             >
-//               <span>View All Testimonials</span>
-//               <FaArrowRight />
-//             </Link>
-//           </div>
-//         </div>
-
-//         {/* Testimonial */}
-//         {loading ? (
-//           <div className="testimonials-preview-loading">
-//             <div></div>
-//             <div></div>
-//           </div>
-//         ) : activeTestimonial ? (
-//           <div className="testimonial-feature">
-
-//             {/* Left */}
-//             <div className="testimonial-feature-left">
-//               <FaQuoteLeft className="testimonial-quote-icon" />
-
-//               <div className="testimonial-rating">
-//                 {[1, 2, 3, 4, 5].map((star) => (
-//                   <FaStar
-//                     key={star}
-//                     className={
-//                       star <= (activeTestimonial.rating || 5)
-//                         ? "active"
-//                         : ""
-//                     }
-//                   />
-//                 ))}
-//               </div>
-
-//               <blockquote>
-//                 “{activeTestimonial.message}”
-//               </blockquote>
-
-//               <div className="testimonial-author">
-//                 <div className="testimonial-author-image">
-//                   {activeTestimonial.image ? (
-//                     <img
-//                       src={getImageUrl(activeTestimonial.image)}
-//                       alt={activeTestimonial.name}
-//                     />
-//                   ) : (
-//                     <span>
-//                       {activeTestimonial.name
-//                         ?.charAt(0)
-//                         ?.toUpperCase() || "S"}
-//                     </span>
-//                   )}
-//                 </div>
-
-//                 <div className="testimonial-author-info">
-//                   <strong>{activeTestimonial.name}</strong>
-
-//                   {activeTestimonial.role && (
-//                     <span>{activeTestimonial.role}</span>
-//                   )}
-//                 </div>
-//               </div>
-//             </div>
-
-//             {/* Right */}
-//             <div className="testimonial-feature-right">
-//               <div className="testimonial-feature-number">
-//                 {String(activeIndex + 1).padStart(2, "0")}
-//                 <span>
-//                   / {String(testimonials.length).padStart(2, "0")}
-//                 </span>
-//               </div>
-
-//               <div className="testimonial-feature-decoration">
-//                 <span></span>
-//                 <span></span>
-//                 <span></span>
-//               </div>
-
-//               <div className="testimonial-feature-caption">
-//                 <strong>TRUST</strong>
-//                 <span>Built through meaningful experiences.</span>
-//               </div>
-//             </div>
-//           </div>
-//         ) : (
-//           <div className="testimonials-preview-empty">
-//             <FaQuoteLeft />
-
-//             <h3>Your Voice Matters</h3>
-
-//             <p>
-//               Community testimonials will be showcased here.
-//             </p>
-//           </div>
-//         )}
-
-//         {/* Navigation */}
-//         {!loading && testimonials.length > 1 && (
-//           <div className="testimonials-preview-navigation">
-
-//             <div className="testimonial-dots">
-//               {testimonials.map((testimonial, index) => (
-//                 <button
-//                   key={testimonial.id}
-//                   type="button"
-//                   className={
-//                     index === activeIndex ? "active" : ""
-//                   }
-//                   onClick={() => setActiveIndex(index)}
-//                   aria-label={`View testimonial ${index + 1}`}
-//                 >
-//                   <span></span>
-//                 </button>
-//               ))}
-//             </div>
-
-//             <div className="testimonial-counter">
-//               <strong>
-//                 {String(activeIndex + 1).padStart(2, "0")}
-//               </strong>
-
-//               <span>—</span>
-
-//               <span>
-//                 {String(testimonials.length).padStart(2, "0")}
-//               </span>
-//             </div>
-//           </div>
-//         )}
-
-//         {/* Bottom Statement */}
-//         <div className="testimonials-preview-bottom">
-//           <div>
-//             <span>OUR PROMISE</span>
-//             <strong>
-//               Creating a place where every student
-//               <em> feels seen, supported & inspired.</em>
-//             </strong>
-//           </div>
-
-//           <Link to="/contact" className="testimonials-preview-bottom-link">
-//             <span>Connect With Us</span>
-//             <FaArrowRight />
-//           </Link>
-//         </div>
-
-//       </div>
-//     </section>
-//   );
-// };
-
-// export default TestimonialsPreview;
-
-
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import {
-  FaArrowRight,
-  FaQuoteLeft,
-  FaStar,
-  FaUserCircle,
-  FaHeart,
-  FaChalkboardTeacher,
-  FaGraduationCap,
-} from "react-icons/fa";
 import testimonialService from "../../services/testimonial.service";
 import "./TestimonialsPreview.css";
 
@@ -264,8 +7,16 @@ const API_URL =
   import.meta.env.VITE_API_URL?.replace(/\/api\/?$/, "") ||
   "http://localhost:5000";
 
-const getImageUrl = (image) => {
-  if (!image) return "";
+const fallbackImages = [
+  "https://images.unsplash.com/photo-1497486751825-1233686d5d80?auto=format&fit=crop&w=1800&q=90",
+  "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1800&q=90",
+  "https://images.unsplash.com/photo-1529390079861-591de354faf5?auto=format&fit=crop&w=1800&q=90",
+];
+
+const getImageUrl = (image, index = 0) => {
+  if (!image) {
+    return fallbackImages[index % fallbackImages.length];
+  }
 
   if (image.startsWith("http://") || image.startsWith("https://")) {
     return image;
@@ -279,101 +30,9 @@ const TestimonialsPreview = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [loading, setLoading] = useState(true);
 
-  const sectionRef = useRef(null);
-  const headerRef = useRef(null);
-  const featureRef = useRef(null);
-  const navRef = useRef(null);
-  const bottomRef = useRef(null);
-
-  // =====================================================
-  // SCROLL TRIGGERED ANIMATIONS
-  // =====================================================
-
   useEffect(() => {
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: "0px 0px -50px 0px",
-    };
+    let mounted = true;
 
-    const sectionObserver = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("testimonials-visible");
-          sectionObserver.unobserve(entry.target);
-        }
-      });
-    }, observerOptions);
-
-    const headerObserver = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("reveal-header");
-          headerObserver.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.15 });
-
-    const featureObserver = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("reveal-feature");
-          featureObserver.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.15 });
-
-    const navObserver = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("reveal-nav");
-          navObserver.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.2 });
-
-    const bottomObserver = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("reveal-bottom");
-          bottomObserver.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.2 });
-
-    if (sectionRef.current) {
-      sectionObserver.observe(sectionRef.current);
-    }
-
-    if (headerRef.current) {
-      headerObserver.observe(headerRef.current);
-    }
-
-    if (featureRef.current) {
-      featureObserver.observe(featureRef.current);
-    }
-
-    if (navRef.current) {
-      navObserver.observe(navRef.current);
-    }
-
-    if (bottomRef.current) {
-      bottomObserver.observe(bottomRef.current);
-    }
-
-    return () => {
-      sectionObserver.disconnect();
-      headerObserver.disconnect();
-      featureObserver.disconnect();
-      navObserver.disconnect();
-      bottomObserver.disconnect();
-    };
-  }, []);
-
-  // =====================================================
-  // FETCH TESTIMONIALS
-  // =====================================================
-
-  useEffect(() => {
     const fetchTestimonials = async () => {
       try {
         const response = await testimonialService.getAll();
@@ -384,21 +43,28 @@ const TestimonialsPreview = () => {
           ? data.filter((item) => item.isPublished !== false)
           : [];
 
-        setTestimonials(published.slice(0, 5));
+        if (mounted) {
+          setTestimonials(published.slice(0, 5));
+        }
       } catch (error) {
         console.error("Failed to load testimonials:", error);
-        setTestimonials([]);
+
+        if (mounted) {
+          setTestimonials([]);
+        }
       } finally {
-        setLoading(false);
+        if (mounted) {
+          setLoading(false);
+        }
       }
     };
 
     fetchTestimonials();
-  }, []);
 
-  // =====================================================
-  // AUTO-PLAY
-  // =====================================================
+    return () => {
+      mounted = false;
+    };
+  }, []);
 
   useEffect(() => {
     if (testimonials.length <= 1) return;
@@ -407,222 +73,319 @@ const TestimonialsPreview = () => {
       setActiveIndex((current) =>
         current === testimonials.length - 1 ? 0 : current + 1
       );
-    }, 6000);
+    }, 6500);
 
     return () => clearInterval(interval);
   }, [testimonials.length]);
 
+  const nextTestimonial = () => {
+    if (!testimonials.length) return;
+
+    setActiveIndex((current) =>
+      current === testimonials.length - 1 ? 0 : current + 1
+    );
+  };
+
+  const previousTestimonial = () => {
+    if (!testimonials.length) return;
+
+    setActiveIndex((current) =>
+      current === 0 ? testimonials.length - 1 : current - 1
+    );
+  };
+
   const activeTestimonial = testimonials[activeIndex];
 
-  // =====================================================
-  // STATS DATA
-  // =====================================================
-
-  const stats = [
-    { number: "50+", label: "Testimonials" },
-    { number: "4.9", label: "Average Rating" },
-    { number: "95%", label: "Satisfaction Rate" },
-    { number: "100%", label: "Trust & Care" },
-  ];
-
   return (
-    <section ref={sectionRef} className="testimonials-preview">
-      {/* Background decorative elements */}
-      <div className="testimonials-bg-shape testimonials-bg-shape-1" />
-      <div className="testimonials-bg-shape testimonials-bg-shape-2" />
-      <div className="testimonials-bg-grid" />
+    <section className="testimonials-preview">
+      {/* =====================================================
+          INTRO
+      ===================================================== */}
 
-      <div className="testimonials-preview-container">
-        {/* =====================================
-            HEADER
-        ====================================== */}
-        <div ref={headerRef} className="testimonials-preview-header">
-          <div className="testimonials-header-content">
-            <span className="testimonials-tag">
-              <FaHeart />
-              VOICES OF OUR COMMUNITY
+      <div className="testimonials-intro">
+        <div className="testimonials-container">
+          <div className="testimonials-intro-top">
+            <span className="testimonials-label">
+              THE SNGA EXPERIENCE
             </span>
 
-            <h2 className="testimonials-title">
-              What Our
+            <span className="testimonials-section-number">
+              08
+            </span>
+          </div>
+
+          <div className="testimonials-intro-grid">
+            <h2>
+              Life at SNGA,
               <br />
-              <span className="testimonials-title-highlight">Community Says.</span>
+              <span>through their eyes.</span>
             </h2>
 
-            <p className="testimonials-description">
-              The experiences of our students and parents reflect the
-              relationships, learning and values we build every day.
-            </p>
+            <div className="testimonials-intro-copy">
+              <p>
+                A school is experienced differently by every
+                child and every family. These are the voices
+                behind our community.
+              </p>
 
-            <Link to="/testimonials" className="testimonials-cta">
-              <span>View All Testimonials</span>
-              <FaArrowRight />
-            </Link>
-          </div>
-
-          <div className="testimonials-header-stats">
-            {stats.map((stat, index) => (
-              <div key={index} className="testimonials-stat">
-                <span className="testimonials-stat-number">{stat.number}</span>
-                <span className="testimonials-stat-label">{stat.label}</span>
-              </div>
-            ))}
+              <Link
+                to="/testimonials"
+                className="testimonials-explore"
+              >
+                <span>Meet our community</span>
+                <span>↗</span>
+              </Link>
+            </div>
           </div>
         </div>
+      </div>
 
-        {/* =====================================
-            FEATURED TESTIMONIAL
-        ====================================== */}
-        {loading ? (
-          <div className="testimonials-loading">
-            <div className="testimonials-loader">
-              <span></span>
-              <span></span>
-              <span></span>
+      {/* =====================================================
+          FEATURE
+      ===================================================== */}
+
+      <div className="testimonials-stage">
+        <div className="testimonials-container">
+          {loading ? (
+            <div className="testimonials-loading">
+              <span />
+              <span />
+              <span />
             </div>
-            <p>Loading testimonials...</p>
-          </div>
-        ) : activeTestimonial ? (
-          <div ref={featureRef} className="testimonials-feature">
-            {/* Left - Quote Content */}
-            <div className="testimonials-feature-left">
-              <div className="testimonials-quote-icon">
-                <FaQuoteLeft />
+          ) : activeTestimonial ? (
+            <div className="testimonials-feature">
+              {/* IMAGE */}
+
+              <div className="testimonials-image-wrap">
+                <img
+                  src={getImageUrl(
+                    activeTestimonial.image,
+                    activeIndex
+                  )}
+                  alt={
+                    activeTestimonial.name ||
+                    "SNGA community member"
+                  }
+                  onError={(event) => {
+                    event.currentTarget.onerror = null;
+                    event.currentTarget.src =
+                      fallbackImages[
+                        activeIndex % fallbackImages.length
+                      ];
+                  }}
+                />
+
+                <div className="testimonials-image-overlay">
+                  <span>SNGA</span>
+                  <span>COMMUNITY</span>
+                </div>
+
+                <div className="testimonials-image-index">
+                  {String(activeIndex + 1).padStart(2, "0")}
+                </div>
               </div>
 
-              <div className="testimonials-rating">
-                {[1, 2, 3, 4, 5].map((star) => (
-                  <FaStar
-                    key={star}
+              {/* QUOTE */}
+
+              <div className="testimonials-quote-area">
+                <div className="testimonials-quote-mark">
+                  “
+                </div>
+
+                <div className="testimonials-quote-content">
+                  <span className="testimonials-quote-label">
+                    A VOICE FROM OUR COMMUNITY
+                  </span>
+
+                  <blockquote>
+                    {activeTestimonial.message}
+                  </blockquote>
+
+                  <div className="testimonials-person">
+                    <div className="testimonials-person-line" />
+
+                    <div className="testimonials-person-info">
+                      <strong>
+                        {activeTestimonial.name ||
+                          "SNGA Community"}
+                      </strong>
+
+                      {activeTestimonial.role && (
+                        <span>{activeTestimonial.role}</span>
+                      )}
+
+                      {activeTestimonial.relation && (
+                        <span>
+                          {activeTestimonial.relation}
+                        </span>
+                      )}
+                    </div>
+                  </div>
+
+                  {activeTestimonial.rating && (
+                    <div className="testimonials-rating">
+                      <span>EXPERIENCE</span>
+
+                      <div>
+                        {[1, 2, 3, 4, 5].map((star) => (
+                          <span
+                            key={star}
+                            className={
+                              star <= activeTestimonial.rating
+                                ? "active"
+                                : ""
+                            }
+                          >
+                            ★
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
+
+                {/* SIDE NUMBER */}
+
+                <div className="testimonials-side-number">
+                  <span>
+                    {String(activeIndex + 1).padStart(2, "0")}
+                  </span>
+
+                  <i />
+
+                  <span>
+                    {String(testimonials.length).padStart(2, "0")}
+                  </span>
+                </div>
+              </div>
+            </div>
+          ) : (
+            <div className="testimonials-empty">
+              <span>08</span>
+
+              <div>
+                <small>THE SNGA EXPERIENCE</small>
+
+                <h3>
+                  Every voice
+                  <br />
+                  <em>matters.</em>
+                </h3>
+
+                <p>
+                  Community testimonials will appear here.
+                </p>
+              </div>
+            </div>
+          )}
+
+          {/* =====================================================
+              CONTROLS
+          ===================================================== */}
+
+          {!loading && testimonials.length > 1 && (
+            <div className="testimonials-controls">
+              <div className="testimonials-progress">
+                {testimonials.map((testimonial, index) => (
+                  <button
+                    key={testimonial.id}
+                    type="button"
                     className={
-                      star <= (activeTestimonial.rating || 5)
-                        ? "active"
-                        : ""
+                      index === activeIndex ? "active" : ""
                     }
-                  />
+                    onClick={() => setActiveIndex(index)}
+                    aria-label={`View testimonial ${
+                      index + 1
+                    }`}
+                  >
+                    <span />
+                  </button>
                 ))}
               </div>
 
-              <blockquote className="testimonials-quote">
-                “{activeTestimonial.message}”
-              </blockquote>
-
-              <div className="testimonials-author">
-                <div className="testimonials-author-avatar">
-                  {activeTestimonial.image ? (
-                    <img
-                      src={getImageUrl(activeTestimonial.image)}
-                      alt={activeTestimonial.name}
-                      loading="lazy"
-                    />
-                  ) : (
-                    <span className="testimonials-avatar-placeholder">
-                      <FaUserCircle />
-                    </span>
-                  )}
-                </div>
-
-                <div className="testimonials-author-info">
-                  <strong>{activeTestimonial.name}</strong>
-                  {activeTestimonial.role && (
-                    <span>
-                      {activeTestimonial.role}
-                    </span>
-                  )}
-                  {activeTestimonial.relation && (
-                    <span className="testimonials-author-relation">
-                      {activeTestimonial.relation}
-                    </span>
-                  )}
-                </div>
-              </div>
-            </div>
-
-            {/* Right - Side Info */}
-            <div className="testimonials-feature-right">
-              <div className="testimonials-feature-number">
-                <span>{String(activeIndex + 1).padStart(2, "0")}</span>
-                <span className="testimonials-feature-total">
-                  / {String(testimonials.length).padStart(2, "0")}
-                </span>
-              </div>
-
-              <div className="testimonials-feature-decoration">
-                <span className="deco-line" />
-                <span className="deco-dot" />
-                <span className="deco-line" />
-              </div>
-
-              <div className="testimonials-feature-badge">
-                <FaChalkboardTeacher />
-                <span>SNGA Community</span>
-              </div>
-
-              <div className="testimonials-feature-caption">
-                <strong>TRUST</strong>
-                <span>Built through meaningful experiences.</span>
-              </div>
-            </div>
-          </div>
-        ) : (
-          <div className="testimonials-empty">
-            <div className="testimonials-empty-icon">
-              <FaQuoteLeft />
-            </div>
-            <h3>Your Voice Matters</h3>
-            <p>Community testimonials will be showcased here.</p>
-          </div>
-        )}
-
-        {/* =====================================
-            NAVIGATION
-        ====================================== */}
-        {!loading && testimonials.length > 1 && (
-          <div ref={navRef} className="testimonials-nav">
-            <div className="testimonials-dots">
-              {testimonials.map((testimonial, index) => (
+              <div className="testimonials-arrows">
                 <button
-                  key={testimonial.id}
                   type="button"
-                  className={`testimonials-dot ${
-                    index === activeIndex ? "active" : ""
-                  }`}
-                  onClick={() => setActiveIndex(index)}
-                  aria-label={`View testimonial ${index + 1}`}
+                  onClick={previousTestimonial}
+                  aria-label="Previous testimonial"
                 >
-                  <span className="dot-bar" />
+                  ←
                 </button>
-              ))}
+
+                <button
+                  type="button"
+                  onClick={nextTestimonial}
+                  aria-label="Next testimonial"
+                >
+                  →
+                </button>
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
+
+      {/* =====================================================
+          STATEMENT
+      ===================================================== */}
+
+      <div className="testimonials-statement">
+        <div className="testimonials-container">
+          <div className="testimonials-statement-grid">
+            <div className="testimonials-statement-number">
+              09
             </div>
 
-            <div className="testimonials-counter">
-              <span className="counter-current">
-                {String(activeIndex + 1).padStart(2, "0")}
+            <div className="testimonials-statement-main">
+              <span className="testimonials-label">
+                WHAT WE BELIEVE
               </span>
-              <span className="counter-divider">—</span>
-              <span className="counter-total">
-                {String(testimonials.length).padStart(2, "0")}
-              </span>
+
+              <h3>
+                When children feel
+                <br />
+                <span>they belong,</span>
+                <br />
+                they are ready to grow.
+              </h3>
             </div>
-          </div>
-        )}
 
-        {/* =====================================
-            BOTTOM
-        ====================================== */}
-        <div ref={bottomRef} className="testimonials-bottom">
-          <div className="testimonials-bottom-content">
-            <span className="testimonials-bottom-label">OUR PROMISE</span>
-            <strong className="testimonials-bottom-quote">
-              Creating a place where every student
-              <em> feels seen, supported & inspired.</em>
-            </strong>
+            <p>
+              We believe meaningful education begins with
+              relationships — between students, teachers,
+              families and the wider school community.
+            </p>
           </div>
+        </div>
+      </div>
 
-          <Link to="/contact" className="testimonials-bottom-link">
-            <span>Connect With Us</span>
-            <FaArrowRight />
-          </Link>
+      {/* =====================================================
+          CTA
+      ===================================================== */}
+
+      <div className="testimonials-bottom">
+        <div className="testimonials-container">
+          <div className="testimonials-bottom-inner">
+            <div>
+              <span className="testimonials-label">
+                DISCOVER SNGA
+              </span>
+
+              <h3>
+                Your child's story
+                <br />
+                <span>starts here.</span>
+              </h3>
+            </div>
+
+            <Link
+              to="/admissions"
+              className="testimonials-bottom-button"
+            >
+              Explore admissions
+              <span>↗</span>
+            </Link>
+          </div>
         </div>
       </div>
     </section>

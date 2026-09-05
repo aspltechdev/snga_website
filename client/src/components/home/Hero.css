@@ -1,777 +1,1274 @@
-/* =====================================================
-   ROOT VARIABLES - NAVY / LIGHT BLUE THEME
-===================================================== */
-:root {
-  --hero-primary: #3498db;
-  --hero-primary-dark: #2e86c1;
-  --hero-primary-light: #5dade2;
-  --hero-primary-glow: rgba(52, 152, 219, 0.3);
-  --hero-bg: #0a1628;
-  --hero-text: #ffffff;
-  --hero-text-muted: rgba(255, 255, 255, 0.6);
-  --hero-overlay-dark: rgba(10, 22, 40, 0.75);
-  --hero-overlay-light: rgba(0, 0, 0, 0.3);
-  --hero-transition: 0.8s cubic-bezier(0.22, 1, 0.36, 1);
-  --hero-transition-fast: 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+/* =========================================================
+   SNGA CINEMATIC HERO
+   "THE FIRST FRAME"
+========================================================= */
 
-  /* --- Premium Font Stack --- */
-  --hero-font-primary: 'Playfair Display', 'Georgia', 'Times New Roman', serif;
-  --hero-font-secondary: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
-  --hero-font-accent: 'Montserrat', 'Inter', sans-serif;
-}
-
-/* =====================================================
-   HERO CONTAINER
-===================================================== */
-.snga-hero {
+.snga-film-hero {
   position: relative;
+
   width: 100%;
-  height: 100vh;
-  min-height: 700px;
-  max-height: 1000px;
+  height: 100svh;
+
+  min-height: 680px;
+
   overflow: hidden;
-  background: var(--hero-bg);
-  color: var(--hero-text);
-  font-family: var(--hero-font-secondary);
-  user-select: none;
+
+  background: #00005b;
+
+  color: #ffffff;
+
+  isolation: isolate;
 }
 
-/* =====================================================
-   LOADING
-===================================================== */
-.snga-hero-loader {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--hero-bg);
-}
+/* =========================================================
+   MEDIA
+========================================================= */
 
-.snga-loader-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 24px;
-}
-
-.loader-logo {
-  font-family: var(--hero-font-primary);
-  font-size: 3rem;
-  font-weight: 700;
-  letter-spacing: 12px;
-  color: var(--hero-primary);
-  animation: pulseLogo 1.8s ease-in-out infinite;
-  font-style: italic;
-}
-
-.loader-bar {
-  width: 120px;
-  height: 3px;
-  background: rgba(255, 255, 255, 0.08);
-  border-radius: 4px;
-  overflow: hidden;
-  position: relative;
-}
-
-.loader-bar i {
-  display: block;
-  height: 100%;
-  width: 40%;
-  background: var(--hero-primary);
-  border-radius: 4px;
-  animation: loadBar 1.2s ease-in-out infinite;
-}
-
-@keyframes pulseLogo {
-  0%, 100% { opacity: 0.4; transform: scale(1); }
-  50% { opacity: 1; transform: scale(1.02); }
-}
-
-@keyframes loadBar {
-  0% { transform: translateX(-100%); }
-  100% { transform: translateX(350%); }
-}
-
-/* =====================================================
-   OVERLAY
-===================================================== */
-.snga-hero-overlay {
+.snga-film-media {
   position: absolute;
   inset: 0;
-  z-index: 5;
+
+  z-index: -5;
+
+  overflow: hidden;
+}
+
+.snga-film-slide {
+  position: absolute;
+  inset: 0;
+
+  opacity: 0;
+
+  transition:
+    opacity 1.35s
+    cubic-bezier(
+      0.2,
+      0.65,
+      0.25,
+      1
+    );
+}
+
+.snga-film-slide.active {
+  opacity: 1;
+}
+
+.snga-film-slide img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  object-position: center;
+
+  transform:
+    scale(1.08);
+
+  transition:
+    transform 8s
+    cubic-bezier(
+      0.15,
+      0.55,
+      0.2,
+      1
+    );
+}
+
+.snga-film-slide.active img {
+  transform:
+    scale(1);
+}
+
+/* =========================================================
+   CINEMATIC COLOR
+========================================================= */
+
+.snga-film-tone {
+  position: absolute;
+  inset: 0;
+
+  z-index: -3;
+
+  background:
+    rgba(0, 0, 32, 0.42);
+}
+
+.snga-film-tone::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    rgba(0, 0, 91, 0.16);
+}
+
+/* =========================================================
+   FILM BORDER
+========================================================= */
+
+.snga-film-border {
+  position: absolute;
+
+  inset: 22px;
+
+  z-index: 2;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.16);
+
   pointer-events: none;
 }
 
-.snga-hero-gradient {
+/* =========================================================
+   COMMON WIDTH
+========================================================= */
+
+.snga-film-header,
+.snga-film-content,
+.snga-film-footer {
+  width:
+    min(
+      calc(100% - 120px),
+      1440px
+    );
+
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.snga-film-header {
   position: absolute;
-  inset: 0;
-  background: 
-    linear-gradient(135deg, rgba(10, 22, 40, 0.85) 0%, rgba(10, 22, 40, 0.2) 40%, rgba(10, 22, 40, 0.1) 70%, rgba(10, 22, 40, 0.6) 100%);
-}
 
-.snga-hero-vignette {
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(ellipse at center, transparent 50%, rgba(0, 0, 0, 0.5) 100%);
-  mix-blend-mode: multiply;
-}
-
-/* =====================================================
-   CAROUSEL
-===================================================== */
-.snga-hero-carousel {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  overflow: hidden;
-}
-
-.snga-hero-slide {
-  position: absolute;
-  inset: -5%;
-  will-change: transform, opacity;
-  transition: transform var(--hero-transition), opacity var(--hero-transition);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.snga-hero-slide.active {
-  transform: scale(1.02);
-  opacity: 1;
-}
-
-.snga-hero-slide.prev {
-  transform: translate3d(-30%, 0, 0) scale(0.92);
-  opacity: 0.5;
-}
-
-.snga-hero-slide.next {
-  transform: translate3d(30%, 0, 0) scale(0.92);
-  opacity: 0.5;
-}
-
-.snga-hero-slide.transitioning {
-  transition: transform var(--hero-transition), opacity var(--hero-transition);
-}
-
-.snga-hero-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: brightness(0.8) saturate(1.05);
-  will-change: transform;
-}
-
-/* =====================================================
-   CONTENT
-===================================================== */
-.snga-hero-content {
-  position: absolute;
-  inset: 0;
-  z-index: 10;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 32px 48px 28px;
-}
-
-/* --- TOP BAR --- */
-.snga-hero-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 4px 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-  padding-bottom: 12px;
-}
-
-.snga-hero-brand {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-}
-
-.brand-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: var(--hero-primary);
-  box-shadow: 0 0 20px var(--hero-primary-glow);
-  animation: dotPulse 3s ease-in-out infinite;
-}
-
-@keyframes dotPulse {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.6; transform: scale(0.85); }
-}
-
-.brand-name {
-  font-family: var(--hero-font-accent);
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 5px;
-  color: rgba(255, 255, 255, 0.5);
-  text-transform: uppercase;
-}
-
-.snga-hero-meta {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  font-family: var(--hero-font-accent);
-  font-size: 0.65rem;
-  font-weight: 600;
-  letter-spacing: 2.5px;
-  color: rgba(255, 255, 255, 0.35);
-  text-transform: uppercase;
-}
-
-.meta-divider {
-  width: 1px;
-  height: 14px;
-  background: rgba(255, 255, 255, 0.1);
-}
-
-/* --- MAIN COPY --- */
-.snga-hero-copy-wrapper {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  padding: 20px 0;
-}
-
-.snga-hero-copy {
-  max-width: 740px;
-  animation: fadeUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-}
-
-@keyframes fadeUp {
-  0% { opacity: 0; transform: translateY(30px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
-
-/* --- Kicker / Subtitle --- */
-.snga-hero-kicker {
-  display: flex;
-  align-items: center;
-  gap: 18px;
-  margin-bottom: 14px;
-}
-
-.kicker-line {
-  width: 44px;
-  height: 2px;
-  background: var(--hero-primary);
-  border-radius: 2px;
-  flex-shrink: 0;
-}
-
-.snga-hero-kicker p {
-  font-family: var(--hero-font-accent);
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  color: var(--hero-primary-light);
-}
-
-/* --- Main Title (Serif + Elegant) --- */
-.snga-hero-title {
-  font-family: var(--hero-font-primary);
-  font-size: clamp(3rem, 8vw, 6rem);
-  font-weight: 700;
-  line-height: 1.05;
-  letter-spacing: -0.02em;
-  margin-bottom: 16px;
-  text-shadow: 0 4px 40px rgba(0, 0, 0, 0.3);
-}
-
-.title-line {
-  display: block;
-  background: linear-gradient(135deg, #ffffff 35%, rgba(255, 255, 255, 0.5) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-/* --- Description (Clean & Readable) --- */
-.snga-hero-description {
-  font-family: var(--hero-font-secondary);
-  font-size: clamp(1rem, 1.3vw, 1.25rem);
-  font-weight: 400;
-  line-height: 1.8;
-  color: rgba(255, 255, 255, 0.7);
-  max-width: 580px;
-  margin-bottom: 32px;
-  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
-  letter-spacing: 0.3px;
-}
-
-/* --- CTA Button --- */
-.snga-hero-cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 14px;
-  padding: 16px 36px;
-  background: var(--hero-primary);
-  color: #ffffff;
-  font-family: var(--hero-font-accent);
-  font-weight: 700;
-  font-size: 0.8rem;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  text-decoration: none;
-  border-radius: 8px;
-  transition: all var(--hero-transition-fast);
-  box-shadow: 0 8px 40px var(--hero-primary-glow);
-  position: relative;
-  overflow: hidden;
-}
-
-.snga-hero-cta::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, #3498db, #2e86c1);
-  opacity: 0;
-  transition: opacity var(--hero-transition-fast);
-}
-
-.snga-hero-cta:hover {
-  transform: translateY(-2px) scale(1.02);
-  box-shadow: 0 12px 50px var(--hero-primary-glow);
-}
-
-.snga-hero-cta:hover::before {
-  opacity: 1;
-}
-
-.snga-hero-cta span {
-  position: relative;
-  z-index: 1;
-}
-
-.cta-icon {
-  display: flex;
-  align-items: center;
-  transition: transform var(--hero-transition-fast);
-}
-
-.snga-hero-cta:hover .cta-icon {
-  transform: translateX(6px);
-}
-
-/* --- SIDE INFO --- */
-.snga-hero-side-info {
-  position: absolute;
-  right: 32px;
-  top: 50%;
-  transform: translateY(-50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 16px;
-  z-index: 15;
-}
-
-.side-number {
-  font-family: var(--hero-font-primary);
-  font-size: 0.9rem;
-  font-weight: 700;
-  letter-spacing: 2px;
-  color: rgba(255, 255, 255, 0.2);
-  writing-mode: vertical-lr;
-  font-style: italic;
-}
-
-.side-line {
-  width: 1px;
-  height: 60px;
-  background: rgba(255, 255, 255, 0.06);
-}
-
-.side-text {
-  font-family: var(--hero-font-accent);
-  font-size: 0.55rem;
-  font-weight: 600;
-  letter-spacing: 4px;
-  color: rgba(255, 255, 255, 0.2);
-  writing-mode: vertical-lr;
-  text-transform: uppercase;
-}
-
-/* =====================================================
-   CONTROLS (Arrow buttons)
-===================================================== */
-.snga-hero-control {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 20;
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  background: rgba(255, 255, 255, 0.04);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  color: rgba(255, 255, 255, 0.5);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: all var(--hero-transition-fast);
-  font-size: 1.1rem;
-}
-
-.snga-hero-control:hover {
-  background: rgba(52, 152, 219, 0.15);
-  border-color: rgba(52, 152, 219, 0.3);
-  color: #fff;
-  transform: translateY(-50%) scale(1.05);
-}
-
-.snga-hero-control-prev {
-  left: 28px;
-}
-
-.snga-hero-control-next {
-  right: 28px;
-}
-
-.snga-hero-control:active {
-  transform: translateY(-50%) scale(0.95);
-}
-
-/* =====================================================
-   BOTTOM BAR
-===================================================== */
-.snga-hero-bottom {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-top: 16px;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
-  z-index: 15;
-  position: relative;
-}
-
-/* --- Pagination Dots --- */
-.snga-hero-pagination {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.snga-hero-dot {
-  width: 32px;
-  height: 2px;
-  border: none;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 2px;
-  cursor: pointer;
-  padding: 0;
-  transition: all var(--hero-transition-fast);
-  position: relative;
-}
-
-.snga-hero-dot span {
-  display: block;
-  width: 100%;
-  height: 100%;
-  background: transparent;
-  border-radius: 2px;
-  transition: background var(--hero-transition-fast);
-}
-
-.snga-hero-dot.active {
-  background: rgba(255, 255, 255, 0.05);
-}
-
-.snga-hero-dot.active span {
-  background: var(--hero-primary);
-  box-shadow: 0 0 20px var(--hero-primary-glow);
-}
-
-.snga-hero-dot:hover {
-  background: rgba(255, 255, 255, 0.2);
-}
-
-.snga-hero-dot.active:hover {
-  background: rgba(255, 255, 255, 0.05);
-}
-
-/* --- Index --- */
-.snga-hero-index {
-  display: flex;
-  align-items: baseline;
-  gap: 6px;
-  font-family: var(--hero-font-secondary);
-  font-size: 0.8rem;
-  font-weight: 300;
-  color: rgba(255, 255, 255, 0.2);
-  letter-spacing: 1px;
-}
-
-.snga-hero-index strong {
-  font-family: var(--hero-font-primary);
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: rgba(255, 255, 255, 0.5);
-}
-
-.snga-hero-index small {
-  font-size: 0.7rem;
-}
-
-/* --- Pause --- */
-.snga-hero-pause {
-  background: none;
-  border: none;
-  color: rgba(255, 255, 255, 0.3);
-  font-family: var(--hero-font-accent);
-  font-size: 0.65rem;
-  font-weight: 700;
-  letter-spacing: 2.5px;
-  cursor: pointer;
-  transition: color var(--hero-transition-fast);
-  padding: 6px 12px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  text-transform: uppercase;
-}
-
-.snga-hero-pause:hover {
-  color: rgba(255, 255, 255, 0.6);
-}
-
-.snga-hero-pause svg {
-  font-size: 0.75rem;
-}
-
-/* =====================================================
-   SCROLL INDICATOR
-===================================================== */
-.snga-hero-scroll {
-  position: absolute;
-  bottom: 28px;
+  top: 45px;
   left: 50%;
-  transform: translateX(-50%);
-  z-index: 15;
-  display: flex;
-  flex-direction: column;
+
+  transform:
+    translateX(-50%);
+
+  z-index: 10;
+
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    auto
+    1fr;
+
   align-items: center;
-  gap: 8px;
-  opacity: 0.3;
-  transition: opacity var(--hero-transition-fast);
+
+  padding-bottom: 22px;
+
+  border-bottom:
+    1px solid
+    rgba(255, 255, 255, 0.2);
 }
 
-.snga-hero-scroll:hover {
-  opacity: 0.7;
+/* =========================================================
+   BRAND
+========================================================= */
+
+.snga-film-brand {
+  display: inline-flex;
+
+  align-items: center;
+
+  width: fit-content;
+
+  gap: 14px;
+
+  color: #ffffff;
+
+  text-decoration: none;
 }
 
-.snga-hero-scroll span {
-  font-family: var(--hero-font-accent);
-  font-size: 0.5rem;
-  font-weight: 700;
-  letter-spacing: 5px;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.4);
-}
+.snga-film-brand-logo {
+  width: 44px;
+  height: 44px;
 
-.scroll-line {
-  width: 1px;
-  height: 40px;
-  background: rgba(255, 255, 255, 0.1);
-  position: relative;
+  display: grid;
+  place-items: center;
+
+  background: #ffffff;
+
   overflow: hidden;
 }
 
-.scroll-line i {
-  display: block;
-  width: 1px;
-  height: 30%;
-  background: var(--hero-primary);
-  border-radius: 1px;
+.snga-film-brand-logo img {
+  width: 34px;
+  height: 34px;
+
+  object-fit: contain;
+}
+
+.snga-film-brand-name {
+  display: flex;
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+.snga-film-brand-name strong {
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing:
+    0.14em;
+
+  line-height: 1;
+}
+
+.snga-film-brand-name span {
+  font-size: 7px;
+
+  font-weight: 600;
+
+  letter-spacing:
+    0.21em;
+
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.62
+    );
+}
+
+/* =========================================================
+   HEADER CENTER
+========================================================= */
+
+.snga-film-header-center {
+  justify-self: center;
+
+  font-size: 7px;
+
+  font-weight: 700;
+
+  letter-spacing:
+    0.25em;
+
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.48
+    );
+}
+
+/* =========================================================
+   HEADER RIGHT
+========================================================= */
+
+.snga-film-header-right {
+  justify-self: end;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  font-size: 8px;
+
+  font-weight: 700;
+
+  letter-spacing:
+    0.16em;
+
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.72
+    );
+}
+
+.snga-film-header-right i {
+  width: 18px;
+  height: 1px;
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.35
+    );
+}
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.snga-film-content {
+  position: relative;
+
+  z-index: 7;
+
+  height: 100%;
+
+  display: flex;
+
+  align-items: flex-end;
+
+  padding-bottom: 165px;
+}
+
+.snga-film-copy {
+  width:
+    min(
+      980px,
+      76%
+    );
+
+  opacity: 0;
+
+  transform:
+    translateY(42px);
+
+  transition:
+    opacity 1s ease,
+    transform 1s
+      cubic-bezier(
+        0.2,
+        0.65,
+        0.25,
+        1
+      );
+}
+
+.snga-film-copy.visible {
+  opacity: 1;
+
+  transform:
+    translateY(0);
+}
+
+/* =========================================================
+   KICKER
+========================================================= */
+
+.snga-film-kicker {
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+
+  margin-bottom: 24px;
+}
+
+.snga-film-kicker span {
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing:
+    0.16em;
+
+  color: #d6a928;
+}
+
+.snga-film-kicker i {
+  width: 45px;
+  height: 1px;
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.55
+    );
+}
+
+.snga-film-kicker p {
+  margin: 0;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing:
+    0.17em;
+
+  text-transform:
+    uppercase;
+
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.86
+    );
+}
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.snga-film-copy h1 {
+  max-width: 1050px;
+
+  margin: 0;
+
+  font-size:
+    clamp(
+      64px,
+      8.5vw,
+      126px
+    );
+
+  font-weight: 700;
+
+  line-height: 0.88;
+
+  letter-spacing:
+    -0.065em;
+
+  color: #ffffff;
+
+  text-wrap: balance;
+}
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.snga-film-description {
+  max-width: 540px;
+
+  margin: 30px 0 0;
+
+  font-size: 16px;
+
+  line-height: 1.7;
+
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.76
+    );
+}
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.snga-film-cta-wrap {
+  margin-top: 31px;
+}
+
+.snga-film-cta {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 25px;
+
+  padding: 17px 20px;
+
+  background: #ffffff;
+
+  color: #00005b;
+
+  text-decoration: none;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  transition:
+    gap 0.3s ease,
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+.snga-film-cta b {
+  font-size: 18px;
+
+  font-weight: 400;
+}
+
+.snga-film-cta:hover {
+  gap: 32px;
+
+  background: #c80000;
+
+  color: #ffffff;
+}
+
+/* =========================================================
+   GIANT SCENE NUMBER
+========================================================= */
+
+.snga-film-big-number {
   position: absolute;
-  top: 0;
-  left: 0;
-  animation: scrollDown 2.4s ease-in-out infinite;
+
+  z-index: 1;
+
+  right: 8%;
+
+  bottom: 12%;
+
+  font-size:
+    clamp(
+      180px,
+      27vw,
+      420px
+    );
+
+  font-weight: 700;
+
+  line-height: 0.7;
+
+  letter-spacing:
+    -0.08em;
+
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.075
+    );
+
+  pointer-events: none;
+
+  user-select: none;
 }
 
-@keyframes scrollDown {
-  0% { transform: translateY(-100%); opacity: 0; }
-  30% { opacity: 1; }
-  70% { opacity: 1; }
-  100% { transform: translateY(350%); opacity: 0; }
+/* =========================================================
+   SIDE LABEL
+========================================================= */
+
+.snga-film-side-label {
+  position: absolute;
+
+  z-index: 8;
+
+  right: 34px;
+
+  top: 50%;
+
+  transform:
+    translateY(-50%)
+    rotate(90deg);
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 11px;
+
+  font-size: 7px;
+
+  font-weight: 700;
+
+  letter-spacing:
+    0.22em;
+
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.56
+    );
 }
 
-/* =====================================================
-   RESPONSIVE
-===================================================== */
-@media (max-width: 1024px) {
-  .snga-hero-content {
-    padding: 24px 32px 20px;
+.snga-film-side-label i {
+  width: 22px;
+  height: 1px;
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.35
+    );
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.snga-film-footer {
+  position: absolute;
+
+  z-index: 10;
+
+  left: 50%;
+  bottom: 38px;
+
+  transform:
+    translateX(-50%);
+
+  display: flex;
+
+  justify-content:
+    space-between;
+
+  align-items: center;
+
+  gap: 50px;
+}
+
+/* =========================================================
+   FOOTER LOCATION
+========================================================= */
+
+.snga-film-footer-left {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  font-size: 8px;
+
+  font-weight: 700;
+
+  letter-spacing:
+    0.17em;
+
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.58
+    );
+}
+
+.snga-film-footer-left i {
+  width: 20px;
+  height: 1px;
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.35
+    );
+}
+
+/* =========================================================
+   CONTROLS
+========================================================= */
+
+.snga-film-controls {
+  display: flex;
+
+  align-items: center;
+
+  gap: 13px;
+}
+
+.snga-film-arrow {
+  width: 40px;
+  height: 40px;
+
+  display: grid;
+
+  place-items: center;
+
+  padding: 0;
+
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.38
+    );
+
+  background:
+    rgba(
+      0,
+      0,
+      91,
+      0.15
+    );
+
+  color: #ffffff;
+
+  cursor: pointer;
+
+  font-size: 17px;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease;
+}
+
+.snga-film-arrow:hover {
+  background: #ffffff;
+
+  color: #00005b;
+}
+
+/* =========================================================
+   PROGRESS
+========================================================= */
+
+.snga-film-progress {
+  display: flex;
+
+  align-items: center;
+
+  gap: 5px;
+
+  margin: 0 4px;
+}
+
+.snga-film-progress button {
+  width: 28px;
+  height: 2px;
+
+  padding: 0;
+
+  border: 0;
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.28
+    );
+
+  cursor: pointer;
+
+  transition:
+    width 0.3s ease,
+    background 0.3s ease;
+}
+
+.snga-film-progress button.active {
+  width: 48px;
+
+  background: #ffffff;
+}
+
+/* =========================================================
+   COUNTER
+========================================================= */
+
+.snga-film-counter {
+  display: flex;
+
+  align-items: baseline;
+
+  gap: 5px;
+
+  margin-left: 7px;
+}
+
+.snga-film-counter strong {
+  font-size: 13px;
+}
+
+.snga-film-counter span,
+.snga-film-counter small {
+  font-size: 9px;
+
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.45
+    );
+}
+
+.snga-film-counter small {
+  font-weight: 600;
+}
+
+/* =========================================================
+   PLAY
+========================================================= */
+
+.snga-film-play {
+  padding: 0;
+
+  border: 0;
+
+  background: transparent;
+
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.62
+    );
+
+  cursor: pointer;
+
+  font-size: 8px;
+
+  font-weight: 700;
+
+  letter-spacing:
+    0.15em;
+}
+
+.snga-film-play:hover {
+  color: #ffffff;
+}
+
+/* =========================================================
+   REEL MARK
+========================================================= */
+
+.snga-film-reel {
+  position: absolute;
+
+  z-index: 9;
+
+  left: 35px;
+  bottom: 38px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  font-size: 7px;
+
+  font-weight: 700;
+
+  letter-spacing:
+    0.16em;
+
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.45
+    );
+}
+
+.snga-film-reel span:first-child {
+  color: #ffffff;
+}
+
+.snga-film-reel span:last-child {
+  padding-left: 8px;
+
+  border-left:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.3
+    );
+}
+
+/* =========================================================
+   LOADING
+========================================================= */
+
+.snga-film-loading {
+  display: grid;
+
+  place-items: center;
+
+  background: #00005b;
+}
+
+.snga-film-loader {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 16px;
+}
+
+.snga-film-loader span {
+  font-size: 13px;
+
+  font-weight: 700;
+
+  letter-spacing:
+    0.22em;
+}
+
+.snga-film-loader i {
+  width: 75px;
+  height: 1px;
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.3
+    );
+
+  overflow: hidden;
+}
+
+.snga-film-loader i::after {
+  content: "";
+
+  display: block;
+
+  width: 30%;
+  height: 100%;
+
+  background: #ffffff;
+
+  animation:
+    filmLoader
+    1.1s
+    ease-in-out
+    infinite;
+}
+
+@keyframes filmLoader {
+  from {
+    transform:
+      translateX(-120%);
   }
 
-  .snga-hero-control-prev {
-    left: 16px;
+  to {
+    transform:
+      translateX(400%);
+  }
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+  .snga-film-header,
+  .snga-film-content,
+  .snga-film-footer {
+    width:
+      calc(100% - 80px);
   }
 
-  .snga-hero-control-next {
-    right: 16px;
-  }
-
-  .snga-hero-side-info {
+  .snga-film-header-center {
     display: none;
   }
+
+  .snga-film-copy {
+    width: 82%;
+  }
+
+  .snga-film-copy h1 {
+    font-size:
+      clamp(
+        58px,
+        9vw,
+        95px
+      );
+  }
+
+  .snga-film-big-number {
+    right: 5%;
+
+    bottom: 16%;
+  }
+
+  .snga-film-side-label {
+    display: none;
+  }
+
+  .snga-film-reel {
+    left: 40px;
+  }
 }
 
-@media (max-width: 768px) {
-  .snga-hero {
-    min-height: 600px;
-    max-height: none;
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+  .snga-film-hero {
+    height: 100svh;
+
+    min-height: 620px;
   }
 
-  .snga-hero-content {
-    padding: 20px 20px 16px;
+  .snga-film-border {
+    inset: 9px;
   }
 
-  .snga-hero-top {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 6px;
-    padding-bottom: 8px;
+  .snga-film-header,
+  .snga-film-content,
+  .snga-film-footer {
+    width:
+      calc(100% - 34px);
   }
 
-  .snga-hero-meta {
-    font-size: 0.55rem;
+  /* HEADER */
+
+  .snga-film-header {
+    top: 22px;
+
+    padding-bottom: 16px;
+  }
+
+  .snga-film-brand {
     gap: 10px;
   }
 
-  .brand-name {
-    font-size: 0.55rem;
-    letter-spacing: 3px;
+  .snga-film-brand-logo {
+    width: 37px;
+    height: 37px;
   }
 
-  .snga-hero-copy-wrapper {
-    padding: 12px 0;
+  .snga-film-brand-logo img {
+    width: 29px;
+    height: 29px;
   }
 
-  .snga-hero-copy {
-    max-width: 100%;
+  .snga-film-brand-name strong {
+    font-size: 8px;
   }
 
-  .snga-hero-title {
-    font-size: clamp(2.2rem, 10vw, 3.5rem);
+  .snga-film-brand-name span {
+    font-size: 5.5px;
+
+    letter-spacing:
+      0.14em;
   }
 
-  .snga-hero-description {
-    font-size: 0.95rem;
-    max-width: 100%;
+  .snga-film-header-right {
+    gap: 7px;
+
+    font-size: 6px;
+
+    letter-spacing:
+      0.1em;
   }
 
-  .snga-hero-cta {
-    padding: 12px 28px;
-    font-size: 0.7rem;
+  .snga-film-header-right i {
+    width: 8px;
   }
 
-  .snga-hero-control {
-    width: 40px;
-    height: 40px;
-    font-size: 0.9rem;
+  /* CONTENT */
+
+  .snga-film-content {
+    align-items: flex-end;
+
+    padding-bottom: 135px;
   }
 
-  .snga-hero-control-prev {
-    left: 10px;
+  .snga-film-copy {
+    width: 100%;
   }
 
-  .snga-hero-control-next {
-    right: 10px;
+  .snga-film-kicker {
+    gap: 9px;
+
+    margin-bottom: 17px;
   }
 
-  .snga-hero-bottom {
-    flex-wrap: wrap;
-    gap: 12px;
+  .snga-film-kicker span {
+    font-size: 7px;
+  }
+
+  .snga-film-kicker i {
+    width: 25px;
+  }
+
+  .snga-film-kicker p {
+    font-size: 7px;
+
+    letter-spacing:
+      0.1em;
+  }
+
+  .snga-film-copy h1 {
+    font-size:
+      clamp(
+        46px,
+        14vw,
+        68px
+      );
+
+    line-height:
+      0.94;
+  }
+
+  .snga-film-description {
+    max-width: 95%;
+
+    margin-top: 20px;
+
+    font-size: 13px;
+
+    line-height: 1.65;
+  }
+
+  .snga-film-cta-wrap {
+    margin-top: 23px;
+  }
+
+  .snga-film-cta {
+    padding: 14px 16px;
+
+    font-size: 9px;
+
+    gap: 18px;
+  }
+
+  .snga-film-cta b {
+    font-size: 15px;
+  }
+
+  /* GIANT NUMBER */
+
+  .snga-film-big-number {
+    right: -2%;
+
+    bottom: 17%;
+
+    font-size:
+      190px;
+
+    color:
+      rgba(
+        255,
+        255,
+        255,
+        0.055
+      );
+  }
+
+  /* FOOTER */
+
+  .snga-film-footer {
+    bottom: 20px;
+  }
+
+  .snga-film-footer-left {
+    display: none;
+  }
+
+  .snga-film-controls {
+    width: 100%;
+
+    justify-content:
+      space-between;
+
+    gap: 7px;
+  }
+
+  .snga-film-arrow {
+    width: 35px;
+    height: 35px;
+
+    flex-shrink: 0;
+  }
+
+  .snga-film-progress {
+    flex: 1;
+
     justify-content: center;
+
+    gap: 4px;
   }
 
-  .snga-hero-pagination {
-    order: 2;
-    gap: 6px;
+  .snga-film-progress button {
+    width: 17px;
   }
 
-  .snga-hero-dot {
-    width: 24px;
+  .snga-film-progress button.active {
+    width: 29px;
   }
 
-  .snga-hero-index {
-    order: 1;
+  .snga-film-counter {
+    margin-left: 2px;
   }
 
-  .snga-hero-pause {
-    order: 3;
-    font-size: 0.55rem;
-  }
-
-  .snga-hero-scroll {
+  .snga-film-play {
     display: none;
+  }
+
+  .snga-film-reel {
+    display: none;
+  }
+
+  /* MOBILE IMAGE */
+
+  .snga-film-slide img {
+    object-position:
+      center center;
   }
 }
 
-@media (max-width: 480px) {
-  .snga-hero-content {
-    padding: 14px 14px 12px;
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 420px) {
+  .snga-film-header-right {
+    display: none;
   }
 
-  .snga-hero-title {
-    font-size: clamp(1.8rem, 8vw, 2.6rem);
+  .snga-film-content {
+    padding-bottom: 125px;
   }
 
-  .snga-hero-description {
-    font-size: 0.85rem;
+  .snga-film-copy h1 {
+    font-size: 45px;
   }
 
-  .snga-hero-cta {
-    padding: 10px 20px;
-    font-size: 0.65rem;
-    gap: 10px;
+  .snga-film-description {
+    font-size: 12.5px;
   }
 
-  .snga-hero-control {
-    width: 34px;
-    height: 34px;
-    font-size: 0.75rem;
+  .snga-film-big-number {
+    font-size: 160px;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .snga-film-slide,
+  .snga-film-slide img,
+  .snga-film-copy {
+    transition: none;
   }
 
-  .snga-hero-control-prev {
-    left: 6px;
+  .snga-film-slide img {
+    transform: none;
   }
 
-  .snga-hero-control-next {
-    right: 6px;
-  }
-
-  .snga-hero-dot {
-    width: 16px;
-    height: 2px;
-  }
-
-  .snga-hero-index strong {
-    font-size: 1rem;
-  }
-
-  .snga-hero-index {
-    font-size: 0.6rem;
-  }
-
-  .snga-hero-kicker p {
-    font-size: 0.6rem;
-    letter-spacing: 3px;
-  }
-
-  .kicker-line {
-    width: 30px;
+  .snga-film-loader i::after {
+    animation: none;
   }
 }
