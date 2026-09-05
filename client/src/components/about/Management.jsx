@@ -353,14 +353,18 @@ import {
 } from "react-icons/fa";
 import "./Management.css";
 
+import heroBg from "../../assets/school.jpg";
+import heroCircle from "../../assets/about.png";
+import ctaBg from "../../assets/engaging.jpg";
+import founder from "../../assets/founder.jpg";
 // =====================================================
 // ONLINE IMAGES (Replace with local imports later)
 // =====================================================
 const IMAGES = {
-  heroBg: "https://images.unsplash.com/photo-1523050854058-8df90110c7f1?w=1920&q=80",
-  heroCircle: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80",
-  ctaBg: "https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=1920&q=80",
-  founder: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80",
+  heroBg: heroBg,
+  heroCircle: heroCircle,
+  ctaBg: ctaBg,
+  founder: founder,
   leadership: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&q=80",
   teachers: "https://images.unsplash.com/photo-1523050854058-8df90110c7f1?w=800&q=80",
   community: "https://images.unsplash.com/photo-1528605248644-14dd04022da1?w=800&q=80",

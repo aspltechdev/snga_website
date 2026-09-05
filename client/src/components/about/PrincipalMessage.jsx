@@ -356,17 +356,25 @@ import {
 } from "react-icons/fa";
 import "./PrincipalMessage.css";
 
+import heroBg from "../../assets/school.jpg";
+import heroCircle from "../../assets/about.png";
+import ctaBg from "../../assets/engaging.jpg";
+import principle from "../../assets/principal.jpg";
+import beyond from "../../assets/beyond.jpg";
+import holistic from "../../assets/holistic.jpg";
+import values from "../../assets/values.jpg";
+
 // =====================================================
 // ONLINE IMAGES (Replace with local imports later)
 // =====================================================
 const IMAGES = {
-  heroBg: "https://images.unsplash.com/photo-1523050854058-8df90110c7f1?w=1920&q=80",
-  heroCircle: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80",
-  ctaBg: "https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=1920&q=80",
-  principal: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80",
-  classroom: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&q=80",
-  students: "https://images.unsplash.com/photo-1523050854058-8df90110c7f1?w=800&q=80",
-  campus: "https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=800&q=80",
+  heroBg: heroBg,
+  heroCircle: heroCircle,
+  ctaBg: ctaBg,
+  principal: principle,
+  classroom: beyond,
+  students: holistic,
+  campus: values,
 };
 
 const PrincipalMessage = () => {
