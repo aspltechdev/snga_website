@@ -356,7 +356,7 @@ import {
 } from "react-icons/fa";
 import "./PrincipalMessage.css";
 
-import heroBg from "../../assets/school.jpg";
+import heroBg from "../../assets/school.JPG";
 import heroCircle from "../../assets/about.png";
 import ctaBg from "../../assets/engaging.jpg";
 import principle from "../../assets/principal.jpg";

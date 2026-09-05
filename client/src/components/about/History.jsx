@@ -459,14 +459,14 @@ import {
 } from "react-icons/fa";
 import "./History.css";
 
-import heroBg from "../../assets/school.jpg";
+import heroBg from "../../assets/school.JPG";
 import heroCircle from "../../assets/about.png";
 import ctaBg from "../../assets/engaging.jpg";
 import campusImage from "../../assets/campus.jpg";
 import libraryImage from "../../assets/library.jpg";
 import scienceImage from "../../assets/sciencelab.jpg";
 import computerImage from "../../assets/ComputerLab.jpg";
-import playground from "../../assets/playground.jpg";
+import playground from "../../assets/playground.JPG";
 // =====================================================
 // ONLINE IMAGES (Replace with local imports later)
 // =====================================================

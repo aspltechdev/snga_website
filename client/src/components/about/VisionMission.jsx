@@ -466,13 +466,13 @@ import {
 } from "react-icons/fa";
 import "./VisionMission.css";
 
-import heroBg from "../../assets/school.jpg";
+import heroBg from "../../assets/school.JPG";
 import heroCircle from "../../assets/about.png";
 import ctaBg from "../../assets/engaging.jpg";
 import vission from "../../assets/values.jpg";
 import mission from "../../assets/beyond.jpg";
 import pillars from "../../assets/holistic.jpg";
-import goals from "../../assets/playground.jpg";
+import goals from "../../assets/playground.JPG";
 
 const IMAGES = {
   heroBg: heroBg,

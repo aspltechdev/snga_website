@@ -353,7 +353,7 @@ import {
 } from "react-icons/fa";
 import "./Management.css";
 
-import heroBg from "../../assets/school.jpg";
+import heroBg from "../../assets/school.JPG";
 import heroCircle from "../../assets/about.png";
 import ctaBg from "../../assets/engaging.jpg";
 import founder from "../../assets/founder.jpg";
