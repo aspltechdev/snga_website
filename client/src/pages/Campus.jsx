@@ -914,7 +914,7 @@ const Campus = () => {
                 ))}
               </div> */}
 
-              <div className="sc-hero__actions">
+              {/* <div className="sc-hero__actions">
                 <a href="#sc-facilities" className="sc-hero__btn sc-hero__btn--primary">
                   <span>Explore Campus</span>
                   <FaArrowRight />
@@ -923,7 +923,7 @@ const Campus = () => {
                   <FaPlay />
                   <span>Virtual Tour</span>
                 </button>
-              </div>
+              </div> */}
             </div>
 
             <div className="sc-hero__image-wrapper">
