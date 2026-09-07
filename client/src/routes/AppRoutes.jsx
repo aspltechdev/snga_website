@@ -171,7 +171,7 @@ const AppRoutes = () => {
 
                     />
                     <Route
-                        path="/achivements"
+                        path="/achievements"
                         element={<Achievements />}
 
 
