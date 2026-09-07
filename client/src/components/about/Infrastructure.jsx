@@ -522,19 +522,28 @@ import {
 } from "react-icons/fa";
 import "./Infrastructure.css";
 
+import heroBg from "../../assets/school.JPG";
+import heroCircle from "../../assets/about.png";
+import ctaBg from "../../assets/engaging.jpg";
+import classroom from "../../assets/classroom.jpg";
+import library from "../../assets/library.jpg";
+import sciencelab from "../../assets/sciencelab.jpg";
+import computerlab from "../../assets/ComputerLab.jpg";
+import campus from "../../assets/camp.jpg";
+import hall from "../../assets/hall.jpg";
 // =====================================================
 // ONLINE IMAGES (Replace with local imports later)
 // =====================================================
 const IMAGES = {
-  heroBg: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1920&q=80",
-  heroCircle: "https://images.unsplash.com/photo-1571260899304-425eee4c7efc?w=600&q=80",
-  ctaBg: "https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=1920&q=80",
-  classroom: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&q=80",
-  library: "https://images.unsplash.com/photo-1521587760476-6c12a4b040da?w=800&q=80",
-  science: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=800&q=80",
-  computer: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&q=80",
-  hall: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80",
-  campus: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&q=80",
+  heroBg: heroBg,
+  heroCircle: heroCircle,
+  ctaBg: ctaBg,
+  classroom: classroom,
+  library: library,
+  science: sciencelab,
+  computer: computerlab,
+  hall: hall,
+  campus: campus,
 };
 
 const Infrastructure = () => {

@@ -1928,18 +1928,24 @@ import {
 import blogService from "../services/blog.service";
 import "./Blogs.css";
 
+import heroBg from "../assets/school.JPG";
+import heroCircle from "../assets/about.png";
+import ctaBg from "../assets/engaging.jpg";
+import featured from "../assets/camp.jpg";
+import editorial from "../assets/beyond.jpg";
+
 // =====================================================
 // ONLINE IMAGES (Replace with local imports later)
 // =====================================================
 const IMAGES = {
-  heroBg: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=1920&q=80",
-  heroCircle: "https://images.unsplash.com/photo-1523050854058-8df90110c7f1?w=600&q=80",
-  ctaBg: "https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=1920&q=80",
-  featured: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&q=80",
+  heroBg: heroBg,
+  heroCircle: heroCircle,
+  ctaBg: ctaBg,
+  featured: featured,
   blog1: "https://images.unsplash.com/photo-1523050854058-8df90110c7f1?w=800&q=80",
   blog2: "https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=800&q=80",
   blog3: "https://images.unsplash.com/photo-1571260899304-425eee4c7efc?w=800&q=80",
-  editorial: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=1600&q=80",
+  editorial: editorial,
 };
 
 const Blogs = () => {

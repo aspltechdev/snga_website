@@ -3191,29 +3191,43 @@ import {
 import admissionService from "../services/admission.service";
 import "./Admissions.css";
 
+import heroBg from "../assets/school.JPG";
+import heroCircle from "../assets/about.png";
+import ctaBg from "../assets/engaging.jpg";
+import campus from "../assets/camp.jpg";
+import library from "../assets/library.jpg";
+import computer from "../assets/ComputerLab.jpg";
+import sport from "../assets/sport.JPG";
+import classroom from "../assets/classroom.jpg";
+import value from "../assets/values.jpg";
+import process1 from "../assets/process1.jpg";
+import process2 from "../assets/process2.jpg";
+import process3 from "../assets/process3.jpg";
+import process4 from "../assets/process4.jpg";
+
 // =====================================================
 // ONLINE IMAGES (Replace with local imports later)
 // =====================================================
 const IMAGES = {
-  heroBg: "https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=1920&q=80",
-  heroCircle: "https://images.unsplash.com/photo-1571260899304-425eee4c7efc?w=600&q=80",
-  ctaBg: "https://images.unsplash.com/photo-1523050854058-8df90110c7f1?w=1920&q=80",
-  campusBg: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1600&q=80",
-  processBg: "https://images.unsplash.com/photo-1461896836934-bd1c52f281b7?w=1600&q=80",
+  heroBg: heroBg,
+  heroCircle: heroCircle,
+  ctaBg: ctaBg,
+  campusBg: campus,
+  processBg: campus,
   
   // Highlight Cards Images
-  highlight1: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&q=80",
-  highlight2: "https://images.unsplash.com/photo-1571260899304-425eee4c7efc?w=800&q=80",
-  highlight3: "https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=800&q=80",
-  highlight4: "https://images.unsplash.com/photo-1523050854058-8df90110c7f1?w=800&q=80",
-  highlight5: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&q=80",
-  highlight6: "https://images.unsplash.com/photo-1461896836934-bd1c52f281b7?w=800&q=80",
+  highlight1: value,
+  highlight2: campus,
+  highlight3: classroom,
+  highlight4: computer,
+  highlight5: library,
+  highlight6: sport,
   
   // Process Cards Images
-  process1: "https://images.unsplash.com/photo-1523050854058-8df90110c7f1?w=800&q=80",
-  process2: "https://images.unsplash.com/photo-1571260899304-425eee4c7efc?w=800&q=80",
-  process3: "https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=800&q=80",
-  process4: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&q=80",
+  process1: process1,
+  process2: process2,
+  process3: process3,
+  process4: process4,
 };
 
 const Admissions = () => {

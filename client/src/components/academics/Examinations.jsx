@@ -540,17 +540,25 @@ import {
 } from "react-icons/fa";
 import "./Examinations.css";
 
+import heroBg from "../../assets/school.JPG";
+import heroCircle from "../../assets/about.png";
+import ctaBg from "../../assets/engaging.jpg";
+import classroom from "../../assets/classroom.jpg";
+import study from "../../assets/holistic.jpg";
+import exam from "../../assets/exam.jpg";
+import values from "../../assets/values.jpg";
+
 // =====================================================
 // ONLINE IMAGES (Replace with local imports later)
 // =====================================================
 const IMAGES = {
-  heroBg: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=1920&q=80",
-  heroCircle: "https://images.unsplash.com/photo-1523050854058-8df90110c7f1?w=600&q=80",
-  ctaBg: "https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=1920&q=80",
-  exam: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=800&q=80",
-  studying: "https://images.unsplash.com/photo-1523050854058-8df90110c7f1?w=800&q=80",
-  classroom: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&q=80",
-  success: "https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=800&q=80",
+  heroBg: heroBg,
+  heroCircle: heroCircle,
+  ctaBg: ctaBg,
+  exam: exam,
+  studying: study,
+  classroom: classroom,
+  success: values,
 };
 
 const Examinations = () => {

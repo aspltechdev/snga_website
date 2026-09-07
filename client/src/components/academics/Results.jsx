@@ -583,17 +583,24 @@ import {
 } from "react-icons/fa";
 import "./Results.css";
 
+import heroBg from "../../assets/school.JPG";
+import heroCircle from "../../assets/about.png";
+import ctaBg from "../../assets/engaging.jpg";
+import study from "../../assets/holistic.jpg";
+import values from "../../assets/values.jpg";
+import classroom from "../../assets/classroom.jpg";
+import achievement from "../../assets/achievement.jpg";
 // =====================================================
 // ONLINE IMAGES (Replace with local imports later)
 // =====================================================
 const IMAGES = {
-  heroBg: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=1920&q=80",
-  heroCircle: "https://images.unsplash.com/photo-1523050854058-8df90110c7f1?w=600&q=80",
-  ctaBg: "https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=1920&q=80",
-  success: "https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=800&q=80",
-  studying: "https://images.unsplash.com/photo-1523050854058-8df90110c7f1?w=800&q=80",
-  classroom: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&q=80",
-  achievement: "https://images.unsplash.com/photo-1461896836934-bd1c52f281b7?w=800&q=80",
+  heroBg: heroBg,
+  heroCircle: heroCircle,
+  ctaBg: ctaBg,
+  success: values,
+  studying: study,
+  classroom: classroom,
+  achievement: achievement,
 };
 
 const Results = () => {

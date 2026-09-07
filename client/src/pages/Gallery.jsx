@@ -4566,22 +4566,34 @@ import {
 import galleryService from "../services/gallery.service";
 import "./Gallery.css";
 
+import heroBg from "../assets/school.JPG";
+import heroCircle from "../assets/about.png";
+import ctaBg from "../assets/engaging.jpg";
+import Academics from "../assets/teaching.jpg";
+import sports from "../assets/sports.JPG";
+import arts from "../assets/arts.jpg";
+import nature from "../assets/camp.jpg";
+import value from "../assets/values.jpg";
+import community from "../assets/about-school.jpg";
+import campus1 from "../assets/camp.jpg";
+import campus2 from "../assets/campus.jpg";
+import campus3 from "../assets/school.JPG";
 // =====================================================
 // ONLINE IMAGES (Replace with local imports later)
 // =====================================================
 const IMAGES = {
-  heroBg: "https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=1920&q=80",
-  heroCircle: "https://images.unsplash.com/photo-1571260899304-425eee4c7efc?w=600&q=80",
-  ctaBg: "https://images.unsplash.com/photo-1523050854058-8df90110c7f1?w=1920&q=80",
-  academics: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&q=80",
-  sports: "https://images.unsplash.com/photo-1461896836934-bd1c52f281b7?w=800&q=80",
-  arts: "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=800&q=80",
-  nature: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&q=80",
-  values: "https://images.unsplash.com/photo-1528605248644-14dd04022da1?w=800&q=80",
-  community: "https://images.unsplash.com/photo-1523050854058-8df90110c7f1?w=800&q=80",
-  campus1: "https://images.unsplash.com/photo-1571260899304-425eee4c7efc?w=800&q=80",
-  campus2: "https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=800&q=80",
-  campus3: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&q=80",
+  heroBg: heroBg,
+  heroCircle: heroCircle,
+  ctaBg: ctaBg,
+  academics: Academics,
+  sports: sports,
+  arts: arts,
+  nature: nature,
+  values: value,
+  community: community,
+  campus1: campus1,
+  campus2: campus2,
+  campus3: campus3,
 };
 
 const Gallery = () => {

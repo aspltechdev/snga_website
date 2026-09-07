@@ -1581,14 +1581,18 @@ import {
 import contactService from "../services/contact.service";
 import "./Contact.css";
 
+import heroBg from "../assets/school.JPG";
+import heroCircle from "../assets/about.png";
+import ctaBg from "../assets/engaging.jpg";
+import Campus from "../assets/camp.jpg";
 // =====================================================
 // ONLINE IMAGES (Replace with local imports later)
 // =====================================================
 const IMAGES = {
-  heroBg: "https://images.unsplash.com/photo-1523050854058-8df90110c7f1?w=1920&q=80",
-  heroCircle: "https://images.unsplash.com/photo-1571260899304-425eee4c7efc?w=600&q=80",
-  ctaBg: "https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=1920&q=80",
-  campusBg: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1600&q=80",
+  heroBg: heroBg,
+  heroCircle: heroCircle,
+  ctaBg: ctaBg,
+  campusBg: Campus,
 };
 
 const Contact = () => {

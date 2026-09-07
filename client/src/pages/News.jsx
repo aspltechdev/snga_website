@@ -2010,15 +2010,20 @@ import {
 import newsService from "../services/news.service";
 import "./News.css";
 
+import heroBg from "../assets/school.JPG";
+import heroCircle from "../assets/about.png";
+import ctaBg from "../assets/engaging.jpg";
+import community from "../assets/about-school.jpg";
+import achievement from "../assets/achievement.jpg";
 // =====================================================
 // ONLINE IMAGES (Replace with local imports later)
 // =====================================================
 const IMAGES = {
-  heroBg: "https://images.unsplash.com/photo-1523050854058-8df90110c7f1?w=1920&q=80",
-  heroCircle: "https://images.unsplash.com/photo-1571260899304-425eee4c7efc?w=600&q=80",
-  ctaBg: "https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=1920&q=80",
-  community: "https://images.unsplash.com/photo-1523050854058-8df90110c7f1?w=1600&q=80",
-  achievements: "https://images.unsplash.com/photo-1461896836934-bd1c52f281b7?w=1600&q=80",
+  heroBg: heroBg,
+  heroCircle: heroCircle,
+  ctaBg: ctaBg,
+  community: community,
+  achievements: achievement,
 };
 
 const News = () => {

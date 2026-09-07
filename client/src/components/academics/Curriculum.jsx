@@ -553,19 +553,28 @@ import {
 } from "react-icons/fa";
 import "./Curriculum.css";
 
+import heroBg from "../../assets/school.JPG";
+import heroCircle from "../../assets/about.png";
+import ctaBg from "../../assets/engaging.jpg";
+import classroom from "../../assets/classroom.jpg";
+import library from "../../assets/library.jpg";
+import sciencelab from "../../assets/sciencelab.jpg";
+import computerlab from "../../assets/ComputerLab.jpg";
+import sports from "../../assets/herocircle.JPG";
+import values from "../../assets/values.jpg";
 // =====================================================
 // ONLINE IMAGES (Replace with local imports later)
 // =====================================================
 const IMAGES = {
-  heroBg: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=1920&q=80",
-  heroCircle: "https://images.unsplash.com/photo-1523050854058-8df90110c7f1?w=600&q=80",
-  ctaBg: "https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=1920&q=80",
-  classroom: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&q=80",
-  science: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=800&q=80",
-  computer: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&q=80",
-  library: "https://images.unsplash.com/photo-1521587760476-6c12a4b040da?w=800&q=80",
-  sports: "https://images.unsplash.com/photo-1461896836934-bd1c52f281b7?w=800&q=80",
-  values: "https://images.unsplash.com/photo-1528605248644-14dd04022da1?w=800&q=80",
+  heroBg: heroBg,
+  heroCircle: heroCircle,
+  ctaBg: ctaBg,
+  classroom: classroom,
+  science: sciencelab,
+  computer: computerlab,
+  library: library,
+  sports: sports,
+  values: values,
 };
 
 const Curriculum = () => {
@@ -644,7 +653,7 @@ const Curriculum = () => {
       title: "Curiosity & Exploration",
       description:
         "Students are encouraged to ask questions, explore ideas and develop the curiosity needed for meaningful and independent learning.",
-      image: IMAGES.science,
+      image: IMAGES.library,
       color: "#F39C12",
     },
     {

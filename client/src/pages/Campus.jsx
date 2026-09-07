@@ -619,25 +619,42 @@ import {
 } from "react-icons/fa";
 import "./Campus.css";
 
+import heroBg from "../assets/school.JPG";
+import heroCircle from "../assets/about.png";
+import ctaBg from "../assets/engaging.jpg";
+import classroom from "../assets/classroom.jpg";
+import library from "../assets/library.jpg";
+import sciencelab from "../assets/sciencelab.jpg";
+import computerlab from "../assets/ComputerLab.jpg";
+import sports from "../assets/sports.JPG";
+import campus1 from "../assets/camp.jpg";
+import campus2 from "../assets/campus.jpg";
+import campus3 from "../assets/school.JPG";
+import campus4 from "../assets/camp.jpg";
+import campus5 from "../assets/campus.jpg";
+import campus6 from "../assets/school.JPG";
+import bus from "../assets/bus.jpg";
+
+
 // =====================================================
 // ONLINE IMAGES (Replace with local imports later)
 // =====================================================
 const IMAGES = {
-  heroBg: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1920&q=80",
-  heroCircle: "https://images.unsplash.com/photo-1571260899304-425eee4c7efc?w=600&q=80",
-  ctaBg: "https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=1920&q=80",
-  campus1: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&q=80",
-  campus2: "https://images.unsplash.com/photo-1571260899304-425eee4c7efc?w=800&q=80",
-  campus3: "https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=800&q=80",
-  campus4: "https://images.unsplash.com/photo-1523050854058-8df90110c7f1?w=800&q=80",
-  campus5: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&q=80",
-  campus6: "https://images.unsplash.com/photo-1461896836934-bd1c52f281b7?w=800&q=80",
-  classroom: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&q=80",
-  library: "https://images.unsplash.com/photo-1521587760476-6c12a4b040da?w=800&q=80",
-  scienceLab: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=800&q=80",
-  computerLab: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&q=80",
-  sports: "https://images.unsplash.com/photo-1461896836934-bd1c52f281b7?w=800&q=80",
-  bus: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=800&q=80",
+  heroBg: heroBg,
+  heroCircle: heroCircle,
+  ctaBg: ctaBg,
+  campus1: campus1,
+  campus2: campus2,
+  campus3: campus3,
+  campus4: campus4,
+  campus5: campus5,
+  campus6: campus6,
+  classroom: classroom,
+  library: library,
+  scienceLab: sciencelab,
+  computerLab: computerlab,
+  sports: sports,
+  bus: bus,
 };
 
 const Campus = () => {

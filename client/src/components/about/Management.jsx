@@ -357,6 +357,9 @@ import heroBg from "../../assets/school.JPG";
 import heroCircle from "../../assets/about.png";
 import ctaBg from "../../assets/engaging.jpg";
 import founder from "../../assets/founder.jpg";
+import Leadership from "../../assets/holistic.jpg"; 
+import Teachers from "../../assets/values.jpg";
+import Community from "../../assets/beyond.jpg";
 // =====================================================
 // ONLINE IMAGES (Replace with local imports later)
 // =====================================================
@@ -365,9 +368,9 @@ const IMAGES = {
   heroCircle: heroCircle,
   ctaBg: ctaBg,
   founder: founder,
-  leadership: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&q=80",
-  teachers: "https://images.unsplash.com/photo-1523050854058-8df90110c7f1?w=800&q=80",
-  community: "https://images.unsplash.com/photo-1528605248644-14dd04022da1?w=800&q=80",
+  leadership: Leadership,
+  teachers: Teachers,
+  community: Community,
 };
 
 const Management = () => {
