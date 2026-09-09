@@ -188,20 +188,17 @@
 }
 
 .se-hero__highlight {
-  color: var(--se-gold);
+  color: var(--sp-gold);
   position: relative;
+  text-decoration-line: underline;
+  text-decoration-color: rgba(212, 160, 43, 0.45);
+  text-decoration-thickness: 3px;
+  text-underline-offset: 8px;
+  text-decoration-skip-ink: none;
 }
 
 .se-hero__highlight::after {
-  content: '';
-  position: absolute;
-  bottom: 4px;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: var(--se-gold);
-  opacity: 0.4;
-  border-radius: 2px;
+  content: none;
 }
 
 .se-hero__desc {
