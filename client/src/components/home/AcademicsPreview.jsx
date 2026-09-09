@@ -233,7 +233,7 @@ const AcademicsPreview = () => {
                 connected future.
               </p>
 
-              <Link to="/curriculum">
+              <Link to="/academics/curriculum">
                 Discover our approach
                 <span>↗</span>
               </Link>

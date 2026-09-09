@@ -544,7 +544,6 @@ const AboutPreview = () => {
         <div className="ap-container">
           <div className="ap-topline">
             <span>ABOUT SHIFAN NOOR GLOBAL ACADEMY</span>
-            <span>02 / 09</span>
           </div>
 
           <div className="ap-intro-grid">
@@ -648,7 +647,7 @@ const AboutPreview = () => {
                 </p>
 
                 <Link
-                  to="/history"
+                  to="/about  /history"
                   className="ap-story-link"
                 >
                   <span>Explore the school</span>
@@ -761,7 +760,7 @@ const AboutPreview = () => {
               </p>
 
               <Link
-                to="/vision-mission"
+                to="/about/vision-mission"
                 className="ap-statement-link"
               >
                 Our vision & mission

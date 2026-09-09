@@ -1379,7 +1379,6 @@ const WhyChooseUs = () => {
 
           <div className="wc-topline">
             <span>THE SNGA APPROACH</span>
-            <span>03 / 04</span>
           </div>
 
           <div className="wc-intro-grid">
@@ -1524,7 +1523,7 @@ const WhyChooseUs = () => {
               </p>
 
               <Link
-                to="/vision-mission"
+                to="/about/vision-mission"
                 className="wc-philosophy-link"
               >
                 Our vision & mission

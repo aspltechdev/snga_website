@@ -42,10 +42,12 @@
 
 // export default AppRoutes;
 
+import { useEffect } from "react";
 import {
     BrowserRouter,
     Routes,
     Route,
+    useLocation,
 } from "react-router-dom";
 import PublicLayout from "../components/layout/PublicLayout";
 import Home from "../pages/Home";
@@ -84,12 +86,25 @@ import Results from "../components/academics/Results";
 import Campus from "../pages/Campus";
 import Achievements from "../pages/Achievements";
 
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
 
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "instant",
+    });
+  }, [pathname]);
+
+  return null;
+};
 
 
 const AppRoutes = () => {
     return (
         <BrowserRouter>
+            <ScrollToTop/>
 
             <Routes>
 
