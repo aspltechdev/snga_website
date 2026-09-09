@@ -516,11 +516,13 @@ import achievementService from "../../services/achievement.service";
 import "./AchievementsPreview.css";
 
 import art from "../../assets/arts.jpg";
+import learn from "../../assets/learn.jpg";
+import celebrate from "../../assets/celebrate.jpg"
 
 const fallbackImages = [
   art,
-  "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1400&q=85",
-  "https://images.unsplash.com/photo-1546410531-bb4caa6b424d?auto=format&fit=crop&w=1400&q=85",
+  learn,
+  celebrate,
 ];
 
 const getImageUrl = (image, fallbackIndex = 0) => {

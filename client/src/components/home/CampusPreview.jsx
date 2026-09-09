@@ -333,23 +333,21 @@
 import { Link } from "react-router-dom";
 import "./CampusPreview.css";
 
+import campus from "../../assets/campus.jpg";
+import learning from "../../assets/teaching.jpg";
+import student from "../../assets/student.jpg";
+import library from "../../assets/library.jpg";
+
 // =====================================================
 // TEMPORARY ONLINE IMAGES
 // Replace these with actual SNGA campus photographs later.
 // =====================================================
 
 const IMAGES = {
-  campus:
-    "https://images.unsplash.com/photo-1562774053-701939374585?w=2400&h=1400&fit=crop&auto=format",
-
-  learning:
-    "https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=2400&h=1400&fit=crop&auto=format",
-
-  students:
-    "https://images.unsplash.com/photo-1577896851231-70ef18881754?w=2400&h=1400&fit=crop&auto=format",
-
-  library:
-    "https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=2400&h=1400&fit=crop&auto=format",
+  campus: campus,
+  learning: learning,
+  students: student,
+  library: library,
 };
 
 const CampusPreview = () => {
