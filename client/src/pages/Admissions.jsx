@@ -3739,7 +3739,7 @@ const Admissions = () => {
                 for learning.
               </p>
               <div className="sad-campus__actions">
-                <Link to="/infrastructure" className="sad-campus__link">
+                <Link to="/about/infrastructure" className="sad-campus__link">
                   <span>Explore Infrastructure</span>
                   <FaArrowRight />
                 </Link>

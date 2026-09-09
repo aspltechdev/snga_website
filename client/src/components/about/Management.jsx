@@ -380,6 +380,7 @@ const Management = () => {
   const philosophyRef = useRef(null);
   const valuesRef = useRef(null);
   const communityRef = useRef(null);
+  const ctaRef = useRef(null);
 
   // =====================================================
   // SCROLL TRIGGERED ANIMATIONS
@@ -398,6 +399,7 @@ const Management = () => {
       { ref: philosophyRef, className: "sm-philosophy--visible" },
       { ref: valuesRef, className: "sm-values--visible" },
       { ref: communityRef, className: "sm-community--visible" },
+      { ref: ctaRef, className: "sm-cta--visible" },
     ];
 
     const observers = {};
@@ -763,7 +765,7 @@ const Management = () => {
       {/* =================================================
           FINAL CTA - With Background Image
       ================================================= */}
-      <section className="sm-cta">
+      <section ref={ctaRef} className="sm-cta">
         <div className="sm-cta__bg-wrapper">
           <div 
             className="sm-cta__bg-image" 

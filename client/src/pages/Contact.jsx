@@ -1904,12 +1904,6 @@ const Contact = () => {
               </div>
             </div>
           </div>
-
-          <div className="sc-hero__meta">
-            <span className="sc-hero__meta-brand">SHIFAN NOOR GLOBAL ACADEMY</span>
-            <span className="sc-hero__meta-divider" />
-            <span className="sc-hero__meta-location">RAMANATHAPURAM · TAMIL NADU</span>
-          </div>
         </div>
 
         <div className="sc-hero__wave">
