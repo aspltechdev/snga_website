@@ -359,7 +359,7 @@ import "./PrincipalMessage.css";
 import heroBg from "../../assets/school.JPG";
 import heroCircle from "../../assets/about.png";
 import ctaBg from "../../assets/engaging.jpg";
-import principle from "../../assets/principal.jpg";
+import principal from "../../assets/principal.jpg";
 import beyond from "../../assets/beyond.jpg";
 import holistic from "../../assets/holistic.jpg";
 import values from "../../assets/values.jpg";
@@ -371,7 +371,7 @@ const IMAGES = {
   heroBg: heroBg,
   heroCircle: heroCircle,
   ctaBg: ctaBg,
-  principal: principle,
+  principal: principal,
   classroom: beyond,
   students: holistic,
   campus: values,
@@ -541,9 +541,9 @@ const PrincipalMessage = () => {
                   className="sp-hero__image-img"
                 />
                 <div className="sp-hero__image-ring" />
-                <div className="sp-hero__image-badge">
+                {/* <div className="sp-hero__image-badge">
                   <span>Principal</span>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>

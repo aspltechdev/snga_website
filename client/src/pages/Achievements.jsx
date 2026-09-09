@@ -290,9 +290,9 @@ const Achievements = () => {
                   className="sa-hero__image-img"
                 />
                 <div className="sa-hero__image-ring" />
-                <div className="sa-hero__image-badge">
+                {/* <div className="sa-hero__image-badge">
                   <span>Since 2015</span>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>

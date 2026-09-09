@@ -515,8 +515,10 @@ import { Link } from "react-router-dom";
 import achievementService from "../../services/achievement.service";
 import "./AchievementsPreview.css";
 
+import art from "../../assets/arts.jpg";
+
 const fallbackImages = [
-  "https://images.unsplash.com/photo-1529390079861-591de354faf5?auto=format&fit=crop&w=1600&q=85",
+  art,
   "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1400&q=85",
   "https://images.unsplash.com/photo-1546410531-bb4caa6b424d?auto=format&fit=crop&w=1400&q=85",
 ];

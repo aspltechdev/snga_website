@@ -832,9 +832,9 @@ const Results = () => {
                   className="sr-hero__image-img"
                 />
                 <div className="sr-hero__image-ring" />
-                <div className="sr-hero__image-badge">
+                {/* <div className="sr-hero__image-badge">
                   <span>Since 2015</span>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>

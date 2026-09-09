@@ -1,23 +1,20 @@
 import { Link } from "react-router-dom";
 import "./AcademicsPreview.css";
 
+import heroBg from "../../assets/school.JPG";
+import practical from "../../assets/beyond.jpg";
+import digital from "../../assets/Digitallearning.jpg";
+import creative from "../../assets/creativearts.jpg";
 // =====================================================
 // ACADEMICS PREVIEW
 // Premium editorial / Apple-style section
 // =====================================================
 
 const IMAGES = {
-  hero:
-    "https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=1800&h=1100&fit=crop&auto=format",
-
-  practical:
-    "https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=1200&h=900&fit=crop&auto=format",
-
-  digital:
-    "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200&h=900&fit=crop&auto=format",
-
-  creative:
-    "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=1200&h=900&fit=crop&auto=format",
+  hero: heroBg,
+  practical: practical,
+  digital: digital,
+  creative: creative,
 };
 
 const AcademicsPreview = () => {

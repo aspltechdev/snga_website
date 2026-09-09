@@ -1898,9 +1898,9 @@ const Contact = () => {
                   className="sc-hero__image-img"
                 />
                 <div className="sc-hero__image-ring" />
-                <div className="sc-hero__image-badge">
+                {/* <div className="sc-hero__image-badge">
                   <span>Since 2015</span>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>

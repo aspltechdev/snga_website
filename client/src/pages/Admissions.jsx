@@ -3547,9 +3547,9 @@ const Admissions = () => {
                   className="sad-hero__image-img"
                 />
                 <div className="sad-hero__image-ring" />
-                <div className="sad-hero__image-badge">
+                {/* <div className="sad-hero__image-badge">
                   <span>Since 2015</span>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>

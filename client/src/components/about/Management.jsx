@@ -566,9 +566,9 @@ const Management = () => {
                   className="sm-hero__image-img"
                 />
                 <div className="sm-hero__image-ring" />
-                <div className="sm-hero__image-badge">
+                {/* <div className="sm-hero__image-badge">
                   <span>Since 2015</span>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>

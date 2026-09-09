@@ -2277,9 +2277,9 @@ const News = () => {
                   className="sn-hero__image-img"
                 />
                 <div className="sn-hero__image-ring" />
-                <div className="sn-hero__image-badge">
+                {/* <div className="sn-hero__image-badge">
                   <span>Since 2015</span>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>

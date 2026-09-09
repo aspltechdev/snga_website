@@ -788,9 +788,9 @@ const Examinations = () => {
                   className="se-hero__image-img"
                 />
                 <div className="se-hero__image-ring" />
-                <div className="se-hero__image-badge">
+                {/* <div className="se-hero__image-badge">
                   <span>Since 2015</span>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>

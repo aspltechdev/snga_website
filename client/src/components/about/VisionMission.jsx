@@ -694,9 +694,9 @@ const VisionMission = () => {
                   className="sv-hero__image-img"
                 />
                 <div className="sv-hero__image-ring" />
-                <div className="sv-hero__image-badge">
+                {/* <div className="sv-hero__image-badge">
                   <span>Since 2015</span>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
