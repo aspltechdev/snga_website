@@ -1,15 +1,17 @@
 const multer = require("multer");
 const path = require("path");
 const fs = require("fs");
+const os = require("os");
 
 // ==========================================
 // UPLOAD DIRECTORY
 // ==========================================
 
-const uploadDir = path.join(
-  process.cwd(),
-  "uploads"
-);
+// Vercel only permits temporary file writing inside /tmp.
+// Local development continues using server/uploads.
+const uploadDir = process.env.VERCEL
+  ? path.join(os.tmpdir(), "uploads")
+  : path.join(process.cwd(), "uploads");
 
 if (!fs.existsSync(uploadDir)) {
   fs.mkdirSync(uploadDir, {
@@ -27,15 +29,14 @@ const storage = multer.diskStorage({
   },
 
   filename: (req, file, cb) => {
-    const ext = path.extname(file.originalname);
+    const ext = path.extname(file.originalname).toLowerCase();
 
     const name = path
       .basename(file.originalname, ext)
       .replace(/[^a-zA-Z0-9]/g, "-")
       .toLowerCase();
 
-    const uniqueName =
-      `${name}-${Date.now()}${ext}`;
+    const uniqueName = `${name}-${Date.now()}${ext}`;
 
     cb(null, uniqueName);
   },
@@ -73,7 +74,6 @@ const fileFilter = (req, file, cb) => {
 const upload = multer({
   storage,
   fileFilter,
-
   limits: {
     fileSize: 5 * 1024 * 1024,
   },

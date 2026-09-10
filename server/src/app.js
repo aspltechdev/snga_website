@@ -72,6 +72,7 @@ const cors = require("cors");
 const helmet = require("helmet");
 const morgan = require("morgan");
 const path = require("path");
+const os = require("os");
 
 // Routes
 const authRoutes = require("./routes/auth.routes");
@@ -93,29 +94,36 @@ const {
 
 const app = express();
 
-// Allow local React and deployed Netlify frontend
+// ==========================================
+// CORS
+// ==========================================
+
 const allowedOrigins = [
   "http://localhost:5173",
   "https://snga.netlify.app",
   process.env.CLIENT_URL,
 ].filter(Boolean);
 
-// CORS
 app.use(
   cors({
     origin(origin, callback) {
-      // Requests such as Postman and direct browser navigation may not have Origin
+      // Allow direct browser requests, Postman and server-to-server requests
       if (!origin || allowedOrigins.includes(origin)) {
         return callback(null, true);
       }
 
-      return callback(new Error(`CORS blocked origin: ${origin}`));
+      return callback(
+        new Error(`CORS blocked origin: ${origin}`)
+      );
     },
     credentials: true,
   })
 );
 
-// Security headers
+// ==========================================
+// SECURITY
+// ==========================================
+
 app.use(
   helmet({
     crossOriginResourcePolicy: {
@@ -124,25 +132,43 @@ app.use(
   })
 );
 
-// Request logger
+// ==========================================
+// REQUEST LOGGER
+// ==========================================
+
 app.use(morgan("dev"));
 
-// Body parsers
+// ==========================================
+// BODY PARSERS
+// ==========================================
+
 app.use(express.json());
+
 app.use(
   express.urlencoded({
     extended: true,
   })
 );
 
-// Local uploaded files
-// This works locally, but Vercel cannot store uploaded files permanently.
+// ==========================================
+// UPLOAD DIRECTORY
+// ==========================================
+
+// Local: server/uploads
+// Vercel: /tmp/uploads
+const uploadsPath = process.env.VERCEL
+  ? path.join(os.tmpdir(), "uploads")
+  : path.join(__dirname, "../uploads");
+
 app.use(
   "/uploads",
-  express.static(path.join(__dirname, "../uploads"))
+  express.static(uploadsPath)
 );
 
-// Root route
+// ==========================================
+// ROOT ROUTE
+// ==========================================
+
 app.get("/", (req, res) => {
   res.status(200).json({
     success: true,
@@ -150,7 +176,10 @@ app.get("/", (req, res) => {
   });
 });
 
-// Health-check route
+// ==========================================
+// HEALTH-CHECK ROUTE
+// ==========================================
+
 app.get("/api/health", (req, res) => {
   res.status(200).json({
     success: true,
@@ -158,7 +187,10 @@ app.get("/api/health", (req, res) => {
   });
 });
 
-// API routes
+// ==========================================
+// API ROUTES
+// ==========================================
+
 app.use("/api/auth", authRoutes);
 app.use("/api/news", newsRoutes);
 app.use("/api/hero", heroRoutes);
@@ -170,7 +202,10 @@ app.use("/api/testimonials", testimonialRoutes);
 app.use("/api/contact", contactRoutes);
 app.use("/api/upload", uploadRoutes);
 
-// Error handlers must remain last
+// ==========================================
+// ERROR HANDLERS — MUST REMAIN LAST
+// ==========================================
+
 app.use(notFound);
 app.use(errorHandler);
 
