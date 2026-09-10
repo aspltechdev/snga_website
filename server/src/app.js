@@ -67,13 +67,13 @@
 // module.exports = app;
 
 
-
 const express = require("express");
 const cors = require("cors");
 const helmet = require("helmet");
 const morgan = require("morgan");
 const path = require("path");
 
+// Routes
 const authRoutes = require("./routes/auth.routes");
 const newsRoutes = require("./routes/news.routes");
 const achievementRoutes = require("./routes/achievement.routes");
@@ -83,9 +83,9 @@ const testimonialRoutes = require("./routes/testimonial.routes");
 const uploadRoutes = require("./routes/upload.routes");
 const contactRoutes = require("./routes/contact.routes");
 const galleryRoutes = require("./routes/gallery.routes");
-
 const heroRoutes = require("./routes/hero.routes");
 
+// Error middleware
 const {
   notFound,
   errorHandler,
@@ -93,25 +93,29 @@ const {
 
 const app = express();
 
-// ==========================================
-// CORS
-// ==========================================
+// Allow local React and deployed Netlify frontend
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://snga.netlify.app",
+  process.env.CLIENT_URL,
+].filter(Boolean);
 
+// CORS
 app.use(
   cors({
-    origin:
-      process.env.CLIENT_URL ||
-      "http://localhost:5173",
+    origin(origin, callback) {
+      // Requests such as Postman and direct browser navigation may not have Origin
+      if (!origin || allowedOrigins.includes(origin)) {
+        return callback(null, true);
+      }
+
+      return callback(new Error(`CORS blocked origin: ${origin}`));
+    },
     credentials: true,
   })
 );
 
-// ==========================================
-// SECURITY
-// ==========================================
-
-// app.use(helmet());
-
+// Security headers
 app.use(
   helmet({
     crossOriginResourcePolicy: {
@@ -119,16 +123,11 @@ app.use(
     },
   })
 );
-// ==========================================
-// LOGGER
-// ==========================================
 
+// Request logger
 app.use(morgan("dev"));
 
-// ==========================================
-// BODY PARSER
-// ==========================================
-
+// Body parsers
 app.use(express.json());
 app.use(
   express.urlencoded({
@@ -136,71 +135,42 @@ app.use(
   })
 );
 
-// ==========================================
-// STATIC UPLOADS
-// ==========================================
-
+// Local uploaded files
+// This works locally, but Vercel cannot store uploaded files permanently.
 app.use(
   "/uploads",
-  express.static(
-    path.join(process.cwd(), "uploads")
-  )
+  express.static(path.join(__dirname, "../uploads"))
 );
 
-// ==========================================
-// ROOT
-// ==========================================
-
+// Root route
 app.get("/", (req, res) => {
-  res.json({
+  res.status(200).json({
     success: true,
     message: "SNGA API is running",
   });
 });
 
-// ==========================================
-// API ROUTES
-// ==========================================
-
-app.use("/api/auth", authRoutes);
-app.use("/api/news", newsRoutes);
-
-app.use("/api/hero", heroRoutes);
-
-app.use("/api/blogs", blogRoutes);
-
-app.use("/api/gallery", galleryRoutes);
-app.use(
-  "/api/achievements",
-  achievementRoutes
-);
-app.use(
-  "/api/admissions",
-  admissionRoutes
-);
-app.use(
-  "/api/testimonials",
-  testimonialRoutes
-);
-app.use("/api/contact", contactRoutes);
-app.use("/api/upload", uploadRoutes);
-
-// ==========================================
-// HEALTH CHECK
-// ==========================================
-
+// Health-check route
 app.get("/api/health", (req, res) => {
-  res.json({
+  res.status(200).json({
     success: true,
     message: "SNGA API healthy",
   });
 });
 
-// ==========================================
-// ERROR HANDLING
-// MUST BE LAST
-// ==========================================
+// API routes
+app.use("/api/auth", authRoutes);
+app.use("/api/news", newsRoutes);
+app.use("/api/hero", heroRoutes);
+app.use("/api/blogs", blogRoutes);
+app.use("/api/gallery", galleryRoutes);
+app.use("/api/achievements", achievementRoutes);
+app.use("/api/admissions", admissionRoutes);
+app.use("/api/testimonials", testimonialRoutes);
+app.use("/api/contact", contactRoutes);
+app.use("/api/upload", uploadRoutes);
 
+// Error handlers must remain last
 app.use(notFound);
 app.use(errorHandler);
 
