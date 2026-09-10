@@ -1,3 +1,5 @@
+
+
 // import { useEffect, useState, useRef } from "react";
 // import { useParams, Link, useNavigate } from "react-router-dom";
 // import {
@@ -331,19 +333,6 @@
 //               <p className="nd-hero__excerpt">{news.excerpt}</p>
 //             )}
 
-//             <div className="nd-hero__author">
-//               <div className="nd-hero__author-avatar">
-//                 <img src={getAuthorAvatarUrl()} alt={getAuthorName()} />
-//               </div>
-//               <div className="nd-hero__author-info">
-//                 <span className="nd-hero__author-name">
-//                   {getAuthorName()}
-//                 </span>
-//                 <span className="nd-hero__author-role">
-//                   {news.author?.email ? "Author" : "News Team"}
-//                 </span>
-//               </div>
-//             </div>
 //           </div>
 //         </div>
 
@@ -611,6 +600,8 @@
 // };
 
 // export default NewsDetail;
+
+
 
 
 import { useEffect, useState, useRef } from "react";
@@ -945,20 +936,7 @@ const NewsDetail = () => {
             {news.excerpt && (
               <p className="nd-hero__excerpt">{news.excerpt}</p>
             )}
-{/* 
-            <div className="nd-hero__author">
-              <div className="nd-hero__author-avatar">
-                <img src={getAuthorAvatarUrl()} alt={getAuthorName()} />
-              </div>
-              <div className="nd-hero__author-info">
-                <span className="nd-hero__author-name">
-                  {getAuthorName()}
-                </span>
-                <span className="nd-hero__author-role">
-                  {news.author?.email ? "Author" : "News Team"}
-                </span>
-              </div>
-            </div> */}
+
           </div>
         </div>
 

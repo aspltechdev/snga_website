@@ -1,265 +1,407 @@
-.wc {
-  width: 100%;
-  overflow: hidden;
-  background: #ffffff;
-  color: #10152b;
+/* =========================================================
+   SHIFAN NOOR GLOBAL ACADEMY
+   WHY CHOOSE US — HOMEPAGE
+
+   Institutional / Editorial / University
+   ========================================================= */
+
+:root {
+  --wc-navy: #00005b;
+  --wc-blue: #123b8c;
+  --wc-red: #c80000;
+
+  --wc-white: #ffffff;
+  --wc-paper: #f7f8fb;
+  --wc-soft: #eef1f6;
+
+  --wc-ink: #10152b;
+  --wc-text: #5d6675;
+  --wc-muted: #8d95a1;
+
+  --wc-line: #dfe4ec;
+  --wc-dark-line: rgba(255, 255, 255, 0.19);
+
+  --wc-container: 1440px;
 }
 
-/* =====================================================
-   COMMON
-===================================================== */
+
+/* =========================================================
+   BASE
+   ========================================================= */
+
+.wc {
+  width: 100%;
+
+  overflow: hidden;
+
+  background: #ffffff;
+
+  color: var(--wc-ink);
+}
 
 .wc-container {
-  width: min(1240px, calc(100% - 64px));
+  width: min(
+    calc(100% - 120px),
+    var(--wc-container)
+  );
+
   margin: 0 auto;
 }
 
-.wc-kicker {
-  color: #00005b;
-  font-size: 9px;
+.wc-overline {
+  display: block;
+
+  color: var(--wc-red);
+
+  font-size: 8px;
   font-weight: 700;
-  letter-spacing: 0.18em;
+
+  letter-spacing: 0.21em;
+
   line-height: 1.4;
+
+  text-transform: uppercase;
 }
 
-/* =====================================================
-   INTRO
-===================================================== */
 
-.wc-intro {
-  padding: 110px 0 100px;
+/* =========================================================
+   OPENING
+   ========================================================= */
+
+.wc-opening {
+  padding: 120px 0 125px;
+
   background: #ffffff;
 }
 
-.wc-topline {
-  display: flex;
-  justify-content: space-between;
+.wc-opening-top {
+  display: grid;
+
+  grid-template-columns:
+    70px
+    1fr
+    auto;
+
   align-items: center;
 
-  padding-bottom: 24px;
+  padding-bottom: 19px;
 
-  border-bottom: 1px solid #e5e9f1;
+  border-bottom: 1px solid var(--wc-line);
+}
 
-  color: #8b929e;
-  font-size: 8px;
+.wc-opening-index {
+  color: var(--wc-red);
+
+  font-size: 9px;
   font-weight: 700;
+
   letter-spacing: 0.16em;
 }
 
-.wc-topline span:first-child {
-  color: #00005b;
+.wc-opening-label,
+.wc-opening-location {
+  color: #7f8793;
+
+  font-size: 8px;
+  font-weight: 700;
+
+  letter-spacing: 0.19em;
+
+  text-transform: uppercase;
 }
 
-.wc-intro-grid {
+.wc-opening-location {
+  color: #a3a9b2;
+}
+
+
+/* =========================================================
+   OPENING GRID
+   ========================================================= */
+
+.wc-opening-grid {
   display: grid;
+
   grid-template-columns:
-    minmax(0, 1.15fr)
-    minmax(300px, 0.55fr);
+    minmax(0, 1.25fr)
+    minmax(300px, 0.75fr);
 
-  gap: 100px;
+  gap: 11%;
 
-  align-items: end;
-
-  padding-top: 55px;
+  padding-top: 82px;
 }
 
-.wc-intro-title {
-  min-width: 0;
-}
 
-.wc-intro-title .wc-kicker {
-  display: block;
-  margin-bottom: 20px;
-  color: #c80000;
-}
+/* =========================================================
+   OPENING TITLE
+   ========================================================= */
 
-.wc-intro-title h2 {
-  margin: 0;
+.wc-opening-heading h2 {
+  margin: 18px 0 0;
 
-  color: #00005b;
+  color: var(--wc-ink);
 
-  font-size: clamp(68px, 8.2vw, 115px);
+  font-size: clamp(
+    72px,
+    8.5vw,
+    132px
+  );
+
   font-weight: 500;
 
   letter-spacing: -0.078em;
-  line-height: 0.84;
+
+  line-height: 0.83;
 }
 
-.wc-intro-title h2 span {
-  color: #e21b23;
+.wc-opening-heading h2 em {
+  color: var(--wc-navy);
+
+  font-style: normal;
 }
 
-.wc-intro-copy {
-  padding-bottom: 5px;
+
+/* =========================================================
+   OPENING COPY
+   ========================================================= */
+
+.wc-opening-copy {
+  align-self: end;
+
+  padding-bottom: 4px;
 }
 
-.wc-intro-copy p {
-  max-width: 410px;
-
-  margin: 0 0 29px;
-
-  color: #697281;
-
-  font-size: 14px;
-  line-height: 1.8;
-}
-
-.wc-intro-link {
-  display: inline-flex;
-  align-items: center;
-
-  gap: 19px;
-
-  color: #00005b;
-
-  font-size: 10px;
-  font-weight: 700;
-
-  text-decoration: none;
-
-  transition:
-    color 0.25s ease,
-    gap 0.25s ease;
-}
-
-.wc-intro-link span {
-  color: #e21b23;
-  font-size: 17px;
-}
-
-.wc-intro-link:hover {
-  gap: 27px;
-  color: #e21b23;
-}
-
-/* =====================================================
-   PRINCIPLES
-===================================================== */
-
-.wc-principles {
-  padding: 0 0 105px;
-
-  background: #ffffff;
-}
-
-.wc-principles-heading {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-
-  padding-bottom: 22px;
-
-  border-bottom: 1px solid #e5e9f1;
-}
-
-.wc-principles-heading > span {
-  color: #00005b;
-
-  font-size: 9px;
-  font-weight: 700;
-
-  letter-spacing: 0.17em;
-}
-
-.wc-principles-heading p {
-  max-width: 300px;
+.wc-opening-copy > p {
+  max-width: 570px;
 
   margin: 0;
 
-  color: #8a929f;
+  color: #424a59;
 
-  font-size: 11px;
-  line-height: 1.6;
+  font-size: clamp(
+    19px,
+    1.65vw,
+    25px
+  );
+
+  letter-spacing: -0.025em;
+
+  line-height: 1.48;
 }
 
-/* =====================================================
-   ROWS
-===================================================== */
 
-.wc-list {
-  width: 100%;
+/* =========================================================
+   EDITORIAL LINK
+   ========================================================= */
+
+.wc-editorial-link {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 16px;
+
+  margin-top: 37px;
+
+  padding-bottom: 9px;
+
+  border-bottom: 1px solid var(--wc-ink);
+
+  color: var(--wc-ink);
+
+  text-decoration: none;
+
+  font-size: 8px;
+  font-weight: 700;
+
+  letter-spacing: 0.18em;
+
+  text-transform: uppercase;
+
+  transition:
+    gap 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease;
 }
 
-.wc-row {
+.wc-editorial-link b {
+  color: var(--wc-red);
+
+  font-size: 16px;
+
+  font-weight: 300;
+}
+
+.wc-editorial-link:hover {
+  gap: 24px;
+
+  color: var(--wc-red);
+
+  border-color: var(--wc-red);
+}
+
+
+/* =========================================================
+   PRINCIPLES
+   ========================================================= */
+
+.wc-principles {
+  padding: 115px 0 135px;
+
+  background: var(--wc-paper);
+}
+
+.wc-principles-intro {
   display: grid;
 
   grid-template-columns:
-    60px
-    175px
-    minmax(0, 1fr)
-    35px;
+    1.2fr
+    0.8fr;
 
-  min-height: 205px;
+  gap: 10%;
+
+  padding-bottom: 72px;
+
+  border-bottom: 1px solid var(--wc-line);
+}
+
+.wc-principles-intro h3 {
+  margin: 20px 0 0;
+
+  color: var(--wc-ink);
+
+  font-size: clamp(
+    47px,
+    5.5vw,
+    82px
+  );
+
+  font-weight: 500;
+
+  letter-spacing: -0.065em;
+
+  line-height: 0.9;
+}
+
+.wc-principles-intro > p {
+  align-self: end;
+
+  max-width: 480px;
+
+  margin: 0;
+
+  color: var(--wc-text);
+
+  font-size: 14px;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   FEATURE LIST
+   ========================================================= */
+
+.wc-feature-list {
+  margin-top: 12px;
+}
+
+.wc-feature {
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns:
+    75px
+    minmax(300px, 0.9fr)
+    minmax(300px, 1.1fr)
+    55px;
 
   align-items: center;
 
-  gap: 28px;
+  min-height: 220px;
 
-  border-bottom: 1px solid #e5e9f1;
+  gap: 25px;
+
+  border-bottom: 1px solid var(--wc-line);
 
   color: inherit;
 
   text-decoration: none;
 
+  overflow: hidden;
+
   transition:
-    background 0.35s ease,
-    padding 0.35s ease;
+    padding 0.45s
+    cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.wc-row:hover {
-  padding-left: 18px;
-  padding-right: 18px;
-
-  background: #f4f7fc;
+.wc-feature:hover {
+  padding-left: 14px;
 }
 
-.wc-row-number {
-  align-self: start;
 
-  padding-top: 28px;
+/* =========================================================
+   FEATURE IMAGE
+   ========================================================= */
 
-  color: #c80000;
+.wc-feature-image {
+  position: relative;
 
-  font-size: 9px;
-  font-weight: 700;
-
-  letter-spacing: 0.13em;
-}
-
-.wc-row-image {
-  width: 175px;
-  height: 145px;
+  width: 100%;
+  height: 155px;
 
   overflow: hidden;
 
-  background: #e7eaf0;
+  background: var(--wc-soft);
 }
 
-.wc-row-image img {
+.wc-feature-image img {
   width: 100%;
   height: 100%;
 
-  display: block;
-
   object-fit: cover;
 
-  transition: transform 0.7s ease;
+  filter:
+    saturate(0.82)
+    contrast(1.04);
+
+  transform: scale(1.04);
+
+  transition:
+    transform 0.8s
+    cubic-bezier(0.16, 1, 0.3, 1),
+    filter 0.5s ease;
 }
 
-.wc-row:hover .wc-row-image img {
-  transform: scale(1.045);
+.wc-feature:hover .wc-feature-image img {
+  transform: scale(1.1);
+
+  filter:
+    saturate(1)
+    contrast(1.04);
 }
 
-.wc-row-content {
-  padding: 28px 0;
+.wc-feature-image-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  background: rgba(0, 0, 65, 0.08);
+
+  pointer-events: none;
 }
 
-.wc-row-kicker {
-  display: block;
 
-  margin-bottom: 11px;
+/* =========================================================
+   NUMBER
+   ========================================================= */
 
-  color: #9098a4;
+.wc-feature-number {
+  align-self: start;
+
+  padding-top: 33px;
+
+  color: #969da8;
 
   font-size: 8px;
   font-weight: 700;
@@ -267,12 +409,38 @@
   letter-spacing: 0.15em;
 }
 
-.wc-row-content h3 {
-  margin: 0 0 10px;
 
-  color: #00005b;
+/* =========================================================
+   CONTENT
+   ========================================================= */
 
-  font-size: clamp(25px, 2.5vw, 35px);
+.wc-feature-content {
+  padding: 25px 0;
+}
+
+.wc-feature-content > span {
+  display: block;
+
+  margin-bottom: 12px;
+
+  color: var(--wc-red);
+
+  font-size: 7px;
+  font-weight: 700;
+
+  letter-spacing: 0.18em;
+}
+
+.wc-feature-content h4 {
+  margin: 0;
+
+  color: var(--wc-ink);
+
+  font-size: clamp(
+    27px,
+    2.7vw,
+    42px
+  );
 
   font-weight: 500;
 
@@ -281,444 +449,776 @@
   line-height: 1;
 }
 
-.wc-row-content p {
-  max-width: 650px;
+.wc-feature-content p {
+  max-width: 480px;
 
-  margin: 0;
+  margin: 15px 0 0;
 
-  color: #697281;
+  color: var(--wc-text);
 
-  font-size: 12px;
+  font-size: 11px;
 
-  line-height: 1.7;
+  line-height: 1.75;
 }
 
-.wc-row-arrow {
-  align-self: center;
 
-  color: #c80000;
+/* =========================================================
+   FEATURE LINK
+   ========================================================= */
 
-  font-size: 18px;
+.wc-feature-link {
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+
+  margin-top: 15px;
+
+  color: var(--wc-ink);
+
+  font-size: 7px;
+  font-weight: 700;
+
+  letter-spacing: 0.17em;
+
+  text-transform: uppercase;
+
+  opacity: 0;
+
+  transform: translateY(5px);
 
   transition:
-    transform 0.3s ease,
-    color 0.3s ease;
+    opacity 0.3s ease,
+    transform 0.3s ease;
 }
 
-.wc-row:hover .wc-row-arrow {
-  transform: translate(4px, -4px);
-  color: #e21b23;
+.wc-feature:hover .wc-feature-link {
+  opacity: 1;
+
+  transform: translateY(0);
 }
 
-/* =====================================================
+.wc-feature-link b {
+  color: var(--wc-red);
+
+  font-size: 13px;
+
+  font-weight: 300;
+}
+
+
+/* =========================================================
+   FEATURE ARROW
+   ========================================================= */
+
+.wc-feature > .wc-feature-line {
+  position: absolute;
+
+  right: 0;
+  bottom: 0;
+
+  width: 0;
+  height: 2px;
+
+  background: var(--wc-red);
+
+  transition:
+    width 0.55s
+    cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.wc-feature:hover > .wc-feature-line {
+  width: 100%;
+}
+
+
+/* =========================================================
    PHILOSOPHY
-===================================================== */
+   ========================================================= */
 
 .wc-philosophy {
-  padding: 115px 0;
+  position: relative;
 
-  background: #f4f7fc;
+  padding: 125px 0 135px;
+
+  background: var(--wc-navy);
+
+  color: #ffffff;
 }
+
+.wc-philosophy::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 2px;
+  height: 110px;
+
+  background: var(--wc-red);
+}
+
+.wc-philosophy-top {
+  display: flex;
+  justify-content: space-between;
+
+  padding-bottom: 20px;
+
+  border-bottom: 1px solid
+    var(--wc-dark-line);
+
+  color: rgba(255, 255, 255, 0.42);
+
+  font-size: 7px;
+  font-weight: 700;
+
+  letter-spacing: 0.2em;
+}
+
+.wc-philosophy-top span:first-child {
+  color: var(--wc-red);
+}
+
+
+/* =========================================================
+   PHILOSOPHY GRID
+   ========================================================= */
 
 .wc-philosophy-grid {
   display: grid;
 
   grid-template-columns:
-    60px
-    minmax(0, 1fr)
-    minmax(280px, 0.45fr);
+    minmax(0, 1.35fr)
+    minmax(300px, 0.65fr);
 
-  gap: 50px;
+  gap: 11%;
 
-  align-items: end;
+  padding-top: 76px;
 }
 
-.wc-philosophy-number {
-  align-self: start;
+.wc-philosophy-heading h3 {
+  margin: 19px 0 0;
 
-  color: #9da5b0;
+  color: #ffffff;
 
-  font-size: 9px;
-  font-weight: 700;
-
-  letter-spacing: 0.15em;
-}
-
-.wc-philosophy-main .wc-kicker {
-  display: block;
-
-  margin-bottom: 23px;
-}
-
-.wc-philosophy-main h3 {
-  margin: 0;
-
-  color: #00005b;
-
-  font-size: clamp(45px, 5.4vw, 77px);
+  font-size: clamp(
+    56px,
+    6.6vw,
+    100px
+  );
 
   font-weight: 400;
 
-  letter-spacing: -0.065em;
+  letter-spacing: -0.07em;
 
-  line-height: 0.91;
+  line-height: 0.88;
 }
 
-.wc-philosophy-main h3 span {
-  color: #e21b23;
+.wc-philosophy-heading h3 em {
+  color: #ffffff;
+
+  font-style: normal;
 }
+
+
+/* =========================================================
+   PHILOSOPHY COPY
+   ========================================================= */
 
 .wc-philosophy-copy {
-  padding-bottom: 3px;
+  align-self: end;
+
+  padding-bottom: 4px;
+}
+
+.wc-philosophy-mark {
+  margin-bottom: 19px;
+
+  color: var(--wc-red);
+
+  font-size: 55px;
+  font-weight: 300;
+
+  line-height: 0.5;
 }
 
 .wc-philosophy-copy p {
-  margin: 0 0 27px;
+  max-width: 460px;
 
-  color: #697281;
+  margin: 0;
 
-  font-size: 13px;
+  color: rgba(255, 255, 255, 0.6);
 
-  line-height: 1.8;
+  font-size: 14px;
+
+  line-height: 1.85;
 }
 
 .wc-philosophy-link {
   display: inline-flex;
   align-items: center;
 
-  gap: 15px;
+  gap: 16px;
 
-  color: #00005b;
+  margin-top: 34px;
 
-  font-size: 9px;
-  font-weight: 700;
+  padding-bottom: 9px;
+
+  border-bottom: 1px solid
+    rgba(255, 255, 255, 0.55);
+
+  color: #ffffff;
 
   text-decoration: none;
-}
-
-.wc-philosophy-link span {
-  color: #e21b23;
-
-  font-size: 15px;
-
-  transition: transform 0.25s ease;
-}
-
-.wc-philosophy-link:hover span {
-  transform: translateX(4px);
-}
-
-/* =====================================================
-   FOUNDATION
-===================================================== */
-
-.wc-foundation {
-  padding: 55px 0;
-
-  background: #00005b;
-}
-
-.wc-foundation-inner {
-  display: flex;
-
-  align-items: center;
-
-  justify-content: space-between;
-
-  gap: 50px;
-}
-
-.wc-foundation-label {
-  color: rgba(255, 255, 255, 0.5);
 
   font-size: 8px;
   font-weight: 700;
 
-  letter-spacing: 0.17em;
+  letter-spacing: 0.18em;
 
-  white-space: nowrap;
+  text-transform: uppercase;
+
+  transition:
+    gap 0.3s ease,
+    color 0.3s ease;
 }
 
-.wc-foundation-items {
-  display: flex;
+.wc-philosophy-link b {
+  color: var(--wc-red);
 
-  align-items: center;
+  font-size: 16px;
 
-  justify-content: flex-end;
+  font-weight: 300;
+}
 
+.wc-philosophy-link:hover {
   gap: 24px;
 
   color: #ffffff;
+}
 
-  font-size: 11px;
+
+/* =========================================================
+   FOUNDATION
+   ========================================================= */
+
+.wc-foundation {
+  padding: 115px 0 130px;
+
+  background: #ffffff;
+}
+
+.wc-foundation-top {
+  display: flex;
+  justify-content: space-between;
+
+  padding-bottom: 20px;
+
+  border-bottom: 1px solid var(--wc-line);
+
+  color: #969da7;
+
+  font-size: 7px;
   font-weight: 700;
 
-  letter-spacing: 0.12em;
+  letter-spacing: 0.2em;
 }
 
-.wc-foundation-items i {
-  width: 4px;
-  height: 4px;
-
-  display: block;
-
-  border-radius: 50%;
-
-  background: #e21b23;
+.wc-foundation-top span:first-child {
+  color: var(--wc-red);
 }
 
-/* =====================================================
+
+/* =========================================================
+   FOUNDATION STATEMENT
+   ========================================================= */
+
+.wc-foundation-statement {
+  display: grid;
+
+  grid-template-columns:
+    1.35fr
+    0.65fr;
+
+  gap: 11%;
+
+  padding-top: 70px;
+}
+
+.wc-foundation-statement h3 {
+  margin: 0;
+
+  color: var(--wc-ink);
+
+  font-size: clamp(
+    60px,
+    7vw,
+    108px
+  );
+
+  font-weight: 500;
+
+  letter-spacing: -0.075em;
+
+  line-height: 0.83;
+}
+
+.wc-foundation-statement h3 em {
+  color: var(--wc-navy);
+
+  font-style: normal;
+}
+
+.wc-foundation-copy {
+  align-self: end;
+
+  padding-bottom: 5px;
+}
+
+.wc-foundation-copy p {
+  max-width: 400px;
+
+  margin: 0;
+
+  color: var(--wc-text);
+
+  font-size: 15px;
+
+  line-height: 1.7;
+}
+
+.wc-foundation-link {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 16px;
+
+  margin-top: 31px;
+
+  color: var(--wc-ink);
+
+  text-decoration: none;
+
+  font-size: 8px;
+  font-weight: 700;
+
+  letter-spacing: 0.18em;
+
+  text-transform: uppercase;
+
+  transition:
+    gap 0.3s ease,
+    color 0.3s ease;
+}
+
+.wc-foundation-link b {
+  color: var(--wc-red);
+
+  font-size: 16px;
+
+  font-weight: 300;
+}
+
+.wc-foundation-link:hover {
+  gap: 24px;
+
+  color: var(--wc-red);
+}
+
+
+/* =========================================================
+   REVEAL
+   ========================================================= */
+
+.wc-opening-heading,
+.wc-opening-copy,
+.wc-principles-intro,
+.wc-feature,
+.wc-philosophy-grid,
+.wc-foundation-statement {
+  opacity: 0;
+
+  transform: translateY(35px);
+
+  transition:
+    opacity 0.9s ease,
+    transform 1s
+      cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.wc-visible .wc-opening-heading {
+  opacity: 1;
+
+  transform: translateY(0);
+
+  transition-delay: 0.05s;
+}
+
+.wc-visible .wc-opening-copy {
+  opacity: 1;
+
+  transform: translateY(0);
+
+  transition-delay: 0.15s;
+}
+
+.wc-visible .wc-principles-intro {
+  opacity: 1;
+
+  transform: translateY(0);
+
+  transition-delay: 0.05s;
+}
+
+.wc-visible .wc-feature {
+  opacity: 1;
+
+  transform: translateY(0);
+}
+
+.wc-visible .wc-feature:nth-child(1) {
+  transition-delay: 0.08s;
+}
+
+.wc-visible .wc-feature:nth-child(2) {
+  transition-delay: 0.16s;
+}
+
+.wc-visible .wc-feature:nth-child(3) {
+  transition-delay: 0.24s;
+}
+
+.wc-visible .wc-feature:nth-child(4) {
+  transition-delay: 0.32s;
+}
+
+.wc-visible .wc-philosophy-grid {
+  opacity: 1;
+
+  transform: translateY(0);
+
+  transition-delay: 0.08s;
+}
+
+.wc-visible .wc-foundation-statement {
+  opacity: 1;
+
+  transform: translateY(0);
+
+  transition-delay: 0.08s;
+}
+
+
+/* =========================================================
    TABLET
-===================================================== */
+   ========================================================= */
 
-@media (max-width: 1050px) {
+@media (max-width: 1100px) {
   .wc-container {
-    width: min(100% - 48px, 1100px);
+    width: calc(100% - 76px);
   }
 
-  .wc-intro-grid {
-    gap: 55px;
+  .wc-opening-grid {
+    gap: 7%;
   }
 
-  .wc-row {
+  .wc-opening-heading h2 {
+    font-size: clamp(
+      62px,
+      9vw,
+      105px
+    );
+  }
+
+  .wc-feature {
     grid-template-columns:
-      45px
-      145px
-      minmax(0, 1fr)
-      30px;
-
-    gap: 22px;
-  }
-
-  .wc-row-image {
-    width: 145px;
-    height: 130px;
-  }
-
-  .wc-philosophy-grid {
-    grid-template-columns:
-      45px
-      minmax(0, 1fr)
-      minmax(240px, 0.5fr);
-
-    gap: 30px;
-  }
-
-  .wc-foundation-items {
-    gap: 17px;
-    font-size: 9px;
-  }
-}
-
-/* =====================================================
-   TABLET / MOBILE
-===================================================== */
-
-@media (max-width: 800px) {
-  .wc-intro {
-    padding: 80px 0 70px;
-  }
-
-  .wc-intro-grid {
-    grid-template-columns: 1fr;
-
-    gap: 35px;
-
-    padding-top: 45px;
-  }
-
-  .wc-intro-title h2 {
-    font-size: clamp(60px, 12vw, 90px);
-  }
-
-  .wc-principles {
-    padding-bottom: 75px;
-  }
-
-  .wc-principles-heading {
-    align-items: flex-start;
-
-    flex-direction: column;
-
-    gap: 12px;
-  }
-
-  .wc-row {
-    grid-template-columns:
-      40px
-      125px
-      minmax(0, 1fr)
-      25px;
-
-    min-height: 180px;
+      55px
+      minmax(250px, 0.9fr)
+      minmax(250px, 1fr)
+      40px;
 
     gap: 18px;
   }
 
-  .wc-row:hover {
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-
-  .wc-row-image {
-    width: 125px;
-    height: 115px;
-  }
-
-  .wc-row-content h3 {
-    font-size: 24px;
-  }
-
-  .wc-row-content p {
-    font-size: 11px;
-  }
-
-  .wc-philosophy {
-    padding: 85px 0;
-  }
-
-  .wc-philosophy-grid {
-    grid-template-columns:
-      40px
-      1fr;
-
-    gap: 22px;
-  }
-
-  .wc-philosophy-copy {
-    grid-column: 2;
-
-    max-width: 520px;
-  }
-
-  .wc-foundation-inner {
-    align-items: flex-start;
-
-    flex-direction: column;
-
-    gap: 25px;
-  }
-
-  .wc-foundation-items {
-    width: 100%;
-
-    justify-content: flex-start;
-
-    flex-wrap: wrap;
+  .wc-philosophy-grid,
+  .wc-foundation-statement {
+    gap: 7%;
   }
 }
 
-/* =====================================================
-   MOBILE
-===================================================== */
 
-@media (max-width: 560px) {
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 820px) {
   .wc-container {
-    width: min(100% - 36px, 500px);
+    width: calc(100% - 48px);
   }
 
-  .wc-intro {
-    padding: 65px 0 55px;
+  .wc-opening {
+    padding: 85px 0 90px;
   }
 
-  .wc-topline {
-    padding-bottom: 18px;
+  .wc-opening-top {
+    grid-template-columns: 45px 1fr;
   }
 
-  .wc-intro-grid {
-    padding-top: 40px;
-    gap: 28px;
-  }
-
-  .wc-intro-title h2 {
-    font-size: 55px;
-  }
-
-  .wc-intro-copy p {
-    font-size: 13px;
-  }
-
-  .wc-principles {
-    padding-bottom: 60px;
-  }
-
-  .wc-row {
-    grid-template-columns:
-      28px
-      88px
-      minmax(0, 1fr);
-
-    min-height: 150px;
-
-    gap: 12px;
-  }
-
-  .wc-row:hover {
-    padding-left: 6px;
-    padding-right: 6px;
-  }
-
-  .wc-row-number {
-    padding-top: 20px;
-  }
-
-  .wc-row-image {
-    width: 88px;
-    height: 100px;
-  }
-
-  .wc-row-content {
-    padding: 18px 0;
-  }
-
-  .wc-row-kicker {
-    margin-bottom: 8px;
-
-    font-size: 7px;
-  }
-
-  .wc-row-content h3 {
-    margin-bottom: 7px;
-
-    font-size: 18px;
-
-    line-height: 1.02;
-  }
-
-  .wc-row-content p {
-    font-size: 10px;
-
-    line-height: 1.55;
-
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-
-    overflow: hidden;
-  }
-
-  .wc-row-arrow {
+  .wc-opening-location {
     display: none;
   }
 
+  .wc-opening-grid {
+    grid-template-columns: 1fr;
+
+    gap: 45px;
+
+    padding-top: 60px;
+  }
+
+  .wc-opening-heading h2 {
+    font-size: clamp(
+      58px,
+      12vw,
+      90px
+    );
+  }
+
+  .wc-principles {
+    padding: 85px 0 90px;
+  }
+
+  .wc-principles-intro {
+    grid-template-columns: 1fr;
+
+    gap: 35px;
+
+    padding-bottom: 55px;
+  }
+
+  .wc-principles-intro h3 {
+    font-size: 55px;
+  }
+
+  .wc-feature {
+    grid-template-columns:
+      50px
+      240px
+      1fr
+      35px;
+
+    min-height: 205px;
+
+    gap: 15px;
+  }
+
+  .wc-feature-image {
+    height: 145px;
+  }
+
+  .wc-feature-content h4 {
+    font-size: 28px;
+  }
+
+  .wc-feature-content p {
+    font-size: 10px;
+  }
+
+  .wc-feature-link {
+    opacity: 1;
+    transform: none;
+  }
+
   .wc-philosophy {
-    padding: 75px 0;
+    padding: 90px 0 95px;
   }
 
   .wc-philosophy-grid {
+    grid-template-columns: 1fr;
+
+    gap: 50px;
+
+    padding-top: 60px;
+  }
+
+  .wc-philosophy-heading h3 {
+    font-size: clamp(
+      55px,
+      10vw,
+      80px
+    );
+  }
+
+  .wc-foundation {
+    padding: 90px 0 100px;
+  }
+
+  .wc-foundation-statement {
+    grid-template-columns: 1fr;
+
+    gap: 50px;
+
+    padding-top: 55px;
+  }
+
+  .wc-foundation-statement h3 {
+    font-size: clamp(
+      57px,
+      11vw,
+      85px
+    );
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 560px) {
+  .wc-container {
+    width: calc(100% - 32px);
+  }
+
+  .wc-opening {
+    padding: 68px 0 70px;
+  }
+
+  .wc-opening-top {
+    grid-template-columns: 35px 1fr;
+  }
+
+  .wc-opening-label {
+    font-size: 6px;
+  }
+
+  .wc-opening-grid {
+    gap: 33px;
+
+    padding-top: 48px;
+  }
+
+  .wc-opening-heading h2 {
+    font-size: clamp(
+      49px,
+      14vw,
+      68px
+    );
+  }
+
+  .wc-opening-copy > p {
+    font-size: 17px;
+  }
+
+  .wc-editorial-link {
+    margin-top: 28px;
+  }
+
+  .wc-principles {
+    padding: 70px 0 75px;
+  }
+
+  .wc-principles-intro {
+    gap: 27px;
+
+    padding-bottom: 43px;
+  }
+
+  .wc-principles-intro h3 {
+    margin-top: 16px;
+
+    font-size: 42px;
+  }
+
+  .wc-principles-intro > p {
+    font-size: 12px;
+  }
+
+  .wc-feature {
     grid-template-columns:
       32px
       1fr;
 
-    gap: 17px;
+    gap: 13px;
+
+    min-height: 0;
+
+    padding: 25px 0;
   }
 
-  .wc-philosophy-main h3 {
-    font-size: 43px;
+  .wc-feature:hover {
+    padding-left: 5px;
   }
 
-  .wc-philosophy-copy {
+  .wc-feature-number {
+    padding-top: 2px;
+
+    font-size: 7px;
+  }
+
+  .wc-feature-image {
     grid-column: 2;
+
+    width: 100%;
+    height: 210px;
+  }
+
+  .wc-feature-content {
+    grid-column: 2;
+
+    padding: 8px 0 4px;
+  }
+
+  .wc-feature-content > span {
+    margin-bottom: 9px;
+
+    font-size: 6px;
+  }
+
+  .wc-feature-content h4 {
+    font-size: 30px;
+  }
+
+  .wc-feature-content p {
+    max-width: 100%;
+
+    margin-top: 12px;
+
+    font-size: 11px;
+
+    line-height: 1.7;
+  }
+
+  .wc-feature-link {
+    margin-top: 14px;
+  }
+
+  .wc-feature > .wc-feature-line {
+    left: 32px;
+  }
+
+  .wc-philosophy {
+    padding: 70px 0 75px;
+  }
+
+  .wc-philosophy-top {
+    font-size: 6px;
+  }
+
+  .wc-philosophy-grid {
+    gap: 40px;
+
+    padding-top: 48px;
+  }
+
+  .wc-philosophy-heading h3 {
+    font-size: 48px;
+  }
+
+  .wc-philosophy-mark {
+    font-size: 45px;
   }
 
   .wc-philosophy-copy p {
@@ -726,29 +1226,85 @@
   }
 
   .wc-foundation {
-    padding: 42px 0;
+    padding: 70px 0 80px;
   }
 
-  .wc-foundation-items {
-    gap: 13px;
-    font-size: 8px;
+  .wc-foundation-top {
+    font-size: 6px;
   }
 
-  .wc-foundation-items i {
-    width: 3px;
-    height: 3px;
+  .wc-foundation-statement {
+    gap: 38px;
+
+    padding-top: 45px;
+  }
+
+  .wc-foundation-statement h3 {
+    font-size: 50px;
+  }
+
+  .wc-foundation-copy p {
+    font-size: 12px;
   }
 }
 
-/* =====================================================
+
+/* =========================================================
+   VERY SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 380px) {
+  .wc-container {
+    width: calc(100% - 26px);
+  }
+
+  .wc-opening-heading h2 {
+    font-size: 45px;
+  }
+
+  .wc-opening-copy > p {
+    font-size: 15px;
+  }
+
+  .wc-feature-image {
+    height: 185px;
+  }
+
+  .wc-feature-content h4 {
+    font-size: 27px;
+  }
+
+  .wc-philosophy-heading h3 {
+    font-size: 43px;
+  }
+
+  .wc-foundation-statement h3 {
+    font-size: 44px;
+  }
+}
+
+
+/* =========================================================
    REDUCED MOTION
-===================================================== */
+   ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
-  .wc-row,
-  .wc-row-image img,
-  .wc-row-arrow,
-  .wc-intro-link {
+  .wc-opening-heading,
+  .wc-opening-copy,
+  .wc-principles-intro,
+  .wc-feature,
+  .wc-philosophy-grid,
+  .wc-foundation-statement,
+  .wc-feature-image img,
+  .wc-feature,
+  .wc-feature-link,
+  .wc-editorial-link,
+  .wc-philosophy-link,
+  .wc-foundation-link {
     transition: none;
+  }
+
+  .wc-feature-image img {
+    transform: none;
   }
 }
