@@ -330,6 +330,471 @@
 
 
 
+// import { Link } from "react-router-dom";
+// import "./CampusPreview.css";
+
+// import campus from "../../assets/campus.jpg";
+// import learning from "../../assets/teaching.jpg";
+// import student from "../../assets/student.jpg";
+// import library from "../../assets/library.jpg";
+
+// // =====================================================
+// // TEMPORARY ONLINE IMAGES
+// // Replace these with actual SNGA campus photographs later.
+// // =====================================================
+
+// const IMAGES = {
+//   campus: campus,
+//   learning: learning,
+//   students: student,
+//   library: library,
+// };
+
+// const CampusPreview = () => {
+//   return (
+//     <section className="campus-preview">
+
+//       {/* =====================================================
+//           INTRO
+//       ===================================================== */}
+
+//       <section className="campus-intro">
+
+//         <div className="campus-intro-inner">
+
+//           <div className="campus-intro-content">
+
+//             <div className="campus-eyebrow">
+//               <span />
+//               OUR CAMPUS
+//             </div>
+
+//             <h2>
+//               More than
+//               <br />
+//               a place to <strong>learn.</strong>
+//             </h2>
+
+//             <p>
+//               A calm, spacious environment designed to give students
+//               room to learn, explore, connect and grow with confidence.
+//             </p>
+
+//             <Link
+//               to="/campus"
+//               className="campus-intro-button"
+//             >
+//               <span>Explore Our Campus</span>
+//               <strong>→</strong>
+//             </Link>
+
+//           </div>
+
+
+//           <div className="campus-intro-side">
+
+//             <span>13.5 ACRES</span>
+//             <span>LEARNING</span>
+//             <span>COMMUNITY</span>
+
+//           </div>
+
+//         </div>
+
+//       </section>
+
+
+//       {/* =====================================================
+//           MAIN CAMPUS IMAGE
+//       ===================================================== */}
+
+//       <article className="campus-image-panel campus-main-panel">
+
+//         <img
+//           src={IMAGES.campus}
+//           alt="School campus"
+//           className="campus-panel-image"
+//           loading="lazy"
+//         />
+
+//         <div className="campus-panel-overlay" />
+
+//         <div className="campus-panel-inner">
+
+//           <div className="campus-panel-content">
+
+//             <div className="campus-panel-eyebrow">
+//               <span />
+//               THE CAMPUS
+//             </div>
+
+//             <h3>
+//               Space that
+//               <br />
+//               inspires <strong>growth.</strong>
+//             </h3>
+
+//             <p>
+//               Set in a calm and spacious environment, the SNGA campus
+//               gives students an atmosphere where learning feels natural,
+//               focused and inspiring.
+//             </p>
+
+//             <Link
+//               to="/infrastructure"
+//               className="campus-panel-button"
+//             >
+//               <span>Discover Our Campus</span>
+//               <strong>→</strong>
+//             </Link>
+
+//           </div>
+
+
+//           <div className="campus-panel-side">
+
+//             <span className="campus-panel-number">
+//               01
+//             </span>
+
+//             <div>
+//               <span>SPACE</span>
+//               <span>CALM</span>
+//               <span>GROWTH</span>
+//             </div>
+
+//           </div>
+
+//         </div>
+
+//       </article>
+
+
+//       {/* =====================================================
+//           LEARNING ENVIRONMENT
+//       ===================================================== */}
+
+//       <article className="campus-image-panel campus-learning-panel">
+
+//         <img
+//           src={IMAGES.learning}
+//           alt="Learning environment"
+//           className="campus-panel-image"
+//           loading="lazy"
+//         />
+
+//         <div className="campus-panel-overlay" />
+
+//         <div className="campus-panel-inner">
+
+//           <div className="campus-panel-content">
+
+//             <div className="campus-panel-eyebrow">
+//               <span />
+//               LEARNING SPACES
+//             </div>
+
+//             <h3>
+//               Every space
+//               <br />
+//               has a <strong>purpose.</strong>
+//             </h3>
+
+//             <p>
+//               Thoughtfully designed classrooms and learning spaces
+//               support concentration, interaction and curiosity throughout
+//               the school day.
+//             </p>
+
+//             <Link
+//               to="/infrastructure"
+//               className="campus-panel-link"
+//             >
+//               <span>Explore Learning Spaces</span>
+//               <strong>↗</strong>
+//             </Link>
+
+//           </div>
+
+
+//           <div className="campus-panel-side">
+
+//             <span className="campus-panel-number">
+//               02
+//             </span>
+
+//             <div>
+//               <span>CLASSROOMS</span>
+//               <span>DISCOVERY</span>
+//               <span>FOCUS</span>
+//             </div>
+
+//           </div>
+
+//         </div>
+
+//       </article>
+
+
+//       {/* =====================================================
+//           STUDENT LIFE
+//       ===================================================== */}
+
+//       <article className="campus-image-panel campus-student-panel">
+
+//         <img
+//           src={IMAGES.students}
+//           alt="Students learning together"
+//           className="campus-panel-image"
+//           loading="lazy"
+//         />
+
+//         <div className="campus-panel-overlay" />
+
+//         <div className="campus-panel-inner">
+
+//           <div className="campus-panel-content">
+
+//             <div className="campus-panel-eyebrow">
+//               <span />
+//               STUDENT LIFE
+//             </div>
+
+//             <h3>
+//               A place to
+//               <br />
+//               belong and <strong>become.</strong>
+//             </h3>
+
+//             <p>
+//               School life extends beyond lessons. Students have space
+//               to collaborate, express themselves, participate and build
+//               meaningful relationships.
+//             </p>
+
+//             <Link
+//               to="/campus"
+//               className="campus-panel-link"
+//             >
+//               <span>Discover Student Life</span>
+//               <strong>↗</strong>
+//             </Link>
+
+//           </div>
+
+
+//           <div className="campus-panel-side">
+
+//             <span className="campus-panel-number">
+//               03
+//             </span>
+
+//             <div>
+//               <span>CONNECT</span>
+//               <span>EXPLORE</span>
+//               <span>BELONG</span>
+//             </div>
+
+//           </div>
+
+//         </div>
+
+//       </article>
+
+
+//       {/* =====================================================
+//           LIBRARY / KNOWLEDGE
+//       ===================================================== */}
+
+//       <article className="campus-image-panel campus-library-panel">
+
+//         <img
+//           src={IMAGES.library}
+//           alt="School library"
+//           className="campus-panel-image"
+//           loading="lazy"
+//         />
+
+//         <div className="campus-panel-overlay" />
+
+//         <div className="campus-panel-inner">
+
+//           <div className="campus-panel-content">
+
+//             <div className="campus-panel-eyebrow">
+//               <span />
+//               KNOWLEDGE
+//             </div>
+
+//             <h3>
+//               Discover more.
+//               <br />
+//               <strong>Imagine further.</strong>
+//             </h3>
+
+//             <p>
+//               A learning environment enriched by books, resources,
+//               technology and opportunities to discover ideas beyond
+//               the classroom.
+//             </p>
+
+//             <Link
+//               to="/facilities"
+//               className="campus-panel-button"
+//             >
+//               <span>Explore Facilities</span>
+//               <strong>→</strong>
+//             </Link>
+
+//           </div>
+
+
+//           <div className="campus-panel-side">
+
+//             <span className="campus-panel-number">
+//               04
+//             </span>
+
+//             <div>
+//               <span>READ</span>
+//               <span>DISCOVER</span>
+//               <span>LEARN</span>
+//             </div>
+
+//           </div>
+
+//         </div>
+
+//       </article>
+
+
+//       {/* =====================================================
+//           CAMPUS FACTS
+//       ===================================================== */}
+
+//       <section className="campus-facts">
+
+//         <div className="campus-facts-inner">
+
+//           <div className="campus-facts-heading">
+
+//             <span>THE SNGA ENVIRONMENT</span>
+
+//             <h3>
+//               Built around
+//               <br />
+//               <strong>students.</strong>
+//             </h3>
+
+//           </div>
+
+
+//           <div className="campus-facts-grid">
+
+//             <div className="campus-fact">
+
+//               <strong>13.5</strong>
+
+//               <span>
+//                 ACRES OF
+//                 <br />
+//                 CAMPUS
+//               </span>
+
+//             </div>
+
+
+//             <div className="campus-fact">
+
+//               <strong>500</strong>
+
+//               <span>
+//                 SQ. FT.
+//                 <br />
+//                 CLASSROOMS
+//               </span>
+
+//             </div>
+
+
+//             <div className="campus-fact">
+
+//               <strong>3,500+</strong>
+
+//               <span>
+//                 BOOKS IN
+//                 <br />
+//                 LIBRARY
+//               </span>
+
+//             </div>
+
+
+//             <div className="campus-fact">
+
+//               <strong>200</strong>
+
+//               <span>
+//                 HALL
+//                 <br />
+//                 CAPACITY
+//               </span>
+
+//             </div>
+
+//           </div>
+
+//         </div>
+
+//       </section>
+
+
+//       {/* =====================================================
+//           CAMPUS STATEMENT
+//       ===================================================== */}
+
+//       <section className="campus-statement">
+
+//         <div className="campus-statement-inner">
+
+//           <div className="campus-statement-number">
+//             05
+//           </div>
+
+//           <div className="campus-statement-content">
+
+//             <span>OUR PHILOSOPHY</span>
+
+//             <h3>
+//               A campus should inspire
+//               <br />
+//               students to discover
+//               <br />
+//               <strong>what they can become.</strong>
+//             </h3>
+
+//           </div>
+
+//           <Link
+//             to="/campus"
+//             className="campus-statement-button"
+//           >
+//             <span>Discover SNGA</span>
+//             <strong>→</strong>
+//           </Link>
+
+//         </div>
+
+//       </section>
+
+//     </section>
+//   );
+// };
+
+// export default CampusPreview;
+
+
+import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import "./CampusPreview.css";
 
@@ -338,232 +803,249 @@ import learning from "../../assets/teaching.jpg";
 import student from "../../assets/student.jpg";
 import library from "../../assets/library.jpg";
 
-// =====================================================
-// TEMPORARY ONLINE IMAGES
-// Replace these with actual SNGA campus photographs later.
-// =====================================================
-
 const IMAGES = {
-  campus: campus,
-  learning: learning,
+  campus,
+  learning,
   students: student,
-  library: library,
+  library,
 };
 
 const CampusPreview = () => {
-  return (
-    <section className="campus-preview">
+  const sectionRef = useRef(null);
 
+  useEffect(() => {
+    const section = sectionRef.current;
+
+    if (!section) return;
+
+    const revealItems = section.querySelectorAll(
+      ".cp-reveal, .cp-image-reveal"
+    );
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("cp-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.12,
+        rootMargin: "0px 0px -60px 0px",
+      }
+    );
+
+    revealItems.forEach((item) => observer.observe(item));
+
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <section className="campus-preview" ref={sectionRef}>
       {/* =====================================================
-          INTRO
+          OPENING
       ===================================================== */}
 
-      <section className="campus-intro">
+      <section className="cp-opening">
+        <div className="cp-opening-inner">
+          <div className="cp-opening-top cp-reveal">
+            <span className="cp-section-number">05</span>
 
-        <div className="campus-intro-inner">
-
-          <div className="campus-intro-content">
-
-            <div className="campus-eyebrow">
-              <span />
-              OUR CAMPUS
+            <div className="cp-opening-meta">
+              <span>THE CAMPUS</span>
+              <span>SHIFAN NOOR GLOBAL ACADEMY</span>
             </div>
 
-            <h2>
-              More than
-              <br />
-              a place to <strong>learn.</strong>
-            </h2>
-
-            <p>
-              A calm, spacious environment designed to give students
-              room to learn, explore, connect and grow with confidence.
-            </p>
-
-            <Link
-              to="/campus"
-              className="campus-intro-button"
-            >
-              <span>Explore Our Campus</span>
-              <strong>→</strong>
-            </Link>
-
+            <span className="cp-opening-location">
+              VENKULAM · RAMANATHAPURAM
+            </span>
           </div>
 
+          <div className="cp-opening-grid">
+            <div className="cp-opening-label cp-reveal">
+              <span className="cp-rule" />
+              <span>SPACE · PLACE · POSSIBILITY</span>
+            </div>
 
-          <div className="campus-intro-side">
+            <div className="cp-opening-content cp-reveal">
+              <p className="cp-kicker">THE LEARNING ENVIRONMENT</p>
 
-            <span>13.5 ACRES</span>
-            <span>LEARNING</span>
-            <span>COMMUNITY</span>
+              <h2>
+                More than
+                <br />
+                a place to <em>learn.</em>
+              </h2>
 
+              <p className="cp-opening-description">
+                A calm, spacious environment designed to give students
+                room to learn, explore, connect and grow with confidence.
+              </p>
+
+              <Link to="/infrastructure" className="cp-text-link">
+                <span>Explore the campus</span>
+                <span className="cp-link-arrow">↗</span>
+              </Link>
+            </div>
+
+            <div className="cp-opening-aside cp-reveal">
+              <span>13.5</span>
+              <small>ACRES</small>
+
+              <div className="cp-aside-lines">
+                <span>LEARNING</span>
+                <span>COMMUNITY</span>
+                <span>GROWTH</span>
+              </div>
+            </div>
           </div>
-
         </div>
-
       </section>
 
-
       {/* =====================================================
-          MAIN CAMPUS IMAGE
+          CAMPUS HERO
       ===================================================== */}
 
-      <article className="campus-image-panel campus-main-panel">
+      <section className="cp-campus-hero">
+        <div className="cp-hero-frame cp-image-reveal">
+          <img
+            src={IMAGES.campus}
+            alt="Shifan Noor Global Academy campus"
+            className="cp-hero-image"
+            loading="lazy"
+          />
 
-        <img
-          src={IMAGES.campus}
-          alt="School campus"
-          className="campus-panel-image"
-          loading="lazy"
-        />
+          <div className="cp-hero-shade" />
 
-        <div className="campus-panel-overlay" />
+          <div className="cp-hero-grid" />
 
-        <div className="campus-panel-inner">
+          <div className="cp-hero-top">
+            <span>01</span>
+            <span>THE CAMPUS</span>
+            <span>VENKULAM · TAMIL NADU</span>
+          </div>
 
-          <div className="campus-panel-content">
-
-            <div className="campus-panel-eyebrow">
-              <span />
-              THE CAMPUS
-            </div>
+          <div className="cp-hero-content">
+            <p>THE PLACE WE LEARN</p>
 
             <h3>
               Space that
               <br />
-              inspires <strong>growth.</strong>
+              inspires <em>growth.</em>
             </h3>
 
-            <p>
+            <p className="cp-hero-description">
               Set in a calm and spacious environment, the SNGA campus
               gives students an atmosphere where learning feels natural,
               focused and inspiring.
             </p>
 
-            <Link
-              to="/infrastructure"
-              className="campus-panel-button"
-            >
-              <span>Discover Our Campus</span>
-              <strong>→</strong>
+            <Link to="/infrastructure" className="cp-light-link">
+              <span>Discover our campus</span>
+              <span>↗</span>
             </Link>
-
           </div>
 
-
-          <div className="campus-panel-side">
-
-            <span className="campus-panel-number">
-              01
-            </span>
-
-            <div>
-              <span>SPACE</span>
-              <span>CALM</span>
-              <span>GROWTH</span>
-            </div>
-
+          <div className="cp-hero-side">
+            <span>SPACE</span>
+            <span>CALM</span>
+            <span>GROWTH</span>
           </div>
 
+          <div className="cp-hero-bottom">
+            <span>SHIFAN NOOR GLOBAL ACADEMY</span>
+            <span>01 / 04</span>
+          </div>
         </div>
-
-      </article>
-
+      </section>
 
       {/* =====================================================
-          LEARNING ENVIRONMENT
+          LEARNING SPACES
       ===================================================== */}
 
-      <article className="campus-image-panel campus-learning-panel">
+      <section className="cp-story cp-story-light">
+        <div className="cp-story-inner">
+          <div className="cp-story-number cp-reveal">
+            <span>02</span>
+            <small>LEARNING SPACES</small>
+          </div>
 
-        <img
-          src={IMAGES.learning}
-          alt="Learning environment"
-          className="campus-panel-image"
-          loading="lazy"
-        />
+          <div className="cp-story-image cp-image-reveal">
+            <img
+              src={IMAGES.learning}
+              alt="Learning environment at SNGA"
+              loading="lazy"
+            />
 
-        <div className="campus-panel-overlay" />
-
-        <div className="campus-panel-inner">
-
-          <div className="campus-panel-content">
-
-            <div className="campus-panel-eyebrow">
-              <span />
-              LEARNING SPACES
+            <div className="cp-image-caption">
+              <span>THE CLASSROOM</span>
+              <span>FOCUS · CURIOSITY · DISCOVERY</span>
             </div>
+          </div>
+
+          <div className="cp-story-copy cp-reveal">
+            <p className="cp-kicker">EVERY SPACE HAS A PURPOSE</p>
 
             <h3>
-              Every space
+              Learning
               <br />
-              has a <strong>purpose.</strong>
+              should feel
+              <br />
+              <em>alive.</em>
             </h3>
 
             <p>
               Thoughtfully designed classrooms and learning spaces
-              support concentration, interaction and curiosity throughout
-              the school day.
+              support concentration, interaction and curiosity
+              throughout the school day.
             </p>
 
-            <Link
-              to="/infrastructure"
-              className="campus-panel-link"
-            >
-              <span>Explore Learning Spaces</span>
-              <strong>↗</strong>
-            </Link>
+            <div className="cp-story-details">
+              <div>
+                <strong>500</strong>
+                <span>
+                  SQ. FT.
+                  <br />
+                  CLASSROOMS
+                </span>
+              </div>
 
-          </div>
-
-
-          <div className="campus-panel-side">
-
-            <span className="campus-panel-number">
-              02
-            </span>
-
-            <div>
-              <span>CLASSROOMS</span>
-              <span>DISCOVERY</span>
-              <span>FOCUS</span>
+              <div>
+                <strong>01</strong>
+                <span>
+                  DIGITAL
+                  <br />
+                  LEARNING
+                </span>
+              </div>
             </div>
 
+            <Link to="/infrastructure" className="cp-text-link">
+              <span>Explore learning spaces</span>
+              <span className="cp-link-arrow">↗</span>
+            </Link>
           </div>
-
         </div>
-
-      </article>
-
+      </section>
 
       {/* =====================================================
           STUDENT LIFE
       ===================================================== */}
 
-      <article className="campus-image-panel campus-student-panel">
+      <section className="cp-story cp-story-dark">
+        <div className="cp-dark-background-number">03</div>
 
-        <img
-          src={IMAGES.students}
-          alt="Students learning together"
-          className="campus-panel-image"
-          loading="lazy"
-        />
-
-        <div className="campus-panel-overlay" />
-
-        <div className="campus-panel-inner">
-
-          <div className="campus-panel-content">
-
-            <div className="campus-panel-eyebrow">
-              <span />
-              STUDENT LIFE
-            </div>
+        <div className="cp-story-inner cp-story-inner-dark">
+          <div className="cp-story-copy cp-reveal">
+            <p className="cp-kicker">STUDENT LIFE</p>
 
             <h3>
               A place to
               <br />
-              belong and <strong>become.</strong>
+              belong and
+              <br />
+              <em>become.</em>
             </h3>
 
             <p>
@@ -572,197 +1054,175 @@ const CampusPreview = () => {
               meaningful relationships.
             </p>
 
-            <Link
-              to="/campus"
-              className="campus-panel-link"
-            >
-              <span>Discover Student Life</span>
-              <strong>↗</strong>
-            </Link>
-
-          </div>
-
-
-          <div className="campus-panel-side">
-
-            <span className="campus-panel-number">
-              03
-            </span>
-
-            <div>
+            <div className="cp-word-list">
               <span>CONNECT</span>
               <span>EXPLORE</span>
               <span>BELONG</span>
             </div>
 
+            <Link to="/infrastructure" className="cp-light-link cp-light-link-inline">
+              <span>Discover student life</span>
+              <span>↗</span>
+            </Link>
           </div>
 
+          <div className="cp-story-image cp-image-reveal">
+            <img
+              src={IMAGES.students}
+              alt="Students learning together"
+              loading="lazy"
+            />
+
+            <div className="cp-image-caption cp-image-caption-dark">
+              <span>THE STUDENT EXPERIENCE</span>
+              <span>BEYOND THE CLASSROOM</span>
+            </div>
+          </div>
         </div>
-
-      </article>
-
+      </section>
 
       {/* =====================================================
           LIBRARY / KNOWLEDGE
       ===================================================== */}
 
-      <article className="campus-image-panel campus-library-panel">
-
-        <img
-          src={IMAGES.library}
-          alt="School library"
-          className="campus-panel-image"
-          loading="lazy"
-        />
-
-        <div className="campus-panel-overlay" />
-
-        <div className="campus-panel-inner">
-
-          <div className="campus-panel-content">
-
-            <div className="campus-panel-eyebrow">
-              <span />
-              KNOWLEDGE
-            </div>
-
-            <h3>
-              Discover more.
-              <br />
-              <strong>Imagine further.</strong>
-            </h3>
-
-            <p>
-              A learning environment enriched by books, resources,
-              technology and opportunities to discover ideas beyond
-              the classroom.
-            </p>
-
-            <Link
-              to="/facilities"
-              className="campus-panel-button"
-            >
-              <span>Explore Facilities</span>
-              <strong>→</strong>
-            </Link>
-
-          </div>
-
-
-          <div className="campus-panel-side">
-
-            <span className="campus-panel-number">
-              04
-            </span>
-
+      <section className="cp-knowledge">
+        <div className="cp-knowledge-inner">
+          <div className="cp-knowledge-header cp-reveal">
             <div>
-              <span>READ</span>
-              <span>DISCOVER</span>
-              <span>LEARN</span>
+              <span className="cp-section-number">04</span>
+              <span className="cp-header-label">KNOWLEDGE</span>
             </div>
 
+            <span>READ · DISCOVER · LEARN</span>
           </div>
 
+          <div className="cp-knowledge-grid">
+            <div className="cp-knowledge-copy cp-reveal">
+              <p className="cp-kicker">BEYOND THE CLASSROOM</p>
+
+              <h3>
+                Discover more.
+                <br />
+                <em>Imagine further.</em>
+              </h3>
+
+              <p>
+                A learning environment enriched by books, resources,
+                technology and opportunities to discover ideas beyond
+                the classroom.
+              </p>
+
+              <div className="cp-library-fact">
+                <strong>3,500+</strong>
+
+                <div>
+                  <span>BOOKS</span>
+                  <span>LIBRARY COLLECTION</span>
+                </div>
+              </div>
+
+              <Link to="/facilities" className="cp-text-link">
+                <span>Explore our facilities</span>
+                <span className="cp-link-arrow">↗</span>
+              </Link>
+            </div>
+
+            <div className="cp-knowledge-image cp-image-reveal">
+              <img
+                src={IMAGES.library}
+                alt="SNGA school library"
+                loading="lazy"
+              />
+
+              <div className="cp-knowledge-image-label">
+                <span>THE LIBRARY</span>
+                <span>SPACE FOR IDEAS</span>
+              </div>
+            </div>
+          </div>
         </div>
-
-      </article>
-
+      </section>
 
       {/* =====================================================
           CAMPUS FACTS
       ===================================================== */}
 
-      <section className="campus-facts">
-
-        <div className="campus-facts-inner">
-
-          <div className="campus-facts-heading">
-
+      <section className="cp-facts">
+        <div className="cp-facts-inner">
+          <div className="cp-facts-heading cp-reveal">
             <span>THE SNGA ENVIRONMENT</span>
 
             <h3>
               Built around
               <br />
-              <strong>students.</strong>
+              <em>students.</em>
             </h3>
 
+            <p>
+              Every part of the environment is intended to support
+              learning, participation and personal growth.
+            </p>
           </div>
 
-
-          <div className="campus-facts-grid">
-
-            <div className="campus-fact">
+          <div className="cp-facts-list">
+            <div className="cp-fact-row cp-reveal">
+              <span className="cp-fact-index">01</span>
 
               <strong>13.5</strong>
 
-              <span>
-                ACRES OF
-                <br />
-                CAMPUS
-              </span>
-
+              <div>
+                <span>ACRES</span>
+                <small>OF CAMPUS</small>
+              </div>
             </div>
 
-
-            <div className="campus-fact">
+            <div className="cp-fact-row cp-reveal">
+              <span className="cp-fact-index">02</span>
 
               <strong>500</strong>
 
-              <span>
-                SQ. FT.
-                <br />
-                CLASSROOMS
-              </span>
-
+              <div>
+                <span>SQ. FT.</span>
+                <small>CLASSROOMS</small>
+              </div>
             </div>
 
-
-            <div className="campus-fact">
+            <div className="cp-fact-row cp-reveal">
+              <span className="cp-fact-index">03</span>
 
               <strong>3,500+</strong>
 
-              <span>
-                BOOKS IN
-                <br />
-                LIBRARY
-              </span>
-
+              <div>
+                <span>BOOKS</span>
+                <small>LIBRARY COLLECTION</small>
+              </div>
             </div>
 
-
-            <div className="campus-fact">
+            <div className="cp-fact-row cp-reveal">
+              <span className="cp-fact-index">04</span>
 
               <strong>200</strong>
 
-              <span>
-                HALL
-                <br />
-                CAPACITY
-              </span>
-
+              <div>
+                <span>SEATS</span>
+                <small>MULTIPURPOSE HALL</small>
+              </div>
             </div>
-
           </div>
-
         </div>
-
       </section>
 
-
       {/* =====================================================
-          CAMPUS STATEMENT
+          FINAL STATEMENT
       ===================================================== */}
 
-      <section className="campus-statement">
-
-        <div className="campus-statement-inner">
-
-          <div className="campus-statement-number">
+      <section className="cp-statement">
+        <div className="cp-statement-inner">
+          <div className="cp-statement-number cp-reveal">
             05
           </div>
 
-          <div className="campus-statement-content">
-
+          <div className="cp-statement-copy cp-reveal">
             <span>OUR PHILOSOPHY</span>
 
             <h3>
@@ -770,23 +1230,28 @@ const CampusPreview = () => {
               <br />
               students to discover
               <br />
-              <strong>what they can become.</strong>
+              <em>what they can become.</em>
             </h3>
-
           </div>
 
-          <Link
-            to="/campus"
-            className="campus-statement-button"
-          >
-            <span>Discover SNGA</span>
-            <strong>→</strong>
-          </Link>
+          <div className="cp-statement-action cp-reveal">
+            <p>
+              The environment matters. It shapes how students
+              experience learning, relationships and possibility.
+            </p>
 
+            <Link to="/infrastructure" className="cp-statement-link">
+              <span>Discover SNGA</span>
+              <span>↗</span>
+            </Link>
+          </div>
         </div>
 
+        <div className="cp-statement-footer">
+          <span>SHIFAN NOOR GLOBAL ACADEMY</span>
+          <span>VENKULAM · RAMANATHAPURAM</span>
+        </div>
       </section>
-
     </section>
   );
 };
