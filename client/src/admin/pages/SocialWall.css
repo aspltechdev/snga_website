@@ -1,0 +1,1788 @@
+/* =========================================================
+   SNGA ADMIN — SOCIAL WALL
+   Premium Institutional Admin UI
+   ========================================================= */
+
+.social-wall-admin {
+  --sw-navy: #00005b;
+  --sw-navy-dark: #000041;
+  --sw-red: #c80000;
+  --sw-red-bright: #e21b23;
+
+  --sw-white: #ffffff;
+  --sw-bg: #f6f7f9;
+  --sw-soft: #f0f2f5;
+
+  --sw-ink: #111522;
+  --sw-muted: #687180;
+  --sw-light: #9299a5;
+
+  --sw-border: #e1e4e9;
+  --sw-border-dark: #d3d7de;
+
+  width: 100%;
+  min-height: 100%;
+
+  padding: 38px 42px 70px;
+
+  background: var(--sw-bg);
+  color: var(--sw-ink);
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.social-wall-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  gap: 35px;
+
+  max-width: 1480px;
+  margin: 0 auto 30px;
+
+  padding-bottom: 27px;
+
+  border-bottom: 1px solid var(--sw-border);
+}
+
+.social-wall-heading {
+  min-width: 0;
+}
+
+.social-wall-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+
+  margin-bottom: 14px;
+}
+
+.social-wall-eyebrow span:first-child {
+  color: var(--sw-red);
+
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+}
+
+.social-wall-eyebrow span:last-child {
+  color: var(--sw-light);
+
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.social-wall-eyebrow::before {
+  content: "";
+
+  width: 27px;
+  height: 1px;
+
+  background: var(--sw-red);
+}
+
+.social-wall-heading h1 {
+  margin: 0;
+
+  color: var(--sw-navy);
+
+  font-size: clamp(32px, 3.4vw, 50px);
+  font-weight: 600;
+
+  letter-spacing: -0.045em;
+  line-height: 0.98;
+}
+
+.social-wall-heading p {
+  max-width: 620px;
+
+  margin: 14px 0 0;
+
+  color: var(--sw-muted);
+
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   ADD SOCIAL POST
+   ========================================================= */
+
+.social-wall-add {
+  flex-shrink: 0;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+
+  min-height: 45px;
+
+  padding: 0 18px;
+
+  border: 1px solid var(--sw-navy);
+  border-radius: 2px;
+
+  background: var(--sw-navy);
+  color: var(--sw-white);
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+
+  cursor: pointer;
+
+  transition:
+    background 180ms ease,
+    border-color 180ms ease,
+    transform 180ms ease;
+}
+
+.social-wall-add:hover {
+  border-color: var(--sw-red);
+  background: var(--sw-red);
+}
+
+.social-wall-add:active {
+  transform: translateY(1px);
+}
+
+.social-wall-add svg {
+  font-size: 11px;
+}
+
+
+/* =========================================================
+   MESSAGES
+   ========================================================= */
+
+.social-wall-success,
+.social-wall-error {
+  max-width: 1480px;
+
+  margin: 0 auto 18px;
+
+  min-height: 44px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 11px 15px;
+
+  border: 1px solid;
+
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.social-wall-success {
+  border-color: #cce6d8;
+  background: #f1faf5;
+  color: #147548;
+}
+
+.social-wall-error {
+  border-color: #edcccc;
+  background: #fff6f6;
+  color: var(--sw-red);
+}
+
+.social-wall-error button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 28px;
+  height: 28px;
+
+  padding: 0;
+
+  border: 0;
+
+  background: transparent;
+  color: inherit;
+
+  cursor: pointer;
+}
+
+.social-wall-error button:hover {
+  background: rgba(200, 0, 0, 0.07);
+}
+
+
+/* =========================================================
+   OVERVIEW
+   ========================================================= */
+
+.social-wall-overview {
+  max-width: 1480px;
+
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+
+  margin: 0 auto 28px;
+
+  border-top: 1px solid var(--sw-border);
+  border-bottom: 1px solid var(--sw-border);
+
+  background: var(--sw-white);
+}
+
+.social-overview-item {
+  min-height: 112px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding: 20px 23px;
+
+  border-right: 1px solid var(--sw-border);
+}
+
+.social-overview-item:last-child {
+  border-right: 0;
+}
+
+.social-overview-number {
+  display: block;
+
+  margin-bottom: 9px;
+
+  color: var(--sw-navy);
+
+  font-size: 29px;
+  font-weight: 600;
+
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+.social-overview-label {
+  color: var(--sw-light);
+
+  font-size: 9px;
+  font-weight: 800;
+
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   TOOLBAR
+   ========================================================= */
+
+.social-wall-toolbar {
+  max-width: 1480px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  margin: 0 auto 15px;
+}
+
+.social-wall-filters {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  gap: 6px;
+}
+
+.social-wall-filters button {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 8px;
+
+  min-height: 34px;
+
+  padding: 0 12px;
+
+  border: 1px solid var(--sw-border-dark);
+  border-radius: 2px;
+
+  background: var(--sw-white);
+  color: var(--sw-muted);
+
+  font-size: 9px;
+  font-weight: 800;
+
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+
+  cursor: pointer;
+
+  transition:
+    color 160ms ease,
+    background 160ms ease,
+    border-color 160ms ease;
+}
+
+.social-wall-filters button:hover {
+  border-color: var(--sw-navy);
+  color: var(--sw-navy);
+}
+
+.social-wall-filters button.active {
+  border-color: var(--sw-navy);
+  background: var(--sw-navy);
+  color: var(--sw-white);
+}
+
+.social-wall-filters button span {
+  opacity: 0.62;
+
+  font-size: 9px;
+}
+
+.social-wall-order-note {
+  color: var(--sw-light);
+
+  font-size: 9px;
+  font-weight: 800;
+
+  letter-spacing: 0.14em;
+}
+
+
+/* =========================================================
+   LOADING
+   ========================================================= */
+
+.social-wall-loading {
+  max-width: 1480px;
+  min-height: 330px;
+
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  border-top: 1px solid var(--sw-border);
+  border-bottom: 1px solid var(--sw-border);
+
+  background: var(--sw-white);
+}
+
+.social-wall-loading div {
+  width: 40px;
+  height: 1px;
+
+  margin-bottom: 14px;
+
+  background: var(--sw-navy);
+
+  animation: socialLoading 1.2s ease-in-out infinite;
+}
+
+.social-wall-loading span {
+  color: var(--sw-light);
+
+  font-size: 9px;
+  font-weight: 800;
+
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+@keyframes socialLoading {
+  0%,
+  100% {
+    transform: scaleX(0.3);
+    opacity: 0.3;
+  }
+
+  50% {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+}
+
+
+/* =========================================================
+   EMPTY STATE
+   ========================================================= */
+
+.social-wall-empty {
+  max-width: 1480px;
+  min-height: 350px;
+
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 45px;
+
+  border-top: 1px solid var(--sw-border);
+  border-bottom: 1px solid var(--sw-border);
+
+  background: var(--sw-white);
+
+  text-align: center;
+}
+
+.social-empty-number {
+  margin-bottom: 13px;
+
+  color: var(--sw-red);
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: 0.18em;
+}
+
+.social-wall-empty h2 {
+  margin: 0;
+
+  color: var(--sw-navy);
+
+  font-size: 26px;
+  font-weight: 600;
+
+  letter-spacing: -0.035em;
+}
+
+.social-wall-empty p {
+  max-width: 450px;
+
+  margin: 11px 0 23px;
+
+  color: var(--sw-muted);
+
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.social-wall-empty button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  min-height: 41px;
+
+  padding: 0 16px;
+
+  border: 1px solid var(--sw-navy);
+  border-radius: 2px;
+
+  background: var(--sw-navy);
+  color: var(--sw-white);
+
+  font-size: 9px;
+  font-weight: 800;
+
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+
+  cursor: pointer;
+
+  transition:
+    background 160ms ease,
+    border-color 160ms ease;
+}
+
+.social-wall-empty button:hover {
+  border-color: var(--sw-red);
+  background: var(--sw-red);
+}
+
+
+/* =========================================================
+   POSTS LIST
+   ========================================================= */
+
+.social-wall-list {
+  max-width: 1480px;
+
+  margin: 0 auto;
+
+  border-top: 1px solid var(--sw-border);
+
+  background: var(--sw-white);
+}
+
+
+/* =========================================================
+   POST ROW
+   ========================================================= */
+
+.social-post-row {
+  display: grid;
+
+  grid-template-columns:
+    82px
+    180px
+    minmax(300px, 1fr)
+    100px
+    78px
+    125px;
+
+  min-height: 94px;
+
+  border-bottom: 1px solid var(--sw-border);
+
+  background: var(--sw-white);
+
+  transition:
+    background 160ms ease;
+}
+
+.social-post-row:hover {
+  background: #fbfbfc;
+}
+
+.social-post-row.unpublished {
+  background: #fafafa;
+}
+
+
+/* =========================================================
+   ORDER COLUMN
+   ========================================================= */
+
+.social-post-order {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 9px;
+
+  border-right: 1px solid var(--sw-border);
+
+  color: var(--sw-light);
+}
+
+.social-post-order svg {
+  font-size: 11px;
+
+  opacity: 0.45;
+}
+
+.social-post-order span {
+  font-size: 11px;
+  font-weight: 800;
+
+  letter-spacing: 0.06em;
+}
+
+
+/* =========================================================
+   PLATFORM
+   ========================================================= */
+
+.social-post-platform {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 17px;
+
+  border-right: 1px solid var(--sw-border);
+}
+
+.social-platform-icon {
+  width: 32px;
+  height: 32px;
+
+  flex-shrink: 0;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid var(--sw-border);
+
+  color: var(--sw-navy);
+
+  font-size: 13px;
+}
+
+.social-platform-icon.instagram {
+  color: #b13d70;
+}
+
+.social-platform-icon.youtube {
+  color: #c80000;
+}
+
+.social-platform-icon.facebook {
+  color: #174c9a;
+}
+
+.social-post-platform div {
+  min-width: 0;
+}
+
+.social-post-platform strong {
+  display: block;
+
+  margin-bottom: 4px;
+
+  color: var(--sw-ink);
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.social-post-platform div span {
+  display: block;
+
+  color: var(--sw-light);
+
+  font-size: 9px;
+}
+
+
+/* =========================================================
+   SOCIAL URL
+   ========================================================= */
+
+.social-post-url {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding: 16px 20px;
+
+  border-right: 1px solid var(--sw-border);
+}
+
+.social-post-url > span {
+  margin-bottom: 7px;
+
+  color: var(--sw-light);
+
+  font-size: 8px;
+  font-weight: 800;
+
+  letter-spacing: 0.14em;
+}
+
+.social-post-url a {
+  min-width: 0;
+
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  overflow: hidden;
+
+  color: var(--sw-ink);
+
+  font-size: 12px;
+  font-weight: 500;
+
+  line-height: 1.4;
+
+  text-decoration: none;
+}
+
+.social-post-url a:hover {
+  color: var(--sw-red);
+}
+
+.social-post-url a {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.social-post-url a svg {
+  flex-shrink: 0;
+
+  color: var(--sw-light);
+
+  font-size: 9px;
+}
+
+
+/* =========================================================
+   STATUS
+   ========================================================= */
+
+.social-post-status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-right: 1px solid var(--sw-border);
+}
+
+.social-post-status span {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 6px;
+
+  font-size: 8px;
+  font-weight: 800;
+
+  letter-spacing: 0.11em;
+}
+
+.social-post-status span::before {
+  content: "";
+
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: currentColor;
+}
+
+.social-post-status .published {
+  color: #147548;
+}
+
+.social-post-status .hidden {
+  color: var(--sw-light);
+}
+
+
+/* =========================================================
+   MOVE
+   ========================================================= */
+
+.social-post-move {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 4px;
+
+  padding: 10px;
+
+  border-right: 1px solid var(--sw-border);
+}
+
+.social-post-move button {
+  width: 28px;
+  height: 28px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: 1px solid var(--sw-border);
+  border-radius: 2px;
+
+  background: var(--sw-white);
+  color: var(--sw-muted);
+
+  cursor: pointer;
+
+  transition:
+    background 150ms ease,
+    border-color 150ms ease,
+    color 150ms ease;
+}
+
+.social-post-move button:hover:not(:disabled) {
+  border-color: var(--sw-navy);
+  background: var(--sw-navy);
+  color: var(--sw-white);
+}
+
+.social-post-move button:disabled {
+  opacity: 0.28;
+
+  cursor: not-allowed;
+}
+
+.social-post-move svg {
+  font-size: 9px;
+}
+
+
+/* =========================================================
+   ACTIONS
+   ========================================================= */
+
+.social-post-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 4px;
+
+  padding: 10px;
+}
+
+.social-action {
+  width: 31px;
+  height: 31px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: 1px solid transparent;
+  border-radius: 2px;
+
+  background: transparent;
+  color: var(--sw-muted);
+
+  cursor: pointer;
+
+  transition:
+    background 150ms ease,
+    border-color 150ms ease,
+    color 150ms ease;
+}
+
+.social-action:hover {
+  border-color: var(--sw-border-dark);
+  background: var(--sw-soft);
+  color: var(--sw-navy);
+}
+
+.social-action.delete:hover {
+  border-color: #eccaca;
+  background: #fff5f5;
+  color: var(--sw-red);
+}
+
+.social-action svg {
+  font-size: 10px;
+}
+
+
+/* =========================================================
+   FORM OVERLAY
+   ========================================================= */
+
+.social-form-overlay {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 9999;
+
+  display: flex;
+  justify-content: flex-end;
+
+  background: rgba(9, 12, 22, 0.38);
+
+  animation: socialOverlayIn 180ms ease both;
+}
+
+@keyframes socialOverlayIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+
+/* =========================================================
+   FORM PANEL
+   ========================================================= */
+
+.social-form-panel {
+  width: min(540px, 100%);
+
+  height: 100%;
+
+  overflow-y: auto;
+
+  background: var(--sw-white);
+
+  border-left: 1px solid var(--sw-border);
+
+  box-shadow:
+    -25px 0 70px rgba(0, 0, 0, 0.1);
+
+  animation: socialPanelIn 240ms ease both;
+}
+
+@keyframes socialPanelIn {
+  from {
+    transform: translateX(45px);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+
+/* =========================================================
+   FORM HEADER
+   ========================================================= */
+
+.social-form-header {
+  position: sticky;
+
+  top: 0;
+
+  z-index: 2;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  padding: 26px 29px 23px;
+
+  border-bottom: 1px solid var(--sw-border);
+
+  background: var(--sw-white);
+}
+
+.social-form-header > div > span {
+  display: block;
+
+  margin-bottom: 9px;
+
+  color: var(--sw-red);
+
+  font-size: 9px;
+  font-weight: 800;
+
+  letter-spacing: 0.16em;
+
+  text-transform: uppercase;
+}
+
+.social-form-header h2 {
+  margin: 0;
+
+  color: var(--sw-navy);
+
+  font-size: 25px;
+  font-weight: 600;
+
+  letter-spacing: -0.035em;
+
+  line-height: 1.08;
+}
+
+.social-form-header button {
+  width: 34px;
+  height: 34px;
+
+  flex-shrink: 0;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: 1px solid var(--sw-border);
+  border-radius: 2px;
+
+  background: var(--sw-white);
+  color: var(--sw-muted);
+
+  cursor: pointer;
+
+  transition:
+    background 150ms ease,
+    border-color 150ms ease,
+    color 150ms ease;
+}
+
+.social-form-header button:hover {
+  border-color: var(--sw-navy);
+  background: var(--sw-navy);
+  color: var(--sw-white);
+}
+
+
+/* =========================================================
+   FORM ERROR
+   ========================================================= */
+
+.social-form-error {
+  margin: 20px 29px 0;
+
+  padding: 12px 14px;
+
+  border-left: 2px solid var(--sw-red);
+
+  background: #fff6f6;
+  color: var(--sw-red);
+
+  font-size: 11px;
+
+  line-height: 1.55;
+}
+
+
+/* =========================================================
+   FORM
+   ========================================================= */
+
+.social-form {
+  padding: 29px;
+}
+
+.social-field {
+  margin-bottom: 23px;
+}
+
+.social-field label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: var(--sw-ink);
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: 0.07em;
+
+  text-transform: uppercase;
+}
+
+.social-field input,
+.social-field select {
+  width: 100%;
+
+  height: 45px;
+
+  padding: 0 13px;
+
+  border: 1px solid var(--sw-border-dark);
+  border-radius: 2px;
+
+  outline: none;
+
+  background: var(--sw-white);
+  color: var(--sw-ink);
+
+  font-size: 12px;
+
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.social-field input:hover,
+.social-field select:hover {
+  border-color: #b8bdc6;
+}
+
+.social-field input:focus,
+.social-field select:focus {
+  border-color: var(--sw-navy);
+
+  box-shadow:
+    0 0 0 2px rgba(0, 0, 91, 0.07);
+}
+
+.social-field input::placeholder {
+  color: #a7adb6;
+}
+
+.social-field select {
+  cursor: pointer;
+}
+
+.social-field small {
+  display: block;
+
+  margin-top: 7px;
+
+  color: var(--sw-light);
+
+  font-size: 10px;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   DETECTED PLATFORM
+   ========================================================= */
+
+.social-detected {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  margin: -7px 0 23px;
+
+  padding: 12px 13px;
+
+  border: 1px solid #d6e8de;
+
+  background: #f2faf6;
+}
+
+.social-detected .social-platform-icon {
+  width: 30px;
+  height: 30px;
+
+  border-color: #cde2d7;
+  background: var(--sw-white);
+}
+
+.social-detected div {
+  display: flex;
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+.social-detected div span {
+  color: #5b8b72;
+
+  font-size: 8px;
+  font-weight: 800;
+
+  letter-spacing: 0.13em;
+}
+
+.social-detected div strong {
+  color: #147548;
+
+  font-size: 11px;
+  font-weight: 800;
+}
+
+
+/* =========================================================
+   PUBLISHED TOGGLE
+   ========================================================= */
+
+.social-published-toggle {
+  display: flex;
+  align-items: center;
+
+  gap: 13px;
+
+  margin-top: 4px;
+
+  padding: 14px;
+
+  border: 1px solid var(--sw-border);
+
+  background: #fbfbfc;
+
+  cursor: pointer;
+}
+
+.social-published-toggle > input {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+
+  opacity: 0;
+}
+
+.toggle-track {
+  position: relative;
+
+  flex-shrink: 0;
+
+  width: 38px;
+  height: 21px;
+
+  border-radius: 20px;
+
+  background: #cdd1d7;
+
+  transition: background 180ms ease;
+}
+
+.toggle-track span {
+  position: absolute;
+
+  top: 3px;
+  left: 3px;
+
+  width: 15px;
+  height: 15px;
+
+  border-radius: 50%;
+
+  background: var(--sw-white);
+
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.18);
+
+  transition: transform 180ms ease;
+}
+
+.social-published-toggle
+  > input:checked
+  + .toggle-track {
+  background: var(--sw-navy);
+}
+
+.social-published-toggle
+  > input:checked
+  + .toggle-track
+  span {
+  transform: translateX(17px);
+}
+
+.social-published-toggle > div {
+  min-width: 0;
+}
+
+.social-published-toggle strong {
+  display: block;
+
+  margin-bottom: 4px;
+
+  color: var(--sw-ink);
+
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.social-published-toggle small {
+  display: block;
+
+  color: var(--sw-light);
+
+  font-size: 9px;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   FORM ACTIONS
+   ========================================================= */
+
+.social-form-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  gap: 8px;
+
+  margin-top: 31px;
+  padding-top: 23px;
+
+  border-top: 1px solid var(--sw-border);
+}
+
+.social-form-cancel,
+.social-form-submit {
+  min-height: 43px;
+
+  padding: 0 17px;
+
+  border-radius: 2px;
+
+  font-size: 9px;
+  font-weight: 800;
+
+  letter-spacing: 0.09em;
+
+  text-transform: uppercase;
+
+  cursor: pointer;
+
+  transition:
+    background 160ms ease,
+    border-color 160ms ease,
+    color 160ms ease;
+}
+
+.social-form-cancel {
+  border: 1px solid var(--sw-border-dark);
+
+  background: var(--sw-white);
+  color: var(--sw-muted);
+}
+
+.social-form-cancel:hover:not(:disabled) {
+  border-color: var(--sw-navy);
+  color: var(--sw-navy);
+}
+
+.social-form-submit {
+  border: 1px solid var(--sw-navy);
+
+  background: var(--sw-navy);
+  color: var(--sw-white);
+}
+
+.social-form-submit:hover:not(:disabled) {
+  border-color: var(--sw-red);
+  background: var(--sw-red);
+}
+
+.social-form-cancel:disabled,
+.social-form-submit:disabled {
+  opacity: 0.5;
+
+  cursor: not-allowed;
+}
+
+
+/* =========================================================
+   FOCUS
+   ========================================================= */
+
+.social-wall-admin
+  button:focus-visible,
+.social-wall-admin
+  a:focus-visible,
+.social-wall-admin
+  input:focus-visible,
+.social-wall-admin
+  select:focus-visible {
+  outline: 2px solid var(--sw-red);
+
+  outline-offset: 2px;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1200px) {
+  .social-wall-admin {
+    padding: 30px 28px 55px;
+  }
+
+  .social-post-row {
+    grid-template-columns:
+      62px
+      155px
+      minmax(240px, 1fr)
+      85px
+      72px
+      112px;
+  }
+
+  .social-post-platform {
+    padding: 14px;
+  }
+
+  .social-post-url {
+    padding: 14px 16px;
+  }
+}
+
+
+/* =========================================================
+   TABLET — 1000
+   ========================================================= */
+
+@media (max-width: 1000px) {
+  .social-wall-overview {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .social-overview-item:nth-child(3) {
+    border-right: 0;
+  }
+
+  .social-overview-item:nth-child(-n + 3) {
+    border-bottom: 1px solid var(--sw-border);
+  }
+
+  .social-overview-item:nth-child(4) {
+    border-right: 1px solid var(--sw-border);
+  }
+
+  .social-post-row {
+    grid-template-columns:
+      58px
+      145px
+      minmax(220px, 1fr)
+      80px
+      70px
+      105px;
+  }
+
+  .social-post-platform {
+    gap: 8px;
+  }
+
+  .social-platform-icon {
+    width: 29px;
+    height: 29px;
+  }
+}
+
+
+/* =========================================================
+   TABLET — 850
+   ========================================================= */
+
+@media (max-width: 850px) {
+  .social-wall-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .social-wall-add {
+    width: 100%;
+  }
+
+  .social-wall-toolbar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .social-wall-order-note {
+    display: none;
+  }
+
+  .social-post-row {
+    grid-template-columns:
+      52px
+      140px
+      minmax(180px, 1fr)
+      70px
+      66px
+      95px;
+  }
+
+  .social-post-platform strong {
+    font-size: 9px;
+  }
+
+  .social-post-url a {
+    font-size: 10px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE — 700
+   ========================================================= */
+
+@media (max-width: 700px) {
+  .social-wall-admin {
+    padding: 23px 15px 45px;
+  }
+
+  .social-wall-heading h1 {
+    font-size: 34px;
+  }
+
+  .social-wall-heading p {
+    font-size: 11px;
+  }
+
+  .social-wall-overview {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .social-overview-item {
+    min-height: 88px;
+
+    padding: 15px;
+  }
+
+  .social-overview-number {
+    font-size: 24px;
+  }
+
+  .social-overview-item:nth-child(2) {
+    border-right: 0;
+  }
+
+  .social-overview-item:nth-child(3) {
+    border-right: 1px solid var(--sw-border);
+  }
+
+  .social-overview-item:nth-child(4) {
+    border-right: 0;
+  }
+
+  .social-overview-item:nth-child(5) {
+    grid-column: span 2;
+
+    border-top: 1px solid var(--sw-border);
+    border-right: 0;
+  }
+
+  .social-wall-filters {
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .social-wall-filters button {
+    width: 100%;
+  }
+
+
+  /* -------------------------------------------------------
+     MOBILE POST
+     ------------------------------------------------------- */
+
+  .social-post-row {
+    display: grid;
+
+    grid-template-columns: 44px 1fr;
+
+    min-height: 0;
+  }
+
+  .social-post-order {
+    grid-row: span 4;
+
+    align-items: flex-start;
+
+    padding-top: 21px;
+  }
+
+  .social-post-platform {
+    min-height: 68px;
+
+    border-right: 0;
+    border-bottom: 1px solid var(--sw-border);
+
+    padding: 14px 15px;
+  }
+
+  .social-post-url {
+    min-height: 67px;
+
+    border-right: 0;
+    border-bottom: 1px solid var(--sw-border);
+
+    padding: 13px 15px;
+  }
+
+  .social-post-status {
+    justify-content: flex-start;
+
+    min-height: 45px;
+
+    padding: 0 15px;
+
+    border-right: 0;
+    border-bottom: 1px solid var(--sw-border);
+  }
+
+  .social-post-move {
+    justify-content: flex-start;
+
+    min-height: 47px;
+
+    padding: 8px 15px;
+
+    border-right: 0;
+    border-bottom: 1px solid var(--sw-border);
+  }
+
+  .social-post-actions {
+    justify-content: flex-start;
+
+    min-height: 50px;
+
+    padding: 9px 15px;
+  }
+
+  .social-post-url a {
+    max-width: 100%;
+  }
+
+
+  /* -------------------------------------------------------
+     FORM
+     ------------------------------------------------------- */
+
+  .social-form-header {
+    padding: 21px 19px;
+  }
+
+  .social-form {
+    padding: 21px 19px 30px;
+  }
+
+  .social-form-error {
+    margin-left: 19px;
+    margin-right: 19px;
+  }
+
+  .social-form-header h2 {
+    font-size: 22px;
+  }
+
+  .social-form-actions {
+    flex-direction: column-reverse;
+  }
+
+  .social-form-cancel,
+  .social-form-submit {
+    width: 100%;
+  }
+}
+
+
+/* =========================================================
+   MOBILE — 450
+   ========================================================= */
+
+@media (max-width: 450px) {
+  .social-wall-admin {
+    padding-left: 11px;
+    padding-right: 11px;
+  }
+
+  .social-wall-heading h1 {
+    font-size: 30px;
+  }
+
+  .social-wall-eyebrow {
+    margin-bottom: 11px;
+  }
+
+  .social-wall-overview {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .social-overview-item {
+    min-height: 78px;
+
+    padding: 12px;
+  }
+
+  .social-overview-number {
+    font-size: 21px;
+  }
+
+  .social-overview-label {
+    font-size: 8px;
+  }
+
+  .social-wall-filters {
+    gap: 5px;
+  }
+
+  .social-wall-filters button {
+    min-height: 32px;
+
+    padding: 0 8px;
+
+    font-size: 8px;
+  }
+
+  .social-post-order {
+    gap: 5px;
+  }
+
+  .social-post-order svg {
+    display: none;
+  }
+
+  .social-post-platform {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .social-post-url {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .social-post-status {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .social-post-move {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .social-post-actions {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .social-platform-icon {
+    width: 27px;
+    height: 27px;
+
+    font-size: 11px;
+  }
+
+  .social-post-platform strong {
+    font-size: 8px;
+  }
+
+  .social-post-platform div span {
+    font-size: 8px;
+  }
+
+  .social-post-url a {
+    font-size: 10px;
+  }
+
+  .social-form-header {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .social-form {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .social-form-error {
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .social-wall-admin *,
+  .social-wall-admin *::before,
+  .social-wall-admin *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
