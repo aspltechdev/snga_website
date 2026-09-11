@@ -23,12 +23,7 @@
 
   --ap-container: 1440px;
 }
-
-
-/* =========================================================
-   BASE
-   ========================================================= */
-
+  
 .ap {
   position: relative;
 
@@ -390,7 +385,7 @@
 
   padding:
     50px
-    4% 
+    4%
     50px
     5%;
 }
@@ -752,9 +747,31 @@
    ========================================================= */
 
 .ap-statement {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+
   padding: 125px 0 135px;
 
-  background: var(--ap-paper);
+  background-color: #061d48;
+  background-image: var(--ap-section-bg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.ap-statement::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+
+  background: linear-gradient(
+    90deg,
+    rgba(0, 18, 62, 0.72) 0%,
+    rgba(0, 35, 94, 0.64) 55%,
+    rgba(0, 53, 120, 0.56) 100%
+  );
 }
 
 .ap-statement-top {
@@ -764,9 +781,9 @@
 
   padding-bottom: 20px;
 
-  border-bottom: 1px solid var(--ap-line);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.28);
 
-  color: #8e96a2;
+  color: rgba(255, 255, 255, 0.7);
 
   font-size: 8px;
   font-weight: 700;
@@ -775,7 +792,7 @@
 }
 
 .ap-statement-top span:first-child {
-  color: var(--ap-red);
+  color: #f5bd19;
 }
 
 .ap-statement-grid {
@@ -793,7 +810,7 @@
 .ap-statement-grid h3 {
   margin: 0;
 
-  color: var(--ap-ink);
+  color: #ffffff;
 
   font-size: clamp(
     60px,
@@ -809,7 +826,7 @@
 }
 
 .ap-statement-grid h3 em {
-  color: var(--ap-navy);
+  color: #8fc6ff;
 
   font-style: normal;
 }
@@ -825,7 +842,7 @@
 
   margin: 0;
 
-  color: var(--ap-text);
+  color: rgba(255, 255, 255, 0.86);
 
   font-size: 15px;
 
@@ -840,7 +857,7 @@
 
   margin-top: 33px;
 
-  color: var(--ap-ink);
+  color: #ffffff;
 
   text-decoration: none;
 
@@ -857,7 +874,7 @@
 }
 
 .ap-statement-link b {
-  color: var(--ap-red);
+  color: #f5bd19;
 
   font-size: 16px;
 
@@ -867,7 +884,7 @@
 .ap-statement-link:hover {
   gap: 24px;
 
-  color: var(--ap-red);
+  color: #f5bd19;
 }
 
 
@@ -876,9 +893,16 @@
    ========================================================= */
 
 .ap-final {
+  position: relative;
+  overflow: hidden;
+
   padding: 0 0 105px;
 
-  background: var(--ap-paper);
+  background: #ffffff;
+}
+
+.ap-final::before {
+  display: none;
 }
 
 .ap-final-line {
@@ -968,6 +992,8 @@
 }
 
 .ap-final-link b {
+  color: var(--ap-red);
+
   font-size: 16px;
 
   font-weight: 300;
@@ -1480,6 +1506,404 @@
 
   .ap-final-grid h3 {
     font-size: 43px;
+  }
+}
+
+
+/* =========================================================
+   FINAL CTA — CONTENT + RIGHT-SIDE IMAGE
+   ========================================================= */
+
+.ap-final {
+  position: relative;
+  overflow: hidden;
+
+  padding: 0 0 90px;
+
+  background: #ffffff;
+}
+
+.ap-final::before {
+  display: none;
+  content: none;
+}
+
+.ap-final-line {
+  width: 100%;
+  height: 1px;
+
+  background: #dfe4ec;
+}
+
+.ap-final-grid {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 0.86fr)
+    minmax(460px, 1.14fr);
+
+  align-items: stretch;
+
+  gap: clamp(55px, 7vw, 110px);
+
+  padding: 75px 0 65px;
+}
+
+.ap-final-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+
+  padding: 20px 0;
+}
+
+.ap-final-intro {
+  display: flex;
+  align-items: center;
+
+  gap: 16px;
+
+  margin-bottom: 38px;
+  padding: 0;
+}
+
+.ap-final-number {
+  color: #c80000;
+
+  font-size: 9px;
+  font-weight: 700;
+
+  letter-spacing: 0.16em;
+}
+
+.ap-final-label {
+  color: #7d8592;
+
+  font-size: 8px;
+  font-weight: 700;
+
+  letter-spacing: 0.2em;
+
+  white-space: nowrap;
+}
+
+.ap-final-content h3 {
+  margin: 0;
+
+  color: #11162b;
+
+  font-size: clamp(55px, 5.8vw, 88px);
+  font-weight: 500;
+
+  letter-spacing: -0.072em;
+
+  line-height: 0.88;
+}
+
+.ap-final-content h3 em {
+  color: #00005b;
+
+  font-style: normal;
+}
+
+.ap-final-content p {
+  max-width: 570px;
+
+  margin: 32px 0 0;
+
+  color: #596273;
+
+  font-size: 14px;
+
+  line-height: 1.8;
+}
+
+.ap-final-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: auto;
+  min-width: 250px;
+
+  gap: 35px;
+
+  margin-top: 36px;
+  padding: 17px 20px;
+
+  border: 1px solid #00005b;
+
+  color: #00005b;
+  background: transparent;
+
+  font-size: 8px;
+  font-weight: 700;
+
+  letter-spacing: 0.16em;
+
+  text-decoration: none;
+  text-transform: uppercase;
+
+  transition:
+    color 0.3s ease,
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.ap-final-link b {
+  color: #c80000;
+
+  font-size: 17px;
+  font-weight: 400;
+
+  transition: transform 0.3s ease;
+}
+
+.ap-final-link:hover {
+  gap: 35px;
+
+  color: #ffffff;
+  background: #00005b;
+  border-color: #00005b;
+
+  transform: translateY(-3px);
+}
+
+.ap-final-link:hover b {
+  color: #f5bd19;
+
+  transform: translate(3px, -3px);
+}
+
+.ap-final-visual {
+  position: relative;
+
+  min-height: 500px;
+
+  overflow: hidden;
+
+  background: #eef1f6;
+}
+
+.ap-final-visual::after {
+  content: "";
+
+  position: absolute;
+  inset: 18px;
+  z-index: 3;
+
+  border: 1px solid rgba(255, 255, 255, 0.38);
+
+  pointer-events: none;
+}
+
+.ap-final-visual img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  min-height: 500px;
+
+  object-fit: cover;
+  object-position: center;
+
+  filter: saturate(0.9) contrast(1.03);
+
+  transform: scale(1.02);
+
+  transition:
+    transform 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+    filter 0.5s ease;
+}
+
+.ap-final-visual:hover img {
+  filter: saturate(1.04) contrast(1.04);
+
+  transform: scale(1.06);
+}
+
+.ap-final-image-shade {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+
+  background: linear-gradient(
+    180deg,
+    rgba(0, 12, 45, 0.12) 0%,
+    rgba(0, 18, 62, 0.08) 45%,
+    rgba(0, 18, 62, 0.74) 100%
+  );
+
+  pointer-events: none;
+}
+
+.ap-final-image-top {
+  position: absolute;
+  top: 34px;
+  right: 34px;
+  left: 34px;
+  z-index: 4;
+
+  display: flex;
+  justify-content: space-between;
+
+  color: rgba(255, 255, 255, 0.88);
+
+  font-size: 7px;
+  font-weight: 700;
+
+  letter-spacing: 0.19em;
+}
+
+.ap-final-image-caption {
+  position: absolute;
+  right: 40px;
+  bottom: 40px;
+  left: 40px;
+  z-index: 4;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 8px;
+
+  color: #ffffff;
+}
+
+.ap-final-image-caption span {
+  font-size: clamp(24px, 2.3vw, 36px);
+  font-weight: 500;
+
+  letter-spacing: -0.04em;
+}
+
+.ap-final-image-caption small {
+  color: rgba(255, 255, 255, 0.74);
+
+  font-size: 8px;
+  font-weight: 700;
+
+  letter-spacing: 0.17em;
+
+  text-transform: uppercase;
+}
+
+.ap-final-keywords {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 25px;
+
+  padding-top: 23px;
+
+  border-top: 1px solid #dfe4ec;
+}
+
+.ap-final-keywords span {
+  color: #9299a4;
+
+  font-size: 7px;
+  font-weight: 700;
+
+  letter-spacing: 0.2em;
+}
+
+@media (max-width: 1000px) {
+  .ap-final-grid {
+    grid-template-columns:
+      minmax(0, 0.9fr)
+      minmax(380px, 1.1fr);
+
+    gap: 45px;
+  }
+
+  .ap-final-visual,
+  .ap-final-visual img {
+    min-height: 450px;
+  }
+}
+
+@media (max-width: 760px) {
+  .ap-final {
+    padding-bottom: 70px;
+  }
+
+  .ap-final-grid {
+    grid-template-columns: 1fr;
+
+    gap: 42px;
+
+    padding: 58px 0 48px;
+  }
+
+  .ap-final-content {
+    padding: 0;
+  }
+
+  .ap-final-intro {
+    margin-bottom: 29px;
+  }
+
+  .ap-final-content h3 {
+    font-size: clamp(51px, 12vw, 72px);
+  }
+
+  .ap-final-visual,
+  .ap-final-visual img {
+    min-height: 430px;
+  }
+
+  .ap-final-keywords {
+    grid-template-columns: repeat(2, 1fr);
+
+    row-gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .ap-final {
+    padding-bottom: 58px;
+  }
+
+  .ap-final-grid {
+    padding-top: 48px;
+  }
+
+  .ap-final-content p {
+    margin-top: 24px;
+
+    font-size: 12px;
+  }
+
+  .ap-final-link {
+    width: 100%;
+    min-width: 0;
+
+    margin-top: 29px;
+  }
+
+  .ap-final-visual,
+  .ap-final-visual img {
+    min-height: 350px;
+  }
+
+  .ap-final-image-top {
+    top: 26px;
+    right: 26px;
+    left: 26px;
+  }
+
+  .ap-final-image-top span:last-child {
+    display: none;
+  }
+
+  .ap-final-image-caption {
+    right: 28px;
+    bottom: 30px;
+    left: 28px;
   }
 }
 

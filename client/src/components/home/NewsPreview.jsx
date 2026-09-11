@@ -1820,7 +1820,12 @@ const NewsPreview = () => {
           EDITORIAL STATEMENT
       ===================================================== */}
 
-      <section className="np-statement">
+      <section
+        className="np-statement"
+        style={{
+          "--np-statement-bg": `url(${getImage(featuredNews, 0)})`,
+        }}
+      >
 
         <div className="np-container">
 

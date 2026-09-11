@@ -38,12 +38,12 @@ const Home = () => {
       <AboutPreview />
       <WhyChooseUs />
       <AcademicsPreview />
-      <AchievementsPreview />
-      <CampusPreview />
-      <NewsPreview />
+      <AchievementsPreview /> 
+      <CampusPreview /> 
+      <NewsPreview /> 
       <GalleryPreview />
-      <TestimonialsPreview />
-   <AdmissionsCTA/>
+      <TestimonialsPreview /> 
+      <AdmissionsCTA/> 
     </main>
   );
 };

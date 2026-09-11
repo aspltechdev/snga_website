@@ -437,7 +437,10 @@ const AcademicsPreview = () => {
       {/* =====================================================
           OPENING EDITORIAL
       ====================================================== */}
-      <div className="academics-opening">
+      <div
+        className="academics-opening"
+        style={{ "--academics-opening-bg": `url(${IMAGES.hero})` }}
+      >
         <div className="academics-container academics-opening-grid">
           <div className="academics-opening-index">
             <span>04</span>
@@ -473,43 +476,6 @@ const AcademicsPreview = () => {
           <div className="academics-opening-note">
             <span>RAMANATHAPURAM</span>
             <span>TAMIL NADU · INDIA</span>
-          </div>
-        </div>
-      </div>
-
-      {/* =====================================================
-          CINEMATIC CAMPUS IMAGE
-      ====================================================== */}
-      <div className="academics-cinematic">
-        <div className="academics-container">
-          <div className="academics-cinematic-frame">
-            <img
-              src={IMAGES.hero}
-              alt="Learning environment at Shifan Noor Global Academy"
-            />
-
-            <div className="academics-cinematic-overlay" />
-
-            <div className="academics-cinematic-top">
-              <span>SHIFAN NOOR GLOBAL ACADEMY</span>
-              <span>ACADEMIC LIFE</span>
-            </div>
-
-            <div className="academics-cinematic-bottom">
-              <div>
-                <span className="academics-cinematic-number">01</span>
-                <span className="academics-cinematic-rule" />
-              </div>
-
-              <p>
-                A learning environment designed to encourage curiosity,
-                understanding and growth.
-              </p>
-            </div>
-
-            <div className="academics-cinematic-mark">
-              SNGA
-            </div>
           </div>
         </div>
       </div>
@@ -746,7 +712,10 @@ const AcademicsPreview = () => {
       {/* =====================================================
           REAL CAMPUS FACTS
       ====================================================== */}
-      <div className="academics-facts">
+      <div
+        className="academics-facts"
+        style={{ "--academics-facts-bg": `url(${heroBg})` }}
+      >
         <div className="academics-container">
           <div className="academics-facts-header">
             <div className="academics-kicker">
@@ -800,14 +769,14 @@ const AcademicsPreview = () => {
       ====================================================== */}
       <div className="academics-closing">
         <div className="academics-container academics-closing-inner">
-          <div className="academics-closing-number">
-            05
-          </div>
-
           <div className="academics-closing-copy">
-            <div className="academics-kicker">
-              <span />
-              DISCOVER SNGA
+            <div className="academics-closing-top">
+              <span className="academics-closing-number">05</span>
+
+              <div className="academics-kicker">
+                <span />
+                DISCOVER SNGA
+              </div>
             </div>
 
             <h3>
@@ -828,6 +797,22 @@ const AcademicsPreview = () => {
               <span>Explore academics</span>
               <span>→</span>
             </Link>
+          </div>
+
+          <div className="academics-closing-visual">
+            <img
+              src={IMAGES.practical}
+              alt="Students learning through practical experiences"
+              loading="lazy"
+            />
+
+            <div className="academics-closing-image-overlay" />
+
+            <div className="academics-closing-image-label">
+              <span>LEARN</span>
+              <span>EXPLORE</span>
+              <span>GROW</span>
+            </div>
           </div>
         </div>
       </div>
