@@ -84,6 +84,9 @@ const testimonialRoutes = require("./routes/testimonial.routes");
 const uploadRoutes = require("./routes/upload.routes");
 const contactRoutes = require("./routes/contact.routes");
 const galleryRoutes = require("./routes/gallery.routes");
+const socialPostRoutes = require("./routes/socialPostRoutes");
+
+
 const heroRoutes = require("./routes/hero.routes");
 
 // Error middleware
@@ -131,6 +134,8 @@ app.use(
     },
   })
 );
+
+
 
 // ==========================================
 // REQUEST LOGGER
@@ -196,9 +201,25 @@ app.use("/api/news", newsRoutes);
 app.use("/api/hero", heroRoutes);
 app.use("/api/blogs", blogRoutes);
 app.use("/api/gallery", galleryRoutes);
-app.use("/api/achievements", achievementRoutes);
-app.use("/api/admissions", admissionRoutes);
-app.use("/api/testimonials", testimonialRoutes);
+
+app.use(
+  "/api/social-posts",
+  socialPostRoutes
+);
+
+
+app.use(
+  "/api/achievements",
+  achievementRoutes
+);
+app.use(
+  "/api/admissions",
+  admissionRoutes
+);
+app.use(
+  "/api/testimonials",
+  testimonialRoutes
+);
 app.use("/api/contact", contactRoutes);
 app.use("/api/upload", uploadRoutes);
 

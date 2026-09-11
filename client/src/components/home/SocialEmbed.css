@@ -1,0 +1,186 @@
+.social-embed {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.social-embed iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  border: 0;
+}
+
+.social-embed-featured {
+  min-height: 650px;
+}
+
+.social-embed-card {
+  min-height: 100%;
+}
+
+/* =========================================================
+   YOUTUBE
+========================================================= */
+
+.social-embed-youtube {
+  background: #000;
+}
+
+.social-embed-youtube iframe {
+  aspect-ratio: 16 / 9;
+  min-height: 100%;
+}
+
+/* =========================================================
+   INSTAGRAM
+========================================================= */
+
+.social-embed-instagram {
+  background: #ffffff;
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.social-embed-instagram .instagram-media {
+  width: 100% !important;
+  max-width: 540px !important;
+  min-width: 280px !important;
+  margin: 0 auto !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+.social-embed-card.social-embed-instagram {
+  align-items: flex-start;
+}
+
+.social-embed-card.social-embed-instagram
+  .instagram-media {
+  transform: scale(0.95);
+  transform-origin: top center;
+}
+
+/* =========================================================
+   FACEBOOK
+========================================================= */
+
+.social-embed-facebook {
+  background: #ffffff;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 20px;
+}
+
+.social-embed-facebook .fb-post {
+  width: 100%;
+  max-width: 550px;
+}
+
+.social-facebook-fallback {
+  display: inline-flex;
+  margin-top: 25px;
+  color: #123b8c;
+  text-decoration: none;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* =========================================================
+   FALLBACK
+========================================================= */
+
+.social-embed-fallback {
+  background: #f1f2f4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-fallback-inner {
+  width: min(85%, 360px);
+  min-height: 280px;
+  padding: 40px;
+  background: #ffffff;
+  border: 1px solid #d9dce2;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.social-fallback-platform {
+  margin-bottom: 22px;
+  color: #c80000;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.social-fallback-title {
+  margin-bottom: 30px;
+  color: #111522;
+  font-size: 36px;
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+}
+
+.social-fallback-link {
+  color: #111522;
+  text-decoration: none;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* =========================================================
+   EMPTY
+========================================================= */
+
+.social-embed-empty {
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6d7481;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 1100px) {
+  .social-embed-featured {
+    min-height: 560px;
+  }
+}
+
+@media (max-width: 760px) {
+  .social-embed-featured {
+    min-height: 420px;
+  }
+
+  .social-embed-instagram
+    .instagram-media {
+    max-width: 100% !important;
+  }
+
+  .social-fallback-inner {
+    min-height: 240px;
+    padding: 30px;
+  }
+}

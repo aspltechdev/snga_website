@@ -7,6 +7,7 @@ import CampusPreview from "../components/home/CampusPreview";
 import GalleryPreview from "../components/home/GalleryPreview";
 import Hero from "../components/home/Hero";
 import NewsPreview from "../components/home/NewsPreview";
+import SocialPreview from "../components/home/SocialPreview";
 import TestimonialsPreview from "../components/home/Testimonials";
 import WhyChooseUs from "../components/home/WhyChoose";
 
@@ -42,8 +43,9 @@ const Home = () => {
       <CampusPreview /> 
       <NewsPreview /> 
       <GalleryPreview />
-      <TestimonialsPreview /> 
-      <AdmissionsCTA/> 
+      <TestimonialsPreview />
+      <SocialPreview/>
+   <AdmissionsCTA/>
     </main>
   );
 };

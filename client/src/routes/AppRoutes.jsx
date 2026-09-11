@@ -85,6 +85,7 @@ import NewsDetail from "../pages/NewsDetail";
 import Results from "../components/academics/Results";
 import Campus from "../pages/Campus";
 import Achievements from "../pages/Achievements";
+import SocialWall from "../admin/pages/SocialWall";
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -303,10 +304,14 @@ const AppRoutes = () => {
                             element={<NewsManagement />}
                         />
 
+                        <Route
+                            path="news"
+                            element={<NewsManagement />}
+                        />
 
                         <Route
-                            path="achievements"
-                            element={<AchievementManagement />}
+                            path="socialmedia"
+                            element={<SocialWall />}
                         />
                         <Route
                             path="admissions"
