@@ -9,7 +9,7 @@ import {
 } from "react-icons/fa";
 import galleryService from "../../services/gallery.service";
 import "./GalleryPreview.css";
-import statementImage from "../../assets/sport.jpg";
+import statementImage from "../../assets/sport.JPG";
 
 const API_URL =
   import.meta.env.VITE_API_URL?.replace(/\/api\/?$/, "") ||
