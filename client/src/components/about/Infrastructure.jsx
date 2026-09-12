@@ -606,6 +606,7 @@ import "./Infrastructure.css";
 
 import heroBg from "../../assets/school.JPG";
 import classroomImage from "../../assets/classroom.jpg";
+import arts from "../../assets/arts.jpg";
 import libraryImage from "../../assets/library.jpg";
 import scienceImage from "../../assets/sciencelab.jpg";
 import computerImage from "../../assets/ComputerLab.jpg";
@@ -652,7 +653,7 @@ const Infrastructure = () => {
       title: "Spaces designed for attention.",
       text:
         "Each classroom provides approximately 500 square feet of space with good lighting, ventilation and essential learning facilities.",
-      image: classroomImage,
+      image: arts,
     },
     {
       number: "02",

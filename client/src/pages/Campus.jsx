@@ -1314,7 +1314,7 @@ import library from "../assets/library.jpg";
 import scienceLab from "../assets/sciencelab.jpg";
 import computerLab from "../assets/ComputerLab.jpg";
 import sports from "../assets/sports.JPG";
-import campusImage from "../assets/campus.jpg";
+import campusImage from "../assets/school1.jpg";
 import campImage from "../assets/camp.jpg";
 import engagingImage from "../assets/engaging.jpg";
 

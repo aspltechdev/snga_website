@@ -1163,7 +1163,7 @@ const PrincipalMessage = () => {
               </Link>
 
               <Link
-                to="/vision-mission"
+                to="/about/vision-mission"
                 className="sp-cta__link"
               >
                 <span>Our Vision &amp; Mission</span>

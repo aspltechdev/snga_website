@@ -911,7 +911,7 @@ const Header = () => {
                 <FaGraduationCap className="header-apply-icon" />
                 <span className="header-apply-text">
                   <span className="header-apply-label">Apply Now</span>
-                  <span className="header-apply-subtext">2025-26</span>
+                  <span className="header-apply-subtext">2026-27</span>
                 </span>
                 <span className="header-apply-shine"></span>
               </Link>

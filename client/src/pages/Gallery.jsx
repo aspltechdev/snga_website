@@ -918,12 +918,12 @@ import "./Gallery.css";
 
 import heroImage from "../assets/school.JPG";
 import campusImage from "../assets/camp.jpg";
-import campusImage2 from "../assets/campus.jpg";
+import campusImage2 from "../assets/camp.jpg";
 import classroomImage from "../assets/classroom.jpg";
 import academicsImage from "../assets/teaching.jpg";
 import sportsImage from "../assets/sports.JPG";
 import artsImage from "../assets/arts.jpg";
-import natureImage from "../assets/camp.jpg";
+import natureImage from "../assets/campus.jpg";
 import valuesImage from "../assets/values.jpg";
 import communityImage from "../assets/about-school.jpg";
 import ctaImage from "../assets/engaging.jpg";

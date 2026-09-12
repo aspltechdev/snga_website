@@ -330,6 +330,11 @@ const AppRoutes = () => {
                             element={<GalleryManagement />}
                         />
 
+                        <Route
+                            path="achievements"
+                            element={<AchievementManagement />}
+                        />
+
 
                         <Route
                             path="testimonials"
