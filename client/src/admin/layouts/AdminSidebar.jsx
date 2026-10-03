@@ -637,11 +637,11 @@ const AdminSidebar = () => {
       path: "/admin/contact",
       icon: Mail,
     },
-    // {
-    //   label: "Settings",
-    //   path: "/admin/settings",
-    //   icon: Settings,
-    // },
+    {
+      label: "Settings",
+      path: "/admin/socialmedia",
+      icon: Settings,
+    },
   ];
 
   return (

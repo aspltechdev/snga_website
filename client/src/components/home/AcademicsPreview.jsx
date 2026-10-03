@@ -1,282 +1,832 @@
-import { useEffect, useRef , useState } from "react";
-import {
-  FaBookOpen,
-  FaMicroscope,
-  FaCode,
-  FaPaintBrush,
-  FaArrowRight,
-  FaGraduationCap,
-  FaAward,
-  FaUsers,
-  FaChalkboardTeacher,
-  FaRocket,
-} from "react-icons/fa";
+// import { Link } from "react-router-dom";
+// import "./AcademicsPreview.css";
+
+// import heroBg from "../../assets/school.JPG";
+// import practical from "../../assets/beyond.jpg";
+// import digital from "../../assets/Digitallearning.jpg";
+// import creative from "../../assets/creativearts.jpg";
+// // =====================================================
+// // ACADEMICS PREVIEW
+// // Premium editorial / Apple-style section
+// // =====================================================
+
+// const IMAGES = {
+//   hero: heroBg,
+//   practical: practical,
+//   digital: digital,
+//   creative: creative,
+// };
+
+// const AcademicsPreview = () => {
+//   const learningAreas = [
+//     {
+//       number: "01",
+//       title: "Strong foundations",
+//       description:
+//         "Building clear academic foundations that encourage curiosity, understanding and confident learning.",
+//     },
+//     {
+//       number: "02",
+//       title: "Practical learning",
+//       description:
+//         "Connecting classroom knowledge with experiments, exploration and meaningful real-world application.",
+//     },
+//     {
+//       number: "03",
+//       title: "Digital learning",
+//       description:
+//         "Using technology as part of the learning experience to make lessons more interactive and engaging.",
+//     },
+//     {
+//       number: "04",
+//       title: "Creative development",
+//       description:
+//         "Encouraging students to discover their creativity through activities beyond traditional academics.",
+//     },
+//   ];
+
+//   return (
+//     <section className="academics-preview">
+//       <div className="academics-preview-container">
+
+//         {/* =================================================
+//             INTRO / HERO
+//         ================================================= */}
+//         <div className="academics-intro">
+
+//           <div className="academics-intro-copy">
+//             <div className="academics-eyebrow">
+//               <span className="academics-eyebrow-line" />
+//               ACADEMICS
+//             </div>
+
+//             <h2 className="academics-main-title">
+//               Learning that
+//               <br />
+//               <span>builds confidence.</span>
+//             </h2>
+
+//             <p className="academics-main-description">
+//               At Shifan Noor Global Academy, learning goes beyond completing
+//               a syllabus. We encourage students to understand, explore,
+//               question and apply what they learn — developing knowledge,
+//               skills, values and confidence for the future.
+//             </p>
+
+//             <Link
+//               to="/academics"
+//               className="academics-primary-link"
+//             >
+//               <span>Explore academics</span>
+//               <span className="academics-link-arrow">↗</span>
+//             </Link>
+//           </div>
+
+//           <div className="academics-intro-visual">
+//             <img
+//               src={IMAGES.hero}
+//               alt="Students learning in a classroom"
+//             />
+
+//             <div className="academics-visual-caption">
+//               <span>01</span>
+//               <p>
+//                 A learning environment designed to encourage curiosity,
+//                 understanding and growth.
+//               </p>
+//             </div>
+//           </div>
+//         </div>
+
+//         {/* =================================================
+//             LEARNING APPROACH
+//         ================================================= */}
+//         <div className="academics-approach">
+
+//           <div className="academics-approach-heading">
+//             <div>
+//               <div className="academics-section-label">
+//                 HOW WE LEARN
+//               </div>
+
+//               <h3>
+//                 More than
+//                 <br />
+//                 <span>just academics.</span>
+//               </h3>
+//             </div>
+
+//             <p>
+//               Our approach brings together academic learning, practical
+//               exploration, technology, creativity and values to support
+//               the development of the whole child.
+//             </p>
+//           </div>
+
+//           <div className="academics-learning-list">
+//             {learningAreas.map((item) => (
+//               <article
+//                 key={item.number}
+//                 className="academics-learning-item"
+//               >
+//                 <div className="academics-learning-number">
+//                   {item.number}
+//                 </div>
+
+//                 <div className="academics-learning-content">
+//                   <h4>{item.title}</h4>
+
+//                   <p>{item.description}</p>
+//                 </div>
+
+//                 <span className="academics-learning-arrow">
+//                   ↗
+//                 </span>
+//               </article>
+//             ))}
+//           </div>
+//         </div>
+
+//         {/* =================================================
+//             FEATURED LEARNING
+//         ================================================= */}
+//         <div className="academics-feature">
+
+//           <div className="academics-feature-image">
+//             <img
+//               src={IMAGES.practical}
+//               alt="Students exploring practical learning"
+//               loading="lazy"
+//             />
+
+//             <div className="academics-feature-image-label">
+//               PRACTICAL LEARNING
+//             </div>
+//           </div>
+
+//           <div className="academics-feature-copy">
+//             <div className="academics-section-label">
+//               LEARNING IN ACTION
+//             </div>
+
+//             <h3>
+//               Knowledge becomes
+//               <br />
+//               meaningful when
+//               <span> students experience it.</span>
+//             </h3>
+
+//             <p>
+//               Practical learning gives students opportunities to explore
+//               ideas beyond the textbook. Through experimentation,
+//               observation and application, students develop a deeper
+//               understanding of what they learn.
+//             </p>
+
+//             <div className="academics-feature-points">
+//               <div>
+//                 <strong>01</strong>
+//                 <span>Explore</span>
+//               </div>
+
+//               <div>
+//                 <strong>02</strong>
+//                 <span>Understand</span>
+//               </div>
+
+//               <div>
+//                 <strong>03</strong>
+//                 <span>Apply</span>
+//               </div>
+//             </div>
+//           </div>
+//         </div>
+
+//         {/* =================================================
+//             DIGITAL + CREATIVE
+//         ================================================= */}
+//         <div className="academics-dual-feature">
+
+//           <div className="academics-small-feature">
+//             <div className="academics-small-feature-image">
+//               <img
+//                 src={IMAGES.digital}
+//                 alt="Digital learning"
+//                 loading="lazy"
+//               />
+//             </div>
+
+//             <div className="academics-small-feature-copy">
+//               <div className="academics-section-label">
+//                 TECHNOLOGY
+//               </div>
+
+//               <h3>
+//                 Digital learning
+//                 <br />
+//                 <span>for a changing world.</span>
+//               </h3>
+
+//               <p>
+//                 Technology-integrated learning helps make education
+//                 interactive while preparing students for a digitally
+//                 connected future.
+//               </p>
+
+//               <Link to="/academics/curriculum">
+//                 Discover our approach
+//                 <span>↗</span>
+//               </Link>
+//             </div>
+//           </div>
+
+//           <div className="academics-small-feature academics-small-feature-dark">
+//             <div className="academics-small-feature-image">
+//               <img
+//                 src={IMAGES.creative}
+//                 alt="Creative student activities"
+//                 loading="lazy"
+//               />
+//             </div>
+
+//             <div className="academics-small-feature-copy">
+//               <div className="academics-section-label">
+//                 BEYOND THE CLASSROOM
+//               </div>
+
+//               <h3>
+//                 Creativity is part
+//                 <br />
+//                 <span>of growing.</span>
+//               </h3>
+
+//               <p>
+//                 Activities beyond the classroom encourage expression,
+//                 confidence, collaboration and all-round development.
+//               </p>
+
+//               <Link to="/academics">
+//                 Explore student life
+//                 <span>↗</span>
+//               </Link>
+//             </div>
+//           </div>
+
+//         </div>
+
+//         {/* =================================================
+//             REAL SCHOOL FACTS
+//         ================================================= */}
+//         <div className="academics-facts">
+
+//           <div className="academics-facts-intro">
+//             <div className="academics-section-label">
+//               THE LEARNING ENVIRONMENT
+//             </div>
+
+//             <h3>
+//               Space to learn.
+//               <br />
+//               <span>Room to grow.</span>
+//             </h3>
+//           </div>
+
+//           <div className="academics-facts-grid">
+
+//             <div className="academics-fact">
+//               <strong>13.5</strong>
+//               <span>Acres of campus</span>
+//             </div>
+
+//             <div className="academics-fact">
+//               <strong>3,500+</strong>
+//               <span>Books in the library</span>
+//             </div>
+
+//             <div className="academics-fact">
+//               <strong>500</strong>
+//               <span>Sq. ft. classrooms</span>
+//             </div>
+
+//             <div className="academics-fact">
+//               <strong>Digital</strong>
+//               <span>Interactive classrooms</span>
+//             </div>
+
+//           </div>
+//         </div>
+
+//         {/* =================================================
+//             FINAL CTA
+//         ================================================= */}
+//         <div className="academics-bottom-cta">
+
+//           <div>
+//             <div className="academics-cta-label">
+//               DISCOVER SNGA
+//             </div>
+
+//             <h3>
+//               Give curiosity
+//               <br />
+//               <span>room to grow.</span>
+//             </h3>
+//           </div>
+
+//           <div className="academics-bottom-cta-right">
+//             <p>
+//               Explore our academic philosophy, curriculum and learning
+//               environment in greater detail.
+//             </p>
+
+//             <Link
+//               to="/academics"
+//               className="academics-cta-button"
+//             >
+//               <span>Explore academics</span>
+//               <span>→</span>
+//             </Link>
+//           </div>
+
+//         </div>
+
+//       </div>
+//     </section>
+//   );
+// };
+
+// export default AcademicsPreview;
+
+
+
+
+import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import "./AcademicsPreview.css";
 
-// =====================================================
-// ONLINE PLACEHOLDER IMAGES
-// =====================================================
+import heroBg from "../../assets/school.JPG";
+import practical from "../../assets/beyond.jpg";
+import digital from "../../assets/Digitallearning.jpg";
+import creative from "../../assets/creativearts.jpg";
+
 const IMAGES = {
-  hero: "https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=800&h=600&fit=crop&auto=format",
-  curriculum: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600&h=400&fit=crop&auto=format",
-  practical: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=600&h=400&fit=crop&auto=format",
-  digital: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=400&fit=crop&auto=format",
-  creative: "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=600&h=400&fit=crop&auto=format",
+  hero: heroBg,
+  practical,
+  digital,
+  creative,
 };
 
 const AcademicsPreview = () => {
-  const programs = [
-    {
-      id: 1,
-      icon: <FaBookOpen />,
-      title: "Strong Curriculum",
-      description:
-        "Structured and engaging curriculum designed to build strong academic foundations and foster intellectual curiosity.",
-      image: IMAGES.curriculum,
-      color: "#2c3e6b",
-      stat: "25+ Subjects",
-    },
-    {
-      id: 2,
-      icon: <FaMicroscope />,
-      title: "Practical Learning",
-      description:
-        "Hands-on experiments, activities and real-world experiences that bring concepts to life.",
-      image: IMAGES.practical,
-      color: "#3498db",
-      stat: "10+ Labs",
-    },
-    {
-      id: 3,
-      icon: <FaCode />,
-      title: "Digital Learning",
-      description:
-        "Technology-enabled learning that helps students develop modern skills for the digital future.",
-      image: IMAGES.digital,
-      color: "#27ae60",
-      stat: "Smart Classes",
-    },
-    {
-      id: 4,
-      icon: <FaPaintBrush />,
-      title: "Creative Development",
-      description:
-        "Encouraging creativity, expression and curiosity through arts, sports and innovation.",
-      image: IMAGES.creative,
-      color: "#e67e22",
-      stat: "Arts & Sports",
-    },
-  ];
-
-  const stats = [
-    { number: "500+", label: "Students" },
-    { number: "40+", label: "Teachers" },
-    { number: "25+", label: "Years of Excellence" },
-    { number: "15+", label: "Programs Offered" },
-  ];
-
   const sectionRef = useRef(null);
-  const headerRef = useRef(null);
-  const gridRef = useRef(null);
-  const statsRef = useRef(null);
-
-  // =====================================================
-  // SCROLL ANIMATIONS
-  // =====================================================
 
   useEffect(() => {
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: "0px 0px -50px 0px",
-    };
+    const section = sectionRef.current;
 
-    const sectionObserver = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
+    if (!section) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add("academics-visible");
-          sectionObserver.unobserve(entry.target);
+          section.classList.add("academics-visible");
+          observer.disconnect();
         }
-      });
-    }, observerOptions);
+      },
+      {
+        threshold: 0.08,
+      }
+    );
 
-    const headerObserver = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("reveal-header");
-          headerObserver.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.15 });
+    observer.observe(section);
 
-    const gridObserver = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const items = entry.target.querySelectorAll(".academics-program-item");
-          items.forEach((item, index) => {
-            setTimeout(() => {
-              item.classList.add("reveal-item");
-            }, index * 120);
-          });
-          gridObserver.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1 });
-
-    const statsObserver = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const items = entry.target.querySelectorAll(".academics-stat-item");
-          items.forEach((item, index) => {
-            setTimeout(() => {
-              item.classList.add("reveal-stat");
-            }, index * 120);
-          });
-          statsObserver.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.2 });
-
-    if (sectionRef.current) {
-      sectionObserver.observe(sectionRef.current);
-    }
-
-    if (headerRef.current) {
-      headerObserver.observe(headerRef.current);
-    }
-
-    if (gridRef.current) {
-      gridObserver.observe(gridRef.current);
-    }
-
-    if (statsRef.current) {
-      statsObserver.observe(statsRef.current);
-    }
-
-    return () => {
-      sectionObserver.disconnect();
-      headerObserver.disconnect();
-      gridObserver.disconnect();
-      statsObserver.disconnect();
-    };
+    return () => observer.disconnect();
   }, []);
 
+  const learningAreas = [
+    {
+      number: "01",
+      title: "Strong foundations",
+      description:
+        "Building clear academic foundations that encourage curiosity, understanding and confident learning.",
+    },
+    {
+      number: "02",
+      title: "Practical learning",
+      description:
+        "Connecting classroom knowledge with experiments, exploration and meaningful real-world application.",
+    },
+    {
+      number: "03",
+      title: "Digital learning",
+      description:
+        "Using technology as part of the learning experience to make lessons more interactive and engaging.",
+    },
+    {
+      number: "04",
+      title: "Creative development",
+      description:
+        "Encouraging students to discover their creativity through activities beyond traditional academics.",
+    },
+  ];
+
   return (
-    <section ref={sectionRef} className="academics-preview">
-      <div className="academics-preview-container">
-        {/* =====================================
-            HEADER
-        ====================================== */}
-        <div ref={headerRef} className="academics-preview-header">
-          <div className="academics-header-content">
-            <span className="academics-tag">ACADEMICS</span>
-            <h1 className="academics-title">
-              Education That
-              <br />
-              <span className="academics-title-highlight">Inspires Excellence</span>
-            </h1>
-            <p className="academics-description">
-              We create meaningful learning experiences that help students
-              understand, explore and apply what they learn, preparing them
-              for a lifetime of discovery and achievement.
-            </p>
-            <div className="academics-header-actions">
-              <Link to="/academics" className="academics-btn-primary">
-                Explore Programs
-                <FaArrowRight />
-              </Link>
-              <Link to="/admissions" className="academics-btn-secondary">
-                Apply Now
-              </Link>
-            </div>
+    <section
+      ref={sectionRef}
+      className="academics-preview"
+      aria-labelledby="academics-title"
+    >
+      {/* =====================================================
+          OPENING EDITORIAL
+      ====================================================== */}
+      <div className="academics-opening">
+        <div className="academics-container academics-opening-grid">
+          <div className="academics-opening-index">
+            <span>04</span>
+            <span className="academics-index-line" />
+            <span>ACADEMICS</span>
           </div>
 
-          <div className="academics-header-visual">
-            <div className="academics-hero-image">
-              <img src={IMAGES.hero} alt="Students learning" />
-              <div className="academics-hero-badge">
-                <FaGraduationCap />
-                <span>25+ Years of Excellence</span>
+          <div className="academics-opening-copy">
+            <div className="academics-kicker">
+              <span />
+              THE ACADEMIC EXPERIENCE
+            </div>
+
+            <h2 id="academics-title">
+              Learning that
+              <br />
+              <em>builds confidence.</em>
+            </h2>
+
+            <p className="academics-opening-lead">
+              At Shifan Noor Global Academy, learning goes beyond completing
+              a syllabus. We encourage students to understand, explore,
+              question and apply what they learn — developing knowledge,
+              skills, values and confidence for the future.
+            </p>
+
+            <Link to="/academics" className="academics-text-link">
+              <span>Explore academics</span>
+              <span className="academics-text-link-arrow">↗</span>
+            </Link>
+          </div>
+
+          <div className="academics-opening-note">
+            <span>RAMANATHAPURAM</span>
+            <span>TAMIL NADU · INDIA</span>
+          </div>
+        </div>
+      </div>
+
+      {/* =====================================================
+          CINEMATIC CAMPUS IMAGE
+      ====================================================== */}
+      <div className="academics-cinematic">
+        <div className="academics-container">
+          <div className="academics-cinematic-frame">
+            <img
+              src={IMAGES.hero}
+              alt="Learning environment at Shifan Noor Global Academy"
+            />
+
+            <div className="academics-cinematic-overlay" />
+
+            <div className="academics-cinematic-top">
+              <span>SHIFAN NOOR GLOBAL ACADEMY</span>
+              <span>ACADEMIC LIFE</span>
+            </div>
+
+            <div className="academics-cinematic-bottom">
+              <div>
+                <span className="academics-cinematic-number">01</span>
+                <span className="academics-cinematic-rule" />
               </div>
+
+              <p>
+                A learning environment designed to encourage curiosity,
+                understanding and growth.
+              </p>
+            </div>
+
+            <div className="academics-cinematic-mark">
+              SNGA
             </div>
           </div>
         </div>
+      </div>
 
-        {/* =====================================
-            PROGRAMS GRID
-        ====================================== */}
-        <div ref={gridRef} className="academics-programs">
-          <div className="academics-programs-header">
-            <span className="academics-section-label">What We Offer</span>
-            <h2 className="academics-section-title">
-              Our Learning <span className="academics-section-highlight">Programs</span>
-            </h2>
+      {/* =====================================================
+          APPROACH
+      ====================================================== */}
+      <div className="academics-approach">
+        <div className="academics-container">
+          <div className="academics-section-intro">
+            <div className="academics-section-number">
+              <span>01</span>
+              <span />
+            </div>
+
+            <div className="academics-section-heading">
+              <div className="academics-kicker">
+                <span />
+                HOW WE LEARN
+              </div>
+
+              <h3>
+                More than
+                <br />
+                <em>just academics.</em>
+              </h3>
+            </div>
+
+            <div className="academics-section-description">
+              <p>
+                Our approach brings together academic learning, practical
+                exploration, technology, creativity and values to support
+                the development of the whole child.
+              </p>
+            </div>
           </div>
 
-          <div className="academics-programs-grid">
-            {programs.map((program) => (
-              <div
-                key={program.id}
-                className="academics-program-item"
-                style={{ "--item-color": program.color }}
+          <div className="academics-learning-list">
+            {learningAreas.map((item) => (
+              <article
+                key={item.number}
+                className="academics-learning-item"
               >
-                <div className="academics-program-image">
-                  <img src={program.image} alt={program.title} loading="lazy" />
-                  <div className="academics-program-overlay" />
+                <div className="academics-learning-number">
+                  {item.number}
                 </div>
 
-                <div className="academics-program-content">
-                  <div
-                    className="academics-program-icon"
-                    style={{ backgroundColor: `${program.color}15`, color: program.color }}
-                  >
-                    {program.icon}
-                  </div>
-
-                  <h3 className="academics-program-title">{program.title}</h3>
-                  <p className="academics-program-desc">{program.description}</p>
-
-                  <div className="academics-program-footer">
-                    <span className="academics-program-stat">{program.stat}</span>
-                    <Link to="/academics" className="academics-program-link">
-                      Learn More
-                      <FaArrowRight />
-                    </Link>
-                  </div>
+                <div className="academics-learning-title">
+                  <h4>{item.title}</h4>
                 </div>
-              </div>
+
+                <div className="academics-learning-description">
+                  <p>{item.description}</p>
+                </div>
+
+                <div className="academics-learning-symbol">
+                  ↗
+                </div>
+              </article>
             ))}
           </div>
         </div>
+      </div>
 
-        {/* =====================================
-            STATS
-        ====================================== */}
-        <div ref={statsRef} className="academics-stats">
-          {stats.map((stat, index) => (
-            <div key={index} className="academics-stat-item">
-              <span className="academics-stat-number">{stat.number}</span>
-              <span className="academics-stat-label">{stat.label}</span>
+      {/* =====================================================
+          PRACTICAL LEARNING — CINEMATIC STORY
+      ====================================================== */}
+      <div className="academics-practical">
+        <div className="academics-container academics-practical-grid">
+          <div className="academics-practical-image">
+            <img
+              src={IMAGES.practical}
+              alt="Students exploring practical learning"
+              loading="lazy"
+            />
+
+            <div className="academics-image-index">
+              <span>02</span>
+              <span>LEARNING IN ACTION</span>
             </div>
-          ))}
+
+            <div className="academics-image-caption">
+              PRACTICAL LEARNING
+            </div>
+          </div>
+
+          <div className="academics-practical-copy">
+            <div className="academics-kicker">
+              <span />
+              EXPERIENCE & APPLICATION
+            </div>
+
+            <h3>
+              Knowledge becomes
+              <br />
+              meaningful when
+              <br />
+              <em>students experience it.</em>
+            </h3>
+
+            <p>
+              Practical learning gives students opportunities to explore
+              ideas beyond the textbook. Through experimentation,
+              observation and application, students develop a deeper
+              understanding of what they learn.
+            </p>
+
+            <div className="academics-learning-sequence">
+              <div>
+                <span>01</span>
+                <strong>Explore</strong>
+              </div>
+
+              <div>
+                <span>02</span>
+                <strong>Understand</strong>
+              </div>
+
+              <div>
+                <span>03</span>
+                <strong>Apply</strong>
+              </div>
+            </div>
+
+            <Link to="/academics" className="academics-outline-link">
+              <span>Discover the approach</span>
+              <span>↗</span>
+            </Link>
+          </div>
         </div>
+      </div>
 
-        {/* =====================================
-            CTA SECTION
-        ====================================== */}
-        <div className="academics-cta">
-          <div className="academics-cta-inner">
-            <div className="academics-cta-text">
-              <h3 className="academics-cta-title">
-                Ready to Start Your <span className="academics-cta-highlight">Learning Journey?</span>
+      {/* =====================================================
+          DIGITAL / CREATIVE
+      ====================================================== */}
+      <div className="academics-beyond">
+        <div className="academics-container">
+          <div className="academics-beyond-heading">
+            <div>
+              <div className="academics-kicker">
+                <span />
+                BEYOND THE TEXTBOOK
+              </div>
+
+              <h3>
+                Different ways
+                <br />
+                <em>to discover.</em>
               </h3>
-              <p className="academics-cta-desc">
-                Join our community of learners and discover your potential.
-              </p>
             </div>
-            <Link to="/admissions" className="academics-cta-button">
-              Apply Now
-              <FaArrowRight />
+
+            <p>
+              Learning continues through technology, creativity,
+              exploration and experiences beyond conventional classroom
+              instruction.
+            </p>
+          </div>
+
+          <div className="academics-beyond-grid">
+            {/* DIGITAL */}
+            <article className="academics-beyond-item">
+              <div className="academics-beyond-image">
+                <img
+                  src={IMAGES.digital}
+                  alt="Digital learning at SNGA"
+                  loading="lazy"
+                />
+
+                <span>03</span>
+              </div>
+
+              <div className="academics-beyond-copy">
+                <div className="academics-small-label">
+                  TECHNOLOGY
+                </div>
+
+                <h4>
+                  Digital learning
+                  <br />
+                  <em>for a changing world.</em>
+                </h4>
+
+                <p>
+                  Technology-integrated learning helps make education
+                  interactive while preparing students for a digitally
+                  connected future.
+                </p>
+
+                <Link to="/academics/curriculum">
+                  Discover our approach
+                  <span>↗</span>
+                </Link>
+              </div>
+            </article>
+
+            {/* CREATIVE */}
+            <article className="academics-beyond-item academics-beyond-item-offset">
+              <div className="academics-beyond-image">
+                <img
+                  src={IMAGES.creative}
+                  alt="Creative student activities"
+                  loading="lazy"
+                />
+
+                <span>04</span>
+              </div>
+
+              <div className="academics-beyond-copy">
+                <div className="academics-small-label">
+                  BEYOND THE CLASSROOM
+                </div>
+
+                <h4>
+                  Creativity is part
+                  <br />
+                  <em>of growing.</em>
+                </h4>
+
+                <p>
+                  Activities beyond the classroom encourage expression,
+                  confidence, collaboration and all-round development.
+                </p>
+
+                <Link to="/academics">
+                  Explore student life
+                  <span>↗</span>
+                </Link>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+
+      {/* =====================================================
+          REAL CAMPUS FACTS
+      ====================================================== */}
+      <div className="academics-facts">
+        <div className="academics-container">
+          <div className="academics-facts-header">
+            <div className="academics-kicker">
+              <span />
+              THE LEARNING ENVIRONMENT
+            </div>
+
+            <h3>
+              Space to learn.
+              <br />
+              <em>Room to grow.</em>
+            </h3>
+
+            <p>
+              The campus provides the physical environment in which
+              learning, exploration and everyday school life come
+              together.
+            </p>
+          </div>
+
+          <div className="academics-facts-list">
+            <div className="academics-fact">
+              <span>01</span>
+              <strong>13.5</strong>
+              <small>ACRES OF CAMPUS</small>
+            </div>
+
+            <div className="academics-fact">
+              <span>02</span>
+              <strong>3,500+</strong>
+              <small>BOOKS IN THE LIBRARY</small>
+            </div>
+
+            <div className="academics-fact">
+              <span>03</span>
+              <strong>500</strong>
+              <small>SQ. FT. CLASSROOMS</small>
+            </div>
+
+            <div className="academics-fact">
+              <span>04</span>
+              <strong>Digital</strong>
+              <small>INTERACTIVE CLASSROOMS</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* =====================================================
+          FINAL EDITORIAL STATEMENT
+      ====================================================== */}
+      <div className="academics-closing">
+        <div className="academics-container academics-closing-inner">
+          <div className="academics-closing-number">
+            05
+          </div>
+
+          <div className="academics-closing-copy">
+            <div className="academics-kicker">
+              <span />
+              DISCOVER SNGA
+            </div>
+
+            <h3>
+              Give curiosity
+              <br />
+              <em>room to grow.</em>
+            </h3>
+
+            <p>
+              Explore our academic philosophy, curriculum and learning
+              environment in greater detail.
+            </p>
+
+            <Link
+              to="/academics"
+              className="academics-closing-button"
+            >
+              <span>Explore academics</span>
+              <span>→</span>
             </Link>
           </div>
         </div>

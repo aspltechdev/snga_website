@@ -42,10 +42,12 @@
 
 // export default AppRoutes;
 
+import { useEffect } from "react";
 import {
     BrowserRouter,
     Routes,
     Route,
+    useLocation,
 } from "react-router-dom";
 import PublicLayout from "../components/layout/PublicLayout";
 import Home from "../pages/Home";
@@ -78,12 +80,32 @@ import Curriculum from "../components/academics/Curriculum";
 import Faculties from "../components/academics/Faculties";
 import Examinations from "../components/academics/Examinations";
 import Admissions from "../pages/Admissions";
+import BlogDetail from "../pages/BlogDetails";
+import NewsDetail from "../pages/NewsDetail";
+import Results from "../components/academics/Results";
+import Campus from "../pages/Campus";
+import Achievements from "../pages/Achievements";
+import SocialWall from "../admin/pages/SocialWall";
 
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "instant",
+    });
+  }, [pathname]);
+
+  return null;
+};
 
 
 const AppRoutes = () => {
     return (
         <BrowserRouter>
+            <ScrollToTop/>
 
             <Routes>
 
@@ -107,56 +129,84 @@ const AppRoutes = () => {
 
                     />
                     <Route
-                        path="/history"
+                        path="/about/history"
                         element={<History />}
 
                     />
 
 
- <Route
+                    <Route
                         path="/about/vision-mission"
                         element={<VisionMission />}
 
                     />
 
 
- <Route
+                    <Route
                         path="/about/leadership"
                         element={<PrincipalMessage />}
 
                     />
 
-                     <Route
+                    <Route
                         path="/about/management"
                         element={<Management />}
 
                     />
-   <Route
+                    <Route
                         path="/about/infrastructure"
                         element={<Infrastructure />}
 
                     />
 
 
-                       <Route
+                    <Route
                         path="/academics/curriculum"
                         element={<Curriculum />}
 
+
+
                     />
 
-                       <Route
+                    <Route
+                        path="/academics"
+                        element={<Curriculum />}
+
+
+
+                    />
+
+
+
+
+                    <Route
+                        path="/campus"
+                        element={<Campus />}
+
+
+
+                    />
+                    <Route
+                        path="/achievements"
+                        element={<Achievements />}
+
+
+
+                    />
+
+                    <Route
                         path="/academics/faculties"
                         element={<Faculties />}
 
                     />
 
-                    <Route 
-                    path="/academics/examinations"
-                    element={<Examinations/>}
+                    <Route
+                        path="/academics/examinations"
+                        element={<Examinations />}
                     />
-    <Route 
-                    path="/academics/results"
-                    element={<Examinations/>}
+                    <Route
+                        path="/academics/results"
+                        element={<Results />}
                     />
 
 
@@ -195,7 +245,9 @@ const AppRoutes = () => {
                         path="/blogs"
                         element={<Blogs />}
                     />
+                    <Route path="/blogs/:slug" element={<BlogDetail />} />
 
+                    <Route path="/news/:slug" element={<NewsDetail />} />
                     <Route
                         path="/gallery"
                         element={<Gallery />}
@@ -240,7 +292,7 @@ const AppRoutes = () => {
                         />
 
                         <Route
-                            path="admin/hero"
+                            path="hero"
                             element={<HeroManagement />}
 
 
@@ -248,39 +300,43 @@ const AppRoutes = () => {
 
 
                         <Route
-                            path="admin/news"
+                            path="news"
                             element={<NewsManagement />}
                         />
 
+                        <Route
+                            path="news"
+                            element={<NewsManagement />}
+                        />
 
                         <Route
-                            path="admin/achievements"
-                            element={<AchievementManagement />}
+                            path="socialmedia"
+                            element={<SocialWall />}
                         />
                         <Route
-                            path="admin/admissions"
+                            path="admissions"
                             element={<AdmissionManagement />}
                         />
 
 
                         <Route
-                            path="admin/blogs"
+                            path="blogs"
                             element={<BlogManagement />}
                         />
 
 
                         <Route
-                            path="admin/gallery"
+                            path="gallery"
                             element={<GalleryManagement />}
                         />
 
 
                         <Route
-                            path="admin/testimonials"
+                            path="testimonials"
                             element={<TestimonialManagement />}
                         />
                         <Route
-                            path="admin/contact"
+                            path="contact"
                             element={<ContactEnquiryManagement />}
                         />
 

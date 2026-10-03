@@ -1,63 +1,691 @@
-import { Link } from "react-router-dom";
-import {
-  FaArrowRight,
-  FaBookOpen,
-  FaLightbulb,
-  FaUsers,
-  FaFlask,
-  FaLaptop,
-  FaHeart,
-} from "react-icons/fa";
 
+
+// import { useEffect, useRef, useState } from "react";
+// import { Link } from "react-router-dom";
+// import {
+//   FaArrowRight,
+//   FaBookOpen,
+//   FaLightbulb,
+//   FaUsers,
+//   FaFlask,
+//   FaLaptop,
+//   FaHeart,
+//   FaSchool,
+//   FaPlay,
+//   FaQuoteLeft,
+//   FaTree,
+//   FaRocket,
+//   FaStar,
+//   FaAward,
+//   FaChalkboardTeacher,
+//   FaHands,
+//   FaChild,
+//   FaGraduationCap,
+// } from "react-icons/fa";
+// import "./Curriculum.css";
+
+// import heroBg from "../../assets/school.JPG";
+// import heroCircle from "../../assets/about.png";
+// import ctaBg from "../../assets/engaging.jpg";
+// import classroom from "../../assets/classroom.jpg";
+// import library from "../../assets/library.jpg";
+// import sciencelab from "../../assets/sciencelab.jpg";
+// import computerlab from "../../assets/ComputerLab.jpg";
+// import sports from "../../assets/herocircle.JPG";
+// import values from "../../assets/values.jpg";
+// // =====================================================
+// // ONLINE IMAGES (Replace with local imports later)
+// // =====================================================
+// const IMAGES = {
+//   heroBg: heroBg,
+//   heroCircle: heroCircle,
+//   ctaBg: ctaBg,
+//   classroom: classroom,
+//   science: sciencelab,
+//   computer: computerlab,
+//   library: library,
+//   sports: sports,
+//   values: values,
+// };
+
+// const Curriculum = () => {
+//   const heroRef = useRef(null);
+//   const introRef = useRef(null);
+//   const philosophyRef = useRef(null);
+//   const areasRef = useRef(null);
+//   const journeyRef = useRef(null);
+//   const modernRef = useRef(null);
+//   const wholeChildRef = useRef(null);
+//   const outcomeRef = useRef(null);
+//   const ctaRef = useRef(null);
+
+//   // =====================================================
+//   // SCROLL TRIGGERED ANIMATIONS
+//   // =====================================================
+
+//   useEffect(() => {
+//     const observerOptions = {
+//       threshold: 0.1,
+//       rootMargin: "0px 0px -50px 0px",
+//     };
+
+//     const sections = [
+//       { ref: heroRef, className: "sc-hero--visible" },
+//       { ref: introRef, className: "sc-intro--visible" },
+//       { ref: philosophyRef, className: "sc-philosophy--visible" },
+//       { ref: areasRef, className: "sc-areas--visible" },
+//       { ref: journeyRef, className: "sc-journey--visible" },
+//       { ref: modernRef, className: "sc-modern--visible" },
+//       { ref: wholeChildRef, className: "sc-whole-child--visible" },
+//       { ref: outcomeRef, className: "sc-outcome--visible" },
+//       { ref: ctaRef, className: "sc-cta--visible" },
+//     ];
+
+//     const observers = {};
+
+//     sections.forEach(({ ref, className }) => {
+//       if (!ref.current) return;
+
+//       const observer = new IntersectionObserver((entries) => {
+//         entries.forEach((entry) => {
+//           if (entry.isIntersecting) {
+//             entry.target.classList.add(className);
+//             observer.unobserve(entry.target);
+//           }
+//         });
+//       }, observerOptions);
+
+//       observer.observe(ref.current);
+//       observers[className] = observer;
+//     });
+
+//     return () => {
+//       Object.values(observers).forEach((observer) => observer.disconnect());
+//     };
+//   }, []);
+
+//   // =====================================================
+//   // DATA
+//   // =====================================================
+
+//   const learningAreas = [
+//     {
+//       number: "01",
+//       icon: <FaBookOpen />,
+//       title: "Academic Learning",
+//       description:
+//         "A structured learning experience that helps students build strong foundations, understand concepts and develop a lasting interest in learning.",
+//       image: IMAGES.classroom,
+//       color: "#4A90D9",
+//     },
+//     {
+//       number: "02",
+//       icon: <FaLightbulb />,
+//       title: "Curiosity & Exploration",
+//       description:
+//         "Students are encouraged to ask questions, explore ideas and develop the curiosity needed for meaningful and independent learning.",
+//       image: IMAGES.library,
+//       color: "#F39C12",
+//     },
+//     {
+//       number: "03",
+//       icon: <FaFlask />,
+//       title: "Practical Learning",
+//       description:
+//         "Laboratory experiences and activity-based learning create opportunities for students to connect concepts with practical experiences.",
+//       image: IMAGES.science,
+//       color: "#27AE60",
+//     },
+//     {
+//       number: "04",
+//       icon: <FaLaptop />,
+//       title: "Digital Learning",
+//       description:
+//         "Digital classroom facilities support interactive teaching and provide additional ways for students to understand and engage with concepts.",
+//       image: IMAGES.computer,
+//       color: "#8E44AD",
+//     },
+//     {
+//       number: "05",
+//       icon: <FaUsers />,
+//       title: "Co-Curricular Growth",
+//       description:
+//         "Learning extends beyond academic subjects through activities that encourage participation, communication, creativity and collaboration.",
+//       image: IMAGES.sports,
+//       color: "#E74C3C",
+//     },
+//     {
+//       number: "06",
+//       icon: <FaHeart />,
+//       title: "Values & Character",
+//       description:
+//         "The curriculum experience is supported by opportunities to develop healthy attitudes, responsibility, confidence and strong human values.",
+//       image: IMAGES.values,
+//       color: "#E67E22",
+//     },
+//   ];
+
+//   const curriculumPrinciples = [
+//     {
+//       number: "01",
+//       title: "Understand",
+//       text:
+//         "Build meaningful knowledge and develop a strong understanding of what is being learned.",
+//       icon: <FaBookOpen />,
+//     },
+//     {
+//       number: "02",
+//       title: "Explore",
+//       text:
+//         "Encourage curiosity, questioning and discovery so students become active participants in learning.",
+//       icon: <FaLightbulb />,
+//     },
+//     {
+//       number: "03",
+//       title: "Apply",
+//       text:
+//         "Connect classroom knowledge with practical experiences, activities and real-world situations.",
+//       icon: <FaHands />,
+//     },
+//     {
+//       number: "04",
+//       title: "Grow",
+//       text:
+//         "Develop communication, confidence, values and personal responsibility alongside academic learning.",
+//       icon: <FaChild />,
+//     },
+//   ];
+
+//   const stats = [
+//     { number: "15+", label: "Subjects", icon: <FaBookOpen /> },
+//     { number: "20+", label: "Activities", icon: <FaStar /> },
+//     { number: "100%", label: "Focus on Values", icon: <FaHeart /> },
+//     { number: "25+", label: "Years of Excellence", icon: <FaAward /> },
+//   ];
+
+//   return (
+//     <main className="sc-page">
+//       {/* =================================================
+//           TOP BAR - School Identity
+//       ================================================= */}
+//       <div className="sc-topbar">
+//         <div className="sc-container">
+//           <div className="sc-topbar__content">
+//             <span className="sc-topbar__motto">
+//               <FaSchool />
+//               Shifan Noor Global Academy - Where Values Meet Excellence
+//             </span>
+//             <span className="sc-topbar__affiliation">Affiliated to CBSE</span>
+//           </div>
+//         </div>
+//       </div>
+
+//       {/* =================================================
+//           HERO - With Background Image & Circular Image
+//       ================================================= */}
+//       <section ref={heroRef} className="sc-hero">
+//         <div className="sc-hero__bg-wrapper">
+//           <div 
+//             className="sc-hero__bg-image" 
+//             style={{ backgroundImage: `url(${IMAGES.heroBg})` }}
+//           />
+//           <div className="sc-hero__bg-overlay" />
+//           <div className="sc-hero__bg-gradient" />
+//         </div>
+
+//         <div className="sc-container">
+//           <div className="sc-hero__inner">
+//             <div className="sc-hero__content">
+//               <div className="sc-hero__badge">
+//                 <FaGraduationCap />
+//                 CURRICULUM
+//               </div>
+
+//               <h1 className="sc-hero__title">
+//                 Learning with
+//                 <br />
+//                 <span className="sc-hero__highlight">Purpose.</span>
+//               </h1>
+
+//               <p className="sc-hero__desc">
+//                 A learning approach designed to build knowledge,
+//                 develop skills and prepare students for the future.
+//               </p>
+
+//               {/* <div className="sc-hero__stats">
+//                 {stats.map((stat, index) => (
+//                   <div key={index} className="sc-hero__stat">
+//                     <span className="sc-hero__stat-icon">{stat.icon}</span>
+//                     <span className="sc-hero__stat-number">{stat.number}</span>
+//                     <span className="sc-hero__stat-label">{stat.label}</span>
+//                   </div>
+//                 ))}
+//               </div> */}
+
+//               <div className="sc-hero__actions">
+//                 <a href="#sc-areas" className="sc-hero__btn sc-hero__btn--primary">
+//                   <span>Explore Curriculum</span>
+//                   <FaArrowRight />
+//                 </a>
+//                 <button className="sc-hero__btn sc-hero__btn--secondary">
+//                   <FaPlay />
+//                   <span>Watch Overview</span>
+//                 </button>
+//               </div>
+//             </div>
+
+//             <div className="sc-hero__image-wrapper">
+//               <div className="sc-hero__image-circle">
+//                 <img 
+//                   src={IMAGES.heroCircle} 
+//                   alt="SNGA School" 
+//                   className="sc-hero__image-img"
+//                 />
+//                 <div className="sc-hero__image-ring" />
+//                 {/* <div className="sc-hero__image-badge">
+//                   <span>Since 2015</span>
+//                 </div> */}
+//               </div>
+//             </div>
+//           </div>
+//         </div>
+
+//         <div className="sc-hero__wave">
+//           <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+//             <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" />
+//           </svg>
+//         </div>
+//       </section>
+
+//       {/* =================================================
+//           INTRO - Welcome Message
+//       ================================================= */}
+//       <section ref={introRef} className="sc-intro">
+//         <div className="sc-container">
+//           <div className="sc-intro__inner">
+//             <div className="sc-intro__header">
+//               <span className="sc-intro__label">OUR APPROACH TO LEARNING</span>
+//               <h2 className="sc-intro__title">
+//                 More Than
+//                 <span className="sc-intro__highlight">Memorising.</span>
+//               </h2>
+//             </div>
+
+//             <div className="sc-intro__content">
+//               <p>
+//                 At Shifan Noor Global Academy, learning is approached as a process
+//                 of understanding, exploration and personal development.
+//               </p>
+//               <p>
+//                 The learning environment brings academic knowledge together with
+//                 skills, practical experiences, technology, co-curricular
+//                 participation and values.
+//               </p>
+//             </div>
+//           </div>
+//         </div>
+//       </section>
+
+//       {/* =================================================
+//           PHILOSOPHY SECTION
+//       ================================================= */}
+//       <section ref={philosophyRef} className="sc-philosophy">
+//         <div className="sc-philosophy__bg" />
+
+//         <div className="sc-container">
+//           <div className="sc-philosophy__inner">
+//             <div className="sc-philosophy__content">
+//               <span className="sc-philosophy__label">LEARNING PHILOSOPHY</span>
+//               <h2 className="sc-philosophy__title">
+//                 From Knowledge
+//                 <br />
+//                 <span className="sc-philosophy__highlight">to Confidence.</span>
+//               </h2>
+//             </div>
+
+//             <div className="sc-philosophy__right">
+//               <div className="sc-philosophy__quote">
+//                 <FaQuoteLeft />
+//               </div>
+//               <p className="sc-philosophy__desc">
+//                 A strong curriculum should help students understand what they
+//                 learn while developing the ability to communicate, think,
+//                 participate and apply their knowledge.
+//               </p>
+//               <p className="sc-philosophy__desc">
+//                 Our approach therefore looks at the student as a whole and
+//                 creates opportunities for academic, intellectual, social,
+//                 emotional and personal growth.
+//               </p>
+//             </div>
+//           </div>
+//         </div>
+//       </section>
+
+//       {/* =================================================
+//           LEARNING AREAS - Image Overlay Cards
+//       ================================================= */}
+//       <section ref={areasRef} className="sc-areas" id="sc-areas">
+//         <div className="sc-container">
+//           <div className="sc-areas__header">
+//             <div>
+//               <span className="sc-areas__label">LEARNING EXPERIENCE</span>
+//               <h2 className="sc-areas__title">
+//                 Different Ways
+//                 <br />
+//                 <span className="sc-areas__highlight">to Learn.</span>
+//               </h2>
+//             </div>
+//             <p className="sc-areas__desc">
+//               Students experience learning through classrooms, technology,
+//               practical activities, co-curricular experiences and opportunities
+//               for personal growth.
+//             </p>
+//           </div>
+
+//           <div className="sc-areas__grid">
+//             {learningAreas.map((area) => (
+//               <div key={area.number} className="sc-areas__card">
+//                 <div className="sc-areas__card-image">
+//                   <img src={area.image} alt={area.title} loading="lazy" />
+//                   <div className="sc-areas__card-overlay">
+//                     <div className="sc-areas__card-content">
+//                       <div className="sc-areas__card-top">
+                   
+//                         <div className="sc-areas__card-icon" style={{ color: area.color }}>
+//                           {area.icon}
+//                         </div>
+//                       </div>
+//                       <h3 className="sc-areas__card-title">{area.title}</h3>
+//                       <p className="sc-areas__card-desc">{area.description}</p>
+//                       <span className="sc-areas__card-arrow">
+//                         <FaArrowRight />
+//                       </span>
+//                     </div>
+//                   </div>
+//                 </div>
+//               </div>
+//             ))}
+//           </div>
+//         </div>
+//       </section>
+
+//       {/* =================================================
+//           LEARNING JOURNEY
+//       ================================================= */}
+//       <section ref={journeyRef} className="sc-journey">
+//         <div className="sc-container">
+//           <div className="sc-journey__header">
+//             <span className="sc-journey__label">THE LEARNING JOURNEY</span>
+//             <h2 className="sc-journey__title">
+//               Understand.
+//               <br />
+//               Explore.
+//               <br />
+//               <span className="sc-journey__highlight">Grow.</span>
+//             </h2>
+//           </div>
+
+//           <div className="sc-journey__grid">
+//             {curriculumPrinciples.map((item) => (
+//               <div key={item.number} className="sc-journey__card">
+//                 {/* <div className="sc-journey__card-number">{item.number}</div> */}
+//                 <div className="sc-journey__card-icon">{item.icon}</div>
+//                 <h3 className="sc-journey__card-title">{item.title}</h3>
+//                 <p className="sc-journey__card-desc">{item.text}</p>
+//                 <div className="sc-journey__card-line" />
+//               </div>
+//             ))}
+//           </div>
+//         </div>
+//       </section>
+
+//       {/* =================================================
+//           MODERN LEARNING
+//       ================================================= */}
+//       <section ref={modernRef} className="sc-modern">
+//         <div className="sc-modern__bg" />
+
+//         <div className="sc-container">
+//           <div className="sc-modern__inner">
+//             <div className="sc-modern__content">
+//               <span className="sc-modern__label">MODERN LEARNING</span>
+//               <h2 className="sc-modern__title">
+//                 Connecting the
+//                 <br />
+//                 Classroom to the <span className="sc-modern__highlight">World.</span>
+//               </h2>
+//               <p className="sc-modern__desc">
+//                 Digital classrooms provide opportunities for interactive teaching,
+//                 while laboratories, library spaces and other learning environments
+//                 allow students to experience education through different formats.
+//               </p>
+//               <p className="sc-modern__desc">
+//                 This combination helps students move beyond passive learning and
+//                 become more engaged in the learning process.
+//               </p>
+//               <Link to="/infrastructure" className="sc-modern__link">
+//                 <span>Explore Infrastructure</span>
+//                 <FaArrowRight />
+//               </Link>
+//             </div>
+
+//             <div className="sc-modern__visual">
+//               <div className="sc-modern__visual-circle">
+//                 <span className="sc-modern__visual-number">360°</span>
+//                 <span className="sc-modern__visual-label">LEARNING<br />EXPERIENCE</span>
+//                 <p className="sc-modern__visual-desc">
+//                   Knowledge, skills, activities and values working together.
+//                 </p>
+//               </div>
+//             </div>
+//           </div>
+//         </div>
+//       </section>
+
+//       {/* =================================================
+//           WHOLE CHILD
+//       ================================================= */}
+//       <section ref={wholeChildRef} className="sc-whole-child">
+//         <div className="sc-container">
+//           <div className="sc-whole-child__inner">
+//             <div className="sc-whole-child__content">
+//               <span className="sc-whole-child__label">BEYOND ACADEMICS</span>
+//               <h2 className="sc-whole-child__title">
+//                 Developing the
+//                 <br />
+//                 <span className="sc-whole-child__highlight">Whole Child.</span>
+//               </h2>
+//             </div>
+
+//             <div className="sc-whole-child__right">
+//               <p className="sc-whole-child__desc">
+//                 Education at SNGA extends beyond academic achievement. Students
+//                 are encouraged to participate in sports, co-curricular and
+//                 extracurricular activities.
+//               </p>
+//               <p className="sc-whole-child__desc">
+//                 These experiences help students discover interests, build
+//                 confidence, develop communication skills and learn to work
+//                 with others.
+//               </p>
+//               <Link to="/sports" className="sc-whole-child__link">
+//                 <span>Explore Student Life</span>
+//                 <FaArrowRight />
+//               </Link>
+//             </div>
+//           </div>
+//         </div>
+//       </section>
+
+//       {/* =================================================
+//           OUTCOME SECTION
+//       ================================================= */}
+//       <section ref={outcomeRef} className="sc-outcome">
+//         <div className="sc-outcome__bg" />
+
+//         <div className="sc-container">
+//           <div className="sc-outcome__inner">
+//             <span className="sc-outcome__label">THE OUTCOME</span>
+//             <h2 className="sc-outcome__title">
+//               Knowledge to
+//               <br />
+//               <span className="sc-outcome__highlight">Face the Future.</span>
+//             </h2>
+//             <p className="sc-outcome__desc">
+//               Our goal is to help students leave school with knowledge, skills,
+//               healthy attitudes, strong values and the confidence to approach
+//               new challenges.
+//             </p>
+
+//             <div className="sc-outcome__values">
+//               <div className="sc-outcome__value">
+//                 <FaBookOpen />
+//                 <span>Knowledge</span>
+//               </div>
+//               <div className="sc-outcome__value">
+//                 <FaHands />
+//                 <span>Skills</span>
+//               </div>
+//               <div className="sc-outcome__value">
+//                 <FaHeart />
+//                 <span>Values</span>
+//               </div>
+//               <div className="sc-outcome__value">
+//                 <FaRocket />
+//                 <span>Confidence</span>
+//               </div>
+//             </div>
+//           </div>
+//         </div>
+//       </section>
+
+//       {/* =================================================
+//           FINAL CTA - With Background Image
+//       ================================================= */}
+//       <section ref={ctaRef} className="sc-cta">
+//         <div className="sc-cta__bg-wrapper">
+//           <div 
+//             className="sc-cta__bg-image" 
+//             style={{ backgroundImage: `url(${IMAGES.ctaBg})` }}
+//           />
+//           <div className="sc-cta__bg-overlay" />
+//           <div className="sc-cta__bg-gradient" />
+//         </div>
+
+//         <div className="sc-container">
+//           <div className="sc-cta__content">
+//             <div className="sc-cta__badge">
+//               <FaGraduationCap />
+//               SHIFAN NOOR GLOBAL ACADEMY
+//             </div>
+
+//             <h2 className="sc-cta__title">
+//               Discover How
+//               <br />
+//               <span className="sc-cta__highlight">Students Learn.</span>
+//             </h2>
+
+//             <p className="sc-cta__desc">
+//               Explore the academic environment, learning spaces and
+//               opportunities available at SNGA.
+//             </p>
+
+//             <div className="sc-cta__actions">
+//               <Link to="/academics" className="sc-cta__btn sc-cta__btn--primary">
+//                 <span>Explore Academics</span>
+//                 <FaArrowRight />
+//               </Link>
+//               <Link to="/infrastructure" className="sc-cta__btn sc-cta__btn--secondary">
+//                 <span>View Facilities</span>
+//               </Link>
+//             </div>
+
+//             <div className="sc-cta__footer">
+//               <span>
+//                 <FaSchool /> CBSE Affiliated
+//               </span>
+//               <span>
+//                 <FaBookOpen /> Holistic Education
+//               </span>
+//               <span>
+//                 <FaAward /> Excellence in Learning
+//               </span>
+//             </div>
+//           </div>
+//         </div>
+//       </section>
+//     </main>
+//   );
+// };
+
+// export default Curriculum;
+
+
+
+
+
+
+
+import { Link } from "react-router-dom";
 import "./Curriculum.css";
+
+import schoolImage from "../../assets/school.JPG";
+import classroomImage from "../../assets/classroom.jpg";
+import libraryImage from "../../assets/library.jpg";
+import scienceImage from "../../assets/sciencelab.jpg";
+import computerLabImage from "../../assets/ComputerLab.jpg";
+import sportsImage from "../../assets/herocircle.JPG";
+import valuesImage from "../../assets/values.jpg";
+import engagingImage from "../../assets/engaging.jpg";
 
 const Curriculum = () => {
   const learningAreas = [
     {
       number: "01",
-      icon: <FaBookOpen />,
       title: "Academic Learning",
-      description:
+      text:
         "A structured learning experience that helps students build strong foundations, understand concepts and develop a lasting interest in learning.",
+      image: classroomImage,
     },
     {
       number: "02",
-      icon: <FaLightbulb />,
       title: "Curiosity & Exploration",
-      description:
+      text:
         "Students are encouraged to ask questions, explore ideas and develop the curiosity needed for meaningful and independent learning.",
+      image: libraryImage,
     },
     {
       number: "03",
-      icon: <FaFlask />,
       title: "Practical Learning",
-      description:
-        "Laboratory experiences and activity-based learning create opportunities for students to connect concepts with practical experiences.",
+      text:
+        "Laboratory experiences and activity-based learning create opportunities to connect concepts with practical experiences.",
+      image: scienceImage,
     },
     {
       number: "04",
-      icon: <FaLaptop />,
       title: "Digital Learning",
-      description:
+      text:
         "Digital classroom facilities support interactive teaching and provide additional ways for students to understand and engage with concepts.",
+      image: computerLabImage,
     },
     {
       number: "05",
-      icon: <FaUsers />,
       title: "Co-Curricular Growth",
-      description:
+      text:
         "Learning extends beyond academic subjects through activities that encourage participation, communication, creativity and collaboration.",
+      image: sportsImage,
     },
     {
       number: "06",
-      icon: <FaHeart />,
       title: "Values & Character",
-      description:
-        "The curriculum experience is supported by opportunities to develop healthy attitudes, responsibility, confidence and strong human values.",
+      text:
+        "The learning experience is supported by opportunities to develop healthy attitudes, responsibility, confidence and strong human values.",
+      image: valuesImage,
     },
   ];
 
-  const curriculumPrinciples = [
+  const principles = [
     {
       number: "01",
       title: "Understand",
@@ -87,142 +715,144 @@ const Curriculum = () => {
   return (
     <main className="curriculum-page">
 
-      {/* HERO */}
+      {/* =====================================================
+          HERO
+      ===================================================== */}
       <section className="curriculum-hero">
-        <div className="curriculum-container">
+        <div className="curriculum-hero__image">
+          <img src={schoolImage} alt="Shifan Noor Global Academy campus" />
+        </div>
 
-          <div className="curriculum-hero-content">
+        <div className="curriculum-hero__overlay" />
 
-            <div className="curriculum-eyebrow">
-              <span />
-              CURRICULUM
-            </div>
+        <div className="curriculum-container curriculum-hero__inner">
+          <div className="curriculum-hero__top">
+            <span>SHIFAN NOOR GLOBAL ACADEMY</span>
+            <span>ACADEMICS · CURRICULUM</span>
+          </div>
 
-            <h1>
-              Learning with
-              <br />
-              <em>purpose.</em>
-            </h1>
+          <div className="curriculum-hero__content">
+            <div className="curriculum-hero__index">03</div>
 
-            <p>
-              A learning approach designed to build knowledge,
-              develop skills and prepare students for the future.
+            <p className="curriculum-kicker">
+              THE LEARNING EXPERIENCE
             </p>
 
+            <h1>
+              Learning
+              <br />
+              <span>with purpose.</span>
+            </h1>
+
+            <p className="curriculum-hero__description">
+              An academic environment designed to build knowledge,
+              develop skills and prepare students to meet the future
+              with confidence.
+            </p>
           </div>
 
-          <div className="curriculum-hero-side">
-            <span>KNOWLEDGE</span>
-            <span>EXPLORATION</span>
-            <span>SKILLS</span>
-            <span>VALUES</span>
+          <div className="curriculum-hero__bottom">
+            <span>VENKULAM · RAMANATHAPURAM</span>
+            <span>SCROLL TO EXPLORE</span>
           </div>
-
         </div>
       </section>
 
-      {/* INTRO */}
+      {/* =====================================================
+          INTRODUCTION
+      ===================================================== */}
       <section className="curriculum-intro">
         <div className="curriculum-container">
-
-          <div className="curriculum-intro-label">
-            OUR APPROACH TO LEARNING
+          <div className="curriculum-section-label">
+            <span>01</span>
+            OUR APPROACH
           </div>
 
-          <div className="curriculum-intro-grid">
-
+          <div className="curriculum-intro__grid">
             <h2>
               More than
               <br />
               <em>memorising.</em>
             </h2>
 
-            <div className="curriculum-intro-copy">
-
-              <p>
-                At Shifan Noor Global Academy, learning is
-                approached as a process of understanding,
-                exploration and personal development.
+            <div className="curriculum-intro__copy">
+              <p className="curriculum-lead">
+                At Shifan Noor Global Academy, learning is approached
+                as a process of understanding, exploration and personal
+                development.
               </p>
 
               <p>
-                The learning environment brings academic
-                knowledge together with skills, practical
-                experiences, technology, co-curricular
+                Academic knowledge is brought together with skills,
+                practical experiences, technology, co-curricular
                 participation and values.
               </p>
 
+              <p>
+                The objective is not simply to complete a syllabus,
+                but to create learners who can think, communicate,
+                participate and continue learning beyond the classroom.
+              </p>
             </div>
-
           </div>
-
         </div>
       </section>
 
-      {/* CURRICULUM PHILOSOPHY */}
+      {/* =====================================================
+          PHILOSOPHY
+      ===================================================== */}
       <section className="curriculum-philosophy">
-
         <div className="curriculum-container">
-
-          <div className="curriculum-philosophy-grid">
-
-            <div className="curriculum-philosophy-heading">
-
-              <div className="curriculum-eyebrow dark">
+          <div className="curriculum-philosophy__grid">
+            <div>
+              <span className="curriculum-kicker">
                 LEARNING PHILOSOPHY
-              </div>
+              </span>
 
               <h2>
                 From knowledge
                 <br />
-                to <em>confidence.</em>
+                <span>to confidence.</span>
               </h2>
-
             </div>
 
-            <div className="curriculum-philosophy-copy">
+            <div className="curriculum-philosophy__statement">
+              <div className="curriculum-philosophy__rule" />
 
               <p>
-                A strong curriculum should help students
-                understand what they learn while developing
-                the ability to communicate, think, participate
-                and apply their knowledge.
+                A strong curriculum should help students understand
+                what they learn while developing the ability to
+                communicate, think, participate and apply their knowledge.
               </p>
 
               <p>
-                Our approach therefore looks at the student
-                as a whole and creates opportunities for
-                academic, intellectual, social, emotional
-                and personal growth.
+                Our approach therefore looks at the student as a whole,
+                creating opportunities for academic, intellectual,
+                social, emotional and personal growth.
               </p>
-
             </div>
-
           </div>
-
         </div>
-
       </section>
 
-      {/* LEARNING AREAS */}
+      {/* =====================================================
+          LEARNING AREAS
+      ===================================================== */}
       <section className="curriculum-areas">
-
         <div className="curriculum-container">
 
-          <div className="curriculum-areas-header">
-
+          <div className="curriculum-section-heading">
             <div>
-
-              <div className="curriculum-eyebrow dark">
+              <div className="curriculum-section-label">
+                <span>02</span>
                 LEARNING EXPERIENCE
               </div>
 
               <h2>
                 Different ways
                 <br />
-                to <em>learn.</em>
+                <em>to learn.</em>
               </h2>
-
             </div>
 
             <p>
@@ -230,296 +860,353 @@ const Curriculum = () => {
               technology, practical activities, co-curricular
               experiences and opportunities for personal growth.
             </p>
-
           </div>
 
-          <div className="curriculum-area-grid">
-
+          <div className="curriculum-area-list">
             {learningAreas.map((area) => (
               <article
-                className="curriculum-area"
+                className="curriculum-area-row"
                 key={area.number}
               >
-
-                <div className="curriculum-area-top">
-
-                  <span className="curriculum-area-number">
-                    {area.number}
-                  </span>
-
-                  <div className="curriculum-area-icon">
-                    {area.icon}
-                  </div>
-
+                <div className="curriculum-area-row__number">
+                  {area.number}
                 </div>
 
-                <h3>
-                  {area.title}
-                </h3>
+                <div className="curriculum-area-row__image">
+                  <img
+                    src={area.image}
+                    alt={area.title}
+                    loading="lazy"
+                  />
+                </div>
 
-                <p>
-                  {area.description}
-                </p>
+                <div className="curriculum-area-row__content">
+                  <h3>{area.title}</h3>
+                  <p>{area.text}</p>
+                </div>
 
+                <div className="curriculum-area-row__arrow">
+                  →
+                </div>
               </article>
             ))}
-
           </div>
-
         </div>
-
       </section>
 
-      {/* LEARNING JOURNEY */}
+      {/* =====================================================
+          LEARNING JOURNEY
+      ===================================================== */}
       <section className="curriculum-journey">
-
         <div className="curriculum-container">
 
-          <div className="curriculum-journey-header">
+          <div className="curriculum-section-label curriculum-section-label--light">
+            <span>03</span>
+            THE LEARNING JOURNEY
+          </div>
 
-            <div className="curriculum-eyebrow">
-              THE LEARNING JOURNEY
-            </div>
-
+          <div className="curriculum-journey__header">
             <h2>
               Understand.
               <br />
               Explore.
               <br />
-              <em>Grow.</em>
+              <span>Grow.</span>
             </h2>
 
+            <p>
+              Learning becomes meaningful when students are given
+              opportunities to move from understanding an idea to
+              exploring it, applying it and growing through the experience.
+            </p>
           </div>
 
-          <div className="curriculum-journey-list">
-
-            {curriculumPrinciples.map((item) => (
+          <div className="curriculum-principles">
+            {principles.map((item) => (
               <article
-                className="curriculum-journey-item"
+                className="curriculum-principle"
                 key={item.number}
               >
+                <span>{item.number}</span>
 
-                <div className="curriculum-journey-number">
-                  {item.number}
+                <div>
+                  <h3>{item.title}</h3>
+                  <p>{item.text}</p>
                 </div>
-
-                <div className="curriculum-journey-content">
-
-                  <h3>
-                    {item.title}
-                  </h3>
-
-                  <p>
-                    {item.text}
-                  </p>
-
-                </div>
-
               </article>
             ))}
-
           </div>
-
         </div>
-
       </section>
 
-      {/* DIGITAL + PRACTICAL */}
+      {/* =====================================================
+          MODERN LEARNING
+      ===================================================== */}
       <section className="curriculum-modern">
-
         <div className="curriculum-container">
 
-          <div className="curriculum-modern-grid">
+          <div className="curriculum-section-label">
+            <span>04</span>
+            MODERN LEARNING
+          </div>
 
-            <div className="curriculum-modern-content">
+          <div className="curriculum-modern__grid">
 
-              <div className="curriculum-eyebrow dark">
-                MODERN LEARNING
+            <div className="curriculum-modern__visual">
+              <img
+                src={engagingImage}
+                alt="Students learning at SNGA"
+                loading="lazy"
+              />
+
+              <div className="curriculum-modern__caption">
+                <span>LEARNING IN MOTION</span>
+                <strong>
+                  The classroom is only
+                  <br />
+                  one part of learning.
+                </strong>
               </div>
+            </div>
 
+            <div className="curriculum-modern__content">
               <h2>
                 Connecting the
                 <br />
-                classroom to the <em>world.</em>
+                classroom to the
+                <br />
+                <em>world.</em>
               </h2>
 
               <p>
-                Digital classrooms provide opportunities
-                for interactive teaching, while laboratories,
-                library spaces and other learning environments
-                allow students to experience education through
-                different formats.
+                Digital classrooms provide opportunities for
+                interactive teaching, while laboratories, library
+                spaces and other learning environments allow students
+                to experience education through different formats.
               </p>
 
               <p>
-                This combination helps students move beyond
-                passive learning and become more engaged in
-                the learning process.
+                This combination helps students move beyond passive
+                learning and become more engaged in the learning process.
               </p>
 
               <Link
                 to="/infrastructure"
-                className="curriculum-link"
+                className="curriculum-text-link"
               >
-                <span>Explore Infrastructure</span>
-                <FaArrowRight />
+                Explore Infrastructure
+                <span>→</span>
               </Link>
-
-            </div>
-
-            <div className="curriculum-modern-visual">
-
-              <div className="curriculum-modern-number">
-                360°
-              </div>
-
-              <div className="curriculum-modern-label">
-                LEARNING
-                <br />
-                EXPERIENCE
-              </div>
-
-              <p>
-                Knowledge, skills, activities
-                and values working together.
-              </p>
-
             </div>
 
           </div>
-
         </div>
-
       </section>
 
-      {/* WHOLE CHILD */}
-      <section className="curriculum-whole-child">
-
+      {/* =====================================================
+          WHOLE CHILD
+      ===================================================== */}
+      <section className="curriculum-whole">
         <div className="curriculum-container">
 
-          <div className="curriculum-whole-child-grid">
-
-            <div className="curriculum-whole-child-heading">
-
-              <div className="curriculum-eyebrow dark">
+          <div className="curriculum-whole__grid">
+            <div>
+              <span className="curriculum-kicker">
                 BEYOND ACADEMICS
-              </div>
+              </span>
 
               <h2>
                 Developing the
                 <br />
-                <em>whole child.</em>
+                <span>whole child.</span>
               </h2>
-
             </div>
 
-            <div className="curriculum-whole-child-copy">
-
-              <p>
-                Education at SNGA extends beyond academic
-                achievement. Students are encouraged to
-                participate in sports, co-curricular and
-                extracurricular activities.
+            <div className="curriculum-whole__copy">
+              <p className="curriculum-lead">
+                Education at SNGA extends beyond academic achievement.
               </p>
 
               <p>
-                These experiences help students discover
-                interests, build confidence, develop
-                communication skills and learn to work
-                with others.
+                Students are encouraged to participate in sports,
+                co-curricular and extracurricular activities. These
+                experiences create opportunities to discover interests,
+                build confidence and develop communication skills.
+              </p>
+
+              <p>
+                Learning to work with others, participate responsibly
+                and express oneself becomes part of the wider educational
+                experience.
               </p>
 
               <Link
                 to="/sports"
-                className="curriculum-link"
+                className="curriculum-text-link"
               >
-                <span>Explore Student Life</span>
-                <FaArrowRight />
+                Explore Student Life
+                <span>→</span>
               </Link>
-
             </div>
-
           </div>
 
         </div>
-
       </section>
 
-      {/* OUTCOME */}
+      {/* =====================================================
+          OUTCOME
+      ===================================================== */}
       <section className="curriculum-outcome">
-
         <div className="curriculum-container">
 
-          <div className="curriculum-outcome-inner">
-
-            <div className="curriculum-eyebrow">
+          <div className="curriculum-outcome__top">
+            <div className="curriculum-section-label curriculum-section-label--light">
+              <span>05</span>
               THE OUTCOME
             </div>
 
+            <span className="curriculum-outcome__word">
+              FUTURE
+            </span>
+          </div>
+
+          <div className="curriculum-outcome__content">
             <h2>
               Knowledge to
               <br />
-              <em>face the future.</em>
+              <span>face the future.</span>
             </h2>
 
             <p>
-              Our goal is to help students leave school
-              with knowledge, skills, healthy attitudes,
-              strong values and the confidence to approach
-              new challenges.
+              Our goal is to help students leave school with knowledge,
+              skills, healthy attitudes, strong values and the confidence
+              to approach new challenges.
             </p>
+          </div>
 
+          <div className="curriculum-outcome__values">
+            <div>
+              <span>01</span>
+              <strong>Knowledge</strong>
+            </div>
+
+            <div>
+              <span>02</span>
+              <strong>Skills</strong>
+            </div>
+
+            <div>
+              <span>03</span>
+              <strong>Values</strong>
+            </div>
+
+            <div>
+              <span>04</span>
+              <strong>Confidence</strong>
+            </div>
           </div>
 
         </div>
-
       </section>
 
-      {/* CTA */}
-      <section className="curriculum-cta">
-
+      {/* =====================================================
+          ACADEMIC CONNECTION
+      ===================================================== */}
+      <section className="curriculum-links">
         <div className="curriculum-container">
 
-          <div className="curriculum-cta-content">
+          <div className="curriculum-section-label">
+            <span>06</span>
+            CONTINUE EXPLORING
+          </div>
 
-            <div className="curriculum-eyebrow dark">
-              EXPLORE ACADEMICS
-            </div>
+          <div className="curriculum-links__grid">
 
-            <h2>
-              Discover how
-              <br />
-              <em>students learn.</em>
-            </h2>
+            <Link to="/academics" className="curriculum-link-card">
+              <span>ACADEMICS</span>
+              <h3>
+                The wider
+                <br />
+                academic experience.
+              </h3>
+              <strong>→</strong>
+            </Link>
 
-            <p>
-              Explore the academic environment, learning
-              spaces and opportunities available at SNGA.
-            </p>
+            <Link
+              to="/infrastructure"
+              className="curriculum-link-card curriculum-link-card--red"
+            >
+              <span>INFRASTRUCTURE</span>
+              <h3>
+                Spaces designed
+                <br />
+                for learning.
+              </h3>
+              <strong>→</strong>
+            </Link>
 
-            <div className="curriculum-actions">
+            <Link
+              to="/faculties"
+              className="curriculum-link-card"
+            >
+              <span>FACULTY</span>
+              <h3>
+                The people
+                <br />
+                behind learning.
+              </h3>
+              <strong>→</strong>
+            </Link>
 
-              <Link
-                to="/academics"
-                className="curriculum-button"
-              >
-                <span>Explore Academics</span>
-                <FaArrowRight />
-              </Link>
+          </div>
+        </div>
+      </section>
 
-              <Link
-                to="/facilities"
-                className="curriculum-secondary"
-              >
-                View Facilities
-              </Link>
+      {/* =====================================================
+          FINAL CTA
+      ===================================================== */}
+      <section className="curriculum-cta">
 
-            </div>
+        <div className="curriculum-cta__image">
+          <img
+            src={schoolImage}
+            alt="Shifan Noor Global Academy"
+            loading="lazy"
+          />
+        </div>
 
+        <div className="curriculum-cta__overlay" />
+
+        <div className="curriculum-container curriculum-cta__inner">
+
+          <span className="curriculum-kicker">
+            SHIFAN NOOR GLOBAL ACADEMY
+          </span>
+
+          <h2>
+            Discover how
+            <br />
+            <span>students learn.</span>
+          </h2>
+
+          <p>
+            Explore the academic environment, learning spaces and
+            opportunities available at SNGA.
+          </p>
+
+          <div className="curriculum-cta__actions">
+            <Link to="/academics">
+              Explore Academics
+              <span>→</span>
+            </Link>
+
+            <Link to="/admissions">
+              Admission Enquiry
+              <span>→</span>
+            </Link>
           </div>
 
         </div>
-
       </section>
 
     </main>

@@ -83,6 +83,8 @@ const testimonialRoutes = require("./routes/testimonial.routes");
 const uploadRoutes = require("./routes/upload.routes");
 const contactRoutes = require("./routes/contact.routes");
 const galleryRoutes = require("./routes/gallery.routes");
+const socialPostRoutes = require("./routes/socialPostRoutes");
+
 
 const heroRoutes = require("./routes/hero.routes");
 
@@ -119,6 +121,9 @@ app.use(
     },
   })
 );
+
+
+
 // ==========================================
 // LOGGER
 // ==========================================
@@ -170,6 +175,13 @@ app.use("/api/hero", heroRoutes);
 app.use("/api/blogs", blogRoutes);
 
 app.use("/api/gallery", galleryRoutes);
+
+app.use(
+  "/api/social-posts",
+  socialPostRoutes
+);
+
+
 app.use(
   "/api/achievements",
   achievementRoutes

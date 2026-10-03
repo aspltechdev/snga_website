@@ -1,204 +1,307 @@
 
+
+// import { useEffect, useRef } from "react";
 // import { Link } from "react-router-dom";
 
-// import {
-//   FaArrowRight,
-//   FaBookOpen,
-//   FaUsers,
-//   FaHeart,
-//   FaAward,
-// } from "react-icons/fa";
-
 // import "./AboutPreview.css";
-
 // import schoolImage from "../../assets/about.png";
 
 // const AboutPreview = () => {
-//   const highlights = [
-//     {
-//       icon: <FaBookOpen />,
-//       text: "Holistic & Value-Based Education",
-//     },
-//     {
-//       icon: <FaUsers />,
-//       text: "Dedicated Learning Environment",
-//     },
-//     {
-//       icon: <FaHeart />,
-//       text: "Character, Confidence & Values",
-//     },
-//     {
-//       icon: <FaAward />,
-//       text: "Academic, Sports & Co-Curricular Growth",
-//     },
-//   ];
+//   const sectionRef = useRef(null);
+
+//   useEffect(() => {
+//     const section = sectionRef.current;
+
+//     if (!section) return;
+
+//     const observer = new IntersectionObserver(
+//       (entries) => {
+//         entries.forEach((entry) => {
+//           if (entry.isIntersecting) {
+//             section.classList.add("ap-visible");
+//             observer.unobserve(section);
+//           }
+//         });
+//       },
+//       {
+//         threshold: 0.12,
+//         rootMargin: "0px 0px -60px 0px",
+//       }
+//     );
+
+//     observer.observe(section);
+
+//     return () => observer.disconnect();
+//   }, []);
 
 //   return (
-//     <section className="about-preview">
-//       {/* Background decorative elements */}
-//       <div className="about-preview-bg-blob about-preview-bg-blob-1" />
-//       <div className="about-preview-bg-blob about-preview-bg-blob-2" />
+//     <section ref={sectionRef} className="ap">
+//       {/* =====================================================
+//           INTRO
+//       ====================================================== */}
 
-//       <div className="about-preview-container">
-
-//         {/* =====================================
-//             IMAGE SIDE
-//         ====================================== */}
-
-//         <div className="about-preview-visual">
-//           <div className="about-preview-image-wrap">
-//             <img
-//               src={schoolImage}
-//               alt="Shifan Noor Global Academy campus"
-//               className="about-preview-image"
-//             />
-
-//             <div className="about-preview-float about-preview-float-1">
-//               <span>✦</span>
-//             </div>
-
-//             <div className="about-preview-float about-preview-float-2">
-//               <span>✦</span>
-//             </div>
+//       <div className="ap-intro">
+//         <div className="ap-container">
+//           <div className="ap-topline">
+//             <span>ABOUT SHIFAN NOOR GLOBAL ACADEMY</span>
 //           </div>
 
-//           {/* Campus Highlight */}
-//           <div className="about-preview-experience">
-//             <div className="about-preview-experience-icon">
-//               <FaBookOpen />
-//             </div>
-
-//             <div>
-//               <strong>13.5 Acres</strong>
-//               <span>
-//                 Green & Serene Learning Campus
+//           <div className="ap-intro-grid">
+//             <div className="ap-title-block">
+//               <span className="ap-kicker">
+//                 A PLACE TO LEARN
 //               </span>
+
+//               <h2>
+//                 More than
+//                 <br />
+//                 <span>a school.</span>
+//               </h2>
+//             </div>
+
+//             <div className="ap-intro-copy">
+//               <p>
+//                 Shifan Noor Global Academy creates a learning
+//                 environment where knowledge, skills, values and
+//                 confidence grow together.
+//               </p>
+
+//               <Link
+//                 to="/about"
+//                 className="ap-intro-link"
+//               >
+//                 Discover our story
+//                 <span>↗</span>
+//               </Link>
 //             </div>
 //           </div>
-
-//           <div className="about-preview-shape" />
-//           <div className="about-preview-shape about-preview-shape-2" />
 //         </div>
+//       </div>
 
-//         {/* =====================================
-//             CONTENT SIDE
-//         ====================================== */}
+//       {/* =====================================================
+//           FEATURE IMAGE + STORY
+//       ====================================================== */}
 
-//         <div className="about-preview-content">
+//       <div className="ap-story">
+//         <div className="ap-container">
+//           <div className="ap-story-grid">
 
-//           <div className="about-preview-label">
-//             <span className="about-preview-label-line" />
+//             {/* IMAGE */}
 
-//             <span className="about-preview-label-text">
-//               ABOUT SNGA
-//             </span>
-//           </div>
+//             <div className="ap-visual">
+//               <div className="ap-image-frame">
+//                 <img
+//                   src={schoolImage}
+//                   alt="Shifan Noor Global Academy campus"
+//                   className="ap-image"
+//                 />
 
-//           <h2 className="about-preview-title">
-//             Inspiring Young Minds,
-//             <br />
+//                 <div className="ap-image-label">
+//                   <span>01</span>
+//                   <span>THE SNGA CAMPUS</span>
+//                 </div>
 
-//             <span className="about-preview-title-emphasis">
-//               Shaping Confident Futures.
-//             </span>
-//           </h2>
+//                 <div className="ap-image-location">
+//                   Ramanathapuram
+//                   <br />
+//                   Tamil Nadu
+//                 </div>
+//               </div>
+//             </div>
 
-//           <p className="about-preview-description">
-//             Shifan Noor Global Academy is committed to
-//             providing a holistic learning environment where
-//             knowledge, skills, values and confidence come
-//             together to shape every child's future.
-//           </p>
+//             {/* CONTENT */}
 
-//           <p className="about-preview-description about-preview-description-secondary">
-//             Set across a calm and lush green 13.5-acre
-//             campus in Ramanathapuram, the school provides
-//             students with modern learning spaces, digital
-//             classrooms, laboratories, library facilities,
-//             sports and opportunities to discover their
-//             individual potential.
-//           </p>
+//             <div className="ap-story-content">
 
-//           {/* =================================
-//               HIGHLIGHTS
-//           ================================= */}
+//               <div className="ap-story-number">
+//                 <span>13.5</span>
+//                 <small>ACRES</small>
+//               </div>
 
-//           <div className="about-preview-points">
-//             {highlights.map((item, index) => (
-//               <div
-//                 key={index}
-//                 className="about-preview-point"
-//                 style={{
-//                   animationDelay: `${index * 0.1}s`,
-//                 }}
-//               >
-//                 <span className="about-preview-check">
-//                   {item.icon}
+//               <div className="ap-story-copy">
+
+//                 <span className="ap-section-label">
+//                   OUR ENVIRONMENT
 //                 </span>
 
-//                 <span>{item.text}</span>
+//                 <h3>
+//                   A calm space
+//                   <br />
+//                   <span>for growing minds.</span>
+//                 </h3>
+
+//                 <p>
+//                   Located at Venkulam on the
+//                   Ramanathapuram–Devipattinam main road,
+//                   the SNGA campus is set within a calm,
+//                   serene and lush green environment designed
+//                   to support meaningful learning.
+//                 </p>
+
+//                 <p>
+//                   Classrooms, digital learning spaces,
+//                   laboratories, a library and areas for
+//                   activities come together to create an
+//                   environment where students can learn,
+//                   explore and develop beyond textbooks.
+//                 </p>
+
+//                 <Link
+//                   to="/about  /history"
+//                   className="ap-story-link"
+//                 >
+//                   <span>Explore the school</span>
+//                   <span>→</span>
+//                 </Link>
+
 //               </div>
-//             ))}
+//             </div>
+//           </div>
+//         </div>
+//       </div>
+
+//       {/* =====================================================
+//           FOUR CORE IDEAS
+//       ====================================================== */}
+
+//       <div className="ap-principles">
+//         <div className="ap-container">
+
+//           <div className="ap-principles-heading">
+//             <span>WHAT WE BELIEVE</span>
+
+//             <p>
+//               Education is not only about what students know.
+//               It is also about who they become.
+//             </p>
 //           </div>
 
-//           {/* =================================
-//               STATS
-//           ================================= */}
+//           <div className="ap-principles-list">
 
-//           <div className="about-preview-stats">
+//             <div className="ap-principle">
+//               <span>01</span>
 
-//             <div className="about-preview-stat">
-//               <span className="about-preview-stat-number">
-//                 13.5
-//               </span>
-
-//               <span className="about-preview-stat-label">
-//                 Acres of Campus
-//               </span>
+//               <div>
+//                 <h3>Knowledge</h3>
+//                 <p>
+//                   Building strong foundations and encouraging
+//                   students to understand, question and discover.
+//                 </p>
+//               </div>
 //             </div>
 
-//             <div className="about-preview-stat-divider" />
+//             <div className="ap-principle">
+//               <span>02</span>
 
-//             <div className="about-preview-stat">
-//               <span className="about-preview-stat-number">
-//                 3500+
-//               </span>
-
-//               <span className="about-preview-stat-label">
-//                 Library Books
-//               </span>
+//               <div>
+//                 <h3>Skills</h3>
+//                 <p>
+//                   Developing practical abilities that help
+//                   students approach challenges with confidence.
+//                 </p>
+//               </div>
 //             </div>
 
-//             <div className="about-preview-stat-divider" />
+//             <div className="ap-principle">
+//               <span>03</span>
 
-//             <div className="about-preview-stat">
-//               <span className="about-preview-stat-number">
-//                 500
-//               </span>
+//               <div>
+//                 <h3>Values</h3>
+//                 <p>
+//                   Nurturing healthy attitudes, responsibility,
+//                   character and respect for others.
+//                 </p>
+//               </div>
+//             </div>
 
-//               <span className="about-preview-stat-label">
-//                 Sq. Ft. Classrooms
-//               </span>
+//             <div className="ap-principle">
+//               <span>04</span>
+
+//               <div>
+//                 <h3>Confidence</h3>
+//                 <p>
+//                   Helping every student develop self-belief
+//                   and readiness for the challenges ahead.
+//                 </p>
+//               </div>
 //             </div>
 
 //           </div>
+//         </div>
+//       </div>
 
-//           {/* =================================
-//               BUTTON
-//           ================================= */}
+//       {/* =====================================================
+//           STATEMENT
+//       ====================================================== */}
 
-//           <Link
-//             to="/about"
-//             className="about-preview-button"
-//           >
-//             <span>
-//               Discover Our School
+//       <div className="ap-statement">
+//         <div className="ap-container">
+
+//           <div className="ap-statement-grid">
+
+//             <span className="ap-statement-number">
+//               03
 //             </span>
 
-//             <span className="about-preview-button-icon">
-//               <FaArrowRight />
-//             </span>
-//           </Link>
+//             <h3>
+//               Learning should
+//               <br />
+//               shape the
+//               <br />
+//               <span>whole person.</span>
+//             </h3>
+
+//             <div className="ap-statement-copy">
+//               <p>
+//                 At SNGA, education brings together academic
+//                 learning, personal development, co-curricular
+//                 experiences and values to help students grow
+//                 into confident individuals.
+//               </p>
+
+//               <Link
+//                 to="/about/vision-mission"
+//                 className="ap-statement-link"
+//               >
+//                 Our vision & mission
+//                 <span>↗</span>
+//               </Link>
+//             </div>
+
+//           </div>
+//         </div>
+//       </div>
+
+//       {/* =====================================================
+//           BOTTOM LINK
+//       ====================================================== */}
+
+//       <div className="ap-bottom">
+//         <div className="ap-container">
+
+//           <div className="ap-bottom-inner">
+
+//             <div>
+//               <span className="ap-kicker">
+//                 GET TO KNOW SNGA
+//               </span>
+
+//               <h3>
+//                 Discover what makes
+//                 <br />
+//                 <span>our school different.</span>
+//               </h3>
+//             </div>
+
+//             <Link
+//               to="/about"
+//               className="ap-bottom-button"
+//             >
+//               Explore About SNGA
+//               <span>↗</span>
+//             </Link>
+
+//           </div>
 
 //         </div>
 //       </div>
@@ -208,272 +311,354 @@
 
 // export default AboutPreview;
 
-import { useEffect, useRef, useState } from "react";
+
+import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
-import {
-  FaArrowRight,
-  FaCheck,
-  FaGraduationCap,
-  FaBookOpen,
-  FaUsers,
-  FaAward,
-  FaHeart,
-} from "react-icons/fa";
 
 import "./AboutPreview.css";
-
 import schoolImage from "../../assets/about.png";
 
 const AboutPreview = () => {
-  const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
-  const imageRef = useRef(null);
-  const contentRef = useRef(null);
-  const statsRef = useRef(null);
-  const pointsRef = useRef(null);
-
-  const highlights = [
-    {
-      icon: <FaBookOpen />,
-      text: "Holistic Learning Environment",
-    },
-    {
-      icon: <FaUsers />,
-      text: "Experienced & Dedicated Faculty",
-    },
-    {
-      icon: <FaHeart />,
-      text: "Focus on Values & Character",
-    },
-    {
-      icon: <FaAward />,
-      text: "Student-Centred Education",
-    },
-  ];
-
-  // =====================================================
-  // SCROLL TRIGGERED ANIMATIONS
-  // =====================================================
 
   useEffect(() => {
-    const observerOptions = {
-      threshold: 0.15,
-      rootMargin: "0px 0px -50px 0px",
-    };
+    const section = sectionRef.current;
 
-    // Section visibility observer
-    const sectionObserver = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
+    if (!section) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
         if (entry.isIntersecting) {
-          setIsVisible(true);
-          sectionObserver.unobserve(entry.target);
+          section.classList.add("ap-visible");
+          observer.unobserve(section);
         }
-      });
-    }, observerOptions);
-
-    // Image observer
-    const imageObserver = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("reveal-image");
-            imageObserver.unobserve(entry.target);
-          }
-        });
       },
-      { threshold: 0.2 }
+      {
+        threshold: 0.12,
+        rootMargin: "0px 0px -80px 0px",
+      }
     );
 
-    // Content observer
-    const contentObserver = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("reveal-content");
-            contentObserver.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.2 }
-    );
+    observer.observe(section);
 
-    // Stats observer
-    const statsObserver = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("reveal-stats");
-            statsObserver.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.3 }
-    );
-
-    // Points observer (staggered)
-    const pointsObserver = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const points = entry.target.querySelectorAll(".about-preview-point");
-            points.forEach((point, index) => {
-              setTimeout(() => {
-                point.classList.add("reveal-point");
-              }, index * 120);
-            });
-            pointsObserver.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.2 }
-    );
-
-    if (sectionRef.current) {
-      sectionObserver.observe(sectionRef.current);
-    }
-
-    if (imageRef.current) {
-      imageObserver.observe(imageRef.current);
-    }
-
-    if (contentRef.current) {
-      contentObserver.observe(contentRef.current);
-    }
-
-    if (statsRef.current) {
-      statsObserver.observe(statsRef.current);
-    }
-
-    if (pointsRef.current) {
-      pointsObserver.observe(pointsRef.current);
-    }
-
-    return () => {
-      sectionObserver.disconnect();
-      imageObserver.disconnect();
-      contentObserver.disconnect();
-      statsObserver.disconnect();
-      pointsObserver.disconnect();
-    };
+    return () => observer.disconnect();
   }, []);
 
   return (
-    <section
-      ref={sectionRef}
-      className={`about-preview ${isVisible ? "about-preview-visible" : ""}`}
-    >
-      {/* Background decorative elements */}
-      <div className="about-preview-bg-blob about-preview-bg-blob-1" />
-      <div className="about-preview-bg-blob about-preview-bg-blob-2" />
+    <section ref={sectionRef} className="ap">
+      {/* =====================================================
+          EDITORIAL INTRO
+      ====================================================== */}
 
-      <div className="about-preview-container">
-        {/* =====================================
-            IMAGE SIDE
-        ====================================== */}
-        <div ref={imageRef} className="about-preview-visual">
-          <div className="about-preview-image-wrap">
-            <img
-              src={schoolImage}
-              alt="Shree Narayan Guru Academy"
-              className="about-preview-image"
-            />
+      <div className="ap-intro">
+        <div className="ap-container">
+          <div className="ap-intro-top">
+            <span className="ap-intro-index">01</span>
 
-            {/* Floating decorative elements */}
-            <div className="about-preview-float about-preview-float-1">
-              <span>✦</span>
-            </div>
-            <div className="about-preview-float about-preview-float-2">
-              <span>✦</span>
-            </div>
+            <span className="ap-intro-label">
+              ABOUT SHIFAN NOOR GLOBAL ACADEMY
+            </span>
+
+            <span className="ap-intro-location">
+              RAMANATHAPURAM · TAMIL NADU
+            </span>
           </div>
 
-          {/* Experience Card */}
-          <div className="about-preview-experience">
-            <div className="about-preview-experience-icon">
-              <FaGraduationCap />
+          <div className="ap-intro-grid">
+            <div className="ap-intro-heading">
+              <span className="ap-overline">
+                THE SNGA EXPERIENCE
+              </span>
+
+              <h2>
+                More than
+                <br />
+                <em>a school.</em>
+              </h2>
             </div>
-            <div>
-              <strong>25+ Years</strong>
-              <span>of Excellence in Education</span>
+
+            <div className="ap-intro-statement">
+              <p className="ap-lead">
+                Shifan Noor Global Academy is a place where
+                education extends beyond the classroom —
+                building knowledge, developing skills,
+                strengthening values and giving every student
+                the confidence to move forward.
+              </p>
+
+              <Link
+                to="/about"
+                className="ap-editorial-link"
+              >
+                <span>Discover SNGA</span>
+                <b>↗</b>
+              </Link>
             </div>
           </div>
-
-          {/* Decorative Shapes */}
-          <div className="about-preview-shape" />
-          <div className="about-preview-shape about-preview-shape-2" />
         </div>
+      </div>
 
-        {/* =====================================
-            CONTENT SIDE
-        ====================================== */}
-        <div ref={contentRef} className="about-preview-content">
-          <div className="about-preview-label">
-            <span className="about-preview-label-line" />
-            <span className="about-preview-label-text">ABOUT SNGA</span>
-          </div>
+      {/* =====================================================
+          CAMPUS STORY
+      ====================================================== */}
 
-          <h2 className="about-preview-title">
-            Nurturing Young Minds,
-            <br />
-            <span className="about-preview-title-emphasis">
-              Building Bright Futures.
-            </span>
-          </h2>
+      <div className="ap-campus">
+        <div className="ap-container">
+          <div className="ap-campus-grid">
+            {/* IMAGE */}
 
-          <p className="about-preview-description">
-            Shree Narayan Guru Academy is committed to providing a nurturing
-            and inspiring learning environment where every student is encouraged
-            to discover their potential, develop confidence, and grow into a
-            responsible individual.
-          </p>
+            <div className="ap-campus-image">
+              <div className="ap-image-wrap">
+                <img
+                  src={schoolImage}
+                  alt="Shifan Noor Global Academy campus"
+                />
 
-          <p className="about-preview-description about-preview-description-secondary">
-            We believe education goes beyond textbooks. Through academics,
-            values, creativity and character building, we prepare our students
-            to face the future with knowledge and confidence.
-          </p>
+                <div className="ap-image-top">
+                  <span>01</span>
+                  <span>THE CAMPUS</span>
+                </div>
 
-          {/* =================================
-              HIGHLIGHTS
-          ================================= */}
-          <div ref={pointsRef} className="about-preview-points">
-            {highlights.map((item, index) => (
-              <div key={index} className="about-preview-point">
-                <span className="about-preview-check">{item.icon}</span>
-                <span>{item.text}</span>
+                <div className="ap-image-bottom">
+                  <span>VENKULAM</span>
+                  <span>TAMIL NADU</span>
+                </div>
               </div>
-            ))}
+            </div>
+
+            {/* STORY */}
+
+            <div className="ap-campus-copy">
+              <div className="ap-campus-number">
+                <strong>13.5</strong>
+                <span>ACRES</span>
+              </div>
+
+              <div className="ap-campus-text">
+                <span className="ap-overline">
+                  A PLACE TO GROW
+                </span>
+
+                <h3>
+                  Space changes
+                  <br />
+                  <em>the way we learn.</em>
+                </h3>
+
+                <p>
+                  Located at Venkulam on the
+                  Ramanathapuram–Devipattinam main road,
+                  the SNGA campus is set within a calm,
+                  serene and lush green environment.
+                </p>
+
+                <p>
+                  The campus brings together classrooms,
+                  digital learning spaces, laboratories,
+                  a library and areas for activities —
+                  giving students room to learn, explore
+                  and develop beyond textbooks.
+                </p>
+
+                <Link
+                  to="/history"
+                  className="ap-text-link"
+                >
+                  <span>Explore the campus story</span>
+                  <b>→</b>
+                </Link>
+              </div>
+            </div>
           </div>
 
-          {/* =================================
-              STATS
-          ================================= */}
-          <div ref={statsRef} className="about-preview-stats">
-            <div className="about-preview-stat">
-              <span className="about-preview-stat-number">500+</span>
-              <span className="about-preview-stat-label">Students</span>
+          {/* CAMPUS FACTS */}
+
+          <div className="ap-facts">
+            <div className="ap-fact">
+              <span>01</span>
+
+              <strong>13.5</strong>
+
+              <div>
+                <b>ACRES</b>
+                <small>Learning campus</small>
+              </div>
             </div>
-            <div className="about-preview-stat-divider" />
-            <div className="about-preview-stat">
-              <span className="about-preview-stat-number">40+</span>
-              <span className="about-preview-stat-label">Teachers</span>
+
+            <div className="ap-fact">
+              <span>02</span>
+
+              <strong>500</strong>
+
+              <div>
+                <b>SQ FT</b>
+                <small>Classroom space</small>
+              </div>
             </div>
-            <div className="about-preview-stat-divider" />
-            <div className="about-preview-stat">
-              <span className="about-preview-stat-number">25+</span>
-              <span className="about-preview-stat-label">Years of Excellence</span>
+
+            <div className="ap-fact">
+              <span>03</span>
+
+              <strong>3,500+</strong>
+
+              <div>
+                <b>BOOKS</b>
+                <small>Library collection</small>
+              </div>
+            </div>
+
+            <div className="ap-fact">
+              <span>04</span>
+
+              <strong>200</strong>
+
+              <div>
+                <b>SEATS</b>
+                <small>Multipurpose hall</small>
+              </div>
             </div>
           </div>
+        </div>
+      </div>
 
-          {/* =================================
-              BUTTON
-          ================================= */}
-          <Link to="/about" className="about-preview-button">
-            <span>Discover Our School</span>
-            <span className="about-preview-button-icon">
-              <FaArrowRight />
+      {/* =====================================================
+          EDUCATIONAL PHILOSOPHY
+      ====================================================== */}
+
+      <div className="ap-philosophy">
+        <div className="ap-container">
+          <div className="ap-philosophy-header">
+            <span className="ap-section-number">
+              02
             </span>
-          </Link>
+
+            <div>
+              <span className="ap-overline">
+                WHAT EDUCATION MEANS TO US
+              </span>
+
+              <p>
+                Education is not only about what students
+                know. It is also about who they become.
+              </p>
+            </div>
+          </div>
+
+          <div className="ap-philosophy-list">
+            <div className="ap-philosophy-row">
+              <span>01</span>
+
+              <h3>Knowledge</h3>
+
+              <p>
+                Building strong foundations and encouraging
+                students to understand, question and discover.
+              </p>
+            </div>
+
+            <div className="ap-philosophy-row">
+              <span>02</span>
+
+              <h3>Skills</h3>
+
+              <p>
+                Developing practical abilities that help
+                students approach challenges with confidence.
+              </p>
+            </div>
+
+            <div className="ap-philosophy-row">
+              <span>03</span>
+
+              <h3>Values</h3>
+
+              <p>
+                Nurturing healthy attitudes, responsibility,
+                character and respect for others.
+              </p>
+            </div>
+
+            <div className="ap-philosophy-row">
+              <span>04</span>
+
+              <h3>Confidence</h3>
+
+              <p>
+                Helping students develop self-belief and
+                readiness for the challenges ahead.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* =====================================================
+          LARGE STATEMENT
+      ====================================================== */}
+
+      <div className="ap-statement">
+        <div className="ap-container">
+          <div className="ap-statement-top">
+            <span>03</span>
+            <span>THE WHOLE CHILD</span>
+          </div>
+
+          <div className="ap-statement-grid">
+            <h3>
+              Learning should
+              <br />
+              shape the
+              <br />
+              <em>whole person.</em>
+            </h3>
+
+            <div className="ap-statement-copy">
+              <p>
+                Academic learning, personal development,
+                co-curricular experiences and values come
+                together to help students grow into
+                confident individuals.
+              </p>
+
+              <Link
+                to="/vision-mission"
+                className="ap-statement-link"
+              >
+                <span>Our vision & mission</span>
+                <b>↗</b>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* =====================================================
+          FINAL EDITORIAL CTA
+      ====================================================== */}
+
+      <div className="ap-final">
+        <div className="ap-container">
+          <div className="ap-final-line" />
+
+          <div className="ap-final-grid">
+            <span className="ap-final-label">
+              CONTINUE EXPLORING
+            </span>
+
+            <h3>
+              Discover the
+              <br />
+              <em>SNGA story.</em>
+            </h3>
+
+            <Link
+              to="/about"
+              className="ap-final-link"
+            >
+              <span>Explore About SNGA</span>
+              <b>↗</b>
+            </Link>
+          </div>
         </div>
       </div>
     </section>
