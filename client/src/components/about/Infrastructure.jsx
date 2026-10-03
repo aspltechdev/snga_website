@@ -610,7 +610,7 @@ import arts from "../../assets/arts.jpg";
 import libraryImage from "../../assets/library.jpg";
 import scienceImage from "../../assets/sciencelab.jpg";
 import computerImage from "../../assets/ComputerLab.jpg";
-import campusImage from "../../assets/camp.jpg";
+import campusImage from "../../assets/school3.jpg";
 import hallImage from "../../assets/hall.jpg";
 import ctaImage from "../../assets/engaging.jpg";
 

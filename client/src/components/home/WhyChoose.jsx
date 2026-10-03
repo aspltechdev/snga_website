@@ -6,7 +6,8 @@ import holisticImage from "../../assets/holistic.jpg";
 import engagingImage from "../../assets/engaging.jpg";
 import beyondImage from "../../assets/beyond.jpg";
 import valuesImage from "../../assets/values.jpg";
-import campusBackground from "../../assets/campus.jpg";
+import campusBackground from "../../assets/school3.JPG";
+
 
 const WhyChooseUs = () => {
   const sectionRef = useRef(null);

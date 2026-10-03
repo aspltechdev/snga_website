@@ -263,8 +263,8 @@
 .cp-hero-image {
   position: absolute;
   inset: -3%;
-  width: 106%;
-  height: 106%;
+  width: 110%;
+  height: 110%;
   object-fit: cover;
   transition: transform 1.8s cubic-bezier(0.16, 1, 0.3, 1);
 }

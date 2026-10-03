@@ -317,6 +317,7 @@ import { Link } from "react-router-dom";
 
 import "./AboutPreview.css";
 import schoolImage from "../../assets/about.png";
+import schoolImage2 from "../../assets/school2.JPG";
 import statementBackground from "../../assets/school1.jpg";
 
 const AboutPreview = () => {
@@ -671,7 +672,7 @@ const AboutPreview = () => {
 
             <div className="ap-final-visual">
               <img
-                src={schoolImage}
+                src={schoolImage2}
                 alt="Shifan Noor Global Academy campus"
                 loading="lazy"
               />
