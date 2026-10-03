@@ -1035,7 +1035,7 @@ import { Link } from "react-router-dom";
 import "./History.css";
 
 import heroBg from "../../assets/school.JPG";
-import campusImage from "../../assets/campus.jpg";
+import campusImage from "../../assets/school1.jpg";
 import libraryImage from "../../assets/library.jpg";
 import scienceImage from "../../assets/sciencelab.jpg";
 import computerImage from "../../assets/ComputerLab.jpg";

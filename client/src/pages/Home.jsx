@@ -39,9 +39,9 @@ const Home = () => {
       <AboutPreview />
       <WhyChooseUs />
       <AcademicsPreview />
-      <AchievementsPreview />
-      <CampusPreview />
-      <NewsPreview />
+      <AchievementsPreview /> 
+      <CampusPreview /> 
+      <NewsPreview /> 
       <GalleryPreview />
       <TestimonialsPreview />
       <SocialPreview/>

@@ -1039,3 +1039,203 @@
   }
 
 }
+
+
+/* =========================================================
+   COMPACT SPACING ENHANCEMENT
+   Existing content remains unchanged
+   ========================================================= */
+
+.achievements-opening {
+  padding: 100px 0 78px;
+}
+
+.achievements-opening-top {
+  padding-bottom: 38px;
+}
+
+.achievements-header-content {
+  gap: clamp(50px, 7vw, 90px);
+
+  padding-top: 46px;
+}
+
+.achievements-kicker {
+  margin-bottom: 21px;
+}
+
+.achievements-header-content h2 {
+  font-size: clamp(58px, 6.8vw, 104px);
+
+  line-height: 0.9;
+}
+
+.achievements-header-description p {
+  margin-bottom: 24px;
+}
+
+.achievements-grid-section {
+  padding: 0 0 95px;
+}
+
+.achievements-grid {
+  column-gap: 28px;
+  row-gap: 48px;
+}
+
+.achievement-card-image {
+  aspect-ratio: 1.4 / 1;
+}
+
+.achievement-card-content {
+  padding-top: 18px;
+}
+
+.achievement-card-meta {
+  margin-bottom: 11px;
+}
+
+.achievement-card-student {
+  margin-top: 14px;
+
+  padding-top: 11px;
+}
+
+.achievements-view-all {
+  margin-top: 62px;
+}
+
+.achievements-view-all-button {
+  padding: 17px 20px;
+}
+
+.achievements-loading {
+  min-height: 135px;
+}
+
+.achievements-empty {
+  padding: 52px 0;
+}
+
+.achievements-statement {
+  padding: 100px 0 110px;
+}
+
+.achievements-statement-copy > span {
+  margin-bottom: 25px;
+}
+
+.achievements-statement-copy h3 {
+  font-size: clamp(50px, 5.9vw, 88px);
+}
+
+@media (max-width: 1100px) {
+  .achievements-opening {
+    padding: 85px 0 68px;
+  }
+
+  .achievements-opening-top {
+    padding-bottom: 32px;
+  }
+
+  .achievements-header-content {
+    gap: 50px;
+
+    padding-top: 40px;
+  }
+
+  .achievements-grid {
+    column-gap: 22px;
+    row-gap: 42px;
+  }
+
+  .achievements-view-all {
+    margin-top: 52px;
+  }
+
+  .achievements-statement {
+    padding: 85px 0 95px;
+  }
+}
+
+@media (max-width: 820px) {
+  .achievements-opening {
+    padding: 72px 0 58px;
+  }
+
+  .achievements-opening-top {
+    padding-bottom: 26px;
+  }
+
+  .achievements-header-content {
+    gap: 30px;
+
+    padding-top: 34px;
+  }
+
+  .achievements-grid-section {
+    padding-bottom: 75px;
+  }
+
+  .achievements-grid {
+    row-gap: 38px;
+  }
+
+  .achievements-view-all {
+    margin-top: 45px;
+  }
+
+  .achievements-statement {
+    padding: 72px 0 80px;
+  }
+}
+
+@media (max-width: 560px) {
+  .achievements-opening {
+    padding: 58px 0 48px;
+  }
+
+  .achievements-opening-top {
+    padding-bottom: 22px;
+  }
+
+  .achievements-header-content {
+    padding-top: 29px;
+  }
+
+  .achievements-kicker {
+    margin-bottom: 17px;
+  }
+
+  .achievements-header-content h2 {
+    font-size: clamp(48px, 14vw, 64px);
+  }
+
+  .achievements-grid-section {
+    padding-bottom: 60px;
+  }
+
+  .achievements-grid {
+    row-gap: 32px;
+  }
+
+  .achievement-card-content {
+    padding-top: 15px;
+  }
+
+  .achievements-view-all {
+    margin-top: 38px;
+  }
+
+  .achievements-statement {
+    padding: 58px 0 65px;
+  }
+
+  .achievements-statement-copy > span {
+    margin-bottom: 19px;
+  }
+
+  .achievements-statement-copy h3 {
+    font-size: 43px;
+  }
+}

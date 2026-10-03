@@ -1,24 +1,30 @@
 const express = require("express");
 
-const upload = require("../middleware/upload.middleware");
+const upload = require(
+  "../middleware/upload.middleware"
+);
 
 const {
   uploadImage,
   deleteImage,
-} = require("../controllers/upload.controller");
+} = require(
+  "../controllers/upload.controller"
+);
 
 const {
   authMiddleware,
   requireAdmin,
-} = require("../middleware/auth.middleware");
+} = require(
+  "../middleware/auth.middleware"
+);
 
 const router = express.Router();
 
 // ==========================================
 // UPLOAD IMAGE
+// POST /api/upload/image
 // ==========================================
 
-// POST /api/upload/image
 router.post(
   "/image",
   authMiddleware,
@@ -29,9 +35,9 @@ router.post(
 
 // ==========================================
 // DELETE IMAGE
+// DELETE /api/upload/image/:filename
 // ==========================================
 
-// DELETE /api/upload/image/:filename
 router.delete(
   "/image/:filename",
   authMiddleware,

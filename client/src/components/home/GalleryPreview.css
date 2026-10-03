@@ -519,9 +519,33 @@
    ========================================================= */
 
 .ga-statement {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
   padding: 145px 48px;
-  background: var(--ga-navy);
+  background-color: var(--ga-navy);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   color: var(--ga-white);
+}
+
+.ga-statement::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 18, 62, 0.72) 0%,
+    rgba(0, 35, 94, 0.64) 55%,
+    rgba(0, 53, 120, 0.56) 100%
+  );
+}
+
+.ga-statement .ga-container {
+  position: relative;
+  z-index: 1;
 }
 
 .ga-statement-grid {

@@ -1423,3 +1423,22 @@
     transform: none;
   }
 }
+
+
+/* =========================================================
+   KEEP PAGE CONTENT VISIBLE
+   Prevent empty sections when API-rendered elements mount
+   after the reveal observer has already been registered.
+   ========================================================= */
+
+.achievements-hero-content,
+.achievements-intro-grid,
+.achievements-feature-heading,
+.achievements-feature-grid,
+.achievements-archive-header,
+.achievements-list,
+.achievements-philosophy-grid,
+.achievements-cta-content {
+  opacity: 1;
+  transform: none;
+}

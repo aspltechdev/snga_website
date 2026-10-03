@@ -741,7 +741,7 @@ import { Link } from "react-router-dom";
 import blogService from "../services/blog.service";
 import "./Blogs.css";
 
-import schoolImage from "../assets/school.JPG";
+import schoolImage from "../assets/school2.JPG";
 import campusImage from "../assets/camp.jpg";
 import engagingImage from "../assets/engaging.jpg";
 import beyondImage from "../assets/beyond.jpg";

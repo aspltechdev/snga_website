@@ -1442,7 +1442,7 @@ import { Link } from "react-router-dom";
 import achievementService from "../services/achievement.service";
 import "./Achievements.css";
 
-import schoolImage from "../assets/school.JPG";
+import schoolImage from "../assets/school2.JPG";
 import aboutImage from "../assets/about.png";
 import engagingImage from "../assets/engaging.jpg";
 import sportsImage from "../assets/sports.JPG";

@@ -317,6 +317,8 @@ import { Link } from "react-router-dom";
 
 import "./AboutPreview.css";
 import schoolImage from "../../assets/about.png";
+import schoolImage2 from "../../assets/school2.JPG";
+import statementBackground from "../../assets/school1.jpg";
 
 const AboutPreview = () => {
   const sectionRef = useRef(null);
@@ -596,7 +598,10 @@ const AboutPreview = () => {
           LARGE STATEMENT
       ====================================================== */}
 
-      <div className="ap-statement">
+      <div
+        className="ap-statement"
+        style={{ "--ap-section-bg": `url(${statementBackground})` }}
+      >
         <div className="ap-container">
           <div className="ap-statement-top">
             <span>03</span>
@@ -641,23 +646,56 @@ const AboutPreview = () => {
           <div className="ap-final-line" />
 
           <div className="ap-final-grid">
-            <span className="ap-final-label">
-              CONTINUE EXPLORING
-            </span>
+            <div className="ap-final-content">
+              <div className="ap-final-intro">
+                <span className="ap-final-number">04</span>
+                <span className="ap-final-label">CONTINUE EXPLORING</span>
+              </div>
 
-            <h3>
-              Discover the
-              <br />
-              <em>SNGA story.</em>
-            </h3>
+              <h3>
+                Discover the
+                <br />
+                <em>SNGA story.</em>
+              </h3>
 
-            <Link
-              to="/about"
-              className="ap-final-link"
-            >
-              <span>Explore About SNGA</span>
-              <b>↗</b>
-            </Link>
+              <p>
+                Learn more about our journey, educational vision, campus
+                environment and the people who make Shifan Noor Global Academy
+                a meaningful place to learn.
+              </p>
+
+              <Link to="/about" className="ap-final-link">
+                <span>Explore About SNGA</span>
+                <b>↗</b>
+              </Link>
+            </div>
+
+            <div className="ap-final-visual">
+              <img
+                src={schoolImage2}
+                alt="Shifan Noor Global Academy campus"
+                loading="lazy"
+              />
+
+              <div className="ap-final-image-shade" />
+
+              <div className="ap-final-image-top">
+                <span>THE SNGA CAMPUS</span>
+                <span>RAMANATHAPURAM</span>
+              </div>
+
+              <div className="ap-final-image-caption">
+                <span>More than a school.</span>
+                <small>A place to learn, grow and belong.</small>
+              </div>
+            </div>
+          </div>
+
+          <div className="ap-final-keywords">
+            <span>OUR HISTORY</span>
+            <span>OUR VISION</span>
+            <span>OUR CAMPUS</span>
+            <span>OUR COMMUNITY</span>
           </div>
         </div>
       </div>
