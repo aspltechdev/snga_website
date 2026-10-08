@@ -2234,8 +2234,8 @@ import contactService from "../services/contact.service";
 
 import "./Contact.css";
 
-import schoolImage from "../assets/school.JPG";
-import campusImage from "../assets/camp.jpg";
+import schoolImage from "../assets/school1.png";
+import campusImage from "../assets/about.png";
 import learningImage from "../assets/engaging.jpg";
 
 const IMAGES = {

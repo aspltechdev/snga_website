@@ -630,14 +630,14 @@
 import { Link } from "react-router-dom";
 import "./Curriculum.css";
 
-import schoolImage from "../../assets/school.JPG";
-import classroomImage from "../../assets/classroom.jpg";
-import libraryImage from "../../assets/library.jpg";
+import schoolImage from "../../assets/school1.png";
+import classroomImage from "../../assets/s2.png";
+import libraryImage from "../../assets/s4.png";
 import scienceImage from "../../assets/sciencelab.jpg";
 import computerLabImage from "../../assets/ComputerLab.jpg";
 import sportsImage from "../../assets/herocircle.JPG";
-import valuesImage from "../../assets/values.jpg";
-import engagingImage from "../../assets/engaging.jpg";
+import valuesImage from "../../assets/s8.png";
+import engagingImage from "../../assets/teaching.jpg";
 
 const Curriculum = () => {
   const learningAreas = [

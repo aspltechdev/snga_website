@@ -1268,12 +1268,12 @@ import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import "./Results.css";
 
-import heroBg from "../../assets/school.JPG";
+import heroBg from "../../assets/school1.png";
 import ctaBg from "../../assets/engaging.jpg";
 import classroom from "../../assets/classroom.jpg";
-import studying from "../../assets/holistic.jpg";
-import achievement from "../../assets/achievement.jpg";
-import values from "../../assets/values.jpg";
+import studying from "../../assets/s5.png";
+import achievement from "../../assets/s4.png";
+import values from "../../assets/achievement.jpg";
 
 const Results = () => {
   const heroRef = useRef(null);

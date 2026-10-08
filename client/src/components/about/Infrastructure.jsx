@@ -605,14 +605,15 @@ import { Link } from "react-router-dom";
 import "./Infrastructure.css";
 
 import heroBg from "../../assets/school.JPG";
-import classroomImage from "../../assets/classroom.jpg";
+import classroomImage from "../../assets/s5.png";
 import arts from "../../assets/arts.jpg";
 import libraryImage from "../../assets/library.jpg";
 import scienceImage from "../../assets/sciencelab.jpg";
 import computerImage from "../../assets/ComputerLab.jpg";
-import campusImage from "../../assets/school3.jpg";
+import campusImage from "../../assets/school2.png";
 import hallImage from "../../assets/hall.jpg";
-import ctaImage from "../../assets/engaging.jpg";
+import school from "../../assets/school2.png";
+import ctaImage from "../../assets/school1.png";
 
 const Infrastructure = () => {
   const sectionsRef = useRef([]);
@@ -1375,7 +1376,7 @@ const Infrastructure = () => {
             <div className="si-hall__image">
 
               <img
-                src={hallImage}
+                src={school}
                 alt="SNGA multipurpose hall"
                 loading="lazy"
               />

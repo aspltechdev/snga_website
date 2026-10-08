@@ -364,8 +364,8 @@ import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import "./AcademicsPreview.css";
 
-import heroBg from "../../assets/school.JPG";
-import practical from "../../assets/beyond.jpg";
+import heroBg from "../../assets/school1.png";
+import practical from "../../assets/s5.png";
 import digital from "../../assets/Digitallearning.jpg";
 import creative from "../../assets/creativearts.jpg";
 

@@ -1307,16 +1307,16 @@ import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import "./Campus.css";
 
-import heroBg from "../assets/school.JPG";
+import heroBg from "../assets/school1.png";
 import aboutImage from "../assets/about.png";
-import classroom from "../assets/classroom.jpg";
+import classroom from "../assets/s4.png";
 import library from "../assets/library.jpg";
 import scienceLab from "../assets/sciencelab.jpg";
 import computerLab from "../assets/ComputerLab.jpg";
 import sports from "../assets/sports.JPG";
-import campusImage from "../assets/school1.jpg";
-import campImage from "../assets/camp.jpg";
-import engagingImage from "../assets/engaging.jpg";
+import campusImage from "../assets/school1.png";
+import campImage from "../assets/school1.jpg";
+import engagingImage from "../assets/about.png";
 
 const IMAGES = {
   hero: heroBg,

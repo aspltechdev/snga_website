@@ -1034,13 +1034,14 @@ import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import "./History.css";
 
-import heroBg from "../../assets/school.JPG";
-import campusImage from "../../assets/school1.jpg";
+import heroBg from "../../assets/school1.png";
+import campusImage from "../../assets/school1.png";
+import campus from "../../assets/school2.png";
 import libraryImage from "../../assets/library.jpg";
 import scienceImage from "../../assets/sciencelab.jpg";
 import computerImage from "../../assets/ComputerLab.jpg";
 import playgroundImage from "../../assets/playground.JPG";
-import engagingImage from "../../assets/engaging.jpg";
+import engagingImage from "../../assets/s3.png";
 
 const History = () => {
   const heroRef = useRef(null);
@@ -1096,7 +1097,7 @@ const History = () => {
       title: "A Place for Peaceful Learning",
       description:
         "Set in a calm, serene and lush green environment at Venkulam on the Ramanathapuram–Devipattinam main road, SNGA provides students with a peaceful setting for learning away from the dust and noise of city life.",
-      image: campusImage,
+      image: campus,
     },
     {
       number: "02",

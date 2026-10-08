@@ -735,8 +735,8 @@ import { Link } from "react-router-dom";
 import newsService from "../services/news.service";
 import "./News.css";
 
-import schoolImage from "../assets/school3.JPG";
-import aboutImage from "../assets/about-school.jpg";
+import schoolImage from "../assets/school2.png";
+import aboutImage from "../assets/student.jpg";
 import achievementImage from "../assets/achievement.jpg";
 import engagingImage from "../assets/engaging.jpg";
 

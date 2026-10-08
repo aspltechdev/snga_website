@@ -587,12 +587,12 @@
 import { Link } from "react-router-dom";
 import "./Faculties.css";
 
-import schoolImage from "../../assets/school.JPG";
+import schoolImage from "../../assets/school1.png";
 import teachingImage from "../../assets/teaching.jpg";
 import classroomImage from "../../assets/classroom.jpg";
-import communityImage from "../../assets/about-school.jpg";
+import communityImage from "../../assets/s3.png";
 import valuesImage from "../../assets/values.jpg";
-import engagingImage from "../../assets/engaging.jpg";
+import engagingImage from "../../assets/s7.png";
 
 const Faculties = () => {
   const teachingPrinciples = [

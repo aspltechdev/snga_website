@@ -847,12 +847,12 @@ import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import "./Management.css";
 
-import heroBg from "../../assets/school.JPG";
+import heroBg from "../../assets/school1.png";
 import founderImage from "../../assets/founder.jpg";
-import leadershipImage from "../../assets/holistic.jpg";
-import teachersImage from "../../assets/values.jpg";
-import communityImage from "../../assets/beyond.jpg";
-import ctaBg from "../../assets/engaging.jpg";
+import leadershipImage from "../../assets/s5.png";
+import teachersImage from "../../assets/s7.png";
+import communityImage from "../../assets/teaching.jpg";
+import ctaBg from "../../assets/s3.png";
 
 const Management = () => {
   const sectionsRef = useRef([]);

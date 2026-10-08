@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { FaChevronLeft, FaChevronRight, FaStar } from "react-icons/fa";
 import testimonialService from "../../services/testimonial.service";
-import engagingImage from "../../assets/engaging.jpg";
+import engagingImage from "../../assets/s3.png";
 import "./TestimonialsPreview.css";
 
 const API_URL =
