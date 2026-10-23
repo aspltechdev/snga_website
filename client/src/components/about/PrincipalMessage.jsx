@@ -501,12 +501,12 @@ import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import "./PrincipalMessage.css";
 
-import heroBg from "../../assets/school.JPG";
+import heroBg from "../../assets/school1.png";
 import principalImage from "../../assets/principal.jpg";
-import messageImage from "../../assets/beyond.jpg";
-import learningImage from "../../assets/holistic.jpg";
-import futureImage from "../../assets/values.jpg";
-import ctaBg from "../../assets/engaging.jpg";
+import messageImage from "../../assets/s6.png";
+import learningImage from "../../assets/s7.png";
+import futureImage from "../../assets/s4.png";
+import ctaBg from "../../assets/s3.png";
 
 const PrincipalMessage = () => {
   const sectionsRef = useRef([]);

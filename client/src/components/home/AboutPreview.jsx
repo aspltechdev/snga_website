@@ -317,8 +317,8 @@ import { Link } from "react-router-dom";
 
 import "./AboutPreview.css";
 import schoolImage from "../../assets/about.png";
-import schoolImage2 from "../../assets/school2.JPG";
-import statementBackground from "../../assets/school1.jpg";
+import schoolImage2 from "../../assets/school1.png";
+import statementBackground from "../../assets/school2.png";
 
 const AboutPreview = () => {
   const sectionRef = useRef(null);

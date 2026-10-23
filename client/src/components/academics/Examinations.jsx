@@ -1160,12 +1160,12 @@
 import { Link } from "react-router-dom";
 import "./Examinations.css";
 
-import schoolImage from "../../assets/school.JPG";
+import schoolImage from "../../assets/school1.png";
 import classroomImage from "../../assets/classroom.jpg";
 import examImage from "../../assets/exam.jpg";
 import studyImage from "../../assets/holistic.jpg";
 import valuesImage from "../../assets/values.jpg";
-import engagingImage from "../../assets/engaging.jpg";
+import engagingImage from "../../assets/s4.png";
 
 const Examinations = () => {
   const assessmentAreas = [

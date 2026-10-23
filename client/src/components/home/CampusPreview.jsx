@@ -799,9 +799,9 @@ import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import "./CampusPreview.css";
 
-import campus from "../../assets/school3.jpg";
+import campus from "../../assets/school2.png";
 import learning from "../../assets/teaching.jpg";
-import student from "../../assets/student.jpg";
+import student from "../../assets/s4.png";
 import library from "../../assets/library.jpg";
 
 const IMAGES = {

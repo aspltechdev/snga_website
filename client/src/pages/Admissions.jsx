@@ -925,9 +925,9 @@ import { Link } from "react-router-dom";
 import admissionService from "../services/admission.service";
 import "./Admissions.css";
 
-import heroImage from "../assets/school.JPG";
-import campusImage from "../assets/camp.jpg";
-import classroomImage from "../assets/classroom.jpg";
+import heroImage from "../assets/school1.png";
+import campusImage from "../assets/school1.jpg";
+import classroomImage from "../assets/s4.png";
 import libraryImage from "../assets/library.jpg";
 import sportsImage from "../assets/sport.JPG";
 import valuesImage from "../assets/values.jpg";

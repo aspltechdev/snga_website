@@ -6,10 +6,10 @@ import "./VisionMission.css";
 
 import heroBg from "../../assets/school.JPG";
 import visionImage from "../../assets/values.jpg";
-import schoolImage from "../../assets/school1.jpg";
-import pillarsImage from "../../assets/holistic.jpg";
+import schoolImage from "../../assets/school1.png";
+import pillarsImage from "../../assets/s2.png";
 import goalsImage from "../../assets/playground.JPG";
-import futureImage from "../../assets/engaging.jpg";
+import futureImage from "../../assets/s4.png";
 
 const VisionMission = () => {
   const sectionsRef = useRef([]);

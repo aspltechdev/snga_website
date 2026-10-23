@@ -916,17 +916,17 @@ import { Link } from "react-router-dom";
 import galleryService from "../services/gallery.service";
 import "./Gallery.css";
 
-import heroImage from "../assets/school.JPG";
-import campusImage from "../assets/camp.jpg";
-import campusImage2 from "../assets/camp.jpg";
-import classroomImage from "../assets/classroom.jpg";
+import heroImage from "../assets/school1.png";
+import campusImage from "../assets/school1.jpg";
+import campusImage2 from "../assets/school2.png";
+import classroomImage from "../assets/teaching.jpg";
 import academicsImage from "../assets/teaching.jpg";
 import sportsImage from "../assets/sports.JPG";
 import artsImage from "../assets/arts.jpg";
-import natureImage from "../assets/campus.jpg";
+import natureImage from "../assets/school1.jpg";
 import valuesImage from "../assets/values.jpg";
 import communityImage from "../assets/about-school.jpg";
-import ctaImage from "../assets/engaging.jpg";
+import ctaImage from "../assets/s3.png";
 
 const Gallery = () => {
   const [albums, setAlbums] = useState([]);

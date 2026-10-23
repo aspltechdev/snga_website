@@ -741,10 +741,10 @@ import { Link } from "react-router-dom";
 import blogService from "../services/blog.service";
 import "./Blogs.css";
 
-import schoolImage from "../assets/school2.JPG";
+import schoolImage from "../assets/school2.png";
 import campusImage from "../assets/camp.jpg";
-import engagingImage from "../assets/engaging.jpg";
-import beyondImage from "../assets/beyond.jpg";
+import engagingImage from "../assets/s3.png";
+import beyondImage from "../assets/s6.png";
 import teachingImage from "../assets/teaching.jpg";
 import sportsImage from "../assets/sports.JPG";
 import artsImage from "../assets/arts.jpg";

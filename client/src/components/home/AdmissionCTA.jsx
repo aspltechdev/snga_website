@@ -501,10 +501,11 @@
 import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import "./AdmissionsCTA.css";
+import back from "../../assets/school1.png";
 
 const IMAGES = {
   background:
-    "https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=2400&q=90",
+    back,
 
   students:
     "https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=1200&q=90",

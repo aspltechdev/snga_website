@@ -2,11 +2,11 @@ import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import "./WhyChooseUs.css";
 
-import holisticImage from "../../assets/holistic.jpg";
-import engagingImage from "../../assets/engaging.jpg";
-import beyondImage from "../../assets/beyond.jpg";
-import valuesImage from "../../assets/values.jpg";
-import campusBackground from "../../assets/school3.JPG";
+import holisticImage from "../../assets/s1.png";
+import engagingImage from "../../assets/s2.png";
+import beyondImage from "../../assets/s3.png";
+import valuesImage from "../../assets/s4.png";
+import campusBackground from "../../assets/about.png";
 
 
 const WhyChooseUs = () => {

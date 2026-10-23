@@ -25,6 +25,7 @@
 .blogs-container {
   width: min(1320px, calc(100% - 80px));
   margin: 0 auto;
+  margin-top: 130px;
 }
 
 /* =========================================================
