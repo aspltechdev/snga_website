@@ -86,6 +86,8 @@ import Results from "../components/academics/Results";
 import Campus from "../pages/Campus";
 import Achievements from "../pages/Achievements";
 import SocialWall from "../admin/pages/SocialWall";
+import Certificates from "../admin/pages/Certificates";
+import PublicDisclosure from "../components/about/PublicDisclosure";
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -131,6 +133,11 @@ const AppRoutes = () => {
                     <Route
                         path="/about/history"
                         element={<History />}
+
+                    />
+                      <Route
+                        path="/about/certificate"
+                        element={<PublicDisclosure />}
 
                     />
 
@@ -309,6 +316,10 @@ const AppRoutes = () => {
                             element={<NewsManagement />}
                         />
 
+  <Route
+                            path="certificates"
+                            element={<Certificates />}
+                        />
                         <Route
                             path="socialmedia"
                             element={<SocialWall />}

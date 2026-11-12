@@ -569,6 +569,7 @@ import {
   LayoutDashboard,
   Newspaper,
   BookOpen,
+  Files,
   Image,
   Trophy,
   GraduationCap,
@@ -578,7 +579,8 @@ import {
   LogOut,
   PanelsTopLeft,
   ChevronRight,
-  Sparkles,
+  
+    ImagePlus,
 } from "lucide-react";
 
 import "./AdminSidebar.css";
@@ -637,10 +639,15 @@ const AdminSidebar = () => {
       path: "/admin/contact",
       icon: Mail,
     },
+     {
+      label: "Certificates",
+      path: "/admin/certificates",
+      icon: Files,
+    },
     {
-      label: "Settings",
+      label: "Social Media",
       path: "/admin/socialmedia",
-      icon: Settings,
+      icon: ImagePlus,
     },
   ];
 

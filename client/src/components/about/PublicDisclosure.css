@@ -1,0 +1,1429 @@
+
+/* =========================================================
+   SHIFAN NOOR GLOBAL ACADEMY
+   PUBLIC DISCLOSURE — COMPLETE DESIGN SYSTEM
+
+   Typography:
+   Cormorant Garamond — Editorial headings
+   DM Sans — Interface and body text
+
+   Palette:
+   Oxford Navy / Royal Blue / Gold / White
+========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=DM+Sans:wght@400;500;600;700;800&display=swap');
+
+/* =========================================================
+   01. ROOT & GLOBAL STYLES
+========================================================= */
+
+.public-disclosure-page {
+  --pd-navy: #00005b;
+  --pd-deep: #00002f;
+  --pd-blue: #173b82;
+  --pd-gold: #d8ad32;
+  --pd-red: #bd2026;
+
+  --pd-white: #ffffff;
+  --pd-paper: #f7f8fb;
+  --pd-muted: #718096;
+
+  --pd-border: #e4e8f0;
+
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+
+  overflow: hidden;
+
+  color: #17233b;
+  background: #ffffff;
+
+  font-family: 'DM Sans', sans-serif;
+}
+
+.public-disclosure-page *,
+.public-disclosure-page *::before,
+.public-disclosure-page *::after {
+  box-sizing: border-box;
+}
+
+.public-disclosure-page img {
+  max-width: 100%;
+}
+
+.public-disclosure-page button {
+  font-family: inherit;
+}
+
+.disclosure-container {
+  width: min(1536px, calc(100% - 80px));
+  margin: 0 auto;
+}
+
+/* =========================================================
+   02. CINEMATIC HERO SECTION
+========================================================= */
+
+.disclosure-hero {
+  position: relative;
+  isolation: isolate;
+
+  min-height: 570px;
+
+  padding: 65px 0 28px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  overflow: hidden;
+
+  color: #ffffff;
+
+  background: #111d3d;
+}
+
+/* ---------------------------------------------------------
+   CAMPUS BACKGROUND IMAGE
+--------------------------------------------------------- */
+
+.disclosure-hero__image {
+  position: absolute;
+  inset: 0;
+  z-index: -3;
+
+  background-image:
+
+    linear-gradient(
+      90deg,
+      rgba(12, 24, 55, 0.76) 0%,
+      rgba(17, 27, 57, 0.68) 48%,
+      rgba(14, 24, 54, 0.73) 100%
+    ),
+
+    linear-gradient(
+      180deg,
+      rgba(5, 12, 36, 0.18) 0%,
+      rgba(5, 12, 36, 0.20) 55%,
+      rgba(5, 12, 36, 0.50) 100%
+    ),
+
+    url("../../assets/about-school.jpg");
+
+  background-position: center 45%;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  transform: scale(1.025);
+
+  animation: pdHeroImage 1.5s ease both;
+}
+
+/* ---------------------------------------------------------
+   GRID TEXTURE
+--------------------------------------------------------- */
+
+.disclosure-hero__grid {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+
+  opacity: 0.09;
+
+  background-image:
+
+    linear-gradient(
+      rgba(255,255,255,.12) 1px,
+      transparent 1px
+    ),
+
+    linear-gradient(
+      90deg,
+      rgba(255,255,255,.12) 1px,
+      transparent 1px
+    );
+
+  background-size: 75px 75px;
+
+  mask-image: linear-gradient(
+    90deg,
+    rgba(0,0,0,.95),
+    rgba(0,0,0,.35)
+  );
+
+  pointer-events: none;
+}
+
+/* ---------------------------------------------------------
+   AMBIENT LIGHTING
+--------------------------------------------------------- */
+
+.disclosure-hero__glow {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+
+  background:
+
+    radial-gradient(
+      ellipse at 85% 40%,
+      rgba(100, 125, 185, .16),
+      transparent 55%
+    );
+
+  pointer-events: none;
+}
+
+/* ---------------------------------------------------------
+   OVERSIZED SNGA WATERMARK
+--------------------------------------------------------- */
+
+.disclosure-hero__watermark {
+  position: absolute;
+  z-index: -1;
+
+  right: 1%;
+  bottom: -130px;
+
+  color: rgba(255,255,255,.055);
+
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(250px, 30vw, 470px);
+  font-weight: 600;
+  letter-spacing: -20px;
+  line-height: .9;
+
+  white-space: nowrap;
+
+  pointer-events: none;
+  user-select: none;
+
+  animation: pdWatermark 1.5s .2s ease both;
+}
+
+/* ---------------------------------------------------------
+   HERO CONTAINER
+--------------------------------------------------------- */
+
+.disclosure-hero__container {
+  position: relative;
+  z-index: 2;
+
+  width: min(1536px, calc(100% - 80px));
+
+  margin: auto;
+}
+
+/* ---------------------------------------------------------
+   TOP BRAND LINE
+--------------------------------------------------------- */
+
+.disclosure-hero__topline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  padding-bottom: 18px;
+
+  border-bottom: 1px solid rgba(255,255,255,.17);
+
+  color: rgba(255,255,255,.85);
+
+  font-family: 'DM Sans', sans-serif;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2.5px;
+}
+
+/* ---------------------------------------------------------
+   HERO CONTENT
+--------------------------------------------------------- */
+
+.disclosure-hero__content {
+  max-width: 1050px;
+
+  padding: 42px 0 55px;
+
+  animation: pdEditorialReveal 1s .15s ease both;
+}
+
+/* Eyebrow */
+
+.disclosure-hero__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+
+  color: #e0e4ef;
+
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.disclosure-hero__eyebrow svg {
+  color: var(--pd-gold);
+  flex-shrink: 0;
+}
+
+/* ---------------------------------------------------------
+   MAIN EDITORIAL HEADING
+--------------------------------------------------------- */
+
+.disclosure-hero__content h1 {
+  margin: 30px 0 25px;
+
+  color: #ffffff;
+
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(76px, 10.5vw, 145px);
+  font-weight: 500;
+
+  letter-spacing: -5px;
+  line-height: .82;
+}
+
+/* Elegant italic second line */
+
+.disclosure-hero__content h1 em {
+  display: inline-block;
+
+  margin-top: 15px;
+
+  color: #ffffff;
+
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.03em;
+  font-weight: 400;
+  font-style: italic;
+
+  letter-spacing: -6px;
+
+  background: none;
+
+  -webkit-background-clip: initial;
+  background-clip: initial;
+  -webkit-text-fill-color: #ffffff;
+}
+
+/* Description */
+
+.disclosure-hero__content > p {
+  max-width: 760px;
+
+  margin: 32px 0 0;
+
+  color: rgba(255,255,255,.90);
+
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 21px;
+  font-weight: 500;
+  line-height: 1.9;
+}
+
+/* ---------------------------------------------------------
+   HERO META
+--------------------------------------------------------- */
+
+.disclosure-hero__meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  gap: 38px;
+
+  margin-top: 36px;
+}
+
+.disclosure-hero__meta > div {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+
+  color: #ffffff;
+
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.disclosure-hero__meta svg {
+  color: #b9ceff;
+  flex-shrink: 0;
+}
+
+/* ---------------------------------------------------------
+   HERO BOTTOM
+--------------------------------------------------------- */
+
+.disclosure-hero__bottom {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  padding-top: 18px;
+
+  border-top: 1px solid rgba(255,255,255,.18);
+
+  color: rgba(255,255,255,.78);
+
+  font-family: 'DM Sans', sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.disclosure-hero__scroll {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.disclosure-hero__scroll i {
+  width: 35px;
+  height: 1px;
+
+  display: inline-block;
+
+  background: var(--pd-gold);
+}
+
+/* Gold bottom line */
+
+.disclosure-hero__bottom-line {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  width: 100%;
+  height: 2px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--pd-gold),
+    transparent
+  );
+}
+
+/* =========================================================
+   03. DOCUMENTS SECTION
+========================================================= */
+
+.disclosure-documents {
+  position: relative;
+
+  padding: 105px 0 120px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #ffffff 0%,
+      #f8f9fc 100%
+    );
+}
+
+/* Section heading layout */
+
+.disclosure-documents__heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  gap: 40px;
+
+  margin-bottom: 52px;
+}
+
+/* Section label */
+
+.disclosure-section-kicker {
+  color: var(--pd-red);
+
+  font-family: 'DM Sans', sans-serif;
+  font-size: 10px;
+  font-weight: 850;
+  letter-spacing: 2.5px;
+}
+
+/* Main section title */
+
+.disclosure-documents__intro h2 {
+  margin: 17px 0 17px;
+
+  color: var(--pd-navy);
+
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(42px, 4vw, 60px);
+  font-weight: 600;
+
+  letter-spacing: -1.8px;
+  line-height: 1.02;
+}
+
+.disclosure-documents__intro h2 em {
+  color: #48679f;
+
+  font-weight: 500;
+  font-style: italic;
+}
+
+.disclosure-documents__intro > p {
+  max-width: 600px;
+
+  margin: 0;
+
+  color: var(--pd-muted);
+
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+/* Document counter */
+
+.disclosure-count {
+  min-width: 205px;
+
+  padding: 19px 21px;
+
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  background: #ffffff;
+
+  border: 1px solid var(--pd-border);
+
+  box-shadow: 0 12px 35px rgba(0,0,91,.045);
+}
+
+.disclosure-count__icon {
+  width: 48px;
+  height: 48px;
+
+  display: grid;
+  place-items: center;
+
+  color: var(--pd-navy);
+
+  background: #edf2fb;
+}
+
+.disclosure-count > div:last-child {
+  display: flex;
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+.disclosure-count strong {
+  color: var(--pd-navy);
+
+  font-size: 25px;
+  line-height: 1;
+}
+
+.disclosure-count span {
+  color: var(--pd-muted);
+
+  font-size: 10px;
+  font-weight: 700;
+}
+
+/* =========================================================
+   04. CERTIFICATE GRID
+========================================================= */
+
+.disclosure-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 24px;
+}
+
+/* Certificate card */
+
+.disclosure-card {
+  position: relative;
+
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  background: #ffffff;
+
+  border: 1px solid #e1e6ef;
+
+  box-shadow: 0 12px 35px rgba(0,0,91,.045);
+
+  animation: pdEditorialReveal .6s ease both;
+  animation-delay: calc(var(--card-index, 0) * 70ms);
+
+  transition:
+    transform .4s ease,
+    border-color .4s ease,
+    box-shadow .4s ease;
+}
+
+.disclosure-card:hover {
+  transform: translateY(-8px);
+
+  border-color: #b9c9e7;
+
+  box-shadow: 0 25px 55px rgba(0,0,91,.11);
+}
+
+/* Card top */
+
+.disclosure-card__top {
+  position: relative;
+
+  min-height: 112px;
+
+  padding: 23px 25px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background:
+    linear-gradient(
+      120deg,
+      #edf2fa,
+      #fafbfe
+    );
+
+  border-bottom: 1px solid #e7ecf4;
+}
+
+/* PDF icon */
+
+.disclosure-card__file {
+  width: 53px;
+  height: 53px;
+
+  display: grid;
+  place-items: center;
+
+  color: var(--pd-navy);
+
+  background: #ffffff;
+
+  border: 1px solid #dce5f3;
+
+  transition:
+    color .3s ease,
+    background .3s ease,
+    transform .3s ease;
+}
+
+.disclosure-card:hover .disclosure-card__file {
+  color: #ffffff;
+
+  background: var(--pd-navy);
+
+  transform: translateY(-3px);
+}
+
+/* PDF badge */
+
+.disclosure-card__tag {
+  padding: 7px 10px;
+
+  color: #a40000;
+
+  background: #fff1f1;
+
+  border: 1px solid #f3dddd;
+
+  font-size: 9px;
+  font-weight: 850;
+  letter-spacing: 1px;
+}
+
+/* Number decoration */
+
+.disclosure-card__number {
+  position: absolute;
+
+  right: 25px;
+  bottom: -18px;
+
+  color: rgba(0,0,91,.07);
+
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 45px;
+  font-weight: 700;
+
+  line-height: 1;
+}
+
+/* Card content */
+
+.disclosure-card__body {
+  flex: 1;
+
+  padding: 28px 25px 23px;
+}
+
+/* Category */
+
+.disclosure-card__category {
+  color: var(--pd-red);
+
+  font-size: 10px;
+  font-weight: 850;
+  letter-spacing: 1.3px;
+  text-transform: uppercase;
+}
+
+/* Title */
+
+.disclosure-card__body h3 {
+  margin: 14px 0 12px;
+
+  color: var(--pd-navy);
+
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 25px;
+  font-weight: 700;
+
+  line-height: 1.25;
+}
+
+/* Description */
+
+.disclosure-card__description {
+  margin: 0 0 17px;
+
+  color: #718096;
+
+  font-size: 12px;
+  line-height: 1.85;
+}
+
+/* Issuer */
+
+.disclosure-card__issuer {
+  display: flex;
+  flex-direction: column;
+
+  gap: 5px;
+
+  margin-top: 17px;
+
+  color: #8993a3;
+
+  font-size: 10px;
+}
+
+.disclosure-card__issuer strong {
+  color: #354766;
+
+  font-size: 12px;
+}
+
+/* Date */
+
+.disclosure-card__date {
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+
+  margin-top: 21px;
+  padding-top: 17px;
+
+  color: #68778e;
+
+  border-top: 1px solid #edf0f5;
+
+  font-size: 11px;
+}
+
+.disclosure-card__date svg {
+  color: var(--pd-blue);
+  flex-shrink: 0;
+}
+
+/* =========================================================
+   05. CERTIFICATE ACTION BUTTONS
+========================================================= */
+
+.disclosure-card__actions {
+  padding: 0 25px 25px;
+
+  display: flex;
+  align-items: stretch;
+
+  gap: 10px;
+}
+
+.disclosure-card__view,
+.disclosure-card__download {
+  min-height: 46px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 9px;
+
+  cursor: pointer;
+
+  transition: all .3s ease;
+}
+
+/* View button */
+
+.disclosure-card__view {
+  flex: 1;
+
+  padding: 0 13px;
+
+  color: #ffffff;
+
+  background: var(--pd-navy);
+
+  border: 1px solid var(--pd-navy);
+
+  font-size: 11px;
+  font-weight: 750;
+}
+
+.disclosure-card__view:hover {
+  background: var(--pd-blue);
+  border-color: var(--pd-blue);
+}
+
+.disclosure-card__view svg:last-child {
+  margin-left: auto;
+}
+
+/* Download button */
+
+.disclosure-card__download {
+  width: 47px;
+  flex: 0 0 47px;
+
+  color: var(--pd-navy);
+
+  background: #ffffff;
+
+  border: 1px solid #dce3ef;
+}
+
+.disclosure-card__download:hover {
+  color: #ffffff;
+
+  background: var(--pd-red);
+
+  border-color: var(--pd-red);
+}
+
+.disclosure-card__view:disabled,
+.disclosure-card__download:disabled {
+  opacity: .45;
+
+  cursor: not-allowed;
+}
+
+/* =========================================================
+   06. LOADING / EMPTY / ERROR STATES
+========================================================= */
+
+.disclosure-state {
+  min-height: 290px;
+
+  padding: 45px 20px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  background: #ffffff;
+
+  border: 1px solid #e5eaf2;
+}
+
+.disclosure-state > svg {
+  margin-bottom: 18px;
+
+  color: var(--pd-blue);
+}
+
+.disclosure-state h3 {
+  margin: 0 0 10px;
+
+  color: var(--pd-navy);
+
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.disclosure-state p {
+  max-width: 430px;
+
+  margin: 0;
+
+  color: var(--pd-muted);
+
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+/* Error */
+
+.disclosure-state--error > svg {
+  color: var(--pd-red);
+}
+
+/* Spinner */
+
+.disclosure-spinner {
+  animation: pdSpin 1s linear infinite;
+}
+
+/* Retry */
+
+.disclosure-retry {
+  margin-top: 23px;
+
+  padding: 12px 19px;
+
+  display: inline-flex;
+  align-items: center;
+
+  gap: 9px;
+
+  color: #ffffff;
+
+  background: var(--pd-navy);
+
+  border: 0;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: background .3s ease;
+}
+
+.disclosure-retry:hover {
+  background: var(--pd-blue);
+}
+
+/* =========================================================
+   07. TRANSPARENCY FOOTER
+========================================================= */
+
+.disclosure-trust {
+  padding: 38px 0;
+
+  background: #f0f3f9;
+
+  border-top: 1px solid #e2e7f0;
+}
+
+.disclosure-trust__inner {
+  display: flex;
+  align-items: center;
+
+  gap: 17px;
+}
+
+.disclosure-trust__icon {
+  width: 49px;
+  height: 49px;
+  flex: 0 0 49px;
+
+  display: grid;
+  place-items: center;
+
+  color: var(--pd-blue);
+
+  background: #ffffff;
+
+  border: 1px solid #e1e7f0;
+}
+
+.disclosure-trust__inner strong {
+  color: var(--pd-navy);
+
+  font-size: 13px;
+}
+
+.disclosure-trust__inner p {
+  margin: 7px 0 0;
+
+  color: var(--pd-muted);
+
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.disclosure-trust__mark {
+  margin-left: auto;
+
+  color: rgba(0,0,91,.12);
+
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 40px;
+  font-weight: 700;
+  letter-spacing: -2px;
+}
+
+/* =========================================================
+   08. PDF PREVIEW MODAL
+========================================================= */
+
+.disclosure-modal-overlay {
+  position: fixed;
+  inset: 0;
+
+  z-index: 9999;
+
+  padding: 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(0, 5, 35, .84);
+
+  backdrop-filter: blur(9px);
+
+  animation: pdFade .25s ease both;
+}
+
+.disclosure-modal {
+  width: min(1150px, 100%);
+  height: min(850px, 92vh);
+
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+
+  background: #ffffff;
+
+  box-shadow: 0 30px 100px rgba(0,0,0,.4);
+}
+
+/* Modal header */
+
+.disclosure-modal__header {
+  min-height: 70px;
+
+  padding: 12px 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 15px;
+
+  background: #ffffff;
+
+  border-bottom: 1px solid #e5e9f0;
+}
+
+/* Modal title */
+
+.disclosure-modal__title {
+  min-width: 0;
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  color: var(--pd-blue);
+}
+
+.disclosure-modal__title > div {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+.disclosure-modal__title strong {
+  overflow: hidden;
+
+  color: var(--pd-navy);
+
+  font-size: 13px;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.disclosure-modal__title span {
+  color: #7a8698;
+
+  font-size: 10px;
+}
+
+/* Modal actions */
+
+.disclosure-modal__actions {
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+}
+
+.disclosure-modal__actions button,
+.disclosure-modal__actions a {
+  width: 39px;
+  height: 39px;
+
+  display: grid;
+  place-items: center;
+
+  color: var(--pd-navy);
+
+  background: #f1f4f9;
+
+  border: 0;
+
+  cursor: pointer;
+
+  text-decoration: none;
+
+  transition: .25s ease;
+}
+
+.disclosure-modal__actions button:hover,
+.disclosure-modal__actions a:hover {
+  color: #ffffff;
+
+  background: var(--pd-navy);
+}
+
+/* PDF viewer */
+
+.disclosure-modal__frame {
+  width: 100%;
+  flex: 1;
+
+  border: 0;
+
+  background: #e8ebf1;
+}
+
+/* =========================================================
+   09. ANIMATIONS
+========================================================= */
+
+@keyframes pdEditorialReveal {
+  from {
+    opacity: 0;
+    transform: translateY(32px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pdWatermark {
+  from {
+    opacity: 0;
+    transform: translateX(75px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pdHeroImage {
+  from {
+    opacity: .5;
+    transform: scale(1.08);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1.025);
+  }
+}
+
+@keyframes pdFade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes pdSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================================================
+   10. TABLET RESPONSIVE
+========================================================= */
+
+@media (max-width: 1024px) {
+
+  .disclosure-container {
+    width: calc(100% - 60px);
+  }
+
+  .disclosure-hero {
+    min-height: 530px;
+  }
+
+  .disclosure-hero__content h1 {
+    font-size: clamp(75px, 10vw, 110px);
+  }
+
+  .disclosure-hero__watermark {
+    font-size: 320px;
+  }
+
+  .disclosure-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+}
+
+/* =========================================================
+   11. MOBILE RESPONSIVE
+========================================================= */
+
+@media (max-width: 650px) {
+
+  .disclosure-container {
+    width: calc(100% - 38px);
+  }
+
+  /* Hero */
+
+  .disclosure-hero {
+    min-height: 490px;
+
+    padding: 40px 0 25px;
+  }
+
+  .disclosure-hero__topline {
+    font-size: 8px;
+    letter-spacing: 1px;
+  }
+
+  .disclosure-hero__topline span:last-child {
+    display: none;
+  }
+
+  .disclosure-hero__content {
+    padding: 48px 0;
+  }
+
+  .disclosure-hero__eyebrow {
+    font-size: 10px;
+    letter-spacing: 1.8px;
+  }
+
+  .disclosure-hero__content h1 {
+    margin: 28px 0 20px;
+
+    font-size: clamp(58px, 12vw, 76px);
+
+    letter-spacing: -3px;
+    line-height: .9;
+  }
+
+  .disclosure-hero__content h1 em {
+    letter-spacing: -3px;
+  }
+
+  .disclosure-hero__content > p {
+    margin-top: 27px;
+
+    font-size: 17px;
+    line-height: 1.75;
+  }
+
+  .disclosure-hero__meta {
+    gap: 17px;
+    margin-top: 26px;
+  }
+
+  .disclosure-hero__meta > div {
+    font-size: 14px;
+  }
+
+  .disclosure-hero__watermark {
+    right: -15%;
+    bottom: -45px;
+
+    font-size: 190px;
+    letter-spacing: -12px;
+  }
+
+  .disclosure-hero__bottom {
+    font-size: 7px;
+    letter-spacing: 1px;
+  }
+
+  /* Documents */
+
+  .disclosure-documents {
+    padding: 70px 0;
+  }
+
+  .disclosure-documents__heading {
+    align-items: flex-start;
+    flex-direction: column;
+
+    gap: 25px;
+
+    margin-bottom: 34px;
+  }
+
+  .disclosure-documents__intro h2 {
+    font-size: 43px;
+  }
+
+  .disclosure-documents__intro > p {
+    font-size: 13px;
+  }
+
+  .disclosure-count {
+    width: 100%;
+  }
+
+  /* Grid */
+
+  .disclosure-grid {
+    grid-template-columns: 1fr;
+
+    gap: 18px;
+  }
+
+  .disclosure-card__body h3 {
+    font-size: 24px;
+  }
+
+  /* Trust */
+
+  .disclosure-trust__inner {
+    align-items: flex-start;
+  }
+
+  .disclosure-trust__mark {
+    display: none;
+  }
+
+  /* Modal */
+
+  .disclosure-modal-overlay {
+    padding: 8px;
+  }
+
+  .disclosure-modal {
+    height: 94vh;
+  }
+
+  .disclosure-modal__header {
+    padding: 10px;
+  }
+
+  .disclosure-modal__title strong {
+    max-width: 145px;
+
+    font-size: 11px;
+  }
+
+  .disclosure-modal__actions {
+    gap: 4px;
+  }
+
+  .disclosure-modal__actions button,
+  .disclosure-modal__actions a {
+    width: 33px;
+    height: 34px;
+  }
+
+}
+
+/* =========================================================
+   12. SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+
+  .disclosure-hero__content h1 {
+    font-size: 54px;
+  }
+
+  .disclosure-hero__content > p {
+    font-size: 15px;
+  }
+
+  .disclosure-hero__meta {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .disclosure-hero__watermark {
+    font-size: 155px;
+  }
+
+  .disclosure-card__actions {
+    padding-left: 17px;
+    padding-right: 17px;
+  }
+
+}
+
+/* =========================================================
+   13. ACCESSIBILITY
+========================================================= */
+
+.public-disclosure-page button:focus-visible,
+.public-disclosure-page a:focus-visible {
+  outline: 2px solid var(--pd-gold);
+  outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .public-disclosure-page *,
+  .public-disclosure-page *::before,
+  .public-disclosure-page *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+}

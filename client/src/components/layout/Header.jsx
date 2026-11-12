@@ -559,6 +559,7 @@ import {
   FaUsersCog,
   FaSchool,
   FaHeart,
+  FaCertificate,
 } from "react-icons/fa";
 
 import "./Header.css";
@@ -730,6 +731,7 @@ const Header = () => {
         { label: "Leadership", path: "/about/leadership", icon: <FaUsers /> },
         { label: "Management", path: "/about/management", icon: <FaUsersCog /> },
         { label: "Infrastructure", path: "/about/infrastructure", icon: <FaBuilding /> },
+        { label: "Public Disclosure", path: "/about/certificate", icon: <FaCertificate/> },
       ],
     },
     {
