@@ -567,7 +567,8 @@ const Footer = () => {
 
           <div className="footer-bottom-right">
             <span className="footer-bottom-credit">
-              Made with <FaHeart className="footer-bottom-heart" /> by SNGA
+              {/* Made with <FaHeart className="footer-bottom-heart" /> by SNGA */}
+               Developed by ASPL Tech Solutions Pvt Ltd Bangalore
             </span>
           </div>
 
