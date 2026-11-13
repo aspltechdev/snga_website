@@ -21,6 +21,7 @@ model User {
   gallery      GalleryAlbum[]
   achievements Achievement[]
   socialPosts  SocialPost[]
+  certificates Certificate[]
 }
 
 enum UserRole {
@@ -222,5 +223,28 @@ model SocialPost {
 
   @@index([platform])
   @@index([isPublished])
+  @@index([sortOrder])
+}
+
+model Certificate {
+  id          Int       @id @default(autoincrement())
+  title       String
+  issuer      String?
+  description String?
+  category    String?
+  issueDate   DateTime?
+  pdfUrl      String
+
+  isPublished Boolean @default(true)
+  sortOrder   Int     @default(0)
+
+  createdById Int
+  createdBy   User @relation(fields: [createdById], references: [id])
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([isPublished])
+  @@index([category])
   @@index([sortOrder])
 }

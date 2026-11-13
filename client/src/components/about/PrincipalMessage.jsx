@@ -502,7 +502,7 @@ import { Link } from "react-router-dom";
 import "./PrincipalMessage.css";
 
 import heroBg from "../../assets/school1.png";
-import principalImage from "../../assets/principal.jpg";
+import principalImage from "../../assets/pc.png";
 import messageImage from "../../assets/s6.png";
 import learningImage from "../../assets/s7.png";
 import futureImage from "../../assets/s4.png";
