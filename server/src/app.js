@@ -285,6 +285,271 @@
 
 
 
+// const express = require("express");
+// const cors = require("cors");
+// const helmet = require("helmet");
+// const morgan = require("morgan");
+// const path = require("path");
+
+// // ==========================================
+// // ROUTES
+// // ==========================================
+
+// const certificateRoutes = require("./routes/certificateRoutes");
+
+// const authRoutes = require("./routes/auth.routes");
+// const newsRoutes = require("./routes/news.routes");
+// const achievementRoutes = require("./routes/achievement.routes");
+// const blogRoutes = require("./routes/blog.routes");
+// const admissionRoutes = require("./routes/admission.routes");
+// const testimonialRoutes = require("./routes/testimonial.routes");
+// const uploadRoutes = require("./routes/upload.routes");
+// const contactRoutes = require("./routes/contact.routes");
+// const galleryRoutes = require("./routes/gallery.routes");
+// const socialPostRoutes = require("./routes/socialPostRoutes");
+// const heroRoutes = require("./routes/hero.routes");
+
+// // ==========================================
+// // ERROR MIDDLEWARE
+// // ==========================================
+
+// const {
+//   notFound,
+//   errorHandler,
+// } = require("./middleware/error.middleware");
+
+// // ==========================================
+// // EXPRESS APP
+// // ==========================================
+
+// const app = express();
+
+// // ==========================================
+// // CORS CONFIGURATION
+// // ==========================================
+
+// const allowedOrigins = [
+//   "http://localhost:5173",
+
+//   // Old Netlify deployment
+//   "https://snga.netlify.app",
+
+//   // New Netlify deployment
+//   "https://sngacbse.netlify.app",
+
+//   // Environment variable
+//   process.env.CLIENT_URL,
+// ].filter(Boolean);
+
+// app.use(
+//   cors({
+//     origin(origin, callback) {
+//       // Allow requests without an origin:
+//       // Postman, mobile apps and server-to-server requests.
+//       if (!origin) {
+//         return callback(null, true);
+//       }
+
+//       if (allowedOrigins.includes(origin)) {
+//         return callback(null, true);
+//       }
+
+//       console.error("CORS blocked origin:", origin);
+
+//       return callback(
+//         new Error(`CORS blocked origin: ${origin}`)
+//       );
+//     },
+
+//     credentials: true,
+
+//     methods: [
+//       "GET",
+//       "POST",
+//       "PUT",
+//       "PATCH",
+//       "DELETE",
+//       "OPTIONS",
+//     ],
+
+//     allowedHeaders: [
+//       "Content-Type",
+//       "Authorization",
+//     ],
+//   })
+// );
+
+// // ==========================================
+// // SECURITY
+// // ==========================================
+
+// app.use(
+//   helmet({
+//     crossOriginResourcePolicy: {
+//       policy: "cross-origin",
+//     },
+//   })
+// );
+
+// // ==========================================
+// // LOCAL FILE STORAGE
+// // ==========================================
+
+// // Serve locally uploaded PDFs, certificates and other files.
+// //
+// // Example:
+// // http://localhost:5000/uploads/certificates/file.pdf
+// //
+// // Physical location:
+// // backend/uploads/certificates/file.pdf
+
+// const uploadDirectory = path.join(
+//   process.cwd(),
+//   "uploads"
+// );
+
+// app.use(
+//   "/uploads",
+//   express.static(uploadDirectory, {
+//     dotfiles: "deny",
+//     index: false,
+//     fallthrough: true,
+//     setHeaders: (res, filePath) => {
+//       if (filePath.toLowerCase().endsWith(".pdf")) {
+//         res.setHeader(
+//           "Content-Type",
+//           "application/pdf"
+//         );
+
+//         res.setHeader(
+//           "Content-Disposition",
+//           "inline"
+//         );
+
+//         res.setHeader(
+//           "X-Content-Type-Options",
+//           "nosniff"
+//         );
+//       }
+//     },
+//   })
+// );
+
+// // ==========================================
+// // REQUEST LOGGER
+// // ==========================================
+
+// app.use(morgan("dev"));
+
+// // ==========================================
+// // BODY PARSERS
+// // ==========================================
+
+// app.use(
+//   express.json({
+//     limit: "1mb",
+//   })
+// );
+
+// app.use(
+//   express.urlencoded({
+//     extended: true,
+//     limit: "1mb",
+//   })
+// );
+
+// // ==========================================
+// // ROOT ROUTE
+// // ==========================================
+
+// app.get("/", (req, res) => {
+//   return res.status(200).json({
+//     success: true,
+//     message: "SNGA API is running",
+//   });
+// });
+
+// // ==========================================
+// // HEALTH CHECK
+// // ==========================================
+
+// app.get("/api/health", (req, res) => {
+//   return res.status(200).json({
+//     success: true,
+//     message: "SNGA API healthy",
+//   });
+// });
+
+// // ==========================================
+// // API ROUTES
+// // ==========================================
+
+// app.use("/api/auth", authRoutes);
+
+// app.use("/api/news", newsRoutes);
+
+// app.use("/api/hero", heroRoutes);
+
+// app.use("/api/blogs", blogRoutes);
+
+// app.use("/api/gallery", galleryRoutes);
+
+// app.use(
+//   "/api/social-posts",
+//   socialPostRoutes
+// );
+
+// // CERTIFICATES
+// app.use(
+//   "/api/certificates",
+//   certificateRoutes
+// );
+
+// app.use(
+//   "/api/achievements",
+//   achievementRoutes
+// );
+
+// app.use(
+//   "/api/admissions",
+//   admissionRoutes
+// );
+
+// app.use(
+//   "/api/testimonials",
+//   testimonialRoutes
+// );
+
+// app.use(
+//   "/api/contact",
+//   contactRoutes
+// );
+
+// app.use(
+//   "/api/upload",
+//   uploadRoutes
+// );
+
+// // ==========================================
+// // 404 HANDLER
+// // ==========================================
+
+// app.use(notFound);
+
+// // ==========================================
+// // GLOBAL ERROR HANDLER
+// // ==========================================
+
+// app.use(errorHandler);
+
+// // ==========================================
+// // EXPORT APP
+// // ==========================================
+
+// module.exports = app;
+
+
+
 const express = require("express");
 const cors = require("cors");
 const helmet = require("helmet");
@@ -329,7 +594,9 @@ const app = express();
 // ==========================================
 
 const allowedOrigins = [
+  // Local development
   "http://localhost:5173",
+  "http://localhost:3000",
 
   // Old Netlify deployment
   "https://snga.netlify.app",
@@ -337,24 +604,33 @@ const allowedOrigins = [
   // New Netlify deployment
   "https://sngacbse.netlify.app",
 
+  // Production domains
+  "https://sngacbse.com",
+  "https://www.sngacbse.com",
+
   // Environment variable
   process.env.CLIENT_URL,
 ].filter(Boolean);
 
+// Remove accidental duplicate origins
+const uniqueAllowedOrigins = [...new Set(allowedOrigins)];
+
 app.use(
   cors({
     origin(origin, callback) {
-      // Allow requests without an origin:
-      // Postman, mobile apps and server-to-server requests.
+      // Allow server-to-server, Postman and non-browser requests
       if (!origin) {
         return callback(null, true);
       }
 
-      if (allowedOrigins.includes(origin)) {
+      // Allow only explicitly approved origins
+      if (uniqueAllowedOrigins.includes(origin)) {
         return callback(null, true);
       }
 
-      console.error("CORS blocked origin:", origin);
+      console.error(
+        `[CORS BLOCKED] Origin not allowed: ${origin}`
+      );
 
       return callback(
         new Error(`CORS blocked origin: ${origin}`)
@@ -376,6 +652,8 @@ app.use(
       "Content-Type",
       "Authorization",
     ],
+
+    optionsSuccessStatus: 204,
   })
 );
 
@@ -395,14 +673,6 @@ app.use(
 // LOCAL FILE STORAGE
 // ==========================================
 
-// Serve locally uploaded PDFs, certificates and other files.
-//
-// Example:
-// http://localhost:5000/uploads/certificates/file.pdf
-//
-// Physical location:
-// backend/uploads/certificates/file.pdf
-
 const uploadDirectory = path.join(
   process.cwd(),
   "uploads"
@@ -414,6 +684,7 @@ app.use(
     dotfiles: "deny",
     index: false,
     fallthrough: true,
+
     setHeaders: (res, filePath) => {
       if (filePath.toLowerCase().endsWith(".pdf")) {
         res.setHeader(
@@ -505,26 +776,31 @@ app.use(
   certificateRoutes
 );
 
+// ACHIEVEMENTS
 app.use(
   "/api/achievements",
   achievementRoutes
 );
 
+// ADMISSIONS
 app.use(
   "/api/admissions",
   admissionRoutes
 );
 
+// TESTIMONIALS
 app.use(
   "/api/testimonials",
   testimonialRoutes
 );
 
+// CONTACT
 app.use(
   "/api/contact",
   contactRoutes
 );
 
+// UPLOADS
 app.use(
   "/api/upload",
   uploadRoutes
